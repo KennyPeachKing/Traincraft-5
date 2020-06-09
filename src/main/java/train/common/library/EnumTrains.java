@@ -1,5 +1,6 @@
 package train.common.library;
 
+import cpw.mods.fml.common.Loader;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
 import train.common.api.AbstractTrains;
@@ -268,7 +269,20 @@ public enum EnumTrains {
 	locoSteam262T("Loco Steam 262T",EntityLocoSteam262T.class, ItemIDs.minecartLocoSteam262T.item,"steam",300,70,0,60,160,300,0.5,0.968,4250,null,15,-3),
 	locoSteam040VB("Loco Steam 040VB",EntityLocoSteam040VB.class, ItemIDs.minecartLocoSteam040vb.item,"steam",200,32,0,40,120,200,0.5,0.968,2500,null,15,-1.1),
 	locoSteamAdler("Loco Steam Adler",EntityLocoSteamAdler.class, ItemIDs.minecartLocoSteamAdler.item,"steam",200,65,0,60,160,300,0.5,0.968,3000,null,15,-1.5),
-	locoSteamSnowPlow("Loco Steam Snow Plow", EntityLocoSteamSnowPlow.class, ItemIDs.minecartLocoSnowPlow.item, "steam, snow plow", 200, 20, 0, 10, 120, 170, 0.7, 0.965, 6850, null, 18, -4.75),;
+	locoSteamSnowPlow("Loco Steam Snow Plow", EntityLocoSteamSnowPlow.class, ItemIDs.minecartLocoSnowPlow.item, "steam, snow plow", 200, 20, 0, 10, 120, 170, 0.7, 0.965, 6850, null, 18, -4.75),
+	//JCIR-TC
+	locoAlcoS2("Alco S2",  com.jcirmodelsquad.tcjcir.locomotives.DieselAlcoS2.class, ItemIDs.minecartAlcoS2.item, "diesel", 1000, 96, 0, 10, 0, 170, 0.7, 0.965, 15000,null, 18, 0, "Created by Bidahochi"),
+	specialExperimentalGeometryCar("Passenger High Speed Zero ED", com.jcirmodelsquad.tcjcir.rollingstock.ExperimentalGeometryCar.class, ItemIDs.minecartGeometryCar.item, "passenger", 0, 0, 2, 0, 0, 0, 0, 0, 0, null, 18, 0, "Model by Bidahochi, train by PeachMaster"),
+	driverlessMetro("PCH-120 Commute", com.jcirmodelsquad.tcjcir.locomotives.DriverlessMetro.class, ItemIDs.minecartDriverlessMetro.item, "electric",1400, 120, 0, 5, 0, 160, 0.8, 0.985, 0, TraincraftUtil.getBytesFromColors(new String[] {"White", "Blue"}), 18,
+			0, "Model by Bidahochi, train by PeachMaster"),
+	cf7("DieselCF7", com.jcirmodelsquad.tcjcir.locomotives.DieselCF7.class, ItemIDs.minecartCF7.item, "diesel", 6900, null, 0, 2, "Model by Bidahochi");
+
+	//freightRibbedHopper("Ribbed Hopper", com.jcirmodelsquad.tcjcir.rollingstock.RibbedHopper.class, ItemIDs.minecartRibbedHopper, "frieght"),;
+
+
+	/*passengerICE1_Restaurant("ICE Restaurant", EntityPassengerICE_Restaurant.class,
+							 ItemIDs.minecartICE1_Restaurant.item, "passenger", 0, 0, 1.5, 0, 0, 0, 0, 0, 0, null, 10, 0),
+	*/
 
 //String trainType,int MHP,int maxSpeed, double mass, int fuelConsumption, int waterConsumption, int heatingTime, double accelerationRate, double brakeRate, int tankCapacity, String[] colors,
 	

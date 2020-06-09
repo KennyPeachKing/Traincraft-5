@@ -1,6 +1,6 @@
 /*******************************************************************************
  * Copyright (c) 2012 Mrbrutal. All rights reserved.
- * 
+ *
  * @name TrainCraft
  * @author Mrbrutal
  ******************************************************************************/
@@ -19,7 +19,7 @@ import train.common.entity.zeppelin.EntityZeppelinTwoBalloons;
 import train.common.library.EnumTrains;
 
 public class EntityHandler {
-	public static void init() {	
+	public static void init() {
 		EntityRegistry.registerModEntity(EntityZeppelinTwoBalloons.class, "zeppelin", EntityIds.ZEPPELIN, Traincraft.instance, 512, 3, true);//zepplin
 		EntityRegistry.registerModEntity(EntityBogie.class, "Entity Front Bogie", EntityIds.LOCOMOTIVE_BOGIE, Traincraft.instance, 800, ConfigHandler.UPDATE_FREQUENCY, true);//front bogie
 		EntityRegistry.registerModEntity(EntityZeppelinOneBalloon.class, "zeppelin big", EntityIds.ZEPPELIN_BIG, Traincraft.instance, 512, 3, true);//zepplin big

@@ -1857,7 +1857,7 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
                 support = true;
             }
         }
-        return this instanceof EntityLocoDieselSD40 || this instanceof EntityLocoElectricBP4 || this instanceof EntityLocoDieselClass66 || this instanceof EntityLocoElectricBR185 || this instanceof EntityLocoElectricCD151 || this instanceof EntityLocoDieselDD35A || this instanceof EntityLocoElectricICE1 || this instanceof EntityLocoElectricHighSpeedZeroED || this instanceof EntityLocoElectricE103 || this instanceof EntityLocoDieselV60_DB || this instanceof EntityLocoDieselCD742 || this instanceof EntityLocoElectricVL10 || this instanceof EntityLocoElectricTramNY || this instanceof EntityLocoDieselIC4_DSB_MG || this instanceof EntityLocoDieselSD70 || support;
+        return this instanceof EntityLocoDieselSD40 || this instanceof EntityLocoElectricBP4 || this instanceof EntityLocoDieselClass66 || this instanceof EntityLocoElectricBR185 || this instanceof EntityLocoElectricCD151 || this instanceof EntityLocoDieselDD35A || this instanceof EntityLocoElectricICE1 || this instanceof EntityLocoElectricHighSpeedZeroED || this instanceof EntityLocoElectricE103 || this instanceof EntityLocoDieselV60_DB || this instanceof EntityLocoDieselCD742 || this instanceof EntityLocoElectricVL10 || this instanceof EntityLocoElectricTramNY || this instanceof EntityLocoDieselIC4_DSB_MG || this instanceof EntityLocoDieselSD70 || this instanceof com.jcirmodelsquad.tcjcir.locomotives.DriverlessMetro || support;
 
 
     }
@@ -1873,7 +1873,7 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
                 support = true;
             }
         }
-        return this instanceof EntityLocoElectricHighSpeedZeroED || this instanceof EntityLocoElectricTramNY || this instanceof EntityLocoElectricICE1 || this instanceof EntityLocoDieselIC4_DSB_MG || support;
+        return this instanceof EntityLocoElectricHighSpeedZeroED || this instanceof EntityLocoElectricTramNY || this instanceof EntityLocoElectricICE1 || this instanceof EntityLocoDieselIC4_DSB_MG || this instanceof com.jcirmodelsquad.tcjcir.locomotives.DriverlessMetro || support;
 
     }
 
@@ -1886,6 +1886,7 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
             this.serverUUID = "";
             isConnected = false;
             Traincraft.mscChannel.sendToAllAround(new PacketMTC(getEntityId(),   0, 1)  , new NetworkRegistry.TargetPoint(this.worldObj.provider.dimensionId, posX, posY, posZ, 150.0D));
+
         }
 
     }
