@@ -895,6 +895,50 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
                 }
             }
         }
+        if (!worldObj.isRemote) {
+            //System.out.println(motionX +" "+motionZ);
+            dataWatcher.updateObject(25, (int) convertSpeed(Math.sqrt(motionX * motionX + motionZ * motionZ)));
+            if (ticksExisted % 5 == 0) {
+                dataWatcher.updateObject(24, fuelTrain);
+                dataWatcher.updateObject(20, overheatLevel);
+                dataWatcher.updateObject(22, locoState);
+                dataWatcher.updateObject(3, destination);
+                dataWatcher.updateObject(5, trainID);
+                dataWatcher.updateObject(31, ("1c/" + castToString((int) (currentFuelConsumptionChange)) + " per tick"));
+            }
+            if (ticksExisted % 20 == 0) {
+                dataWatcher.updateObject(26, (castToString(currentNumCartsPulled)));
+                dataWatcher.updateObject(27, (castToString((currentMassPulled)) + " tons"));
+                dataWatcher.updateObject(28, castToString((int) currentSpeedSlowDown));
+                dataWatcher.updateObject(29, (castToString((double) (Math.round(currentAccelSlowDown * 1000)) / 1000)));
+                dataWatcher.updateObject(30, (castToString((double) (Math.round(currentBrakeSlowDown * 1000)) / 1000)));
+                dataWatcher.updateObject(15, getMaxSpeed());
+            }
+            //System.out.println();
+            if (ticksExisted % 4 == 0 && this.worldObj.handleMaterialAcceleration(this.boundingBox.expand(0.0D, -0.2000000059604645D, 0.0D).contract(0.001D, 0.001D, 0.001D), Material.water, this)) {
+                if (!hasDrowned && !worldObj.isRemote && FMLCommonHandler.instance().getMinecraftServerInstance() != null && this.lastEntityRider instanceof EntityPlayer) {
+                    FMLCommonHandler.instance().getMinecraftServerInstance().getConfigurationManager().sendChatMsg(new ChatComponentText(((EntityPlayer) this.lastEntityRider).getDisplayName() + " drowned " + this.getTrainOwner() + "'s locomotive"));
+                    FMLCommonHandler.instance().getMinecraftServerInstance().getConfigurationManager().sendChatMsg(new ChatComponentText(((EntityPlayer) this.lastEntityRider).getDisplayName() + " drowned " + this.getTrainOwner() + "'s locomotive"));
+                }
+                //this.attackEntityFrom(DamageSource.generic, 100);
+                this.setCustomSpeed(0);// set speed to normal
+                this.setAccel(0.000001);// simulate a break down
+                this.setBrake(1);
+                this.motionX *= 0.97;// slowly slows down
+                this.motionZ *= 0.97;
+                this.fuelTrain = 0;
+                this.hasDrowned = true;
+                this.canCheckInvent = false;
+                blowUpDelay++;
+                if (blowUpDelay > 20) {
+                    this.attackEntityFrom(DamageSource.drown, 100);
+                }
+            }/*
+             * else{ this.canCheckInvent=true; this.hasDrowned=false; }
+             */
+        }
+
+
         //Minecraft Train Control things.
         if (!worldObj.isRemote) {
 
@@ -1016,6 +1060,7 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
 
 
             //For Automatic Train Operation
+
             if (this.atoStatus == 1 && trainIsATOSupported()) {
                 distanceFromStationStop = this.getDistance(this.xStationStop, this.yStationStop, this.zStationStop);
                 if (this.parkingBrake) {
@@ -1024,49 +1069,6 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
                 }
                 if (!(distanceFromStopPoint < this.getSpeed()) && (!(distanceFromSpeedChange < this.getSpeed())) && !(this.distanceFromStopPoint  < 2)) {
                     accel(this.speedLimit);
-                }
-
-                if (!worldObj.isRemote) {
-                    //System.out.println(motionX +" "+motionZ);
-                    dataWatcher.updateObject(25, (int) convertSpeed(Math.sqrt(motionX * motionX + motionZ * motionZ)));
-                    if (ticksExisted % 5 == 0) {
-                        dataWatcher.updateObject(24, fuelTrain);
-                        dataWatcher.updateObject(20, overheatLevel);
-                        dataWatcher.updateObject(22, locoState);
-                        dataWatcher.updateObject(3, destination);
-                        dataWatcher.updateObject(5, trainID);
-                        dataWatcher.updateObject(31, ("1c/" + castToString((int) (currentFuelConsumptionChange)) + " per tick"));
-                    }
-                    if (ticksExisted % 20 == 0) {
-                        dataWatcher.updateObject(26, (castToString(currentNumCartsPulled)));
-                        dataWatcher.updateObject(27, (castToString((currentMassPulled)) + " tons"));
-                        dataWatcher.updateObject(28, castToString((int) currentSpeedSlowDown));
-                        dataWatcher.updateObject(29, (castToString((double) (Math.round(currentAccelSlowDown * 1000)) / 1000)));
-                        dataWatcher.updateObject(30, (castToString((double) (Math.round(currentBrakeSlowDown * 1000)) / 1000)));
-                        dataWatcher.updateObject(15, getMaxSpeed());
-                    }
-                    //System.out.println();
-                    if (ticksExisted % 4 == 0 && this.worldObj.handleMaterialAcceleration(this.boundingBox.expand(0.0D, -0.2000000059604645D, 0.0D).contract(0.001D, 0.001D, 0.001D), Material.water, this)) {
-                        if (!hasDrowned && !worldObj.isRemote && FMLCommonHandler.instance().getMinecraftServerInstance() != null && this.lastEntityRider instanceof EntityPlayer) {
-                            FMLCommonHandler.instance().getMinecraftServerInstance().getConfigurationManager().sendChatMsg(new ChatComponentText(((EntityPlayer) this.lastEntityRider).getDisplayName() + " drowned " + this.getTrainOwner() + "'s locomotive"));
-                            FMLCommonHandler.instance().getMinecraftServerInstance().getConfigurationManager().sendChatMsg(new ChatComponentText(((EntityPlayer) this.lastEntityRider).getDisplayName() + " drowned " + this.getTrainOwner() + "'s locomotive"));
-                        }
-                        //this.attackEntityFrom(DamageSource.generic, 100);
-                        this.setCustomSpeed(0);// set speed to normal
-                        this.setAccel(0.000001);// simulate a break down
-                        this.setBrake(1);
-                        this.motionX *= 0.97;// slowly slows down
-                        this.motionZ *= 0.97;
-                        this.fuelTrain = 0;
-                        this.hasDrowned = true;
-                        this.canCheckInvent = false;
-                        blowUpDelay++;
-                        if (blowUpDelay > 20) {
-                            this.attackEntityFrom(DamageSource.drown, 100);
-                        }
-                    }/*
-                     * else{ this.canCheckInvent=true; this.hasDrowned=false; }
-                     */
                 }
 
                 if (distanceFromStopPoint < this.getSpeed()) {
@@ -1117,6 +1119,7 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
                         JsonObject sendingObj = new JsonObject();
                         sendingObj.addProperty("funct", "stationstopcomplete");
                         sendMessage(new PDMMessage(this.trainID, serverUUID, sendingObj.toString(), 0));
+                        stationStopComplete();
                     }
                 }
 
@@ -1890,4 +1893,6 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
         }
 
     }
+
+    public void stationStopComplete() {}
 }
