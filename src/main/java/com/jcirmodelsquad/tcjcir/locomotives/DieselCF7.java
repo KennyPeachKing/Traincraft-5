@@ -17,9 +17,13 @@ import train.common.library.GuiIDs;
 public class DieselCF7 extends DieselTrain {
 	public DieselCF7(World world) {
 		super(world, EnumTrains.locoDieselSD70.getTankCapacity(), LiquidManager.dieselFilter());
+		initLoco();
 	}
 
-
+	public void initLoco() {
+		fuelTrain = 0;
+		locoInvent = new ItemStack[inventorySize];
+	}
 
 	public DieselCF7(World world, double d, double d1, double d2) {
 		this(world);
@@ -33,23 +37,98 @@ public class DieselCF7 extends DieselTrain {
 	}
 
 	@Override
-	public float getOptimalDistance(EntityMinecart cart) {
-		return 0;
+	public void updateRiderPosition() {
+		TraincraftUtil.updateRider(this,2.3, 0.5);
 	}
 
+	@Override
+	public void setDead() {
+		super.setDead();
+		isDead = true;
+	}
+
+	@Override
+	public void pressKey(int i) {
+		if (i == 7 && riddenByEntity != null && riddenByEntity instanceof EntityPlayer) {
+			((EntityPlayer) riddenByEntity).openGui(Traincraft.instance, GuiIDs.LOCO, worldObj, (int) this.posX, (int) this.posY, (int) this.posZ);
+		}
+	}
+
+	@Override
+	public void onUpdate() {
+		checkInvent(locoInvent[0]);
+		super.onUpdate();
+	}
+
+	@Override
+	protected void writeEntityToNBT(NBTTagCompound nbttagcompound) {
+		super.writeEntityToNBT(nbttagcompound);
+
+		nbttagcompound.setShort("fuelTrain", (short) fuelTrain);
+		NBTTagList nbttaglist = new NBTTagList();
+		for (int i = 0; i < locoInvent.length; i++) {
+			if (locoInvent[i] != null) {
+				NBTTagCompound nbttagcompound1 = new NBTTagCompound();
+				nbttagcompound1.setByte("Slot", (byte) i);
+				locoInvent[i].writeToNBT(nbttagcompound1);
+				nbttaglist.appendTag(nbttagcompound1);
+			}
+		}
+		nbttagcompound.setTag("Items", nbttaglist);
+	}
+
+	@Override
+	protected void readEntityFromNBT(NBTTagCompound nbttagcompound) {
+		super.readEntityFromNBT(nbttagcompound);
+
+		fuelTrain = nbttagcompound.getShort("fuelTrain");
+		NBTTagList nbttaglist = nbttagcompound.getTagList("Items", Constants.NBT.TAG_COMPOUND);
+		locoInvent = new ItemStack[getSizeInventory()];
+		for (int i = 0; i < nbttaglist.tagCount(); i++) {
+			NBTTagCompound nbttagcompound1 = nbttaglist.getCompoundTagAt(i);
+			int j = nbttagcompound1.getByte("Slot") & 0xff;
+			if (j >= 0 && j < locoInvent.length) {
+				locoInvent[j] = ItemStack.loadItemStackFromNBT(nbttagcompound1);
+			}
+		}
+	}
 
 	@Override
 	public int getSizeInventory() {
-		return 0;
+		return inventorySize;
 	}
 
 	@Override
 	public String getInventoryName() {
-		return null;
+		return "CF-7";
 	}
 
 	@Override
-	public boolean isItemValidForSlot(int p_94041_1_, ItemStack p_94041_2_) {
-		return false;
+	public boolean interactFirst(EntityPlayer entityplayer) {
+		playerEntity = entityplayer;
+		if ((super.interactFirst(entityplayer))) {
+			return false;
+		}
+		if (!worldObj.isRemote) {
+			if (riddenByEntity != null && (riddenByEntity instanceof EntityPlayer) && riddenByEntity != entityplayer) {
+				return true;
+			}
+			entityplayer.mountEntity(this);
+		}
+		return true;
+	}
+
+	@Override
+	public float getOptimalDistance(EntityMinecart cart) {
+		return (1.2F);
+	}
+	@Override
+	public boolean canBeAdjusted(EntityMinecart cart) {
+		return canBeAdjusted;
+	}
+
+	@Override
+	public boolean isItemValidForSlot(int i, ItemStack itemstack) {
+		return true;
 	}
 }

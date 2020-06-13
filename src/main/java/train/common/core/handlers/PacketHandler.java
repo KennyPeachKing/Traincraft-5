@@ -7,6 +7,9 @@
 
 package train.common.core.handlers;
 
+import com.jcirmodelsquad.tcjcir.extras.packets.GenerateTrackReport;
+import com.jcirmodelsquad.tcjcir.extras.packets.StartMissionPacket;
+import com.jcirmodelsquad.tcjcir.extras.packets.UpdateGeometryCar;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.relauncher.Side;
@@ -74,5 +77,9 @@ public class PacketHandler {
 			Traincraft.gsfsrChannel.registerMessage(PacketThingFromServerHandler.class, PacketThingFromServer.class, 214, Side.CLIENT);
 			Traincraft.playSoundOnClientChannel.registerMessage(PacketPlaySoundOnClientHandler.class, PacketPlaySoundOnClient.class, 209, Side.CLIENT);
 		}
+
+		Traincraft.startMissionPacketChannel.registerMessage(StartMissionPacket.Handler.class,StartMissionPacket.class, 220, Side.SERVER);
+		Traincraft.updateGeometryCarChannel.registerMessage(UpdateGeometryCar.Handler.class, UpdateGeometryCar.class, 221, Side.SERVER);
+		Traincraft.generateTrackReportChannel.registerMessage(GenerateTrackReport.Handler.class, GenerateTrackReport.class, 222, Side.SERVER);
 	}
 }

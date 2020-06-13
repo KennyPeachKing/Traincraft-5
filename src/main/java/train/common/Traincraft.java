@@ -1,5 +1,7 @@
 package train.common;
 
+import com.jcirmodelsquad.tcjcir.extras.JCIRQuote;
+import com.jcirmodelsquad.tcjcir.extras.QuoteList;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
@@ -37,6 +39,9 @@ import train.common.recipes.AssemblyTableRecipes;
 
 import java.io.File;
 import java.net.HttpURLConnection;
+import java.util.Random;
+
+import static com.jcirmodelsquad.tcjcir.extras.QuoteList.importantQuotes;
 
 @Mod(modid = Info.modID, name = Info.modName, version = Info.modVersion)
 public class Traincraft {
@@ -79,6 +84,10 @@ public class Traincraft {
 	public static final SimpleNetworkWrapper gsfsrChannel = NetworkRegistry.INSTANCE.newSimpleChannel("gsfsReturnChannel");
 	public static final SimpleNetworkWrapper playSoundOnClientChannel  = NetworkRegistry.INSTANCE.newSimpleChannel(" SoundOnCChannel");
 
+	public static SimpleNetworkWrapper startMissionPacketChannel = NetworkRegistry.INSTANCE.newSimpleChannel("GeometryCarStartMission");
+	public static SimpleNetworkWrapper updateGeometryCarChannel = NetworkRegistry.INSTANCE.newSimpleChannel("UpdateGeometryCar");
+	public static SimpleNetworkWrapper generateTrackReportChannel = NetworkRegistry.INSTANCE.newSimpleChannel("GenerateTrackReport");
+	public static final Logger jcirLogger = LogManager.getLogger("JCIR-Traincraft");
 
 	public static File configDirectory;
 
@@ -205,6 +214,12 @@ public class Traincraft {
 		if (Loader.isModLoaded("OpenComputers")) {
 			tcLog.info("OpenComputers integration successfully activated!");
 		}
+
+		//Just for the laffs :)
+		Random rand = new Random();
+		JCIRQuote quoteOfTheDay = QuoteList.getQuotes().get(rand.nextInt(QuoteList.getQuotes().size()));
+		jcirLogger.info(quoteOfTheDay.quote + " -" + quoteOfTheDay.from);
+
 		tcLog.info("Finished PostInitialization");
 	}
 
