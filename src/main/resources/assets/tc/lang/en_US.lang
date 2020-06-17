@@ -344,6 +344,8 @@ item.tc:minecartLocoAlcoSC4.name=Alco SC4
 item.tc:minecartFreightL.name=Freight Car L
 
 
+item.tc:minecartAlcoS2.name=Alco S2
+
 <!-- ## Achievements ## -->
 achievement.tc:engineer=Engineers clothes
 achievement.tc:engineer.desc=A true trainman!
@@ -624,6 +626,8 @@ entity.tc.Loco WLs40.name=WLs40
 entity.tc.Freight Car L.name=Freight Car L
 entity.tc.Loco Steam C41 0-8-0.name=C41 0-8-0
 entity.tc.Loco Steam Alco SC4.name=Alco SC4
+
+entity.tc.ALCO S2.name=Alco S2
 
 description.villager.profession.tc.station_chief=Station Chief
 

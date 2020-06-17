@@ -9,8 +9,13 @@
 
 package com.jcirmodelsquad.tcjcir.models;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.ResourceLocation;
+import org.lwjgl.opengl.GL11;
 import tmt.ModelBase;
 import tmt.ModelRendererTurbo;
+import tmt.Tessellator;
+import train.client.render.models.ModelAmericanFreightTrucks;
+import train.common.library.Info;
 
 public class ModelRibbedHopper extends ModelBase
 {
@@ -463,7 +468,7 @@ public class ModelRibbedHopper extends ModelBase
 
 
     }
-
+    ModelAmericanFreightTrucks bogie = new ModelAmericanFreightTrucks();
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
     {
@@ -471,6 +476,17 @@ public class ModelRibbedHopper extends ModelBase
         {
             ribbedhopperModel[i].render(f5);
         }
+
+        Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/AmericanFreightTrucks.png"));
+
+        GL11.glPushMatrix();
+        GL11.glScalef(1,1,0.9f);
+        GL11.glTranslated(-2.05,0.2,-0.4);
+        bogie.render(entity,f,f1,f2,f3,f4,f5);
+
+        GL11.glTranslated(4,0,0.03);
+        bogie.render(entity,f,f1,f2,f3,f4,f5);
+        GL11.glPopMatrix();
     }
 
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5)

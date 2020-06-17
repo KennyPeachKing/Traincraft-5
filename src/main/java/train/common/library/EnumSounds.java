@@ -87,7 +87,8 @@ public enum EnumSounds {
 	locoLSSP7(EntityLocoSteamLSSP7.class, "american_steam_horn", 0.8F, "steam_run", 0.2F, 20, "steam_run", 0.2F, 20, true),
 	E103(EntityLocoElectricE103.class, "mg_horn", 1F, "mg_run", 0.6F, 8, "mg_idle", 0.4F, 50, false),
 
-	driverlessMetro(com.jcirmodelsquad.tcjcir.locomotives.DriverlessMetro.class, "mg_horn", 1F, "mg_run", 0.6F, 8, "mg_idle", 0.4F, 50, false),;
+	driverlessMetro(com.jcirmodelsquad.tcjcir.locomotives.DriverlessMetro.class, "mg_horn", 1F, "mg_run", 0.6F, 8, "mg_idle", 0.4F, 50, false),
+	alcoS2(com.jcirmodelsquad.tcjcir.locomotives.DieselAlcoS2.class, "leslie_a200", 1F, "539t_notch8", 0.65F, 40, "539t_idle", 0.65F, 40, true);
 
 	private Class entityClass;
 	private String horn;

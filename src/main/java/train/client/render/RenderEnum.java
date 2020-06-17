@@ -625,7 +625,7 @@ public enum RenderEnum {
 	}, "", null, 0, false),
 
 	//JCIR-TC
-	alcoS2( com.jcirmodelsquad.tcjcir.locomotives.DieselAlcoS2.class,  new ModelAlcoS2(), "alcos2", false,new float[] {0F, -0.1F, 0F},  new float[] { 0F, 180F, 180F }, null, "largesmoke", 2,  new ArrayList<double[]>() {
+	alcoS2( com.jcirmodelsquad.tcjcir.locomotives.DieselAlcoS2.class,  new ModelAlcoS2(), "alcos2_", true,new float[] {-1F, -0.1F, 0F},  new float[] { 0F, 180F, 180F }, null, "largesmoke", 2,  new ArrayList<double[]>() {
 		{
 			add(new double[]{0.9D, 1.4D, 0.0D});
 		}
@@ -638,7 +638,7 @@ public enum RenderEnum {
 		}
 	}, "", null, 0, false),
 	amfleet(com.jcirmodelsquad.tcjcir.rollingstock.Amfleet.class, new com.jcirmodelsquad.tcjcir.models.ModelAmfleet(),"amfleet", false, new float[]{0F, -0.4F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
-	ribbedHopper(com.jcirmodelsquad.tcjcir.rollingstock.RibbedHopper.class, new com.jcirmodelsquad.tcjcir.models.ModelRibbedHopper(),"ribbed_hopper", false, new float[]{0F, -0.4F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false);
+	ribbedHopper(com.jcirmodelsquad.tcjcir.rollingstock.RibbedHopper.class, new com.jcirmodelsquad.tcjcir.models.ModelRibbedHopper(),"ribbed_hopper", false, new float[]{0F, -0.2F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false);
 
 	private Class<? extends AbstractTrains> entityClass;
 	private ModelBase model;

@@ -32,5 +32,8 @@
   "mg_run": {"category": "master", "sounds": [{"name": "mg_run","stream": false}]},
   "mg_idle": {"category": "master", "sounds": [{"name": "mg_idle","stream": false}]},
   "mtc_speedchange": {"category": "master", "sounds": [{"name": "speedchange","stream": false}]},
-  "mtc_overspeed": {"category": "master", "sounds": [{"name": "overspeed","stream": false}]}
+  "mtc_overspeed": {"category": "master", "sounds": [{"name": "overspeed","stream": false}]},
+  "leslie_a200": {"category": "master", "sounds": [{"name": "leslie_a200","stream": true}]},
+  "539t_idle": {"category": "master", "sounds": [{"name": "539t_idle","stream": true}]},
+  "539t_notch8": {"category": "master", "sounds": [{"name": "539t_notch8","stream": true}]}
 }

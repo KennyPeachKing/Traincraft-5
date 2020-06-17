@@ -101,7 +101,7 @@ public class RibbedHopper  extends Freight implements IInventory  {
 
     @Override
     public float getOptimalDistance(EntityMinecart cart) {
-        return 3.2F;
+        return 2.6F;
     }
 
     @Override
