@@ -2,6 +2,7 @@ package train.client.render;
 
 import com.jcirmodelsquad.tcjcir.locomotives.DieselAlcoS2;
 import com.jcirmodelsquad.tcjcir.models.ModelAlcoS2;
+import com.jcirmodelsquad.tcjcir.models.ModelSW1;
 import tmt.ModelBase;
 import train.client.render.models.*;
 import train.common.api.AbstractTrains;
@@ -638,7 +639,13 @@ public enum RenderEnum {
 		}
 	}, "", null, 0, false),
 	amfleet(com.jcirmodelsquad.tcjcir.rollingstock.Amfleet.class, new com.jcirmodelsquad.tcjcir.models.ModelAmfleet(),"amfleet", false, new float[]{0F, -0.4F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
-	ribbedHopper(com.jcirmodelsquad.tcjcir.rollingstock.RibbedHopper.class, new com.jcirmodelsquad.tcjcir.models.ModelRibbedHopper(),"ribbed_hopper", false, new float[]{0F, -0.2F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false);
+	ribbedHopper(com.jcirmodelsquad.tcjcir.rollingstock.RibbedHopper.class, new com.jcirmodelsquad.tcjcir.models.ModelRibbedHopper(),"ribbed_hopper_", true, new float[]{0F, -0.2F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
+	SW1( com.jcirmodelsquad.tcjcir.locomotives.DieselSW1.class,  new com.jcirmodelsquad.tcjcir.models.ModelSW1(), "sw1", false,new float[] {-1.1F, -0.05F, 0F},  new float[] { 0F, 180F, 180F }, null, "smoke", 2,  new ArrayList<double[]>() {
+		{
+			add(new double[]{0.9D, 1.4D, 0.0D});
+		}
+	}, "", null, 0, false);
+
 
 	private Class<? extends AbstractTrains> entityClass;
 	private ModelBase model;

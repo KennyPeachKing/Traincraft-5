@@ -345,6 +345,8 @@ item.tc:minecartFreightL.name=Freight Car L
 
 
 item.tc:minecartAlcoS2.name=Alco S2
+item.tc:minecartRibbedHopper.name= Ribbed Covered Hopper
+item.tc:minecartSW1.name= EMD SW1
 
 <!-- ## Achievements ## -->
 achievement.tc:engineer=Engineers clothes
@@ -628,6 +630,8 @@ entity.tc.Loco Steam C41 0-8-0.name=C41 0-8-0
 entity.tc.Loco Steam Alco SC4.name=Alco SC4
 
 entity.tc.ALCO S2.name=Alco S2
+entity.tc.Ribbed Hopper.name= Ribbed Covered Hopper
+entity.tc.SW1.name= EMD SW1
 
 description.villager.profession.tc.station_chief=Station Chief
 

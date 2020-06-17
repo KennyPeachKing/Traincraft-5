@@ -88,7 +88,8 @@ public enum EnumSounds {
 	E103(EntityLocoElectricE103.class, "mg_horn", 1F, "mg_run", 0.6F, 8, "mg_idle", 0.4F, 50, false),
 
 	driverlessMetro(com.jcirmodelsquad.tcjcir.locomotives.DriverlessMetro.class, "mg_horn", 1F, "mg_run", 0.6F, 8, "mg_idle", 0.4F, 50, false),
-	alcoS2(com.jcirmodelsquad.tcjcir.locomotives.DieselAlcoS2.class, "leslie_a200", 1F, "539t_notch8", 0.65F, 40, "539t_idle", 0.65F, 40, true);
+	alcoS2(com.jcirmodelsquad.tcjcir.locomotives.DieselAlcoS2.class, "leslie_a200", 1F, "539t_notch8", 0.50F, 40, "539t_idle", 0.65F, 40, true),
+	SW1(com.jcirmodelsquad.tcjcir.locomotives.DieselSW1.class, "leslie_a200", 0.9F, "567_notch8", 0.55F, 40, "567_idle", 0.75F, 40, false);
 
 	private Class entityClass;
 	private String horn;
