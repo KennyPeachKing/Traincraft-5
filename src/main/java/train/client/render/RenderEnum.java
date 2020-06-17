@@ -637,8 +637,8 @@ public enum RenderEnum {
 			add(new double[]{0.9D, 1.4D, 0.0D});
 		}
 	}, "", null, 0, false),
-	amfleet(com.jcirmodelsquad.tcjcir.rollingstock.Amfleet.class, new com.jcirmodelsquad.tcjcir.models.ModelAmfleet(),"amfleet", false, new float[]{0F, -0.4F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false);
-
+	amfleet(com.jcirmodelsquad.tcjcir.rollingstock.Amfleet.class, new com.jcirmodelsquad.tcjcir.models.ModelAmfleet(),"amfleet", false, new float[]{0F, -0.4F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
+	ribbedHopper(com.jcirmodelsquad.tcjcir.rollingstock.RibbedHopper.class, new com.jcirmodelsquad.tcjcir.models.ModelRibbedHopper(),"ribbed_hopper", false, new float[]{0F, -0.4F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false);
 
 	private Class<? extends AbstractTrains> entityClass;
 	private ModelBase model;

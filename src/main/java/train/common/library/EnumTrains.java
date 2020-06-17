@@ -276,10 +276,10 @@ public enum EnumTrains {
 	driverlessMetro("PCH-120 Commute", com.jcirmodelsquad.tcjcir.locomotives.DriverlessMetro.class, ItemIDs.minecartDriverlessMetro.item, "electric",1400, 120, 0, 5, 0, 160, 0.8, 0.985, 0, TraincraftUtil.getBytesFromColors(new String[] {"White", "Blue"}), 18,
 			0, "Model by Bidahochi, train by PeachMaster"),
 	cf7("DieselCF7", com.jcirmodelsquad.tcjcir.locomotives.DieselCF7.class, ItemIDs.minecartCF7.item, "diesel", 6900, null, 0, 2, "Model by Bidahochi"),
-	amfleet("Amfleet", com.jcirmodelsquad.tcjcir.rollingstock.Amfleet.class, ItemIDs.minecartAmfleet.item, "freight", 2, null, 0, 0, "Model by Valaktik, Updated by Bidahochi");
+	amfleet("Amfleet", com.jcirmodelsquad.tcjcir.rollingstock.Amfleet.class, ItemIDs.minecartAmfleet.item, "freight", 2, null, 0, 0, "Model by Valaktik, Updated by Bidahochi"),
 
 
-	//freightRibbedHopper("Ribbed Hopper", com.jcirmodelsquad.tcjcir.rollingstock.RibbedHopper.class, ItemIDs.minecartRibbedHopper, "frieght"),;
+	freightRibbedHopper("Ribbed Hopper", com.jcirmodelsquad.tcjcir.rollingstock.RibbedHopper.class, ItemIDs.minecartRibbedHopper.item, "frieght", 4, null, 0, 64, "Model by Bidahochi"),;
 
 
 	/*passengerICE1_Restaurant("ICE Restaurant", EntityPassengerICE_Restaurant.class,

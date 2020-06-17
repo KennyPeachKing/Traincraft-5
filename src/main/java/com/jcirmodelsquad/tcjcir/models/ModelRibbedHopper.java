@@ -8,8 +8,8 @@
 // Last changed on: 03.05.2019 - 23:05:46
 
 package com.jcirmodelsquad.tcjcir.models;
-import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
+import tmt.ModelBase;
 import tmt.ModelRendererTurbo;
 
 public class ModelRibbedHopper extends ModelBase

@@ -50,6 +50,7 @@ public class QuoteList {
         importantQuotes.add(new JCIRQuote("My automated..I NEED TO USE THE BATHROOM", "PeachMaster"));
         importantQuotes.add(new JCIRQuote("WhaT! I'm not doing insect with the bees!", "Hariesh"));
         importantQuotes.add(new JCIRQuote("A RECTANGLE IS A SQUARE!!", "Bidahochi"));
+        importantQuotes.add(new JCIRQuote("No, don't sit on my CF7 book", "Bidahochi"));
         return importantQuotes;
 
     }
