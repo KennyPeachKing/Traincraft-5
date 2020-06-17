@@ -626,7 +626,7 @@ public enum RenderEnum {
 	}, "", null, 0, false),
 
 	//JCIR-TC
-	alcoS2( com.jcirmodelsquad.tcjcir.locomotives.DieselAlcoS2.class,  new ModelAlcoS2(), "alcos2_", true,new float[] {-1F, -0.1F, 0F},  new float[] { 0F, 180F, 180F }, null, "largesmoke", 2,  new ArrayList<double[]>() {
+	alcoS2( com.jcirmodelsquad.tcjcir.locomotives.DieselAlcoS2.class,  new ModelAlcoS2(), "alcos2_", true,new float[] {-1F, -0.1F, 0F},  new float[] { 0F, 180F, 180F }, null, "smoke", 5,  new ArrayList<double[]>() {
 		{
 			add(new double[]{0.9D, 1.4D, 0.0D});
 		}
@@ -644,7 +644,12 @@ public enum RenderEnum {
 		{
 			add(new double[]{0.9D, 1.4D, 0.0D});
 		}
-	}, "", null, 0, false);
+	}, "", null, 0, false),
+	H1044( com.jcirmodelsquad.tcjcir.locomotives.DieselH1044.class,  new com.jcirmodelsquad.tcjcir.models.ModelH1044(), "h10-44_", true,new float[] {-1.1F, 0.1F, 0F},  new float[] { 0F, 180F, 180F }, null, "smoke", 4,  new ArrayList<double[]>() {
+		{
+			add(new double[]{1.9D, 1.6D, 0.0D});
+		}
+	}, "", null, 0, false);;
 
 
 	private Class<? extends AbstractTrains> entityClass;

@@ -309,14 +309,15 @@ public enum ItemIDs {
 	tcRailVeryLargeSlopeBallast("ItemTCRail", "item_rail_straight_slope_ballast", 3),
 
 	//TC-JCIR
-	minecartAlcoS2("ItemRollingStock", "alco_s2", 4),
+	minecartAlcoS2("ItemRollingStock", "alco_s2", 9),
 	minecartRibbedHopper("ItemRollingStock", "ribbed_hopper", 3),
 	minecartGeometryCar("ItemRollingStock", "geometry_car", 15),
 	minecartDriverlessMetro("ItemRollingStock", "driverless_metro", 20),
 	minecartCF7("ItemRollingStock", "cf7", 4),
 	minecartAmfleet("ItemRollingStock", "Amfleet", 3),
 	minecartBaldwinMineLoco("ItemRollingStock", "baldwinmineloco", 1),
-	minecartSW1("ItemRollingStock","sw1", 9);
+	minecartSW1("ItemRollingStock","sw1", 9),
+	minecartH1044("ItemRollingStock", "h1044", 11);
 	public Item item;
 	public String className;
 	public String iconName;

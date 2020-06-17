@@ -278,7 +278,7 @@ public enum EnumTrains {
 	cf7("DieselCF7", com.jcirmodelsquad.tcjcir.locomotives.DieselCF7.class, ItemIDs.minecartCF7.item, "diesel", 6900, null, 0, 2, "Model by Bidahochi"),
 	amfleet("Amfleet", com.jcirmodelsquad.tcjcir.rollingstock.Amfleet.class, ItemIDs.minecartAmfleet.item, "freight", 2, null, 0, 0, "Model by Valaktik, Updated by Bidahochi"),
 	SW1("SW1", com.jcirmodelsquad.tcjcir.locomotives.DieselSW1.class, ItemIDs.minecartSW1.item, "diesel", 600, 105, 0, 8, 0, 160, 0.6, 0.890, 10000, null, 18, -2.1, "model by Bida as usual kEk"),
-
+	H1044("H1044", com.jcirmodelsquad.tcjcir.locomotives.DieselH1044.class, ItemIDs.minecartH1044.item, "diesel", 1000, 97, 0, 10, 0, 175, 0.75, 0.92, 14000, TraincraftUtil.getBytesFromColors(new String[]{"Green", "Yellow", "Black", "Red", "Blue", "Grey", "LightBlue", "Orange", "White"}), 18, -2.2, "Model by Bida"),
 
 	freightRibbedHopper("Ribbed Hopper", com.jcirmodelsquad.tcjcir.rollingstock.RibbedHopper.class, ItemIDs.minecartRibbedHopper.item, "frieght", 4, TraincraftUtil.getBytesFromColors(new String[] {"Grey", "Cyan", "LightGrey"}), 0, 54, "Model by Bidahochi"),;
 
