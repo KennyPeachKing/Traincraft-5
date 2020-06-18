@@ -632,7 +632,7 @@ public enum RenderEnum {
 		}
 	}, "", null, 0, false),
 	geometryCar(com.jcirmodelsquad.tcjcir.rollingstock.ExperimentalGeometryCar.class,new ModelPassengerHighSpeedCarZeroED(), "passengerHighSpeedCarZeroED", false, new float[] { 0.0F, -0.47F, 0.0F }, null, null, "", 0, null, "", null, 0, false),
-	driverlessMetro(com.jcirmodelsquad.tcjcir.locomotives.DriverlessMetro.class, new com.jcirmodelsquad.tcjcir.models.ModelPCH120Commute(), "pch120commute_", true,new float[] {0F, 0.03F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
+	driverlessMetro(com.jcirmodelsquad.tcjcir.locomotives.DriverlessMetro.class, new com.jcirmodelsquad.tcjcir.models.ModelPCH120Commute(), "pch120commute_", true,new float[] {-1.3F, 0.03F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
 	cf7(com.jcirmodelsquad.tcjcir.locomotives.DieselCF7.class, new com.jcirmodelsquad.tcjcir.models.ModelCF7(), "cf7", false, new float[] {0F, -0.1F, 0F},  new float[] { 0F, 180F, 180F }, null, "largesmoke", 2,  new ArrayList<double[]>() {
 		{
 			add(new double[]{0.9D, 1.4D, 0.0D});
@@ -649,7 +649,13 @@ public enum RenderEnum {
 		{
 			add(new double[]{1.9D, 1.6D, 0.0D});
 		}
-	}, "", null, 0, false);;
+	}, "", null, 0, false),
+	HighrailTruck( com.jcirmodelsquad.tcjcir.locomotives.DieselHighrailTruck.class,  new com.jcirmodelsquad.tcjcir.models.ModelHighrailTruck(), "highrail_", true,new float[] {-1.5F, 0.2F, 0F},  new float[] { 0F, 180F, 180F }, null, "smoke", 1,  new ArrayList<double[]>() {
+		{
+			add(new double[]{-0.3D, -0.3D, 0.0D});
+		}
+	}, "", null, 0, false),
+	Thanos(com.jcirmodelsquad.tcjcir.locomotives.Thanos.class, new ModelLocoMinetrain(), "thanos", false,new float[] {-0.8F, -0.47F, 0.0F},  new float[] { 0F, 0F, 0F }, null, "", 0, null, "", null, 0, false);;
 
 
 	private Class<? extends AbstractTrains> entityClass;

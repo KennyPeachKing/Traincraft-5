@@ -348,6 +348,10 @@ item.tc:minecartAlcoS2.name=Alco S2
 item.tc:minecartRibbedHopper.name= Ribbed Covered Hopper
 item.tc:minecartSW1.name= EMD SW1
 item.tc:minecartH1044.name= FM H10-44
+item.tc:minecartAmfleet.name= Amfleet Car
+item.tc:minecartDriverlessMetro.name= PCH 120 Commute
+item.tc:minecartHighrailTruck.name= Generic Highrail Truck
+item.tc:minecartThanos.name= Thanos Cart
 
 <!-- ## Achievements ## -->
 achievement.tc:engineer=Engineers clothes
@@ -634,6 +638,10 @@ entity.tc.ALCO S2.name=Alco S2
 entity.tc.Ribbed Hopper.name= Ribbed Covered Hopper
 entity.tc.SW1.name= EMD SW1
 entity.tc.H1044.name= FM H10-44
+entity.tc.Amfleet.name= Amfleet Car
+entity.tc.Driverless Metro.name= PCH 120 Commute
+entity.tc.HighrailTruck.name= Generic Highrail Truck
+entity.tc.Thanos.name= Thanos Cart
 
 description.villager.profession.tc.station_chief=Station Chief
 
