@@ -349,7 +349,7 @@ item.tc:minecartRibbedHopper.name= Ribbed Covered Hopper
 item.tc:minecartSW1.name= EMD SW1
 item.tc:minecartH1044.name= FM H10-44
 item.tc:minecartAmfleet.name= Amfleet Car
-item.tc:minecartDriverlessMetro.name= PCH 120 Commute
+item.tc:minecartDriverlessMetro.name= PCH-120 Commute
 item.tc:minecartHighrailTruck.name= Generic Highrail Truck
 item.tc:minecartThanos.name= Thanos Cart
 
