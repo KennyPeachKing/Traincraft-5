@@ -149,7 +149,7 @@ public abstract class DieselTrain extends Locomotive implements IFluidHandler {
 			motionZ *= 0.88;
 		}
 		if (locoInvent0 != null) {
-			liquidInSlot(locoInvent0);
+		liquidInSlot(locoInvent0);
 		}
 		return locoInvent0;
 	}
