@@ -25,6 +25,7 @@ import train.common.api.ElectricTrain;
 import train.common.api.EntityRollingStock;
 import train.common.library.GuiIDs;
 import train.common.mtc.PDMMessage;
+import train.common.mtc.packets.PacketATO;
 import train.common.mtc.packets.PacketATOSetStopPoint;
 
 import java.util.ArrayList;
@@ -64,6 +65,9 @@ public class DriverlessMetro extends ElectricTrain {
     public DriverlessMetro otherSide;
     public boolean isLeading = true;
     private long lastMills = 0L;
+    private long lastMillsRTD = 0L;
+    private boolean readyToDepart;
+
     public DriverlessMetro(World world) {
         super(world);
     }
@@ -291,7 +295,7 @@ public class DriverlessMetro extends ElectricTrain {
                     }
                 }
             }
-            if (obstacleInWay && !obstacleBrakeDone) {
+          /*  if (obstacleInWay && !obstacleBrakeDone) {
                 motionX *= brake;
                 motionZ *= brake;
                 if (this.getSpeed() == 3) {
@@ -299,7 +303,7 @@ public class DriverlessMetro extends ElectricTrain {
                     obstacleBrakeDone = true;
                     System.out.println("Braking!");
                 }
-            }
+            }*/
 
             if (riddenByEntity != null) {
                 int dir = MathHelper
@@ -357,7 +361,7 @@ public class DriverlessMetro extends ElectricTrain {
                             //Handle normal MTC stuff. Use W-MTC station stops and stuff.. Ooh, speaking of those, set the station stop once the train is close enough.
                         }
 
-                        if (distanceFromNextStation < this.getSpeed() + 5 && !stationStop) {
+                        if (distanceFromNextStation < this.getSpeed() + 5 && !stationStop && theNextStation != null) {
                             this.xStationStop = theNextStation.stationX;
                             this.yStationStop = theNextStation.stationY;
                             this.zStationStop = theNextStation.stationZ;
@@ -369,20 +373,40 @@ public class DriverlessMetro extends ElectricTrain {
 
 
 
-                            if (System.currentTimeMillis() > lastMills+timeUntilRTD) {
+                            if (System.currentTimeMillis() > lastMillsRTD+timeUntilRTD && !readyToDepart) {
                                 //Send "readyToDepart" message to the server.
                                 JsonObject sendingObj = new JsonObject();
                                 sendingObj.addProperty("funct", "readyToDepart");
                                 sendingObj.addProperty("stationName", theCurrentStation.getStationName());
                                 System.out.println("Ready to depart!");
                                 sendMessage(new PDMMessage(this.trainID, serverUUID, sendingObj.toString(), 0));
-                                lastMills=System.currentTimeMillis();
+                                lastMillsRTD=0L;
+                                readyToDepart = true;
                             }
 
                             if (System.currentTimeMillis() > lastMills+timeUntilDeparture) {
-                                if (theCurrentStation.isFinalStop()) {
+                                if (theCurrentStation.isFinalStop() && otherSide != null) {
                                     System.out.println("Final stop!");
                                     //Do switching over code soon
+                                    System.out.println("Switching over!");
+                                    otherSide.isConnected = true;
+                                    otherSide.serverUUID = this.serverUUID;
+                                    JsonObject sendingObj = new JsonObject();
+                                    sendingObj.addProperty("funct", "newtimetable");
+                                    sendingObj.addProperty("position", theCurrentStation.getStationName());
+                                    sendMessage(new PDMMessage(otherSide.trainID, serverUUID, sendingObj.toString(), 0));
+                                    Traincraft.atoChannel.sendToAllAround(new PacketATO(this.getEntityId(), 0), new NetworkRegistry.TargetPoint(this.worldObj.provider.dimensionId, this.posX, this.posY, this.posZ, 150.0D));
+                                    this.canBePulled = true;
+                                    this.setCanBeAdjusted(true);
+                                    this.parkingBrake = false;
+                                    otherSide.canBePulled = false;
+                                    otherSide.canBeAdjusted = false;
+                                    //Now, just kinda shut down and do nothing.
+                                    currentMode = 5;
+                                    atoStatus = 0;
+                                    stationStop = false;
+                                    theCurrentStation = null;
+                                    operation = 0;
                                 } else {
                                     //No? It isn't the final stop? Okay, continue on the route.
                                     System.out.println("Departing!");
@@ -396,11 +420,12 @@ public class DriverlessMetro extends ElectricTrain {
                                         sendingObj.addProperty("stationName", theCurrentStation.getStationName());
                                         sendMessage(new PDMMessage(this.trainID, serverUUID, sendingObj.toString(), 0));
                                         theCurrentStation = null;
+                                        readyToDepart = false;
                                     }
 
 
                                 }
-                                lastMills=System.currentTimeMillis();
+                                lastMills= 0L;
 
                             }
                         } else {
@@ -445,7 +470,7 @@ public class DriverlessMetro extends ElectricTrain {
 
     @Override
     public float getOptimalDistance(EntityMinecart cart) {
-        return 2.2F;
+        return 0.8F;
     }
 
     @Override
@@ -559,6 +584,8 @@ public class DriverlessMetro extends ElectricTrain {
         this.xStationStop = 0.0;
         this.yStationStop = 0.0;
         this.zStationStop = 0.0;
+        lastMills = System.currentTimeMillis();
+        lastMillsRTD = System.currentTimeMillis();
         Traincraft.atoSetStopPoint.sendToAllAround(new PacketATOSetStopPoint(this.getEntityId(), xFromStopPoint, yFromStopPoint, zFromStopPoint, xStationStop, yStationStop, zStationStop), new NetworkRegistry.TargetPoint(this.worldObj.provider.dimensionId, this.posX, this.posY, this.posZ, 150.0D));
     }
 }

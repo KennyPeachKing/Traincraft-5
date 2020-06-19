@@ -1100,6 +1100,7 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
                 }
 
                 if (this.distanceFromStationStop < 2 && !stationStop) {
+                    stationStopComplete();
                     this.parkingBrake = true;
                     this.isBraking = true;
 
@@ -1119,7 +1120,7 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
                         JsonObject sendingObj = new JsonObject();
                         sendingObj.addProperty("funct", "stationstopcomplete");
                         sendMessage(new PDMMessage(this.trainID, serverUUID, sendingObj.toString(), 0));
-                        stationStopComplete();
+
                     }
                 }
 
@@ -1661,7 +1662,7 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
                     // worldObj.playSoundAtEntity(daTrain.ridingEntity, Info.resourceLocation + ":" + "mtc_speedchange", 1.0F, 1.0F);
                     // worldObj.playSoundAtEntity(this, Info.resourceLocation + ":" + sounds.getHornString(), sounds.getHornVolume(), 1.0F);
 
-                    if (!speedGoingDown) {
+                    if (!speedGoingDown && riddenByEntity != null ) {
                         Traincraft.playSoundOnClientChannel.sendTo(new PacketPlaySoundOnClient(7, "tc:mtc_speedchange"), (EntityPlayerMP) riddenByEntity);
                     }
                 }
