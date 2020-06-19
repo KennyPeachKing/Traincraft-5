@@ -281,7 +281,8 @@ public enum EnumTrains {
 	H1044("H1044", com.jcirmodelsquad.tcjcir.locomotives.DieselH1044.class, ItemIDs.minecartH1044.item, "diesel", 1000, 97, 0, 10, 0, 175, 0.75, 0.92, 14000, TraincraftUtil.getBytesFromColors(new String[]{"Green", "Yellow", "Black", "Red", "Blue", "Grey", "LightBlue", "Orange", "White"}), 18, -2.2, "Model by Bida"),
 	HighrailTruck("HighrailTruck", com.jcirmodelsquad.tcjcir.locomotives.DieselHighrailTruck.class, ItemIDs.minecartHighrailTruck.item, "diesel", 90, 80, 0, 7, 0, 140, 0.7, 0.8, 1000,TraincraftUtil.getBytesFromColors(new String[] {"Yellow", "White"}),18, 2.7, "Model by MessibOOmer"),
 	freightRibbedHopper("Ribbed Hopper", com.jcirmodelsquad.tcjcir.rollingstock.RibbedHopper.class, ItemIDs.minecartRibbedHopper.item, "frieght", 4, TraincraftUtil.getBytesFromColors(new String[] {"Grey", "Cyan", "LightGrey"}), 0, 54, "Model by Bidahochi"),
-	Thanos("Thanos", com.jcirmodelsquad.tcjcir.locomotives.Thanos.class, ItemIDs.minecartThanos.item, "electric", 1000001, 6210000, 0, 3, 0, 1, 6, 3, 0, null, 18, -1, "You don't want to mess with the Universe's Best");
+	Thanos("Thanos", com.jcirmodelsquad.tcjcir.locomotives.Thanos.class, ItemIDs.minecartThanos.item, "electric", 1000001, 6210000, 0, 3, 0, 1, 6, 3, 0, null, 18, -1, "You don't want to mess with the Universe's Best"),
+	U23B("U23B", com.jcirmodelsquad.tcjcir.locomotives.DieselU23B.class, ItemIDs.minecartU23B.item, "diesel", 2250, 70, 0, 9, 0, 180, 0.7, 0.91, 17000, null, 10, -3.7, "U23B - Type B Truck");
 
 
 	/*passengerICE1_Restaurant("ICE Restaurant", EntityPassengerICE_Restaurant.class,
