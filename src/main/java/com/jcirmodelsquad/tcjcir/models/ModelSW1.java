@@ -9,7 +9,6 @@
 
 package com.jcirmodelsquad.tcjcir.models;
 
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;

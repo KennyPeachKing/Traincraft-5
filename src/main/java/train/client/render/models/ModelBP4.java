@@ -109,13 +109,13 @@ public class ModelBP4 extends ModelConverter
 		bodyModel[68] = new ModelRendererTurbo(this, 257, 25, textureX, textureY); // Box 28
 		bodyModel[69] = new ModelRendererTurbo(this, 281, 25, textureX, textureY); // Box 29
 		bodyModel[70] = new ModelRendererTurbo(this, 297, 25, textureX, textureY); // Box 30
-		bodyModel[71] = new ModelRendererTurbo(this, 305, 25, textureX, textureY, "lamp"); // Box 31 lamp
+		bodyModel[71] = new ModelRendererTurbo(this, 305, 25, textureX, textureY); // Box 31 lamp but not really
 		bodyModel[72] = new ModelRendererTurbo(this, 369, 25, textureX, textureY); // Box 40
 		bodyModel[73] = new ModelRendererTurbo(this, 393, 25, textureX, textureY); // Box 41
 		bodyModel[74] = new ModelRendererTurbo(this, 417, 33, textureX, textureY); // Box 101
 		bodyModel[75] = new ModelRendererTurbo(this, 305, 25, textureX, textureY); // Box 102
-		bodyModel[76] = new ModelRendererTurbo(this, 33, 25, textureX, textureY); // Box 115 liveryimg 2
-		bodyModel[77] = new ModelRendererTurbo(this, 249, 25, textureX, textureY); // Box 116 liveryimg 2
+		bodyModel[76] = new ModelRendererTurbo(this, 33, 25, textureX, textureY, "lamp"); // Box 115 liveryimg 2
+		bodyModel[77] = new ModelRendererTurbo(this, 249, 25, textureX, textureY, "lamp"); // Box 116 liveryimg 2
 		bodyModel[78] = new ModelRendererTurbo(this, 73, 41, textureX, textureY); // Box 117
 		bodyModel[79] = new ModelRendererTurbo(this, 385, 25, textureX, textureY); // Box 118
 		bodyModel[80] = new ModelRendererTurbo(this, 409, 25, textureX, textureY); // Box 119
@@ -134,7 +134,7 @@ public class ModelBP4 extends ModelConverter
 		bodyModel[93] = new ModelRendererTurbo(this, 305, 49, textureX, textureY); // Box 34
 		bodyModel[94] = new ModelRendererTurbo(this, 361, 57, textureX, textureY); // Box 42
 		bodyModel[95] = new ModelRendererTurbo(this, 385, 57, textureX, textureY); // Box 43
-		bodyModel[96] = new ModelRendererTurbo(this, 417, 33, textureX, textureY, "lamp"); // Box 48 lamp
+		bodyModel[96] = new ModelRendererTurbo(this, 417, 33, textureX, textureY); // Box 48 lamp but not really
 		bodyModel[97] = new ModelRendererTurbo(this, 425, 57, textureX, textureY); // Box 44
 		bodyModel[98] = new ModelRendererTurbo(this, 409, 57, textureX, textureY); // Box 43
 		bodyModel[99] = new ModelRendererTurbo(this, 449, 57, textureX, textureY); // Box 44
@@ -143,13 +143,13 @@ public class ModelBP4 extends ModelConverter
 		bodyModel[102] = new ModelRendererTurbo(this, 121, 65, textureX, textureY); // Box 65
 		bodyModel[103] = new ModelRendererTurbo(this, 281, 33, textureX, textureY); // box64
 		bodyModel[104] = new ModelRendererTurbo(this, 89, 41, textureX, textureY); // box65
-		bodyModel[105] = new ModelRendererTurbo(this, 417, 9, textureX, textureY); // Box 162 light
+		bodyModel[105] = new ModelRendererTurbo(this, 417, 9, textureX, textureY, "lamp"); // Box 162 light
 		bodyModel[106] = new ModelRendererTurbo(this, 369, 25, textureX, textureY); // Box 165
 		bodyModel[107] = new ModelRendererTurbo(this, 321, 49, textureX, textureY); // Box 108 liveryimg 1
 		bodyModel[108] = new ModelRendererTurbo(this, 377, 57, textureX, textureY); // Box 109 liveryimg 1
-		bodyModel[109] = new ModelRendererTurbo(this, 1, 9, textureX, textureY); // Box 117 liveryimg 2
-		bodyModel[110] = new ModelRendererTurbo(this, 385, 9, textureX, textureY); // Box 118 liveryimg 2
-		bodyModel[111] = new ModelRendererTurbo(this, 441, 9, textureX, textureY); // Box 162 light
+		bodyModel[109] = new ModelRendererTurbo(this, 1, 9, textureX, textureY, "lamp"); // Box 117 liveryimg 2
+		bodyModel[110] = new ModelRendererTurbo(this, 385, 9, textureX, textureY, "lamp"); // Box 118 liveryimg 2
+		bodyModel[111] = new ModelRendererTurbo(this, 441, 9, textureX, textureY, "lamp"); // Box 162 light
 		bodyModel[112] = new ModelRendererTurbo(this, 441, 25, textureX, textureY); // Box 165
 		bodyModel[113] = new ModelRendererTurbo(this, 393, 17, textureX, textureY); // Box 44
 		bodyModel[114] = new ModelRendererTurbo(this, 73, 57, textureX, textureY); // Box 45
@@ -254,7 +254,7 @@ public class ModelBP4 extends ModelConverter
 		bodyModel[213] = new ModelRendererTurbo(this, 195, 95, textureX, textureY); // Box 333
 		bodyModel[214] = new ModelRendererTurbo(this, 219, 97, textureX, textureY, "lamp"); // Box 334 lamp
 		bodyModel[215] = new ModelRendererTurbo(this, 237, 97, textureX, textureY, "lamp"); // Box 335 lamp
-		bodyModel[216] = new ModelRendererTurbo(this, 431, 1, textureX, textureY); // Box 219 light
+		bodyModel[216] = new ModelRendererTurbo(this, 431, 1, textureX, textureY, "lamp"); // Box 219 light
 		bodyModel[217] = new ModelRendererTurbo(this, 434, 12, textureX, textureY); // Box 220
 		bodyModel[218] = new ModelRendererTurbo(this, 182, 92, textureX, textureY); // Box 221
 		bodyModel[219] = new ModelRendererTurbo(this, 181, 98, textureX, textureY); // Box 222
@@ -476,10 +476,10 @@ public class ModelBP4 extends ModelConverter
 
 		bodyModel[70].addBox(0F, 0F, 0F, 2, 1, 1, 0F); // Box 30
 		bodyModel[70].setRotationPoint(33F, -22F, 5F);
-
+		Minecraft.getMinecraft().entityRenderer.disableLightmap(1D);
 		bodyModel[71].addBox(0F, 0F, 0F, 2, 2, 4, 0F); // Box 31 lamp
 		bodyModel[71].setRotationPoint(37.25F, -18F, 0F);
-
+		Minecraft.getMinecraft().entityRenderer.enableLightmap(1D);
 		bodyModel[72].addShapeBox(0F, 0F, 0F, 3, 21, 7, 0F,0F, 0F, 0F, -3F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -3F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F); // Box 40
 		bodyModel[72].setRotationPoint(36F, -21F, -5F);
 
@@ -553,10 +553,10 @@ public class ModelBP4 extends ModelConverter
 
 		bodyModel[95].addBox(0F, 0F, 0F, 4, 13, 14, 0F); // Box 43
 		bodyModel[95].setRotationPoint(-34F, -13F, -5F);
-
+		Minecraft.getMinecraft().entityRenderer.disableLightmap(1D);
 		bodyModel[96].addBox(0F, 0F, 0F, 2, 4, 2, 0F); // Box 48 lamp
 		bodyModel[96].setRotationPoint(-32F, -21F, 1F);
-
+		Minecraft.getMinecraft().entityRenderer.enableLightmap(1D);
 		bodyModel[97].addBox(0F, 0F, 0F, 1, 9, 8, 0F); // Box 44
 		bodyModel[97].setRotationPoint(-29F, -13F, -2F);
 
@@ -580,10 +580,10 @@ public class ModelBP4 extends ModelConverter
 
 		bodyModel[104].addShapeBox(0F, 0F, 0F, 7, 2, 1, 0F,1F, 0F, -1F, 1F, 0F, -1F, 1F, 0F, 0F, 1F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -1F, 0F, 0F, -1F); // box65
 		bodyModel[104].setRotationPoint(-28F, -17F, -10F);
-
+		Minecraft.getMinecraft().entityRenderer.disableLightmap(1D);
 		bodyModel[105].addShapeBox(0F, 0F, 0F, 1, 2, 1, 0F,0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F); // Box 162 light
 		bodyModel[105].setRotationPoint(-28.68F, -23F, 7.5F);
-
+		Minecraft.getMinecraft().entityRenderer.enableLightmap(1D);
 		bodyModel[106].addShapeBox(0F, 0F, 0F, 2, 1, 1, 0F,0.3F, -0.5F, 0.1F, -1F, -0.5F, 0.1F, -1F, -0.5F, 0.1F, 0.3F, -0.5F, 0.1F, 0.3F, 0F, 0.1F, -1F, 0F, 0.1F, -1F, 0F, 0.1F, 0.3F, 0F, 0.1F); // Box 165
 		bodyModel[106].setRotationPoint(-28.5F, -22F, 7.5F);
 
@@ -600,10 +600,10 @@ public class ModelBP4 extends ModelConverter
 		bodyModel[110].addBox(0F, 0F, -5F, 0, 2, 5, 0F); // Box 118 liveryimg 2
 		bodyModel[110].setRotationPoint(-30.05F, -19.5F, 8F);
 		bodyModel[110].rotateAngleY = -0.38397244F;
-
+		Minecraft.getMinecraft().entityRenderer.disableLightmap(1D);
 		bodyModel[111].addShapeBox(0F, 0F, 0F, 1, 2, 1, 0F,0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F); // Box 162 light
 		bodyModel[111].setRotationPoint(-28.68F, -23F, -4.5F);
-
+		Minecraft.getMinecraft().entityRenderer.enableLightmap(1D);
 		bodyModel[112].addShapeBox(0F, 0F, 0F, 2, 1, 1, 0F,0.3F, -0.5F, 0.1F, -1F, -0.5F, 0.1F, -1F, -0.5F, 0.1F, 0.3F, -0.5F, 0.1F, 0.3F, 0F, 0.1F, -1F, 0F, 0.1F, -1F, 0F, 0.1F, 0.3F, 0F, 0.1F); // Box 165
 		bodyModel[112].setRotationPoint(-28.5F, -22F, -4.5F);
 
@@ -701,22 +701,22 @@ public class ModelBP4 extends ModelConverter
 
 		bodyModel[143].addShapeBox(0F, 0F, 0F, 1, 2, 2, 0F,0F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, 0F, 0F, 0F); // Box 78
 		bodyModel[143].setRotationPoint(-40F, -2F, 6.75F);
-
+		Minecraft.getMinecraft().entityRenderer.disableLightmap(1D);
 		bodyModel[144].addShapeBox(0F, 0F, 0F, 1, 2, 2, 0F,0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F); // Box 186 lamp
 		bodyModel[144].setRotationPoint(-32.5F, -21F, 1F);
 
 		bodyModel[145].addShapeBox(0F, 0F, 0F, 1, 2, 2, 0F,0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F); // Box 187 lamp
 		bodyModel[145].setRotationPoint(-32.5F, -19F, 1F);
-
+		Minecraft.getMinecraft().entityRenderer.enableLightmap(1D);
 		bodyModel[146].addShapeBox(0F, 0F, 0F, 1, 2, 2, 0F,0F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, 0F, 0F, 0F); // Box 188
 		bodyModel[146].setRotationPoint(-40F, -2F, -4.75F);
-
+		Minecraft.getMinecraft().entityRenderer.disableLightmap(1D);
 		bodyModel[147].addShapeBox(0F, 0F, 0F, 1, 2, 2, 0F,0F, -0.25F, -0.25F, -0.5F, -0.25F, -0.25F, -0.5F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, -0.5F, -0.25F, -0.25F, -0.5F, -0.25F, -0.25F, 0F, -0.25F, -0.25F); // Box 189 lamp
 		bodyModel[147].setRotationPoint(-40.25F, -2F, 6.75F);
 
 		bodyModel[148].addShapeBox(0F, 0F, 0F, 1, 2, 2, 0F,0F, -0.25F, -0.25F, -0.5F, -0.25F, -0.25F, -0.5F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, -0.5F, -0.25F, -0.25F, -0.5F, -0.25F, -0.25F, 0F, -0.25F, -0.25F); // Box 190 lamp
 		bodyModel[148].setRotationPoint(-40.25F, -2F, -4.75F);
-
+		Minecraft.getMinecraft().entityRenderer.enableLightmap(1D);
 		bodyModel[149].addBox(0F, 0F, 0F, 1, 2, 14, 0F); // Box 186
 		bodyModel[149].setRotationPoint(41F, 0F, -5F);
 
@@ -734,22 +734,22 @@ public class ModelBP4 extends ModelConverter
 
 		bodyModel[154].addShapeBox(0F, 0F, 0F, 1, 2, 2, 0F,-0.5F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -0.5F, 0F, 0F); // Box 239
 		bodyModel[154].setRotationPoint(41F, -2F, -4.75F);
-
+		Minecraft.getMinecraft().entityRenderer.disableLightmap(1D);
 		bodyModel[155].addShapeBox(0F, 0F, 0F, 1, 2, 2, 0F,-0.5F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, -0.5F, -0.25F, -0.25F, -0.5F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, -0.5F, -0.25F, -0.25F); // Box 240 lamp
 		bodyModel[155].setRotationPoint(41.25F, -2F, -4.75F);
 
 		bodyModel[156].addShapeBox(0F, 0F, 0F, 1, 2, 2, 0F,-0.5F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, -0.5F, -0.25F, -0.25F, -0.5F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, -0.5F, -0.25F, -0.25F); // Box 241 lamp
 		bodyModel[156].setRotationPoint(41.25F, -2F, 6.75F);
-
+		Minecraft.getMinecraft().entityRenderer.enableLightmap(1D);
 		bodyModel[157].addShapeBox(0F, 0F, 0F, 1, 2, 2, 0F,-0.5F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -0.5F, 0F, 0F); // Box 242
 		bodyModel[157].setRotationPoint(41F, -2F, 6.75F);
-
+		Minecraft.getMinecraft().entityRenderer.disableLightmap(1D);
 		bodyModel[158].addShapeBox(0F, 0F, 0F, 1, 2, 2, 0F,-0.5F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, -0.5F, -0.25F, -0.25F, -0.5F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, -0.5F, -0.25F, -0.25F); // Box 247 lamp
 		bodyModel[158].setRotationPoint(38.5F, -18F, 0F);
 
 		bodyModel[159].addShapeBox(0F, 0F, 0F, 1, 2, 2, 0F,-0.5F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, -0.5F, -0.25F, -0.25F, -0.5F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, -0.5F, -0.25F, -0.25F); // Box 248 lamp
 		bodyModel[159].setRotationPoint(38.5F, -18F, 2F);
-
+		Minecraft.getMinecraft().entityRenderer.enableLightmap(1D);
 		bodyModel[160].addBox(0F, 0F, 0F, 1, 2, 14, 0F); // Box 197
 		bodyModel[160].setRotationPoint(-40F, 0F, -5F);
 
@@ -914,7 +914,7 @@ public class ModelBP4 extends ModelConverter
 
 		bodyModel[213].addBox(0F, 0F, 0F, 2, 2, 4, 0F); // Box 333
 		bodyModel[213].setRotationPoint(-31.5F, -23F, 0F);
-
+		Minecraft.getMinecraft().entityRenderer.disableLightmap(1D);
 		bodyModel[214].addShapeBox(0F, 0F, 0F, 1, 2, 2, 0F,-0.5F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, -0.5F, -0.25F, -0.25F, -0.5F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, 0F, -0.25F, -0.25F, -0.5F, -0.25F, -0.25F); // Box 334 lamp
 		bodyModel[214].setRotationPoint(-32.5F, -23F, 0F);
 
@@ -923,7 +923,7 @@ public class ModelBP4 extends ModelConverter
 
 		bodyModel[216].addShapeBox(0F, 0F, 0F, 1, 2, 1, 0F,0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F); // Box 219 light
 		bodyModel[216].setRotationPoint(-28.68F, -25F, 1.5F);
-
+		Minecraft.getMinecraft().entityRenderer.enableLightmap(1D);
 		bodyModel[217].addShapeBox(0F, 0F, 0F, 2, 1, 1, 0F,0.3F, -0.5F, 0.1F, -1F, -0.5F, 0.1F, -1F, -0.5F, 0.1F, 0.3F, -0.5F, 0.1F, 0.3F, 0F, 0.1F, -1F, 0F, 0.1F, -1F, 0F, 0.1F, 0.3F, 0F, 0.1F); // Box 220
 		bodyModel[217].setRotationPoint(-28.5F, -24F, 1.5F);
 
