@@ -110,6 +110,7 @@ item.tc:electronicCircuit.name=Electronic Circuit
 item.tc:chunkLoaderActivator.name=Chunk Loader Activator
 item.tc:emptyCanister.name=Empty Canister
 item.tc:recipeBook.name=Traincraft guide
+item.tc:paintbrushThing.name=Paintbrush Thing
 item.tc:adminBook.name=Traincraft Admin Book
 item.tc:wirelessTransmitter.name= MTC Wireless Transmitter
 item.tc:atoCard.name= ATO Card

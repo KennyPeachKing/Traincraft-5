@@ -51,6 +51,7 @@ public class QuoteList {
         importantQuotes.add(new JCIRQuote("WhaT! I'm not doing insect with the bees!", "Hariesh"));
         importantQuotes.add(new JCIRQuote("A RECTANGLE IS A SQUARE!!", "Bidahochi"));
         importantQuotes.add(new JCIRQuote("No, don't sit on my CF7 book", "Bidahochi"));
+        importantQuotes.add(new JCIRQuote("THat's weird, it works in the test enviorment..", "Bida"));
         return importantQuotes;
 
     }

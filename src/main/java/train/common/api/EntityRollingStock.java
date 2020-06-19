@@ -47,11 +47,8 @@ import train.common.core.handlers.*;
 import train.common.core.network.PacketRollingStockRotation;
 import train.common.core.util.TraincraftUtil;
 import train.common.entity.rollingStock.EntityTracksBuilder;
-import train.common.items.ItemContainer;
-import train.common.items.ItemRollingStock;
-import train.common.items.ItemTCRail;
+import train.common.items.*;
 import train.common.items.ItemTCRail.TrackTypes;
-import train.common.items.ItemWrench;
 import train.common.library.BlockIDs;
 import train.common.library.EnumTrains;
 import train.common.library.ItemIDs;
@@ -1575,6 +1572,23 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 		 * If the color is valid for the cart, then change it and reduce
 		 * itemstack size
 		 */
+		if (itemstack != null && itemstack.getItem() instanceof ItemPaintbrushThing && entityplayer.isSneaking()) {
+			if (this.acceptedColors != null && this.acceptedColors.size() > 0) {
+
+				try {
+					for (int i = 0; i < this.acceptedColors.size(); i++) {
+						if (this.getColor() == this.acceptedColors.get(i)) {
+							this.setColor(this.acceptedColors.get(i + 1).intValue());
+							break;
+						}
+					}
+				} catch (Exception ex) {
+					this.setColor(acceptedColors.indexOf(this.acceptedColors.get(0)));
+				}
+			} else {
+				entityplayer.addChatMessage(new ChatComponentText("There are no other colors available."));
+			}
+		}
 		if (itemstack != null && itemstack.getItem() instanceof ItemDye) {
 			if (this.acceptedColors != null && this.acceptedColors.size() > 0) {
 				for (int i = 0; i < this.acceptedColors.size(); i++) {

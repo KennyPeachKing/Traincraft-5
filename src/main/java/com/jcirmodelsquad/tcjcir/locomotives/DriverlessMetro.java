@@ -63,6 +63,7 @@ public class DriverlessMetro extends ElectricTrain {
     public boolean obstacleBrakeDone = false;
     public DriverlessMetro otherSide;
     public boolean isLeading = true;
+    private long lastMills = 0L;
     public DriverlessMetro(World world) {
         super(world);
     }
@@ -198,7 +199,6 @@ public class DriverlessMetro extends ElectricTrain {
                 if (thing.get("trainMode") != null) {
                     //Update the train mode.
                     currentMode = thing.get("trainMode").getAsInt();
-                    System.out.println("Current mode: " + currentMode);
                 }
             } else if (thing.get("funct").getAsString().equals("startlevel2")) {
                 if (thing.get("trainMode") != null) {
@@ -269,9 +269,7 @@ public class DriverlessMetro extends ElectricTrain {
             if (playerEntityList != null && playerEntityList.size() > 0) {
 
                 for (Object obj : playerEntityList) {
-                    System.out.println(obj.getClass().getName());
                     if (!this.getClass().isInstance(obj)) {
-                        System.out.println("something");
                         if (obj instanceof EntityPlayer) {
                             EntityPlayer thePlayer = (EntityPlayer) obj;
                             obstacleInWay = true;
@@ -365,21 +363,23 @@ public class DriverlessMetro extends ElectricTrain {
                             this.zStationStop = theNextStation.stationZ;
                             Traincraft.atoSetStopPoint.sendToAllAround(new PacketATOSetStopPoint(this.getEntityId(), xFromStopPoint, yFromStopPoint, zFromStopPoint, xStationStop, yStationStop, zStationStop), new NetworkRegistry.TargetPoint(this.worldObj.provider.dimensionId, this.posX, this.posY, this.posZ, 150.0D));
                         }
-
                         if (theCurrentStation != null && stationStop) {
-                            long timeUntilDeparture = worldObj.getTotalWorldTime() % (theCurrentStation.getDwellTime() * 20);
-                            long timeUntilRTD = (worldObj.getTotalWorldTime() % (theCurrentStation.getDwellTime() - 10 * 20));
-                            System.out.println(timeUntilDeparture);
-                            if (timeUntilRTD == 0) {
+                            int timeUntilDeparture = theCurrentStation.getDwellTime() * 1000;
+                            int timeUntilRTD = (theCurrentStation.getDwellTime() - 10) * 1000;
+
+
+
+                            if (System.currentTimeMillis() > lastMills+timeUntilRTD) {
                                 //Send "readyToDepart" message to the server.
                                 JsonObject sendingObj = new JsonObject();
                                 sendingObj.addProperty("funct", "readyToDepart");
                                 sendingObj.addProperty("stationName", theCurrentStation.getStationName());
                                 System.out.println("Ready to depart!");
                                 sendMessage(new PDMMessage(this.trainID, serverUUID, sendingObj.toString(), 0));
+                                lastMills=System.currentTimeMillis();
                             }
 
-                            if (timeUntilDeparture == 0) {
+                            if (System.currentTimeMillis() > lastMills+timeUntilDeparture) {
                                 if (theCurrentStation.isFinalStop()) {
                                     System.out.println("Final stop!");
                                     //Do switching over code soon
@@ -400,7 +400,7 @@ public class DriverlessMetro extends ElectricTrain {
 
 
                                 }
-
+                                lastMills=System.currentTimeMillis();
 
                             }
                         } else {
@@ -516,7 +516,7 @@ public class DriverlessMetro extends ElectricTrain {
     }
 
 
-    @Override
+    /*@Override
     public void accel(Integer desiredSpeed) {
         if (this.worldObj != null) {
 
@@ -549,7 +549,7 @@ public class DriverlessMetro extends ElectricTrain {
 
 
         }
-    }
+    }*/
 
     @Override
     public void stationStopComplete() {

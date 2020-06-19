@@ -87,7 +87,6 @@ public class Traincraft {
 	public static SimpleNetworkWrapper startMissionPacketChannel = NetworkRegistry.INSTANCE.newSimpleChannel("GeometryCarStartMission");
 	public static SimpleNetworkWrapper updateGeometryCarChannel = NetworkRegistry.INSTANCE.newSimpleChannel("UpdateGeometryCar");
 	public static SimpleNetworkWrapper generateTrackReportChannel = NetworkRegistry.INSTANCE.newSimpleChannel("GenerateTrackReport");
-	public static final Logger jcirLogger = LogManager.getLogger("JCIR-Traincraft");
 
 	public static File configDirectory;
 
@@ -218,7 +217,7 @@ public class Traincraft {
 		//Just for the laffs :)
 		Random rand = new Random();
 		JCIRQuote quoteOfTheDay = QuoteList.getQuotes().get(rand.nextInt(QuoteList.getQuotes().size()));
-		jcirLogger.info(quoteOfTheDay.quote + " -" + quoteOfTheDay.from);
+		tcLog.info(quoteOfTheDay.quote + " -" + quoteOfTheDay.from);
 
 		tcLog.info("Finished PostInitialization");
 	}

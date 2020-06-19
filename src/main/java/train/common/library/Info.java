@@ -11,7 +11,7 @@ public class Info {
 
 	/* Mod relevant information */
 	public static final String modID = "tc";
-	public static final String modName = "Traincraft";
+	public static final String modName = "JCIR-Traincraft";
 	public static final String		modVersion				= "@VERSION1@";
 	public static final String channel = "Traincraft";
 	public static final String keyChannel = "TraincraftKey";
