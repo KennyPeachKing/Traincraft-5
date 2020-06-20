@@ -17,6 +17,8 @@ import org.lwjgl.opengl.GL11;
 import tmt.ModelConverter;
 import tmt.ModelRendererTurbo;
 import tmt.Tessellator;
+import train.common.api.AbstractTrains;
+import train.common.library.Info;
 
 public class ModelU23b extends ModelConverter //Same as Filename
 {
@@ -1231,12 +1233,14 @@ public class ModelU23b extends ModelConverter //Same as Filename
 		bodyModel[294].addBox(0F, 0F, 0F, 4, 1, 1, 0F); // Box 289
 		bodyModel[294].setRotationPoint(36F, -29.95F, -0.5F);
 	}
-	ModelTypeB theTrucks = new ModelTypeB();
+	ModelTypeB theTrucks1 = new ModelTypeB();
+	ModelFB2 theTrucks2 = new ModelFB2();
+
+	//color 14 is orange, color 0 is black, 7 is LG
 
 	@Override
-	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
-	{
-		for(int i = 0; i < 295; i++) {
+	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+		for (int i = 0; i < 295; i++) {
 			if (bodyModel[i].boxName != null && bodyModel[i].boxName.contains("lamp")) {
 				Minecraft.getMinecraft().entityRenderer.disableLightmap(1D);
 				bodyModel[i].render(f5);
@@ -1245,17 +1249,26 @@ public class ModelU23b extends ModelConverter //Same as Filename
 				bodyModel[i].render(f5);
 			}
 		}
-		Tessellator.bindTexture(new ResourceLocation("tc:textures/trains/typeb_black.png"));
-		GL11.glPushMatrix();
-		GL11.glTranslatef(-1.52F ,-0.00F,0F);
-		//GL11.glScalef(0.9f,0.9f,0.8f);
-		theTrucks.render(entity,f,f1,f2,f3,f4,f5);
-		GL11.glPopMatrix();
+		if (entity instanceof AbstractTrains && ((AbstractTrains) entity).getColor() == 14||entity instanceof AbstractTrains && ((AbstractTrains) entity).getColor() == 7) {
+			Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/fb2_Black.png"));
+			GL11.glPushMatrix();
+			GL11.glTranslated(-1.52, 0, 0);
+			theTrucks2.render(entity, f, f1, f2, f3, f4, f5);
 
-		GL11.glPushMatrix();
-		GL11.glTranslated(1.52F,0.00F,0);
-		theTrucks.render(entity,f,f1,f2,f3,f4,f5);
-		GL11.glPopMatrix();
+			GL11.glTranslated(3.05, 0, 0);
+			theTrucks2.render(entity, f, f1, f2, f3, f4, f5);
+			GL11.glPopMatrix();
+
+		} else {
+			Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/typeb_black.png"));
+			GL11.glPushMatrix();
+			GL11.glTranslated(-1.52, 0, 0);
+			theTrucks1.render(entity, f, f1, f2, f3, f4, f5);
+
+			GL11.glTranslated(3.05, 0, 0);
+			theTrucks1.render(entity, f, f1, f2, f3, f4, f5);
+			GL11.glPopMatrix();
+		}
 	}
 
 	public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5)

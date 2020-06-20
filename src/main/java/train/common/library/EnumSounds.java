@@ -89,10 +89,11 @@ public enum EnumSounds {
 
 	driverlessMetro(com.jcirmodelsquad.tcjcir.locomotives.DriverlessMetro.class, "mg_horn", 1F, "mg_run", 0.6F, 8, "mg_idle", 0.4F, 50, false),
 	alcoS2(com.jcirmodelsquad.tcjcir.locomotives.DieselAlcoS2.class, "leslie_a200", 1F, "539t_notch8", 0.50F, 40, "539t_idle", 0.65F, 40, true),
-	SW1(com.jcirmodelsquad.tcjcir.locomotives.DieselSW1.class, "leslie_a200", 0.9F, "567_notch8", 0.55F, 40, "567_idle", 0.75F, 40, false),
+	SW1(com.jcirmodelsquad.tcjcir.locomotives.DieselSW1.class, "leslie_a200", 0.9F, "567_notch8", 0.45F, 40, "567_idle", 0.75F, 40, false),
 	H1044(com.jcirmodelsquad.tcjcir.locomotives.DieselH1044.class, "shunter_horn", 1.1F, "h10_notch8", 0.65F, 40, "h10_idle", 0.65F, 40, false),
-	Thanos(com.jcirmodelsquad.tcjcir.locomotives.Thanos.class, "thanos_horn", 5, "thanos_run", 0.6F, 10, "thanos_idle", 0.65F, 10, true),
-	HighrailTruck(com.jcirmodelsquad.tcjcir.locomotives.DieselHighrailTruck.class, "subway_horn", 0.8F, "chme3_idle", 0.65F, 40, "chme3_idle", 0.65F, 40, true);
+	Thanos(com.jcirmodelsquad.tcjcir.locomotives.Thanos.class, "thanos_horn", 5, "thanos_run", 0.6F, 2, "thanos_idle", 0.65F, 2, true),
+	HighrailTruck(com.jcirmodelsquad.tcjcir.locomotives.DieselHighrailTruck.class, "subway_horn", 0.8F, "chme3_idle", 0.65F, 40, "chme3_idle", 0.65F, 40, true),
+	U23B(com.jcirmodelsquad.tcjcir.locomotives.DieselU23B.class, "shunter_horn", 1.1F, "7fdl-12_notch8", 0.65F, 40, "7fdl-12_idle", 0.65F, 40, true);
 
 	private Class entityClass;
 	private String horn;
