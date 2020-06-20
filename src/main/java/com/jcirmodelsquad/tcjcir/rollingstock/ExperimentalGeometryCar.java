@@ -63,11 +63,11 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
         prevPosY = d1;
         prevPosZ = d2;
         missionStartLocation = new TrackPosition(new Double(posX).intValue(), new Double(posY).intValue(), new Double(posZ).intValue());
-        dataWatcher.addObject(31, railroadLine);
-        dataWatcher.addObject(30, geometryCarName);
-        dataWatcher.addObject(29, lineType);
-        dataWatcher.addObject(28, standard);
-        dataWatcher.addObject(27, missionStarted + ":" + currentTrackReport);
+//        dataWatcher.addObject(31, railroadLine);
+//        dataWatcher.addObject(30, geometryCarName);
+       // dataWatcher.addObject(29, lineType);
+        //dataWatcher.addObject(28, standard);
+       // dataWatcher.addObject(27, missionStarted + ":" + currentTrackReport);
        // dataWatcher.addObject(32, currentTrackReport);
     }
 
@@ -77,7 +77,7 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
         if (riddenByEntity == null) {
             return;
         }
-        riddenByEntity.setPosition(posX, posY + getMountedYOffset() + riddenByEntity.getYOffset(), posZ);
+        riddenByEntity.setPosition(posX - 2.3, posY + getMountedYOffset() + riddenByEntity.getYOffset() + 0.1, posZ);
     }
 
     @Override
@@ -166,7 +166,7 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
 
     @Override
     public float getOptimalDistance(EntityMinecart cart) {
-        return 2.17F;
+        return 4.8F;
     }
 
 
@@ -321,26 +321,26 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
 
         }
 
-        if (worldObj != null && !worldObj.isRemote && ticksExisted % 5 == 0) {
-
-
-               dataWatcher.updateObject(31, railroadLine);
-                 dataWatcher.updateObject(30, geometryCarName);
-                dataWatcher.updateObject(29, lineType);
-                 dataWatcher.updateObject(28, standard);
-                 dataWatcher.updateObject(27, missionStarted + ":" + currentTrackReport);
-//                 dataWatcher.updateObject(26, currentTrackReport);
-
-
-           // dataWatcher.updateObject(31, railroadLine);
-          //  dataWatcher.updateObject(30, geometryCarName);
-           // dataWatcher.updateObject(29, lineType);
-           // dataWatcher.updateObject(28, standard);
-          //  dataWatcher.updateObject(27, Boolean.toString(missionStarted));
-           /// dataWatcher.updateObject(26, currentTrackReport);
-
-
-        }
+//        if (worldObj != null && !worldObj.isRemote && ticksExisted % 5 == 0) {
+//
+//
+//               dataWatcher.updateObject(31, railroadLine);
+//                 dataWatcher.updateObject(30, geometryCarName);
+//                dataWatcher.updateObject(29, lineType);
+//                 dataWatcher.updateObject(28, standard);
+//                 dataWatcher.updateObject(27, missionStarted + ":" + currentTrackReport);
+////                 dataWatcher.updateObject(26, currentTrackReport);
+//
+//
+//           // dataWatcher.updateObject(31, railroadLine);
+//          //  dataWatcher.updateObject(30, geometryCarName);
+//           // dataWatcher.updateObject(29, lineType);
+//           // dataWatcher.updateObject(28, standard);
+//          //  dataWatcher.updateObject(27, Boolean.toString(missionStarted));
+//           /// dataWatcher.updateObject(26, currentTrackReport);
+//
+//
+//        }
     }
 
 

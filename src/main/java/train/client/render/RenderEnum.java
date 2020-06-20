@@ -2,6 +2,7 @@ package train.client.render;
 
 import com.jcirmodelsquad.tcjcir.locomotives.DieselAlcoS2;
 import com.jcirmodelsquad.tcjcir.models.ModelAlcoS2;
+import com.jcirmodelsquad.tcjcir.models.ModelGeometryCar;
 import com.jcirmodelsquad.tcjcir.models.ModelSW1;
 import tmt.ModelBase;
 import train.client.render.models.*;
@@ -631,7 +632,7 @@ public enum RenderEnum {
 			add(new double[]{0.9D, 1.4D, 0.0D});
 		}
 	}, "", null, 0, false),
-	geometryCar(com.jcirmodelsquad.tcjcir.rollingstock.ExperimentalGeometryCar.class,new ModelPassengerHighSpeedCarZeroED(), "passengerHighSpeedCarZeroED", false, new float[] { 0.0F, -0.47F, 0.0F }, null, null, "", 0, null, "", null, 0, false),
+	geometryCar(com.jcirmodelsquad.tcjcir.rollingstock.ExperimentalGeometryCar.class,new ModelGeometryCar(), "geometrycar", false, new float[] { 1F, 0F, 0.0F }, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
 	driverlessMetro(com.jcirmodelsquad.tcjcir.locomotives.DriverlessMetro.class, new com.jcirmodelsquad.tcjcir.models.ModelPCH120Commute(), "pch120commute_", true,new float[] {-1.3F, 0.03F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
 	cf7(com.jcirmodelsquad.tcjcir.locomotives.DieselCF7.class, new com.jcirmodelsquad.tcjcir.models.ModelCF7(), "cf7", false, new float[] {0F, -0.1F, 0F},  new float[] { 0F, 180F, 180F }, null, "largesmoke", 2,  new ArrayList<double[]>() {
 		{
