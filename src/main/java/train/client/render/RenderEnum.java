@@ -657,7 +657,7 @@ public enum RenderEnum {
 		}
 	}, "", null, 0, false),
 	Thanos(com.jcirmodelsquad.tcjcir.locomotives.Thanos.class, new ModelLocoMinetrain(), "thanos", false,new float[] {-0.8F, -0.47F, 0.0F},  new float[] { 0F, 0F, 0F }, null, "", 0, null, "", null, 0, false),
-	U23B( com.jcirmodelsquad.tcjcir.locomotives.DieselU23B.class,  new com.jcirmodelsquad.tcjcir.models.ModelU23b(), "u23b_Grey", false,new float[] {-1.7F, -0.15F, 0F},  new float[] { 0F, 180F, 180F }, null, "smoke", 4,  new ArrayList<double[]>() {
+	U23B( com.jcirmodelsquad.tcjcir.locomotives.DieselU23B.class,  new com.jcirmodelsquad.tcjcir.models.ModelU23b(), "u23b_", true,new float[] {-1.7F, -0.15F, 0F},  new float[] { 0F, 180F, 180F }, null, "smoke", 4,  new ArrayList<double[]>() {
 		{
 			add(new double[]{0.9D, 1.6D, 0.0D});
 		}

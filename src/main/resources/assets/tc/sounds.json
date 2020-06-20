@@ -42,5 +42,7 @@
   "thanos_idle": {"category": "master", "sounds": [{"name": "thanos_idle","stream": true}]},
   "thanos_run": {"category": "master", "sounds": [{"name": "thanos_run","stream": true}]},
   "h10_idle": {"category": "master", "sounds": [{"name": "h10_idle","stream": true}]},
-  "h10_notch8": {"category": "master", "sounds": [{"name": "h10_notch8","stream": true}]}
+  "h10_notch8": {"category": "master", "sounds": [{"name": "h10_notch8","stream": true}]},
+  "7fdl-12_idle": {"category": "master", "sounds": [{"name": "7fdl-12_idle","stream": true}]},
+  "7fdl-12_notch8": {"category": "master", "sounds": [{"name": "7fdl-12_notch8","stream": true}]}
 }
