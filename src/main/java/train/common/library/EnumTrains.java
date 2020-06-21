@@ -272,7 +272,7 @@ public enum EnumTrains {
 	locoSteamSnowPlow("Loco Steam Snow Plow", EntityLocoSteamSnowPlow.class, ItemIDs.minecartLocoSnowPlow.item, "steam, snow plow", 200, 20, 0, 10, 120, 170, 0.7, 0.965, 6850, null, 18, -4.75),
 	//JCIR-TC
 	locoAlcoS2("Alco S2",  com.jcirmodelsquad.tcjcir.locomotives.DieselAlcoS2.class, ItemIDs.minecartAlcoS2.item, "diesel", 1000, 96, 0, 10, 0, 170, 0.7, 0.965, 15000,TraincraftUtil.getBytesFromColors(new String[] {"Black", "Grey", "Green", "Orange"}), 18, -2, "Created by Bidahochi"),
-	geometryCar("NXTrack Geometry Car", com.jcirmodelsquad.tcjcir.rollingstock.ExperimentalGeometryCar.class, ItemIDs.minecartGeometryCar.item, "geometry car", 0, 0, 2, 0, 0, 0, 0, 0, 0, null, 18, 0, "Model by Bidahochi, train by PeachMaster. It checks the railroad for things not up to standard."),
+	geometryCar("NXTrack Geometry Car", com.jcirmodelsquad.tcjcir.rollingstock.ExperimentalGeometryCar.class, ItemIDs.minecartGeometryCar.item, "geometry car", 0, 0, 2, 0, 0, 0, 0, 0, 0, null, 18, 0, "Model by Bidahochi, train by PeachMaster.\n It checks the railroad for things not up to standard."),
 	driverlessMetro("PCH-120 Commute", com.jcirmodelsquad.tcjcir.locomotives.DriverlessMetro.class, ItemIDs.minecartDriverlessMetro.item, "electric",1400, 120, 0, 5, 0, 160, 0.8, 0.985, 0, TraincraftUtil.getBytesFromColors(new String[] {"White", "Blue"}), 18,
 			-2.7, "Model by Bidahochi, train by PeachMaster"),
 	cf7("DieselCF7", com.jcirmodelsquad.tcjcir.locomotives.DieselCF7.class, ItemIDs.minecartCF7.item, "diesel", 6900, null, 0, 2, "Model by Bidahochi"),

@@ -43,6 +43,7 @@ public class TierRecipeManager implements ITierCraftingManager {
 		}
 	}
 
+
 	public void addRecipeFinal(int tier, ItemStack planks, ItemStack wheels,
 			ItemStack frame, ItemStack coupler, ItemStack chimney,
 			ItemStack cab, ItemStack boiler, ItemStack firebox,

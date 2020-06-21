@@ -116,6 +116,7 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 	public int overheatLevel;
 	public int linkageNumber;
 
+	public int scrollPosition = 0;
 	public Side side;
 	@SideOnly(Side.CLIENT)
 	private SoundHandler theSoundManager;
@@ -1572,23 +1573,29 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 		 * If the color is valid for the cart, then change it and reduce
 		 * itemstack size
 		 */
-		if (itemstack != null && itemstack.getItem() instanceof ItemPaintbrushThing && entityplayer.isSneaking()) {
-			if (this.acceptedColors != null && this.acceptedColors.size() > 0) {
 
-				try {
-					for (int i = 0; i < this.acceptedColors.size(); i++) {
-						if (this.getColor() == this.acceptedColors.get(i)) {
-							this.setColor(this.acceptedColors.get(i + 1).intValue());
-							break;
-						}
-					}
-				} catch (Exception ex) {
-					this.setColor(acceptedColors.indexOf(this.acceptedColors.get(0)));
+		if (itemstack != null && itemstack.getItem() instanceof ItemPaintbrushThing && entityplayer.isSneaking()) {
+
+
+			if (this.acceptedColors != null && this.acceptedColors.size() > 0) {
+				if (scrollPosition > this.acceptedColors.size() - 1) {
+					this.setColor(acceptedColors.get(0));
+					scrollPosition = 0;
+				} else {
+					this.setColor(acceptedColors.get(scrollPosition));
+					scrollPosition++;
 				}
-			} else {
+
+
+			}
+
+			if (this.acceptedColors != null && this.acceptedColors.size() == 0) {
 				entityplayer.addChatMessage(new ChatComponentText("There are no other colors available."));
 			}
+
+			return true;
 		}
+
 		if (itemstack != null && itemstack.getItem() instanceof ItemDye) {
 			if (this.acceptedColors != null && this.acceptedColors.size() > 0) {
 				for (int i = 0; i < this.acceptedColors.size(); i++) {
@@ -1625,17 +1632,23 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 			DieselTrain thisAsDieselTrain = (DieselTrain)this;
 			if (theItem == ItemIDs.diesel.item || theItem == ItemIDs.refinedFuel.item) {
 				ItemStack result = LiquidManager.getInstance().processContainer(thisAsDieselTrain, 0, thisAsDieselTrain, itemstack);
-				for (int i = 0; i < entityplayer.inventory.getSizeInventory(); i++) {
+				//entityplayer.inventory.setInventorySlotContents(entityplayer.inventory.currentItem, new ItemStack(ItemIDs.diesel.item, itemstack.stackSize - 1));
+				itemstack.stackSize--;
+
+
+				/*for (int i = 0; i < entityplayer.inventory.getSizeInventory(); i++) {
 					if (entityplayer.inventory.getStackInSlot(i) != null && entityplayer.inventory.getStackInSlot(i).isItemEqual(itemstack)) {
 						if (itemstack.stackSize > 1) {
-							entityplayer.inventory.setInventorySlotContents(i, new ItemStack(ItemIDs.diesel.item,itemstack.stackSize - 1));
+							itemstack = new ItemStack(ItemIDs.diesel.item,itemstack.stackSize - 1);
 							entityplayer.inventory.addItemStackToInventory(new ItemStack(ItemIDs.emptyCanister.item, 1));
+							break;
 						} else {
 							entityplayer.inventory.setInventorySlotContents(i, new ItemStack(ItemIDs.emptyCanister.item,1));
+							break;
 						}
-						break;
+
 					}
-				}
+				}*/
 
 			} else if (theItem == ItemIDs.emptyCanister.item) {
 				thisAsDieselTrain.getTank().drain(1000, true);
