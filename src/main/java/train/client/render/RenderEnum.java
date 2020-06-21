@@ -629,7 +629,7 @@ public enum RenderEnum {
 	//JCIR-TC
 	alcoS2( com.jcirmodelsquad.tcjcir.locomotives.DieselAlcoS2.class,  new ModelAlcoS2(), "alcos2_", true,new float[] {-1F, -0.1F, 0F},  new float[] { 0F, 180F, 180F }, null, "smoke", 5,  new ArrayList<double[]>() {
 		{
-			add(new double[]{0.9D, 1.4D, 0.0D});
+			add(new double[]{0.8D, 1.4D, -0.3D});
 		}
 	}, "", null, 0, false),
 	geometryCar(com.jcirmodelsquad.tcjcir.rollingstock.ExperimentalGeometryCar.class,new ModelGeometryCar(), "geometrycar", false, new float[] {0F, 0F, 0.0F }, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
@@ -664,7 +664,9 @@ public enum RenderEnum {
 	}, "", null, 0, false),
 	SW1500( com.jcirmodelsquad.tcjcir.locomotives.DieselSW1500.class,  new com.jcirmodelsquad.tcjcir.models.ModelSW1500(), "sw1500_", true,new float[] {-1.6F, -0F, 0F},  new float[] { 0F, 180F, 180F }, null, "largesmoke", 1,  new ArrayList<double[]>() {
 		{
-			add(new double[]{0.9D, 1.6D, 0.0D});
+			add(new double[]{1.3D, 2D, 0.0D});
+
+			add(new double[]{2D, 2D, 0.0D});
 		}
 	}, "", null, 0, false),;
 
