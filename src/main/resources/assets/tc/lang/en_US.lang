@@ -354,6 +354,8 @@ item.tc:minecartDriverlessMetro.name= PCH-120 Commute
 item.tc:minecartHighrailTruck.name= Generic Highrail Truck
 item.tc:minecartThanos.name= Thanos Cart
 item.tc:minecartGeometryCar.name= Geometry Car
+item.tc:minecartU23B.name= GE U23B
+item.tc:minecartSW1500.name= EMD SW1500
 
 <!-- ## Achievements ## -->
 achievement.tc:engineer=Engineers clothes
@@ -644,6 +646,8 @@ entity.tc.Amfleet.name= Amfleet Car
 entity.tc.Driverless Metro.name= PCH 120 Commute
 entity.tc.HighrailTruck.name= Generic Highrail Truck
 entity.tc.Thanos.name= Thanos Cart
+entity.tc.U23B.name= GE U23B
+entity.tc.SW1500.name= EMD SW1500
 
 description.villager.profession.tc.station_chief=Station Chief
 
