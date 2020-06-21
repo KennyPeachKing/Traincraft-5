@@ -44,5 +44,9 @@
   "h10_idle": {"category": "master", "sounds": [{"name": "h10_idle","stream": true}]},
   "h10_notch8": {"category": "master", "sounds": [{"name": "h10_notch8","stream": true}]},
   "7fdl-12_idle": {"category": "master", "sounds": [{"name": "7fdl-12_idle","stream": true}]},
-  "7fdl-12_notch8": {"category": "master", "sounds": [{"name": "7fdl-12_notch8","stream": true}]}
+  "7fdl-12_notch8": {"category": "master", "sounds": [{"name": "7fdl-12_notch8","stream": true}]},
+  "leslie_s3l": {"category": "master", "sounds": [{"name": "leslie_s3l","stream": true}]},
+  "nathan_p3": {"category": "master", "sounds": [{"name": "nathan_p3","stream": true}]},
+  "16-645e_idle": {"category": "master", "sounds": [{"name": "16-645e_idle","stream": true}]},
+  "16-645e_notch8": {"category": "master", "sounds": [{"name": "16-645e_notch8","stream": true}]}
 }
