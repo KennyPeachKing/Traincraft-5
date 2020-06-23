@@ -3,6 +3,7 @@ package com.jcirmodelsquad.tcjcir.rollingstock;
 
 
 import cofh.api.energy.IEnergyHandler;
+import com.jcirmodelsquad.tcjcir.extras.packets.ClientGeometryCarUpdate;
 import com.jcirmodelsquad.tcjcir.geometryvechicle.PotentialIssue;
 import com.jcirmodelsquad.tcjcir.geometryvechicle.TrackPosition;
 import cpw.mods.fml.common.Loader;
@@ -12,6 +13,7 @@ import net.minecraft.block.BlockAir;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.item.EntityMinecart;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -20,6 +22,7 @@ import net.minecraft.nbt.NBTTagString;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
+import train.common.Traincraft;
 import train.common.api.EntityRollingStock;
 import train.common.api.IPassenger;
 import train.common.tile.TileTCRailGag;
@@ -38,7 +41,7 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
     public boolean missionStarted = false;
     private ArrayList<PotentialIssue> problematicTrackLocations = new ArrayList<PotentialIssue>();
     private TrackPosition missionStartLocation;
-    private String currentTrackReport;
+    public String currentTrackReport;
     private ArrayList<String> accessibleNames = new ArrayList<String>();
 
     public Block lastBlock;
@@ -173,12 +176,7 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
     //Special Geometry Stuff ooh!
     public void onUpdate() {
         super.onUpdate();
-        if (!missionStarted) {
-            currentTrackReport = "Mission not started yet.";
-        }
-        if (missionStarted && worldObj != null && ticksExisted % 20 == 0) {
-            currentTrackReport = createTrackReport();
-        }
+
         if (missionStarted && !worldObj.isRemote) {
 
 
@@ -340,7 +338,19 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
 //           /// dataWatcher.updateObject(26, currentTrackReport);
 //
 //
+
 //        }
+        if (worldObj != null && !worldObj.isRemote && ticksExisted % 20 == 0 && riddenByEntity != null && riddenByEntity instanceof EntityPlayerMP) {
+            StringBuilder theReport = new StringBuilder();
+            for (PotentialIssue issue : problematicTrackLocations) {
+                theReport.append("\n <").append(issue.thePosition.x).append(",").append(issue.thePosition.z).append(">: ").append(issue.issue.getTypeName());
+            }
+            if (problematicTrackLocations.size() == 0) {
+                theReport.append("\nNo detected track issues!");
+            }
+            this.currentTrackReport = theReport.toString();
+            Traincraft.updateTrackReport.sendTo(new ClientGeometryCarUpdate(this.getEntityId(), theReport.toString()), (EntityPlayerMP)riddenByEntity);
+        }
     }
 
 

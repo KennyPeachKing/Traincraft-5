@@ -309,6 +309,8 @@ public enum ItemIDs {
 	tcRailVeryLargeSlopeBallast("ItemTCRail", "item_rail_straight_slope_ballast", 3),
 
 	//TC-JCIR
+	remoteController("ItemRemoteController", "remote_controller", 20),
+	remoteControllerModule("ItemRemoteControllerModule", "remote_controller_module", 15),
 	minecartAlcoS2("ItemRollingStock", "alco_s2", 9),
 	minecartRibbedHopper("ItemRollingStock", "ribbed_hopper", 3),
 	minecartGeometryCar("ItemRollingStock", "geometry_car", 15),

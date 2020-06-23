@@ -91,7 +91,7 @@ public class RecipeHandler {
 		}
 		
 		GameRegistry.addRecipe(new ItemStack(BlockIDs.oreTC.block, 1,3),  "GXG", Character.valueOf('G'), Blocks.gravel, Character.valueOf('X'), Items.clay_ball);
-		
+
 	}
 
 	public static void initItemRecipes() {
@@ -324,7 +324,7 @@ public class RecipeHandler {
 		TrainCraftingManager.instance.addRecipe(new ItemStack(ItemIDs.tcRailSmallRoadCrossing2.item, 1),  "   ", "SRS", "   ", Character.valueOf('S'), new ItemStack(Blocks.stained_hardened_clay, 1, 3), Character.valueOf('R'), Item.getItemFromBlock(Blocks.rail) );*/
 		TrainCraftingManager.instance.addRecipe(new ItemStack(Item.getItemFromBlock(Blocks.rail), 1),  "   ", " R ", "   ", Character.valueOf('R'), ItemIDs.tcRailSmallStraight.item);
 		TrainCraftingManager.instance.addRecipe(new ItemStack(Item.getItemFromBlock(Blocks.rail), 1),  "   ", " R ", "   ", Character.valueOf('R'), ItemIDs.tcRailSmallRoadCrossing.item);
-		TrainCraftingManager.instance.addRecipe(new ItemStack(Item.getItemFromBlock(Blocks.rail), 1),  "   ", " R ", "   ", Character.valueOf('R'), ItemIDs.tcRailSmallRoadCrossing1.item);
+		TrainCraftingManager.instance.addRecipe(new ItemStack(Item.getItemFromBlock(Blocks.rail), 1),  "   ", " R ", "   ", 'R', ItemIDs.tcRailSmallRoadCrossing1.item);
 		TrainCraftingManager.instance.addRecipe(new ItemStack(Item.getItemFromBlock(Blocks.rail), 1),  "   ", " R ", "   ", Character.valueOf('R'), ItemIDs.tcRailSmallRoadCrossing2.item);
 		// Short Slope Gravel
 		TrainCraftingManager.instance.addRecipe(new ItemStack(ItemIDs.tcRailSlopeGravel.item, 1),
@@ -452,6 +452,28 @@ public class RecipeHandler {
 		TrainCraftingManager.instance.addRecipe(new ItemStack(Blocks.rail,18), "   ", " S ", "   ",
 				(char)'S',new ItemStack(ItemIDs.tcRailVeryLargeSlopeGravel.item,1));
 		//ATO Card and W-MTC card
+		/* JCIR-Traincraft */
+		ArrayList<ItemStack> dyeRed = OreDictionary.getOres("dyeRed"); //1
+		ArrayList<ItemStack> dyeGreen = OreDictionary.getOres("dyeGreen"); //2
+		ArrayList<ItemStack> dyeBlue = OreDictionary.getOres("dyeBlue"); //4
+
+		for (ItemStack red : dyeRed) {
+			for (ItemStack green : dyeGreen) {
+				for (ItemStack blue : dyeBlue) {
+					for (ItemStack ironingot : iron) {
+						TrainCraftingManager.instance.addRecipe(new ItemStack(ItemIDs.paintbrushThing.item, 1), "GB ", "RIS", " ST", 'G', green, 'B', blue, 'R', red, 'I', ironingot, 'S', Items.string, 'T', Items.stick);
+					}
+				}
+			}
+		}
+
+		for (ItemStack ironingot : iron) {
+			TrainCraftingManager.instance.addRecipe(new ItemStack(ItemIDs.remoteController.item, 1), "LRL", "BCB", "EIE", 'L', Blocks.lever, 'R', Blocks.redstone_torch, 'B', Blocks.stone_button, 'C', ItemIDs.controls.item, 'E', ItemIDs.electronicCircuit.item, 'I', ironingot);
+		}
+
+		for (ItemStack plastic : plastics) {
+			TrainCraftingManager.instance.addRecipe(new ItemStack(ItemIDs.remoteControllerModule.item, 1), " R ", "PEP", "PEP", 'R', Blocks.redstone_torch, 'P', plastic, 'E', ItemIDs.electronicCircuit.item);
+		}
 
 	}
 	

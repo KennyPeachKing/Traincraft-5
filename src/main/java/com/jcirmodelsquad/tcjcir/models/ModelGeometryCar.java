@@ -29,8 +29,6 @@ public class ModelGeometryCar extends ModelConverter //Same as Filename
         initbodyModel_1();
 
         translateAll(0F, 0F, 0F);
-
-
         flipAll();
     }
 
@@ -595,7 +593,6 @@ public class ModelGeometryCar extends ModelConverter //Same as Filename
         //GL11.glScalef(0.9f,0.9f,0.8f);
         theTrucks.render(entity,f,f1,f2,f3,f4,f5);
         GL11.glPopMatrix();
-
         GL11.glPushMatrix();
         GL11.glTranslated(1.67F,0.1F,0);
         theTrucks.render(entity,f,f1,f2,f3,f4,f5);

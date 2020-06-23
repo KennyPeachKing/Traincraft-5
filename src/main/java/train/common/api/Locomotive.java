@@ -2,6 +2,7 @@ package train.common.api;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.jcirmodelsquad.tcjcir.extras.packets.RemoteControlKeyPacket;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
@@ -16,6 +17,7 @@ import net.minecraft.entity.passive.EntityAnimal;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.inventory.IInventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
@@ -23,6 +25,7 @@ import net.minecraft.util.*;
 import net.minecraft.world.World;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.lwjgl.input.Keyboard;
+import train.client.core.handlers.TCKeyHandler;
 import train.common.Traincraft;
 import train.common.adminbook.ServerLogger;
 import train.common.core.HandleMaxAttachedCarts;
@@ -31,10 +34,10 @@ import train.common.core.network.PacketKeyPress;
 import train.common.core.network.PacketParkingBrake;
 import train.common.core.network.PacketSlotsFilled;
 import train.common.entity.rollingStock.*;
-import train.common.items.ItemATOCard;
-import train.common.items.ItemWirelessTransmitter;
+import train.common.items.*;
 import train.common.library.EnumSounds;
 import train.common.library.Info;
+import train.common.library.ItemIDs;
 import train.common.mtc.PDMMessage;
 import train.common.mtc.TilePDMInstructionRadio;
 import train.common.mtc.packets.*;
@@ -135,6 +138,7 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
      */
     public boolean canBePulled = false;
 
+    public boolean paired = false;
 
     public Locomotive(World world) {
         super(world);
@@ -685,6 +689,45 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
                 brakePressed = false;
             }
 
+            Item currentItem = new Item();
+            if (Minecraft.getMinecraft().thePlayer != null && Minecraft.getMinecraft().thePlayer.inventory.getCurrentItem() != null) {
+                currentItem = Minecraft.getMinecraft().thePlayer.inventory.getCurrentItem().getItem();
+            }
+            boolean hasController = currentItem instanceof ItemRemoteController;
+            boolean isConnected = false;
+
+            if (currentItem != null  && hasController) {
+                isConnected = ((ItemRemoteController) currentItem).attachedLocomotive != null;
+            }
+            //1: Forward
+            //2: Backwards
+            //3: Toggle Brake
+            //4: Horn
+
+            if (Minecraft.getMinecraft().thePlayer != null && Vec3.createVectorHelper(Minecraft.getMinecraft().thePlayer.posX, Minecraft.getMinecraft().thePlayer.posY, Minecraft.getMinecraft().thePlayer.posZ).distanceTo(Vec3.createVectorHelper(this.posX, posY, posZ)) < 200) {
+                if (TCKeyHandler.remoteControlForward.getIsKeyPressed() && hasController && isConnected && ((ItemRemoteController) currentItem).attachedLocomotive == this) {
+                    ItemRemoteController theController = (ItemRemoteController) currentItem;
+                    Traincraft.remoteControlKey.sendToServer(new RemoteControlKeyPacket(this.getEntityId(), 1));
+                }
+
+                if (TCKeyHandler.remoteControlBackwards.getIsKeyPressed() && hasController && isConnected && ((ItemRemoteController) currentItem).attachedLocomotive == this) {
+                    ItemRemoteController theController = (ItemRemoteController) currentItem;
+                    Traincraft.remoteControlKey.sendToServer(new RemoteControlKeyPacket(this.getEntityId(), 2));
+                }
+
+                if (TCKeyHandler.remoteControlBrake.getIsKeyPressed() && hasController && isConnected && ((ItemRemoteController) currentItem).attachedLocomotive == this) {
+                    ItemRemoteController theController = (ItemRemoteController) currentItem;
+
+                    Traincraft.remoteControlKey.sendToServer(new RemoteControlKeyPacket(this.getEntityId(), 3));
+                }
+
+                if (TCKeyHandler.remoteControlHorn.getIsKeyPressed() && hasController && isConnected && ((ItemRemoteController) currentItem).attachedLocomotive == this) {
+                    ItemRemoteController theController = (ItemRemoteController) currentItem;
+
+                    Traincraft.remoteControlKey.sendToServer(new RemoteControlKeyPacket(this.getEntityId(), 4));
+                }
+            }
+
         }
 
         // if (worldObj.isRemote) {
@@ -732,35 +775,6 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
                                 } else {
                                     motionX -= 0.0075 * this.accelerate;
                                 }
-                            }
-                        } else if (true) {
-
-                            double rotation = this.serverRealRotation;
-                            if (rotation == 90.0) {
-                                if (forwardPressed) {
-                                    motionX -= 0.0075 * this.accelerate;
-                                } else {
-                                    motionX += 0.0075 * this.accelerate;
-                                }
-                            } else if (rotation == -90.0) {
-                                if (forwardPressed) {
-                                    motionX += 0.0075 * this.accelerate;
-                                } else {
-                                    motionX -= 0.0075 * this.accelerate;
-                                }
-                            } else if (rotation == 0.0) {
-                                if (forwardPressed) {
-                                    motionZ += 0.0075 * this.accelerate;
-                                } else {
-                                    motionZ -= 0.0075 * this.accelerate;
-                                }
-                            } else if (rotation == -180.0) {
-                                if (forwardPressed) {
-                                    motionZ -= 0.0075 * this.accelerate;
-                                } else {
-                                    motionZ += 0.0075 * this.accelerate;
-                                }
-
                             }
                         }
                     }
@@ -1380,7 +1394,19 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
 
     @Override
     public boolean attackEntityFrom(DamageSource damagesource, float i) {
-        if (worldObj.isRemote) { return true; }
+        if (worldObj.isRemote) {
+
+            if (Minecraft.getMinecraft().thePlayer != null) {
+                for (int i2 = 0; i2 < Minecraft.getMinecraft().thePlayer.inventory.getSizeInventory(); i2++) {
+                    if (Minecraft.getMinecraft().thePlayer.inventory.getStackInSlot(i2) != null && Minecraft.getMinecraft().thePlayer.inventory.getStackInSlot(i2).getItem() instanceof ItemRemoteController && ((ItemRemoteController)Minecraft.getMinecraft().thePlayer.inventory.getStackInSlot(i2).getItem()).attachedLocomotive == this) {
+                        ((ItemRemoteController)Minecraft.getMinecraft().thePlayer.inventory.getStackInSlot(i2).getItem()).attachedLocomotive = null;
+                        break;
+                    }
+                }
+            }
+            return true;
+
+        }
         if (canBeDestroyedByPlayer(damagesource)) return true;
         super.attackEntityFrom(damagesource, i);
         setRollingDirection(-getRollingDirection());
@@ -1895,5 +1921,79 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
 
     }
 
+    public Boolean trainIsRemoteControlSupported() {
+       for (ItemStack item : this.getInventory()) {
+           if (item != null && item.getItem() != null && item.getItem() instanceof ItemRemoteControllerModule) {
+               return true;
+           }
+       }
+        return false;
+    }
+
+
+
     public void stationStopComplete() {}
+
+    //1: Forward
+    //2: Backwards
+    //3: Toggle Brake
+    //4: Horn
+
+    public void remoteControlFromPacket(int key ) {
+        switch (key) {
+            case 1: {
+                double rotation = this.serverRealRotation;
+                if (rotation == 90.0) {
+
+                    this.motionX -= 0.0015 * this.accelerate;
+
+
+                } else if (rotation == -90.0) {
+
+                    this.motionX += 0.0015 * this.accelerate;
+
+                } else if (rotation == 0.0) {
+
+                    this.motionZ += 0.0015 * this.accelerate;
+
+                } else if (rotation == -180.0) {
+                    this.motionZ -= 0.0015 * this.accelerate;
+                }
+
+                break;
+            }
+
+            case 2: {
+                double rotation = this.serverRealRotation;
+                if (rotation == 90.0) {
+
+                    this.motionX += 0.0020 * this.accelerate;
+
+
+                } else if (rotation == -90.0) {
+
+                    this.motionX -= 0.0020 * this.accelerate;
+
+                } else if (rotation == 0.0) {
+
+                    this.motionZ-= 0.0020 * this.accelerate;
+
+                } else if (rotation == -180.0) {
+
+                    this.motionZ += 0.0020 * this.accelerate;
+                }
+                break;
+            }
+
+            case 3: {
+                this.parkingBrake = !this.parkingBrake;
+                break;
+            }
+
+            case 4: {
+                soundHorn();
+                break;
+            }
+        }
+    }
 }

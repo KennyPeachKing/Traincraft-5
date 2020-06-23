@@ -8,31 +8,27 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumChatFormatting;
 import train.common.Traincraft;
-import train.common.api.Locomotive;
 import train.common.library.Info;
 
 import java.util.List;
 
-public class ItemRemoteController extends Item {
-    public Locomotive attachedLocomotive;
+public class ItemRemoteControllerModule extends Item {
 
-    public ItemRemoteController()  {
+    public ItemRemoteControllerModule()  {
         setCreativeTab(Traincraft.tcTab);
-
     }
 
     @Override
     @SideOnly(Side.CLIENT)
     public void registerIcons(IIconRegister iconRegister) {
-        this.itemIcon = iconRegister.registerIcon(Info.modID.toLowerCase() + ":remote_controller");
+        this.itemIcon = iconRegister.registerIcon(Info.modID.toLowerCase() + ":remote_controller_module");
     }
     @SideOnly(Side.CLIENT)
     @Override
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
-        par3List.add("\u00a77" + "You can remotely control trains with this!");
-        par3List.add("\u00a77" + "Right click on a locomotive you own to pair.");
-        par3List.add("\u00a77" + "Then click on it again to unpair.");
-        par3List.add("\u00a77" + EnumChatFormatting.GREEN + "Easy!");
-        par3List.add("\u00a77" + EnumChatFormatting.YELLOW + "These have a range of only 200 blocks.");
+        par3List.add("\u00a77" + "Place this any slot of trains inventory.");
+        par3List.add("\u00a77" + "Then, use a remote controller to control it.");
+        par3List.add("\u00a77" + EnumChatFormatting.LIGHT_PURPLE + "Simple!");
     }
+
 }

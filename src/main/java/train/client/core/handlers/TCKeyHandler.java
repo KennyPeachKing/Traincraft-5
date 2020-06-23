@@ -1,6 +1,7 @@
 package train.client.core.handlers;
 
 import com.jcirmodelsquad.tcjcir.extras.GuiGeometryCar;
+import com.jcirmodelsquad.tcjcir.extras.packets.RemoteControlKeyPacket;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.common.Loader;
@@ -9,12 +10,14 @@ import cpw.mods.fml.common.gameevent.InputEvent;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.util.ChatComponentText;
 import org.lwjgl.input.Keyboard;
 import train.client.gui.GuiMTCInfo;
 import train.common.Traincraft;
 import train.common.api.Locomotive;
 import train.common.core.network.PacketKeyPress;
+import train.common.items.ItemRemoteController;
 
 
 public class TCKeyHandler {
@@ -28,10 +31,10 @@ public class TCKeyHandler {
     public static KeyBinding toggleATO;
     public static KeyBinding mtcOverride;
     public static KeyBinding overspeedOverride;
-/*	public static KeyBinding remoteControlForward;
+	public static KeyBinding remoteControlForward;
 	public static KeyBinding remoteControlBackwards;
 	public static KeyBinding remoteControlHorn;
-	public static KeyBinding remoteControlBrake;*/
+	public static KeyBinding remoteControlBrake;
 
     public static KeyBinding openGeometryCarGUI;
     public static KeyBinding hideGeometryCarHUD;
@@ -60,12 +63,20 @@ public class TCKeyHandler {
             ClientRegistry.registerKeyBinding(overspeedOverride);
         }
 
-        openGeometryCarGUI = new KeyBinding("Show Geometry Car GUI", Keyboard.KEY_NUMPAD1, "JCIR-Traincraft");
+        openGeometryCarGUI = new KeyBinding("Show Geometry Car GUI", Keyboard.KEY_NUMPAD1, "key.categories.traincraft");
         ClientRegistry.registerKeyBinding(openGeometryCarGUI);
-        hideGeometryCarHUD = new KeyBinding("Hide Geometry Car HUD", Keyboard.KEY_NUMPAD2, "JCIR-Traincraft");
+        hideGeometryCarHUD = new KeyBinding("Hide Geometry Car HUD", Keyboard.KEY_NUMPAD2, "key.categories.traincraft");
         ClientRegistry.registerKeyBinding(hideGeometryCarHUD);
 
 
+        remoteControlForward = new KeyBinding("Remote Control Forward", Keyboard.KEY_NUMPAD8, "key.categories.traincraft");
+        remoteControlBackwards = new KeyBinding("Remote Control Backwards", Keyboard.KEY_NUMPAD8, "key.categories.traincraft");
+        remoteControlBrake = new KeyBinding("Remote Control Brake", Keyboard.KEY_NUMPAD0, "key.categories.traincraft");
+        remoteControlHorn = new KeyBinding("Remote Control Horn", Keyboard.KEY_NUMPADENTER, "key.categories.traincraft");
+        ClientRegistry.registerKeyBinding(remoteControlForward);
+        ClientRegistry.registerKeyBinding(remoteControlBackwards);
+        ClientRegistry.registerKeyBinding(remoteControlBrake);
+        ClientRegistry.registerKeyBinding(remoteControlHorn);
     }
 
     @SubscribeEvent
@@ -176,4 +187,7 @@ public class TCKeyHandler {
     private static void sendKeyControlsPacket(int key) {
         Traincraft.keyChannel.sendToServer(new PacketKeyPress(key));
     }
+
+
+
 }

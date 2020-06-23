@@ -98,6 +98,8 @@ public class TCItems {
 		}
 
 		ItemIDs.paintbrushThing.item = new ItemPaintbrushThing();
+		ItemIDs.remoteController.item = new ItemRemoteController();
+		ItemIDs.remoteControllerModule.item = new ItemRemoteControllerModule();
 	}
 	
 	private static void registerItems() {

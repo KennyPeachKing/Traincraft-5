@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import train.common.api.Locomotive;
+import train.common.items.ItemRemoteController;
 import train.common.library.Info;
 
 public class HUDMTC extends GuiScreen {
@@ -21,6 +22,11 @@ public class HUDMTC extends GuiScreen {
 	public void onGameRender(RenderGameOverlayEvent.Text event){
 		if (game != null && game.thePlayer != null && game.thePlayer.ridingEntity != null && game.thePlayer.ridingEntity instanceof Locomotive && Minecraft.isGuiEnabled() && game.currentScreen == null) {
 			renderSkillHUD(event, (Locomotive) game.thePlayer.ridingEntity);
+		} else if (game != null && game.thePlayer != null && game.thePlayer.inventory != null && game.thePlayer.inventory.getCurrentItem() != null && game.thePlayer.inventory.getCurrentItem().getItem() instanceof ItemRemoteController) {
+			ItemRemoteController currentItem = (ItemRemoteController) Minecraft.getMinecraft().thePlayer.inventory.getCurrentItem().getItem();
+			if (currentItem.attachedLocomotive != null) {
+				renderSkillHUD(event, currentItem.attachedLocomotive);
+			}
 		} else {
 			this.game = this.mc = Minecraft.getMinecraft();
 			this.fontRendererObj = this.game.fontRenderer;

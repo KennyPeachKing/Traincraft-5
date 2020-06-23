@@ -356,6 +356,8 @@ item.tc:minecartThanos.name= Thanos Cart
 item.tc:minecartGeometryCar.name= Geometry Car
 item.tc:minecartU23B.name= GE U23B
 item.tc:minecartSW1500.name= EMD SW1500
+item.tc:remoteController.name= Remote Controller
+item.tc:remoteControllerModule.name= Remote Controller Module
 
 <!-- ## Achievements ## -->
 achievement.tc:engineer=Engineers clothes

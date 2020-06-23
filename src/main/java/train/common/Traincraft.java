@@ -87,7 +87,8 @@ public class Traincraft {
 	public static SimpleNetworkWrapper startMissionPacketChannel = NetworkRegistry.INSTANCE.newSimpleChannel("GeometryCarStartMission");
 	public static SimpleNetworkWrapper updateGeometryCarChannel = NetworkRegistry.INSTANCE.newSimpleChannel("UpdateGeometryCar");
 	public static SimpleNetworkWrapper generateTrackReportChannel = NetworkRegistry.INSTANCE.newSimpleChannel("GenerateTrackReport");
-
+	public static SimpleNetworkWrapper updateTrackReport = NetworkRegistry.INSTANCE.newSimpleChannel("UpdateTrackReport");
+	public static SimpleNetworkWrapper remoteControlKey = NetworkRegistry.INSTANCE.newSimpleChannel("RemoteControl");
 	public static File configDirectory;
 
 	/* Creative tab for Traincraft */
@@ -105,7 +106,7 @@ public class Traincraft {
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		tcLog.info("Starting Traincraft " + Info.modVersion + "!");
+		tcLog.info("Starting JCIR-Traincraft " + Info.modVersion + "!");
 		/* Config handler */
 		configDirectory= event.getModConfigurationDirectory();
 		ConfigHandler.init(new File(event.getModConfigurationDirectory(), Info.modName + ".cfg"));
@@ -114,7 +115,7 @@ public class Traincraft {
 		proxy.registerKeyBindingHandler();
 
 		/* Register Items, Blocks, ... */
-		tcLog.info("Initialize Blocks, Items, ...");
+		tcLog.info("Initialize blocks, items, and other stuff");
 		tcTab = new CreativeTabTraincraft(CreativeTabs.getNextID(), "Traincraft");
 		trainArmor = proxy.addArmor("armor");
 		trainCloth = proxy.addArmor("Paintable");
@@ -147,24 +148,24 @@ public class Traincraft {
 		}
 
 		/* Other Proxy init */
-		tcLog.info("Initialize Renderer and Events");
+		tcLog.info("Initializing renderer and events.");
 		proxy.registerRenderInformation();
 		proxy.registerEvents(event);
 
 		/* Networking and Packet initialisation */
 		PacketHandler.init();
 
-		tcLog.info("Finished PreInitialization");
+		tcLog.info("Finished Preinitialization!");
 	}
 
 	@EventHandler
 	public void load(FMLInitializationEvent event) {
-		tcLog.info("Start Initialization");
+		tcLog.info("Entering Initialization.");
 
 		//proxy.getCape();
 
 		/* GUI handler initiation */
-		tcLog.info("Initialize Gui");
+		tcLog.info("Initializing gui...");
 		NetworkRegistry.INSTANCE.registerGuiHandler(instance, proxy);
 		FMLCommonHandler.instance().bus().register(new CraftingHandler());
 
@@ -172,21 +173,21 @@ public class Traincraft {
 		OreHandler.registerOres();
 
 		/* Recipes */
-		tcLog.info("Initialize Recipes");
+		tcLog.info("Initializing recipes...");
 		RecipeHandler.initBlockRecipes();
 		RecipeHandler.initItemRecipes();
 		RecipeHandler.initSmeltingRecipes();
 		AssemblyTableRecipes.recipes();
 
 		/* Register the liquids */
-		tcLog.info("Initialize Fluids");
+		tcLog.info("Initializing fluids..");
 		LiquidManager.getInstance().registerLiquids();
 
 		/* Liquid FX */
 		proxy.registerTextureFX();
 
 		/*Trainman Villager*/
-		tcLog.info("Initialize Station Chief Villager");
+		tcLog.info("Initializing VillagerJoe!!! :D ..and other village stuff.");
 		VillagerRegistry.instance().registerVillagerId(ConfigHandler.TRAINCRAFT_VILLAGER_ID);
 		VillagerTraincraftHandler villageHandler = new VillagerTraincraftHandler();
 		VillagerRegistry.instance().registerVillageCreationHandler(villageHandler);
@@ -197,17 +198,17 @@ public class Traincraft {
 		proxy.registerBookHandler();
 
 		
-		tcLog.info("Finished Initialization");
+		tcLog.info("Finished Initialization!");
 
 
 	}
 
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent evt) {
-		tcLog.info("Start to PostInitialize");
-		tcLog.info("Register ChunkHandler");
+		tcLog.info("Entering PostInitialization.");
+		tcLog.info("Registering ChunkHandler..");
 
-		tcLog.info("Activation Mod Compatibility");
+		tcLog.info("Activating mod compatibility.");
 		TrainModCore.ModsLoaded();
 		LiquidManager.getLiquidsFromDictionnary();
 		if (Loader.isModLoaded("OpenComputers")) {
@@ -219,7 +220,7 @@ public class Traincraft {
 		JCIRQuote quoteOfTheDay = QuoteList.getQuotes().get(rand.nextInt(QuoteList.getQuotes().size()));
 		tcLog.info(quoteOfTheDay.quote + " -" + quoteOfTheDay.from);
 
-		tcLog.info("Finished PostInitialization");
+		tcLog.info("Finished PostInitialization! We are done for Traincraft!");
 	}
 
 	@EventHandler

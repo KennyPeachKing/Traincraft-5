@@ -3,12 +3,14 @@ package train.client.gui;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import org.lwjgl.opengl.GL11;
 import train.common.api.DieselTrain;
 import train.common.api.Locomotive;
 import train.common.api.SteamTrain;
+import train.common.items.ItemRemoteController;
 import train.common.library.Info;
 
 public class HUDloco extends GuiScreen {
@@ -20,6 +22,11 @@ public class HUDloco extends GuiScreen {
 	public void onGameRender(RenderGameOverlayEvent.Text event){
 		if (game != null && game.thePlayer != null && game.thePlayer.ridingEntity != null && game.thePlayer.ridingEntity instanceof Locomotive && Minecraft.isGuiEnabled() && game.currentScreen == null) {
 			renderSkillHUD(event, (Locomotive) game.thePlayer.ridingEntity);
+		} else if (game != null && game.thePlayer != null && game.thePlayer.inventory != null && game.thePlayer.inventory.getCurrentItem() != null && game.thePlayer.inventory.getCurrentItem().getItem() instanceof ItemRemoteController) {
+			ItemRemoteController currentItem = (ItemRemoteController) Minecraft.getMinecraft().thePlayer.inventory.getCurrentItem().getItem();
+			if (currentItem.attachedLocomotive != null) {
+				renderSkillHUD(event, currentItem.attachedLocomotive);
+			}
 		} else {
 			this.game = this.mc = Minecraft.getMinecraft();
 			this.fontRendererObj = this.game.fontRenderer;

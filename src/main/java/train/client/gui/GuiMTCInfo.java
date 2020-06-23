@@ -91,7 +91,7 @@ public class GuiMTCInfo extends GuiScreen {
             destination.textboxKeyTyped(par1, par2);
         }
 
-        if (par2 == 1 || par2 == Keyboard.KEY_ESCAPE) {
+        if (par2 == 1) {
             if (!destination.isFocused() || !trainID.isFocused() || !trainLevel.isFocused()) {
                 mc.thePlayer.closeScreen();
                 theLocomotive.trainLevel = trainLevel.getText();

@@ -7,9 +7,7 @@
 
 package train.common.core.handlers;
 
-import com.jcirmodelsquad.tcjcir.extras.packets.GenerateTrackReport;
-import com.jcirmodelsquad.tcjcir.extras.packets.StartMissionPacket;
-import com.jcirmodelsquad.tcjcir.extras.packets.UpdateGeometryCar;
+import com.jcirmodelsquad.tcjcir.extras.packets.*;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.relauncher.Side;
@@ -23,7 +21,7 @@ import train.common.mtc.packets.handlers.*;
 public class PacketHandler {
 
 	public static void init(){
-		Traincraft.tcLog.info("Initialize Packets");
+		Traincraft.tcLog.info("Initializing Packets");
 		Traincraft.modChannel = NetworkRegistry.INSTANCE.newSimpleChannel(Info.channel);
 		Traincraft.keyChannel = NetworkRegistry.INSTANCE.newSimpleChannel(Info.keyChannel);
 		Traincraft.rotationChannel = NetworkRegistry.INSTANCE.newSimpleChannel(Info.rotationChannel);
@@ -81,5 +79,7 @@ public class PacketHandler {
 		Traincraft.startMissionPacketChannel.registerMessage(StartMissionPacket.Handler.class,StartMissionPacket.class, 220, Side.SERVER);
 		Traincraft.updateGeometryCarChannel.registerMessage(UpdateGeometryCar.Handler.class, UpdateGeometryCar.class, 221, Side.SERVER);
 		Traincraft.generateTrackReportChannel.registerMessage(GenerateTrackReport.Handler.class, GenerateTrackReport.class, 222, Side.SERVER);
+		Traincraft.updateTrackReport.registerMessage(ClientGeometryCarUpdate.Handler.class, ClientGeometryCarUpdate.class, 223, Side.CLIENT);
+		Traincraft.remoteControlKey.registerMessage(RemoteControlKeyPacket.Handler.class, RemoteControlKeyPacket.class, 224, Side.SERVER);
 	}
 }

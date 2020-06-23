@@ -9,6 +9,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
@@ -22,11 +23,11 @@ public class GuiGeometryCar extends GuiScreen {
     private GuiTCTextField geometryCarName;
     private GuiTCTextField railroadType;
     private GuiTCTextField railroadStandard;
-    private GuiTCTextField trackReportOutput;
     private GuiButton startStopButton;
     private GuiButton lockButton;
     private GuiButton saveTrackReport;
     private GuiButton saveTrackReportAsFile;
+    private GuiButton allTrackIssues;
     public int xSize = 305;
     public int ySize = 274;
     public int guiLeft;
@@ -40,12 +41,15 @@ public class GuiGeometryCar extends GuiScreen {
     }
     @Override
     public void initGui() {
+        ScaledResolution sr = new ScaledResolution(Minecraft.getMinecraft(), Minecraft.getMinecraft().displayWidth, Minecraft.getMinecraft().displayHeight);
+        int width = sr.getScaledWidth();
+        int height = sr.getScaledHeight();
+
         this.guiLeft = (this.width - this.xSize) / 2;
         this.guiTop = (this.height - this.ySize) / 2;
-        railroadName = new GuiTCTextField(fontRendererObj, guiLeft + 85, guiTop + 7, 80,15);
+        railroadName = new GuiTCTextField(fontRendererObj, width-260, height - 5, 120,15);
         geometryCarName = new GuiTCTextField(fontRendererObj, guiLeft + 110, guiTop + 26, 120,15);
         railroadType = new GuiTCTextField(fontRendererObj, guiLeft + 85, guiTop + 46, 80,15);
-        trackReportOutput = new GuiTCTextField(fontRendererObj, guiLeft + 5, guiTop + 130, 160,140);
         railroadStandard = new GuiTCTextField(fontRendererObj, guiLeft + 5, guiTop + 546, 160,140);
         try {
             if (theCar != null  &&  theCar.getDataWatcher().getWatchableObjectString(27).split(":")[0].equals("true")) {
@@ -71,15 +75,18 @@ public class GuiGeometryCar extends GuiScreen {
 
     @Override
     public void drawScreen(int mouseX, int mouseY, float partialTicks) {
-        this.guiLeft = (this.width - this.xSize) / 2;
-        this.guiTop = (this.height - this.ySize) / 2;
+        ScaledResolution sr = new ScaledResolution(Minecraft.getMinecraft(), Minecraft.getMinecraft().displayWidth, Minecraft.getMinecraft().displayHeight);
+        int width = sr.getScaledWidth();
+        int height = sr.getScaledHeight();
+
+        this.guiLeft = (sr.getScaledWidth() - this.xSize) / 2;
+        this.guiTop = (sr.getScaledHeight() - this.ySize) / 2;
         drawDefaultBackground();
-        drawTexturedRect(new ResourceLocation("tcjcir:extras/geocar-background.png"), guiLeft, guiTop,0, 0,305,274,305, 274, 1);
+        ///drawTexturedRect(new ResourceLocation("tc:textures/gui/geocar_background.png"), guiLeft, guiTop,0, 0, 305,274,305, 274, 1);
         railroadName.drawTextBox();
         geometryCarName.drawTextBox();
         railroadType.drawTextBox();
-        trackReportOutput.drawTextBox();
-        fontRendererObj.drawString("Railroad Name:", guiLeft + 10, guiTop + 10, 000000);
+        fontRendererObj.drawString("Railroad Name:", guiLeft + 10, guiTop + 10, 0xFFFFFF);
         fontRendererObj.drawString("Geometry Car Name:", guiLeft + 10, guiTop + 30, 000000);
         fontRendererObj.drawString("Railroad Type: ", guiLeft + 10, guiTop + 50, 000000);
         super.drawScreen(mouseX, mouseY, partialTicks);
@@ -119,7 +126,7 @@ public class GuiGeometryCar extends GuiScreen {
             saveTrackReportAsFile.enabled = false;
             startStopButton.displayString = "Start Mission";
         }
-            trackReportOutput.setText(theCar.getDataWatcher().getWatchableObjectString(27).split(":")[1]);
+
         ///trackReportOutput.setText(theCar.getDataWatcher().getWatchableObjectString(26));
     }
 
