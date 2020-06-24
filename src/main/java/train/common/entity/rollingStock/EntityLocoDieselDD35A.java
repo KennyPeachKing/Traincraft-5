@@ -39,8 +39,8 @@ public class EntityLocoDieselDD35A extends DieselTrain {
 	public void updateRiderPosition() {
 		if(riddenByEntity==null){return;}
 		double pitchRads = this.anglePitchClient * Math.PI / 180.0D;
-		double distance = 4.9;
-		double yOffset = 0.4;
+		double distance = 5;
+		double yOffset = 0.65;
 		float rotationCos1 = (float) Math.cos(Math.toRadians(this.renderYaw + 90));
 		float rotationSin1 = (float) Math.sin(Math.toRadians((this.renderYaw + 90)));
 		if (side.isServer()) {

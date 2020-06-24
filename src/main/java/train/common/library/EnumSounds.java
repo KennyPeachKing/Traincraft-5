@@ -94,7 +94,8 @@ public enum EnumSounds {
 	Thanos(com.jcirmodelsquad.tcjcir.locomotives.Thanos.class, "thanos_horn", 5, "thanos_run", 0.6F, 200, "thanos_idle", 0.65F, 100, false),
 	HighrailTruck(com.jcirmodelsquad.tcjcir.locomotives.DieselHighrailTruck.class, "subway_horn", 0.8F, "chme3_idle", 0.65F, 40, "chme3_idle", 0.65F, 40, true),
 	U23B(com.jcirmodelsquad.tcjcir.locomotives.DieselU23B.class, "leslie_s3l", 2.5F, "7fdl-12_notch8", 0.65F, 40, "7fdl-12_idle", 0.65F, 50, true),
-	SW1500(com.jcirmodelsquad.tcjcir.locomotives.DieselSW1500.class, "nathan_p3", 1F, "16-645e_notch8", 0.65F, 10, "16-645e_idle", 0.8F, 3, true);
+	SW1500(com.jcirmodelsquad.tcjcir.locomotives.DieselSW1500.class, "nathan_p3", 1F, "16-645e_notch8", 0.65F, 10, "16-645e_idle", 0.8F, 3, true),
+	SD45dash2(com.jcirmodelsquad.tcjcir.locomotives.DieselSD45dash2.class, "nathan_p3", 1F, "645e3_notch8", 0.65F, 10, "645e3_idle", 0.65F, 3, true);
 
 	private Class entityClass;
 	private String horn;

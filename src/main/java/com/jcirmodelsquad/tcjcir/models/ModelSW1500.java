@@ -185,9 +185,9 @@ public class ModelSW1500 extends ModelConverter //Same as Filename
 		bodyModel[144] = new ModelRendererTurbo(this, 145, 33, textureX, textureY); // Box 375
 		bodyModel[145] = new ModelRendererTurbo(this, 81, 33, textureX, textureY, "lamp"); // Box 376 liveryimg 2 glow
 		bodyModel[146] = new ModelRendererTurbo(this, 249, 57, textureX, textureY); // Box 377
-		bodyModel[147] = new ModelRendererTurbo(this, 129, 33, textureX, textureY); // Box 378 lamp
+		bodyModel[147] = new ModelRendererTurbo(this, 129, 33, textureX, textureY, "lamp"); // Box 378 lamp
 		bodyModel[148] = new ModelRendererTurbo(this, 113, 41, textureX, textureY); // Box 379
-		bodyModel[149] = new ModelRendererTurbo(this, 241, 33, textureX, textureY); // Box 380 lamp
+		bodyModel[149] = new ModelRendererTurbo(this, 241, 33, textureX, textureY, "lamp"); // Box 380 lamp
 		bodyModel[150] = new ModelRendererTurbo(this, 1, 41, textureX, textureY); // Box 381
 		bodyModel[151] = new ModelRendererTurbo(this, 265, 57, textureX, textureY); // Box 382
 		bodyModel[152] = new ModelRendererTurbo(this, 505, 33, textureX, textureY, "lamp"); // Box 385 liveryimg 2 glow
@@ -1296,6 +1296,6 @@ public class ModelSW1500 extends ModelConverter //Same as Filename
 	{
 	}
 
-	public ModelRendererTurbo u23bModel[];
+	public ModelRendererTurbo SW1500Model[];
 
 }

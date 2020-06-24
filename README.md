@@ -1,5 +1,39 @@
-# Traincraft - A mod for Minecraft
+![JCIR-Traincraft Logo](https://i.imgur.com/qdcdqsN.png)
+# JCIR-Traincraft - A mod for Minecraft, based on Traincraft but with new stuff.
 
+This is a fork of Traincraft, but with content specificly desigined for the Minecraft server JC's Industral Railroading. It adds things like:
+
+- Remote Controlled Trains
+- Right click to fuel and unfuel
+- Paintbrushes
+- Driverless trains
+- More content!
+
+Thank you to the original creators:
+
+- Spitfire4466
+- EternalBlueFlame
+- Spitfire4466
+- NitroxydeX
+- MrBrutal
+
+Also, thank you to our content contributers:
+
+- Bidahochi
+- BigJ
+- Messicrew
+- Professor Binky (TrainGoddess)
+- PeachMaster (me :D)
+- JCRail
+- ..and you! If you want to, of course. Make your changes with a pull request, and join the Discord server to stay up to date with things that are happening.
+
+## **1.0 Release deadline: July 2nd**
+
+JCIR Discord Server: https://discord.gg/eF578D
+
+(and yes, we did get permission from EternalBlueFlame to do this, so don't complain)
+
+# Original README.md
 Here you will find the source code for the **Traincraft 1.7.10 Port**.<br/>
 **Don't ask for release dates or beta builds. Unless you are a developer you should get your builds from [curse](https://minecraft.curseforge.com/projects/traincraft). <br/>Regarding new features/behavior changes, or if you have found any bugs, please submit a new issue to the issue tracker for it, or add your findings to an existing issue if someone else has already made one. This helps keep everything organized while saving time and effort.**
 

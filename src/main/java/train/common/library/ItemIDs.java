@@ -298,7 +298,7 @@ public enum ItemIDs {
 	tcRailMediumParallelSwitch("ItemTCRail", "item_rail_switch_parallel", 5),
 
 	tcRailTwoWaysCrossing("ItemTCRail","item_rail_two_ways_crossing",5),
-	tcRailSlopeWood("ItemTCRail", "item_rail_straight_slope_wood", 5),
+	tcRailSlopeWood("ItemTCRail", "item_rail_straight_slope_wood", 1),
 	tcRailSlopeGravel("ItemTCRail", "item_rail_straight_slope_gravel", 5),
 	tcRailSlopeBallast("ItemTCRail", "item_rail_straight_slope_ballast", 5),
 	tcRailLargeSlopeWood("ItemTCRail", "item_rail_straight_slope_wood", 3),
@@ -323,7 +323,8 @@ public enum ItemIDs {
 	minecartHighrailTruck("ItemRollingStock", "highrail", 3),
 	minecartThanos("ItemRollingStock", "thanos", 64),
 	minecartU23B("ItemRollingStock", "u23b", 12),
-	minecartSW1500("ItemRollingStock", "sw1500", 13);
+	minecartSW1500("ItemRollingStock", "sw1500", 13),
+	minecartSD45dash2("ItemRollingStock", "sd45dash2", 14);
 	public Item item;
 	public String className;
 	public String iconName;
