@@ -1260,8 +1260,9 @@ public class ModelSW1500 extends ModelConverter //Same as Filename
 				bodyModel[i].render(f5);
 			}
 		}
-		if (entity instanceof AbstractTrains && ((AbstractTrains) entity).getColor() == 14||entity instanceof AbstractTrains && ((AbstractTrains) entity).getColor() == 7) {
-			Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/typeasmol.png"));
+
+		if (entity instanceof AbstractTrains && ((AbstractTrains) entity).getColor() == 14) {
+			Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/typeasmol_Green.png"));
 			GL11.glPushMatrix();
 			GL11.glTranslated(-0.7, 0.1, 0);
 			theTrucks2.render(entity, f, f1, f2, f3, f4, f5);
@@ -1269,8 +1270,16 @@ public class ModelSW1500 extends ModelConverter //Same as Filename
 			GL11.glTranslated(2.13, 0, 0);
 			theTrucks2.render(entity, f, f1, f2, f3, f4, f5);
 			GL11.glPopMatrix();
+		} else if (entity instanceof AbstractTrains && ((AbstractTrains) entity).getColor() == 7) {
+			Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/typeasmol_Black.png"));
+			GL11.glPushMatrix();
+			GL11.glTranslated(-0.7, 0.1, 0);
+			theTrucks2.render(entity, f, f1, f2, f3, f4, f5);
 
-		} else {
+			GL11.glTranslated(2.13, 0, 0);
+			theTrucks2.render(entity, f, f1, f2, f3, f4, f5);
+			GL11.glPopMatrix();
+		} else if (entity instanceof AbstractTrains && ((AbstractTrains) entity).getColor() == 12 || entity instanceof AbstractTrains && ((AbstractTrains) entity).getColor() == 4) {
 			Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/flexicoil2_Black.png"));
 			GL11.glPushMatrix();
 			GL11.glTranslated(-0.75, 0.13, 0);
@@ -1280,6 +1289,7 @@ public class ModelSW1500 extends ModelConverter //Same as Filename
 			theTrucks1.render(entity, f, f1, f2, f3, f4, f5);
 			GL11.glPopMatrix();
 		}
+
 	}
 
 	public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5)

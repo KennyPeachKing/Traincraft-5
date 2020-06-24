@@ -30,12 +30,15 @@ import train.common.tile.TileTCRailGag;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.Format;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class ExperimentalGeometryCar extends EntityRollingStock implements IPassenger {
 
     public String railroadLine = "Bruh Moment Mainline";
-    public String geometryCarName = "FRA Geometry Car";
+    public String geometryCarName = "NXTrack Geometry Car";
     public String lineType = "mainline";
     public String standard = "JCIR";
     public boolean missionStarted = false;
@@ -43,7 +46,7 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
     private TrackPosition missionStartLocation;
     public String currentTrackReport;
     private ArrayList<String> accessibleNames = new ArrayList<String>();
-
+    public String operatingCrew = "";
     public Block lastBlock;
     public TileEntity lastTileEntity;
 
@@ -340,6 +343,9 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
 //
 
 //        }
+        if (worldObj != null && !worldObj.isRemote && ticksExisted % 10 == 0) {
+
+        }
         if (worldObj != null && !worldObj.isRemote && ticksExisted % 20 == 0 && riddenByEntity != null && riddenByEntity instanceof EntityPlayerMP) {
             StringBuilder theReport = new StringBuilder();
             for (PotentialIssue issue : problematicTrackLocations) {
@@ -374,9 +380,13 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
         problematicTrackLocations.clear();
     }
     public String createTrackReport() {
-        StringBuilder theReport = new StringBuilder();
+        new StringBuilder();
+        StringBuilder theReport;
         TrackPosition lastPosition = null;
-        theReport = new StringBuilder(geometryCarName + "\n Track Report \n Railroad: " + railroadLine + "(type " + lineType + ")" + "\n Distance from start: " + doubleToInt(getDistance(this.missionStartLocation.x, this.missionStartLocation.y, this.missionStartLocation.z)) + " blocks.");
+        Format f = new SimpleDateFormat("MM/dd");
+        String strDate = f.format(new Date());
+
+        theReport = new StringBuilder(geometryCarName + "\n Track Report \n Date: " + strDate + "\n Operating Crew: " + operatingCrew + "\n Railroad: " + railroadLine + "(type " + lineType + ")" + "\n Distance from start: " + doubleToInt(getDistance(this.missionStartLocation.x, this.missionStartLocation.y, this.missionStartLocation.z)) + " blocks.");
         theReport.append("\nDetected issues: ");
         for (PotentialIssue issue : problematicTrackLocations) {
 
@@ -409,9 +419,10 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
 
         FileWriter myWriter = null;
         try {
-
-            File myObj = new File(Loader.instance().getConfigDir() + File.separator + "traincraft" + File.separator + railroadLine + " Track Report.txt");
-            System.out.println(Loader.instance().getConfigDir() + File.separator + "traincraft" + File.separator + railroadLine + " Track Report.txt");
+            Format f = new SimpleDateFormat("MM-dd");
+            String strDate = f.format(new Date());
+            File myObj = new File(Loader.instance().getConfigDir() + File.separator + "traincraft" + File.separator + railroadLine + " Track Report" + "-" + strDate + ".txt");
+            System.out.println(Loader.instance().getConfigDir() + File.separator + "traincraft" + File.separator + railroadLine + " Track Report" + "-" + strDate + ".txt");
             myObj.createNewFile();
 
             myWriter = new FileWriter(myObj);

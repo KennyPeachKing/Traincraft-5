@@ -370,8 +370,9 @@ public class DriverlessMetro extends ElectricTrain {
                         if (theCurrentStation != null && stationStop) {
                             int timeUntilDeparture = theCurrentStation.getDwellTime() * 1000;
                             int timeUntilRTD = (theCurrentStation.getDwellTime() - 10) * 1000;
-
-
+                           // System.out.println("Current: " + System.currentTimeMillis());
+                           // System.out.println("TUD: " + lastMills+timeUntilDeparture);
+                           // System.out.println("RTD: " + timeUntilRTD+timeUntilDeparture);
 
                             if (System.currentTimeMillis() > lastMillsRTD+timeUntilRTD && !readyToDepart) {
                                 //Send "readyToDepart" message to the server.
@@ -430,6 +431,8 @@ public class DriverlessMetro extends ElectricTrain {
                             }
                         } else {
                             atoStatus = 1;
+                            lastMillsRTD = System.currentTimeMillis();
+                            lastMills = System.currentTimeMillis();
                         }
 
                     }
@@ -584,8 +587,6 @@ public class DriverlessMetro extends ElectricTrain {
         this.xStationStop = 0.0;
         this.yStationStop = 0.0;
         this.zStationStop = 0.0;
-        lastMills = System.currentTimeMillis();
-        lastMillsRTD = System.currentTimeMillis();
         Traincraft.atoSetStopPoint.sendToAllAround(new PacketATOSetStopPoint(this.getEntityId(), xFromStopPoint, yFromStopPoint, zFromStopPoint, xStationStop, yStationStop, zStationStop), new NetworkRegistry.TargetPoint(this.worldObj.provider.dimensionId, this.posX, this.posY, this.posZ, 150.0D));
     }
 }

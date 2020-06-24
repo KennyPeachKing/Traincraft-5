@@ -12,35 +12,31 @@ public class UpdateGeometryCar implements IMessage {
 
     public int entity;
     public String railroadName;
-    public String geometryCarName;
     public String lineType;
-    public String railStandard;
+    public String operatingCrew;
 
     public UpdateGeometryCar() {}
 
-    public UpdateGeometryCar(int entity, String railroadName, String geometryCarName, String lineType, String railStandard) {
+    public UpdateGeometryCar(int entity, String railroadName, String lineType, String operatingCrew) {
         this.entity = entity;
         this.railroadName = railroadName;
-        this.geometryCarName = geometryCarName;
         this.lineType = lineType;
-        this.railStandard = railStandard;
+        this.operatingCrew = operatingCrew;
     }
     @Override
     public void fromBytes(ByteBuf buf) {
         this.entity = buf.readInt();
         railroadName = ByteBufUtils.readUTF8String(buf);
-        geometryCarName = ByteBufUtils.readUTF8String(buf);
         lineType = ByteBufUtils.readUTF8String(buf);
-        railStandard = ByteBufUtils.readUTF8String(buf);
+        operatingCrew = ByteBufUtils.readUTF8String(buf);
     }
 
     @Override
     public void toBytes(ByteBuf buf) {
         buf.writeInt(entity);
         ByteBufUtils.writeUTF8String(buf, railroadName);
-        ByteBufUtils.writeUTF8String(buf, geometryCarName);
         ByteBufUtils.writeUTF8String(buf, lineType);
-        ByteBufUtils.writeUTF8String(buf, railStandard);
+        ByteBufUtils.writeUTF8String(buf, operatingCrew);
     }
 
     public static class Handler implements IMessageHandler<UpdateGeometryCar, IMessage> {
@@ -50,9 +46,8 @@ public class UpdateGeometryCar implements IMessage {
             if (theCar instanceof ExperimentalGeometryCar) {
                 ExperimentalGeometryCar theGeoCar = (ExperimentalGeometryCar)theCar;
                 theGeoCar.railroadLine = message.railroadName;
-                theGeoCar.geometryCarName = message.geometryCarName;
                 theGeoCar.lineType = message.lineType;
-                theGeoCar.standard = message.railStandard;
+                theGeoCar.operatingCrew = message.operatingCrew;
             }
             return null;
         }
