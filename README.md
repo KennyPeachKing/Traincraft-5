@@ -24,6 +24,7 @@ Also, thank you to our content contributers:
 - Messicrew
 - Professor Binky (TrainGoddess)
 - PeachMaster (me :D)
+- JCRail
 - ..and you! If you want to, of course. Make your changes with a pull request, and join the Discord server to stay up to date with things that are happening.
 
 ## **1.0 Release deadline: July 2nd**
