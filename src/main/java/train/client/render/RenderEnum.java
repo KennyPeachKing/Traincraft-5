@@ -629,7 +629,7 @@ public enum RenderEnum {
 	//JCIR-TC
 	alcoS2( com.jcirmodelsquad.tcjcir.locomotives.DieselAlcoS2.class,  new ModelAlcoS2(), "alcos2_", true,new float[] {-1F, -0.1F, 0F},  new float[] { 0F, 180F, 180F }, null, "smoke", 5,  new ArrayList<double[]>() {
 		{
-			add(new double[]{0.8D, 1.4D, -0.3D});
+			add(new double[]{0.8D, 1.4D, -0.2D});
 		}
 	}, "", null, 0, false),
 	geometryCar(com.jcirmodelsquad.tcjcir.rollingstock.ExperimentalGeometryCar.class,new ModelGeometryCar(), "geometrycar", false, new float[] {0F, 0F, 0.0F }, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),

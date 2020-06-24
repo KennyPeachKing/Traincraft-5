@@ -17,6 +17,8 @@ import org.lwjgl.opengl.GL11;
 import tmt.ModelConverter;
 import tmt.ModelRendererTurbo;
 import tmt.Tessellator;
+import train.common.api.AbstractTrains;
+import train.common.library.Info;
 
 public class ModelAlcoS2 extends ModelConverter //Same as Filename
 {
@@ -952,7 +954,11 @@ public class ModelAlcoS2 extends ModelConverter //Same as Filename
 				bodyModel[i].render(f5);
 			}
 		}
-		Tessellator.bindTexture(new ResourceLocation("tc:textures/trains/alcos2_blunttruck.png"));
+		if(entity instanceof AbstractTrains && ((AbstractTrains) entity).getColor()==15){
+			Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/blunttruck_Green.png"));
+		} else {
+			Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/blunttruck_Black.png"));
+		}
 		GL11.glPushMatrix();
 		GL11.glTranslatef(-0.85F ,0F,0F);
 		//GL11.glScalef(0.9f,0.9f,0.8f);
