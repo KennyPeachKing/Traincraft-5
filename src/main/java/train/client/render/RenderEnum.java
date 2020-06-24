@@ -641,7 +641,7 @@ public enum RenderEnum {
 	}, "", null, 0, false),
 	amfleet(com.jcirmodelsquad.tcjcir.rollingstock.Amfleet.class, new com.jcirmodelsquad.tcjcir.models.ModelAmfleet(),"amfleet", false, new float[]{0F, -0.4F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
 	ribbedHopper(com.jcirmodelsquad.tcjcir.rollingstock.RibbedHopper.class, new com.jcirmodelsquad.tcjcir.models.ModelRibbedHopper(),"ribbed_hopper_", true, new float[]{0F, -0.2F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
-	SW1( com.jcirmodelsquad.tcjcir.locomotives.DieselSW1.class,  new com.jcirmodelsquad.tcjcir.models.ModelSW1(), "sw1", false,new float[] {-1.1F, -0.05F, 0F},  new float[] { 0F, 180F, 180F }, null, "smoke", 2,  new ArrayList<double[]>() {
+	SW1( com.jcirmodelsquad.tcjcir.locomotives.DieselSW1.class,  new com.jcirmodelsquad.tcjcir.models.ModelSW1(), "sw1_", true,new float[] {-1.1F, -0.05F, 0F},  new float[] { 0F, 180F, 180F }, null, "smoke", 2,  new ArrayList<double[]>() {
 		{
 			add(new double[]{0.9D, 1.4D, 0.0D});
 		}
@@ -667,6 +667,12 @@ public enum RenderEnum {
 			add(new double[]{1.3D, 2D, 0.0D});
 
 			add(new double[]{2D, 2D, 0.0D});
+		}
+	}, "", null, 0, false),
+	SD45dash2( com.jcirmodelsquad.tcjcir.locomotives.DieselSD45dash2.class,  new com.jcirmodelsquad.tcjcir.models.ModelSD45dash2(), "sd45dash2_", true,new float[] {-2.5F, -0.1F, 0F},  new float[] { 0F, 180F, 180F }, null, "smoke", 6,  new ArrayList<double[]>() {
+		{
+			add(new double[]{3.0D, 1.65D, 0.0D});
+
 		}
 	}, "", null, 0, false),;
 

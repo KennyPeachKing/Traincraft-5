@@ -974,8 +974,8 @@ public class ModelH1044 extends ModelConverter //Same as Filename
 				bodyModel[i].render(f5);
 			}
 		}
-		//Tessellator.bindTexture(new ResourceLocation("tc:textures/trains/typea_black.png"));
-		if(entity instanceof AbstractTrains && ((AbstractTrains) entity).getColor()==11){
+
+		if(entity instanceof AbstractTrains && ((AbstractTrains) entity).getColor()==15){
 			Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/typea_Grey.png"));
 		} else {
 			Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/typea_black.png"));

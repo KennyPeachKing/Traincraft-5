@@ -727,7 +727,7 @@ public class ModelSW1 extends ModelConverter //Same as Filename
                 bodyModel[i].render(f5);
             }
         }
-        Tessellator.bindTexture(new ResourceLocation("tc:textures/trains/typeasmol.png"));
+        Tessellator.bindTexture(new ResourceLocation("tc:textures/trains/typeasmol_Black.png"));
         GL11.glPushMatrix();
         GL11.glTranslatef(-0.6F ,0.05F,0F);
         //GL11.glScalef(0.9f,0.9f,0.8f);
