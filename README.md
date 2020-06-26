@@ -3,8 +3,8 @@
 
 This is a fork of Traincraft, but with content specificly desigined for the Minecraft server JC's Industral Railroading. It adds things like:
 
-- Remote Controlled Trains
-- Right click to fuel and unfuel
+- Remote Controlled Trains (soon, in 2.0)
+- Right click to fuel and unfuel (soon, in 2.0)
 - Paintbrushes
 - Driverless trains
 - More content!
