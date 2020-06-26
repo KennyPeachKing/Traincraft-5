@@ -324,7 +324,8 @@ public enum ItemIDs {
 	minecartThanos("ItemRollingStock", "thanos", 64),
 	minecartU23B("ItemRollingStock", "u23b", 12),
 	minecartSW1500("ItemRollingStock", "sw1500", 13),
-	minecartSD45dash2("ItemRollingStock", "sd45dash2", 14);
+	minecartSD45dash2("ItemRollingStock", "sd45dash2", 14),
+	minecartSD40dash2("ItemRollingStock", "sd40dash2", 13);
 	public Item item;
 	public String className;
 	public String iconName;

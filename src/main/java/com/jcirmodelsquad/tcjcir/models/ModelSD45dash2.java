@@ -204,7 +204,7 @@ public class ModelSD45dash2 extends ModelConverter //Same as Filename
 		bodyModel[162] = new ModelRendererTurbo(this, 433, 9, textureX, textureY); // Box 302
 		bodyModel[163] = new ModelRendererTurbo(this, 281, 81, textureX, textureY); // Box 303
 		bodyModel[164] = new ModelRendererTurbo(this, 433, 17, textureX, textureY); // Box 304
-		bodyModel[165] = new ModelRendererTurbo(this, 305, 65, textureX, textureY, "lamp"); // Box 31 lamp
+		bodyModel[165] = new ModelRendererTurbo(this, 305, 65, textureX, textureY); // Box 31 lamp
 		bodyModel[166] = new ModelRendererTurbo(this, 105, 65, textureX, textureY, "lamp"); // Box 247 lamp
 		bodyModel[167] = new ModelRendererTurbo(this, 257, 65, textureX, textureY, "lamp"); // Box 248 lamp
 		bodyModel[168] = new ModelRendererTurbo(this, 417, 89, textureX, textureY); // Box 308

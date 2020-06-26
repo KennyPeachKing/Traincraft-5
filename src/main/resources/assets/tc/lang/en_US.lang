@@ -359,6 +359,7 @@ item.tc:minecartSW1500.name= EMD SW1500
 item.tc:remoteController.name= Remote Controller
 item.tc:remoteControllerModule.name= Remote Controller Module
 item.tc:minecartSD45dash2.name= EMD SD45-2
+item.tc:minecartSD40dash2.name= EMD SD40-2
 
 <!-- ## Achievements ## -->
 achievement.tc:engineer=Engineers clothes
@@ -652,6 +653,7 @@ entity.tc.Thanos.name= Thanos Cart
 entity.tc.U23B.name= GE U23B
 entity.tc.SW1500.name= EMD SW1500
 entity.tc.SD45dash2.name= EMD SD45-2
+entity.tc.SD40dash2.name EMD SD40-2
 
 description.villager.profession.tc.station_chief=Station Chief
 

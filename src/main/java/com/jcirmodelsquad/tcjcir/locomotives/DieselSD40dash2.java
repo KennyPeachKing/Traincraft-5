@@ -13,14 +13,14 @@ import train.common.api.LiquidManager;
 import train.common.library.EnumTrains;
 import train.common.library.GuiIDs;
 
-//haha sw1 go brrrr
-public class DieselSW1 extends DieselTrain {
-    public DieselSW1(World world) {
-        super(world, EnumTrains.locoDieselMILW_H1044.getTankCapacity(), LiquidManager.dieselFilter());
+
+public class DieselSD40dash2 extends DieselTrain {
+    public DieselSD40dash2(World world) {
+        super(world, EnumTrains.locoDieselFOL_M1.getTankCapacity(), LiquidManager.dieselFilter());
         initLoco();
-        //apparently, the reason "world" was red was cus it needed the tank capacity thingg from something else, so iDk reER
+        //when the
     }
-    public DieselSW1(World world, double d, double d1, double d2){
+    public DieselSD40dash2(World world, double d, double d1, double d2){
         this(world);
         setPosition(d, d1 + yOffset, d2);
         motionX = 0.0D;
@@ -29,7 +29,7 @@ public class DieselSW1 extends DieselTrain {
         prevPosX = d;
         prevPosY = d1;
         prevPosZ = d2;
-        System.out.println("If we got here, that means the things have merged successfully. Good job!");
+        System.out.println("rer621");
     }
 
     public void initLoco() {
@@ -38,10 +38,9 @@ public class DieselSW1 extends DieselTrain {
     }
 
     @Override
-
     public void updateRiderPosition() {
         double pitchRads = this.anglePitchClient * Math.PI / 180.0D;
-        double distance = -0.2;
+        double distance = 4.0;
         double yOffset = 0.5;
         float rotationCos1 = (float) Math.cos(Math.toRadians(this.renderYaw + 90));
         float rotationSin1 = (float) Math.sin(Math.toRadians((this.renderYaw + 90)));
@@ -65,10 +64,10 @@ public class DieselSW1 extends DieselTrain {
             pitch-=pitchRads*1.2;
         }
         if (pitchRads == 0.0) {
-            riddenByEntity.setPosition(bogieX1, pitch1, bogieZ1);
+            riddenByEntity.setPosition(bogieX1, pitch1, bogieZ1 -0.0);
         }
         if (pitchRads > -1.01 && pitchRads < 1.01) {
-            riddenByEntity.setPosition(bogieX1, pitch, bogieZ1);
+            riddenByEntity.setPosition(bogieX1, pitch, bogieZ1 +0.0);
         }
     }
     @Override
@@ -124,7 +123,7 @@ public class DieselSW1 extends DieselTrain {
     }
 
     @Override
-    public float getOptimalDistance(EntityMinecart cart) { return 1.3F;
+    public float getOptimalDistance(EntityMinecart cart) { return 0.65F;
     }
 
     @Override
@@ -134,7 +133,7 @@ public class DieselSW1 extends DieselTrain {
 
     @Override
     public String getInventoryName() {
-        return "EMD SW1";
+        return "EMD SD40-2";
     }
 
     @Override

@@ -674,6 +674,12 @@ public enum RenderEnum {
 			add(new double[]{3.0D, 1.65D, 0.0D});
 
 		}
+	}, "", null, 0, false),
+	SD40dash2( com.jcirmodelsquad.tcjcir.locomotives.DieselSD40dash2.class,  new com.jcirmodelsquad.tcjcir.models.ModelSD40dash2(), "sd40dash2_", true,new float[] {-2.5F, -0.1F, 0F},  new float[] { 0F, 180F, 180F }, null, "smoke", 6,  new ArrayList<double[]>() {
+		{
+			add(new double[]{2.85D, 1.65D, 0.0D});
+
+		}
 	}, "", null, 0, false),;
 
 
