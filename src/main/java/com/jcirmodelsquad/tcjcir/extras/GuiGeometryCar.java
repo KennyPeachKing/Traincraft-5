@@ -33,6 +33,7 @@ public class GuiGeometryCar extends GuiScreen {
     public int ySize = 274;
     public int guiLeft;
     public int guiTop;
+    public boolean showReports = false;
     public GuiGeometryCar(EntityPlayer theRider) {
         if (theRider != null && theRider.ridingEntity instanceof ExperimentalGeometryCar) {
             theCar = (ExperimentalGeometryCar)theRider.ridingEntity;
@@ -69,9 +70,11 @@ public class GuiGeometryCar extends GuiScreen {
             railroadName.setText(theCar.railroadLine);
         }
         saveTrackReport = new GuiButton(2,guiLeft + 110, guiTop + 115,130,20,"Generate Track Report");
+        allTrackIssues = new GuiButton(3,guiLeft + 110, guiTop + 140,130,20,"Show all track issues");
         this.buttonList.add(startStopButton);
         this.buttonList.add(saveTrackReport);
         this.buttonList.add(railroadType);
+        buttonList.add(allTrackIssues);
     }
 
     @Override
@@ -88,14 +91,17 @@ public class GuiGeometryCar extends GuiScreen {
         this.guiTop = (sr.getScaledHeight() - this.ySize) / 2;
         drawDefaultBackground();
         ///drawTexturedRect(new ResourceLocation("tc:textures/gui/geocar_background.png"), guiLeft, guiTop,0, 0, 305,274,305, 274, 1);
-        railroadName.drawTextBox();
-        operatingCrew.drawTextBox();
-
-        fontRendererObj.drawString("Railroad Name:",x - 120 , y - 107, 0xFFFFFF);
-        fontRendererObj.drawString("Railroad Type:",x - 120 , y - 84, 0xFFFFFF);
-        fontRendererObj.drawString("Operating Crew:",x - 126 , y - 62, 0xFFFFFF);
+        if (!showReports) {
+            railroadName.drawTextBox();
+            operatingCrew.drawTextBox();
+            fontRendererObj.drawString("Railroad Name:", x - 120, y - 107, 0xFFFFFF);
+            fontRendererObj.drawString("Railroad Type:", x - 120, y - 84, 0xFFFFFF);
+            fontRendererObj.drawString("Operating Crew:", x - 126, y - 62, 0xFFFFFF);
        /* fontRendererObj.drawString("Geometry Car Name:", guiLeft + 10, guiTop + 30, 000000);
         fontRendererObj.drawString("Railroad Type: ", guiLeft + 10, guiTop + 50, 000000);*/
+        } else {
+            fontRendererObj.drawString(theCar.currentTrackReport, x - 80, y - 107, 0xFFFFFF);
+        }
         super.drawScreen(mouseX, mouseY, partialTicks);
     }
 
@@ -122,6 +128,23 @@ public class GuiGeometryCar extends GuiScreen {
             } else {
                 railroadType.displayString = "Mainline";
             }
+
+        } else if (button.id ==  3) {
+            showReports = !showReports;
+            if (showReports) {
+                allTrackIssues = new GuiButton(3,guiLeft + 110, guiTop + 160,130,20,"Go back");
+                buttonList.clear();
+                buttonList.add(allTrackIssues);
+
+            } else {
+                buttonList.clear();
+                allTrackIssues = new GuiButton(3,guiLeft + 110, guiTop + 140,130,20,"Show all track issues");
+                buttonList.add(allTrackIssues);
+                this.buttonList.add(startStopButton);
+                this.buttonList.add(saveTrackReport);
+                this.buttonList.add(railroadType);
+            }
+
 
         }
     }

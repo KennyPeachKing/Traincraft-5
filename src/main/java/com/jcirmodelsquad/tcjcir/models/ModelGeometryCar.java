@@ -573,7 +573,7 @@ public class ModelGeometryCar extends ModelConverter //Same as Filename
         bodyModel[133].addBox(0F, 0F, 0F, 1, 22, 20, 0F); // Box 358
         bodyModel[133].setRotationPoint(2F, -22F, -10F);
     }
-    ModelGeometryCarBogie theTrucks = new ModelGeometryCarBogie();
+    private ModelGeometryCarBogie theTrucks = new ModelGeometryCarBogie();
 
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)

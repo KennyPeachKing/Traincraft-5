@@ -86,9 +86,11 @@ public class Traincraft {
 
 	public static SimpleNetworkWrapper startMissionPacketChannel = NetworkRegistry.INSTANCE.newSimpleChannel("GeometryCarStartMission");
 	public static SimpleNetworkWrapper updateGeometryCarChannel = NetworkRegistry.INSTANCE.newSimpleChannel("UpdateGeometryCar");
+	public static SimpleNetworkWrapper updateGeometryCarFromServerChannel = NetworkRegistry.INSTANCE.newSimpleChannel("UpdateGeometryCarFromServer");
 	public static SimpleNetworkWrapper generateTrackReportChannel = NetworkRegistry.INSTANCE.newSimpleChannel("GenerateTrackReport");
 	public static SimpleNetworkWrapper updateTrackReport = NetworkRegistry.INSTANCE.newSimpleChannel("UpdateTrackReport");
 	public static SimpleNetworkWrapper remoteControlKey = NetworkRegistry.INSTANCE.newSimpleChannel("RemoteControl");
+	public static SimpleNetworkWrapper brakeUpdateFromServer = NetworkRegistry.INSTANCE.newSimpleChannel("BrakeUpdateFromServer");
 	public static File configDirectory;
 
 	/* Creative tab for Traincraft */

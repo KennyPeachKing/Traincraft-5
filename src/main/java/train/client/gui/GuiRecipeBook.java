@@ -37,7 +37,7 @@ public class GuiRecipeBook extends GuiScreen {
 	/** Update ticks since the gui was opened */
 	private int bookImageWidth = 206;
 	private int bookImageHeight = 200;
-	public static int bookTotalPages = 102;
+	public static int bookTotalPages = 103;
 	private int currPage;
 	private int currRecipe;
 	public ArrayList<String> leftPage = new ArrayList<String>();
@@ -86,6 +86,14 @@ public class GuiRecipeBook extends GuiScreen {
 				add(new StackToDraw(new ItemStack(ItemIDs.minecartFreightWagon_DB.item), 80, 175));
 				add(new StackToDraw(new ItemStack(ItemIDs.minecartWood.item), 100, 175));
 				add(new StackToDraw(new ItemStack(ItemIDs.minecartCabooseLogging.item), 120, 175));
+			}
+		});
+		addPage("Special thanks to the JCIR-Traincraft contributors and developers:\n \nPeachMaster\nBidahochi\nJCRail\nProf. Binky\nBigJ\nMessicrew\n\nAnd JCRail for making a great server :)", "", "left", new ArrayList<StackToDraw>() {
+			{
+				add(new StackToDraw(new ItemStack(ItemIDs.minecartAlcoS2.item), 20, 16));
+				add(new StackToDraw(new ItemStack(ItemIDs.minecartAmfleet.item), 170, 16));
+				add(new StackToDraw(new ItemStack(ItemIDs.minecartHighrailTruck.item), 20, 175));
+				add(new StackToDraw(new ItemStack(ItemIDs.minecartU23B.item), 160, 175));
 			}
 		});
 		addPage("World generation:\n\n By default, petrol and oil sands will be generated in the world. If you don't want them, open Traincraft.cfg and change the line ENABLE_ORE_SPAWN from true to false.\nOnly the new ores will generate, the old ones can be transformed into the new ones in a crafting table.", "", "left", new ArrayList<StackToDraw>() {

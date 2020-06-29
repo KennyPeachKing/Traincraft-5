@@ -4,9 +4,11 @@ package com.jcirmodelsquad.tcjcir.rollingstock;
 
 import cofh.api.energy.IEnergyHandler;
 import com.jcirmodelsquad.tcjcir.extras.packets.ClientGeometryCarUpdate;
+import com.jcirmodelsquad.tcjcir.extras.packets.UpdateGeometryCarFromServer;
 import com.jcirmodelsquad.tcjcir.geometryvechicle.PotentialIssue;
 import com.jcirmodelsquad.tcjcir.geometryvechicle.TrackPosition;
 import cpw.mods.fml.common.Loader;
+import cpw.mods.fml.common.network.NetworkRegistry;
 import mods.railcraft.api.signals.ISignalBlockTile;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockAir;
@@ -21,7 +23,9 @@ import net.minecraft.nbt.NBTTagList;
 import net.minecraft.nbt.NBTTagString;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ChatComponentText;
+import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
+import net.minecraftforge.common.util.Constants;
 import train.common.Traincraft;
 import train.common.api.EntityRollingStock;
 import train.common.api.IPassenger;
@@ -47,9 +51,8 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
     public String currentTrackReport;
     private ArrayList<String> accessibleNames = new ArrayList<String>();
     public String operatingCrew = "";
-    public Block lastBlock;
-    public TileEntity lastTileEntity;
-
+    public PotentialIssue lastIssue;
+    public boolean justLoaded = false;
     public ExperimentalGeometryCar(World world) {
         super(world);
         dataWatcher.addObject(31, railroadLine);
@@ -214,6 +217,8 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
                 blockRight = getBlockThatIsntAir(doubleToInt(posX), doubleToInt(posY + 1), doubleToInt(posZ - 1));
             }
 
+            if (blockLeft != null) { System.out.println(blockLeft.getLocalizedName());}
+            if (blockRight != null) { System.out.println(blockRight.getLocalizedName());}
 
             if (blockLeft != null && blockRight != null && blockAboveCar != null && blockOneAboveCar != null) {
                 System.out.println("Left: " + blockLeft.getLocalizedName());
@@ -231,17 +236,17 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
 
             //Detect if there is a block one above the top of the train, and to the left, or, if there is a block one above the train, and to the right, and if there is, report it.
             // Type BLOCK_TOO_CLOSE_TO_TRACK_IN_TUNNEL.
-            if ((blockOneAboveCar != null && blockLeft != null) || (blockOneAboveCar != null && blockRight != null)) {
-                addIssue(new PotentialIssue(doubleToInt(posX), doubleToInt(posY), doubleToInt(posZ), PotentialIssue.IssueType.BLOCK_TOO_CLOSE_TO_TRACK_IN_TUNNEL));
-            }
+          //  if ((blockOneAboveCar != null && blockLeft != null) || (blockOneAboveCar != null && blockRight != null)) {
+            //    addIssue(new PotentialIssue(doubleToInt(posX), doubleToInt(posY), doubleToInt(posZ), PotentialIssue.IssueType.BLOCK_TOO_CLOSE_TO_TRACK_IN_TUNNEL));
+           // }
 
 
             //Detect if a block's light level is too low. If so, report it.
             // Type TUNNEL_TOO_DARK.
-
-            if (blockAboveCar2 != null && blockAboveCar2.getLightValue() < 10) {
+            //Removed for now, being annoying. >:(
+           /* if (blockAboveCar2 != null && blockAboveCar2.getLightValue() < 10) {
                 addIssue(new PotentialIssue(doubleToInt(posX), doubleToInt(posY), doubleToInt(posZ), PotentialIssue.IssueType.TUNNEL_TOO_DARK));
-            }
+            }*/
 
             //
 
@@ -263,21 +268,20 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
 
                 //Detect if the slope below the train is made out of wood. If so, report it.
                 // Type: WOODEN_SLOPE.
-                if (track.type.equals("SLOPE_WOOD") || track.type.equals("LARGE_SLOPE_WOOD") || track.type.equals("VERY_LARGE_SLOPE_WOOD")) {
+                if (track.type.equals("SLOPE_WOOD") || track.type.equals("LARGE_SLOPE_WOOD") || track.type.equals("VERY_LARGE_SLOPE_WOOD") && getPotentialIssueByCoordinates(posX, posY, posZ) == null) {
                     addIssue(new PotentialIssue(doubleToInt(posX), doubleToInt(posY), doubleToInt(posZ), PotentialIssue.IssueType.WOODEN_SLOPE));
                 }
                 // Detect if there are normal slopes on mainlines. If so, report it.
-                if (track.type.equals("SLOPE_GRAVEL") || track.type.equals("SLOPE_BALLAST") && lineType.equals("mainline"))  {
+                if (track.type.equals("SLOPE_GRAVEL") || track.type.equals("SLOPE_BALLAST") && lineType.equals("mainline")  && getPotentialIssueByCoordinates(posX, posY, posZ) == null)  {
                     addIssue(new PotentialIssue(doubleToInt(posX), doubleToInt(posY), doubleToInt(posZ), PotentialIssue.IssueType.SMALL_SLOPE_ON_MAINLINE));
                 }
 
                 //Detect if we are on a slope, and there is a block above us, and if so, report it.
-                if (track.type.contains("SLOPE") && blockAboveCar != null || blockOneAboveCar != null) {
-                    addIssue(new PotentialIssue(doubleToInt(posX), doubleToInt(posY), doubleToInt(posZ), PotentialIssue.IssueType.BLOCK_TOO_CLOSE_TO_TRACK_ON_SLOPE));
-                }
+              //  if (track.type.contains("SLOPE") && blockAboveCar != null || blockOneAboveCar != null  && getPotentialIssueByCoordinates(posX, posY, posZ) == null) {
+                //    addIssue(new PotentialIssue(doubleToInt(posX), doubleToInt(posY), doubleToInt(posZ), PotentialIssue.IssueType.BLOCK_TOO_CLOSE_TO_TRACK_ON_SLOPE) );
+               // }
             }
 
-            lastTileEntity = tileBottom;
             // if (blockLeft != null && !(blockLeft instanceof BlockAir) && checkForSameIssueType(blockLeft.x, this.posY + 2, this.posZ, PotentialIssue.IssueType.BLOCK_TOO_CLOSE_TO_TRACK)) {
 //
             //     }
@@ -343,8 +347,9 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
 //
 
 //        }
-        if (worldObj != null && !worldObj.isRemote && ticksExisted % 10 == 0) {
-
+        if (worldObj != null && !worldObj.isRemote && justLoaded) {
+            justLoaded = false;
+            Traincraft.updateGeometryCarFromServerChannel.sendToAll(new UpdateGeometryCarFromServer(this.getEntityId(), railroadLine, lineType, operatingCrew, missionStarted));
         }
         if (worldObj != null && !worldObj.isRemote && ticksExisted % 20 == 0 && riddenByEntity != null && riddenByEntity instanceof EntityPlayerMP) {
             StringBuilder theReport = new StringBuilder();
@@ -363,12 +368,19 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
 
     public void addIssue(PotentialIssue theIssue) {
 
-        if (!checkForSameIssueType(this.posX, this.posY, this.posZ, theIssue.issue)) {
-            if (this.ridingEntity != null && this.ridingEntity instanceof EntityPlayer) {
-                ((EntityPlayer) this.ridingEntity).addChatMessage(new ChatComponentText("Track issue found at this position! " + theIssue.issue.getTypeName() + ": " + theIssue.issue.getSafeMessage()));
+        if (!checkForSameIssueType(this.posX, this.posY, this.posZ, theIssue.issue) ) {
+            if (lastIssue != null) {
+                System.out.println(Vec3.createVectorHelper(lastIssue.thePosition.x, lastIssue.thePosition.y, lastIssue.thePosition.z).distanceTo(Vec3.createVectorHelper(posX, posY, posZ)));
             }
+            if (lastIssue != null && Vec3.createVectorHelper(lastIssue.thePosition.x,lastIssue.thePosition.y, lastIssue.thePosition.z).distanceTo(Vec3.createVectorHelper(posX, posY, posZ)) > 5 || problematicTrackLocations.size() == 0) {
+                if (this.ridingEntity != null && this.ridingEntity instanceof EntityPlayer) {
+                    ((EntityPlayer) this.ridingEntity).addChatMessage(new ChatComponentText("Track issue found at this position! " + theIssue.issue.getTypeName() + ": " + theIssue.issue.getSafeMessage()));
+                }
 
-            problematicTrackLocations.add(theIssue);
+                problematicTrackLocations.add(theIssue);
+                lastIssue = theIssue;
+                System.out.println("Adding!");
+            }
         }
     }
 
@@ -387,10 +399,15 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
         String strDate = f.format(new Date());
 
         theReport = new StringBuilder(geometryCarName + "\n Track Report \n Date: " + strDate + "\n Operating Crew: " + operatingCrew + "\n Railroad: " + railroadLine + "(type " + lineType + ")" + "\n Distance from start: " + doubleToInt(getDistance(this.missionStartLocation.x, this.missionStartLocation.y, this.missionStartLocation.z)) + " blocks.");
-        theReport.append("\nDetected issues: ");
+        if (problematicTrackLocations.size() == 1) {
+            theReport.append("\n 1 issue: ");
+        } else {
+            theReport.append("\n" + problematicTrackLocations.size() + " issues: ");
+        }
+
         for (PotentialIssue issue : problematicTrackLocations) {
 
-            theReport.append("\n ").append(issue.thePosition.x).append(",").append(issue.thePosition.y).append(",").append(issue.thePosition.z).append(": ").append(issue.issue.getTypeName()).append(": ").append(issue.issue.getSafeMessage());
+            theReport.append("\n ").append(doubleToInt(issue.thePosition.x)).append(",").append(doubleToInt(issue.thePosition.y)).append(",").append(doubleToInt(issue.thePosition.z)).append(" | ").append(issue.issue.getTypeName()).append(": ").append(issue.issue.getSafeMessage());
         }
 
         if (problematicTrackLocations.size() == 0) {
@@ -412,7 +429,16 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
     }
 
     public void generateTrackReportAsBook() {
-
+        ItemStack head = new ItemStack(Items.written_book,1);
+        head.setTagCompound(new NBTTagCompound());
+        head.stackTagCompound.setString("author", geometryCarName);
+        head.stackTagCompound.setString("title", railroadLine + " Track Report");
+        NBTTagList bookTagList = new NBTTagList();
+        bookTagList.appendTag(new NBTTagString(createTrackReport()));
+        head.stackTagCompound.setTag("pages", bookTagList);
+        if (riddenByEntity != null && riddenByEntity instanceof EntityPlayer) {
+            ((EntityPlayer)riddenByEntity).inventory.addItemStackToInventory(head);
+        }
     }
 
     public void generateTrackReportAsFile() {
@@ -465,4 +491,50 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
         }
         return null;
     }
+    @Override
+    public void writeEntityToNBT(NBTTagCompound nbt) {
+        super.writeEntityToNBT(nbt);
+        nbt.setString("railroadLine", railroadLine);
+        nbt.setString("geometryCarName", geometryCarName);
+        nbt.setString("lineType", lineType);
+        nbt.setBoolean("missionStarted", missionStarted);
+        nbt.setString("operatingCrew", operatingCrew);
+        NBTTagList issues = new NBTTagList();
+        for (int i = 0; i < problematicTrackLocations.size(); i++) {
+            NBTTagCompound compound = new NBTTagCompound();
+            compound.setString("issueType", problematicTrackLocations.get(i).issue.name());
+            compound.setInteger("x", doubleToInt(problematicTrackLocations.get(i).thePosition.x));
+            compound.setInteger("y", doubleToInt(problematicTrackLocations.get(i).thePosition.y));
+            compound.setInteger("z", doubleToInt(problematicTrackLocations.get(i).thePosition.z));
+            issues.appendTag(compound);
+        }
+        nbt.setTag("Issues", issues);
+    }
+
+    @Override
+    protected void readEntityFromNBT(NBTTagCompound nbt) {
+        super.readEntityFromNBT(nbt);
+        NBTTagList nbttaglist = nbt.getTagList("Issues", Constants.NBT.TAG_COMPOUND);
+        for (int i = 0; i < nbttaglist.tagCount(); i++) {
+            NBTTagCompound theCompound = nbttaglist.getCompoundTagAt(i);
+            problematicTrackLocations.add(new PotentialIssue(theCompound.getInteger("x"),theCompound.getInteger("y"), theCompound.getInteger("z"), PotentialIssue.IssueType.valueOf(theCompound.getString("issueType"))));
+        }
+        railroadLine = nbt.getString("railroadLine");
+        geometryCarName = nbt.getString("geometryCarName");
+        lineType = nbt.getString("lineType");
+        missionStarted = nbt.getBoolean("missionStarted");
+        operatingCrew = nbt.getString("operatingCrew");
+        justLoaded = true;
+    }
+   /* public String railroadLine = "Bruh Moment Mainline";
+    public String geometryCarName = "NXTrack Geometry Car";
+    public String lineType = "mainline";
+    public String standard = "JCIR";
+    public boolean missionStarted = false;
+    private ArrayList<PotentialIssue> problematicTrackLocations = new ArrayList<PotentialIssue>();
+    private TrackPosition missionStartLocation;
+    public String currentTrackReport;
+    private ArrayList<String> accessibleNames = new ArrayList<String>();
+    public String operatingCrew = "";
+    public PotentialIssue lastIssue;*/
 }

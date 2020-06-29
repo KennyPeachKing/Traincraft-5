@@ -1940,25 +1940,29 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
     //4: Horn
 
     public void remoteControlFromPacket(int key ) {
+        System.out.println("glrlr");
         switch (key) {
             case 1: {
                 double rotation = this.serverRealRotation;
-                if (rotation == 90.0) {
+                if (rotation < 90.0 && rotation > 0  || rotation == 90.0) {
 
                     this.motionX -= 0.0015 * this.accelerate;
 
 
-                } else if (rotation == -90.0) {
+                } else if (rotation < -90.0 && rotation > -90.0 || rotation == -90.0) {
 
                     this.motionX += 0.0015 * this.accelerate;
 
-                } else if (rotation == 0.0) {
+                } else if (rotation < -90.00 && rotation > -180 || rotation == 0) {
 
                     this.motionZ += 0.0015 * this.accelerate;
 
-                } else if (rotation == -180.0) {
+                } else if (rotation < 180.0 && rotation > 90.0 || rotation == 180) {
+                    this.motionZ -= 0.0015 * this.accelerate;
+                } else if (rotation > -180 && rotation < -90 || rotation == -180) {
                     this.motionZ -= 0.0015 * this.accelerate;
                 }
+
 
                 break;
             }

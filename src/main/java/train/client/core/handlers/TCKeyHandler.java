@@ -37,8 +37,6 @@ public class TCKeyHandler {
 	public static KeyBinding remoteControlHorn;
 	public static KeyBinding remoteControlBrake;
 
-    public static KeyBinding openGeometryCarGUI;
-    public static KeyBinding hideGeometryCarHUD;
 
     public TCKeyHandler() {
         horn = new KeyBinding("key.traincraft.horn", Keyboard.KEY_H, "key.categories.traincraft");
@@ -63,11 +61,6 @@ public class TCKeyHandler {
             overspeedOverride = new KeyBinding("key.traincraft.overspeedOverride", Keyboard.KEY_L, "key.categories.traincraft");
             ClientRegistry.registerKeyBinding(overspeedOverride);
         }
-
-        openGeometryCarGUI = new KeyBinding("Show Geometry Car GUI", Keyboard.KEY_NUMPAD1, "key.categories.traincraft");
-        ClientRegistry.registerKeyBinding(openGeometryCarGUI);
-        hideGeometryCarHUD = new KeyBinding("Hide Geometry Car HUD", Keyboard.KEY_NUMPAD2, "key.categories.traincraft");
-        ClientRegistry.registerKeyBinding(hideGeometryCarHUD);
 
 
         remoteControlForward = new KeyBinding("Remote Control Forward", Keyboard.KEY_NUMPAD8, "key.categories.traincraft");
@@ -169,11 +162,7 @@ public class TCKeyHandler {
                     Locomotive train = (Locomotive) Minecraft.getMinecraft().thePlayer.ridingEntity;
                     sendKeyControlsPacket(18);
                     if (train.mtcStatus == 1 | train.mtcStatus == 2) {
-                        if (train.overspeedOveridePressed) {
-                            train.overspeedOveridePressed = false;
-                        } else {
-                            train.overspeedOveridePressed = true;
-                        }
+                        train.overspeedOveridePressed = !train.overspeedOveridePressed;
                     }
                 }
 

@@ -7,15 +7,14 @@ public class PotentialIssue {
     public enum IssueType {
 
 
-        BLOCK_TOO_CLOSE_TO_TRACK_IN_TUNNEL("Block is too close to track", "The side of the tunnel is too close to the track. This may cause survival players to get damaged when they go through the curve."),
-        BLOCK_TOO_CLOSE_TO_TRACK_ON_SLOPE("Block is too close to track on a slope", "A block is too close to the track on a slope. This may cause survival players to get damaged when they enter the slope."),
-        BLOCK_TOO_CLOSE_TO_TRACK("Block is too close to the track.", "A block is too close to the track. This may cause derailments, and is not allowed by the JCIR Infrastructure standards."),
-        WOODEN_SLOPE("Wooden slope on mainline", "The slope is made out of wood. That is not allowed by JCIR Infrastructure standards."),
-        CURVE_NOT_VERY_LARGE_ON_MAINLINE("Curve is not very large on a mainline", "The curve is not a very large curve, on a mainline. That is not allowed by JCIR Infrastructure standards."),
-        TUNNEL_TOO_DARK("Tunnel does not have lighting", "The tunnel does not have lighting. That is not allowed by JCIR Infrastructure standards."),
-        MEDIUM_SWITCH_ON_MAINLINE("Medium Switch on mainline", "There is a medium switch on the mainline. That is not allowed by JCIR Infrastructure standards."),
-        MISSION_START("Mission start", "This isn't an issue. it just shows where the mission starts."),
-        SMALL_SLOPE_ON_MAINLINE("Standard slope on mainline", "There is a standard slope on the mainline. That is not allowed by JCIR Infrastructure Standards."),
+        BLOCK_TOO_CLOSE_TO_TRACK_IN_TUNNEL("GC-1", "The side of the tunnel is too close to the track. This may cause survival players to get damaged when they go through the curve."),
+        BLOCK_TOO_CLOSE_TO_TRACK_ON_SLOPE("GC-2", "A block is too close to the track on a slope. This may cause survival players to get damaged when they enter the slope."),
+        BLOCK_TOO_CLOSE_TO_TRACK("GC-3", "A block is too close to the track. This may cause derailments, and is not allowed by the JCIR Infrastructure standards."),
+        WOODEN_SLOPE("GC-4", "The slope is made out of wood. That is not allowed by JCIR Infrastructure standards."),
+        CURVE_NOT_VERY_LARGE_ON_MAINLINE("GC-5", "The curve is not a very large curve, on a mainline. That is not allowed by JCIR Infrastructure standards."),
+        TUNNEL_TOO_DARK("GC-6", "The tunnel does not have lighting. That is not allowed by JCIR Infrastructure standards."),
+        MEDIUM_SWITCH_ON_MAINLINE("GC-7", "There is a medium switch on the mainline. That is not allowed by JCIR Infrastructure standards."),
+        SMALL_SLOPE_ON_MAINLINE("GC-8", "There is a standard slope on the mainline. That is not allowed by JCIR Infrastructure Standards."),
         ;
 
         private String typeName;
