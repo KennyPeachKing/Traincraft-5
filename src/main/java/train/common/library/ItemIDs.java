@@ -155,7 +155,7 @@ public enum ItemIDs {
 	minecartLocoEMDF3("ItemRollingStock", "train_emdf3", 10),
 	minecartLocoEMDF7B("ItemRollingStock", "train_emdf7b", 10),
 	minecartLocoEMDF3B("ItemRollingStock", "train_emdf3b", 10),
-	minecartLocoDD35B("ItemRollingStock", "train_dd35b", 10),
+	minecartLocoDD35B("ItemRollingStock", "train_dd35b", 16),
 	minecartLocoWLs40("ItemRollingStock", "train_wls40", 10),
 	//minecartRotativeDigger("ItemRotativeDigger","train_",10),
 	minecartLocoEr("ItemRollingStock", "train_ussr", 10),
@@ -315,9 +315,8 @@ public enum ItemIDs {
 	minecartRibbedHopper("ItemRollingStock", "ribbed_hopper", 3),
 	minecartGeometryCar("ItemRollingStock", "geometry_car", 15),
 	minecartDriverlessMetro("ItemRollingStock", "driverless_metro", 20),
-	minecartCF7("ItemRollingStock", "cf7", 4),
 	minecartAmfleet("ItemRollingStock", "Amfleet", 3),
-	minecartBaldwinMineLoco("ItemRollingStock", "baldwinmineloco", 1),
+	//minecartBaldwinMineLoco("ItemRollingStock", "baldwinmineloco", 1),
 	minecartSW1("ItemRollingStock","sw1", 9),
 	minecartH1044("ItemRollingStock", "h1044", 11),
 	minecartHighrailTruck("ItemRollingStock", "highrail", 3),
@@ -325,7 +324,10 @@ public enum ItemIDs {
 	minecartU23B("ItemRollingStock", "u23b", 12),
 	minecartSW1500("ItemRollingStock", "sw1500", 13),
 	minecartSD45dash2("ItemRollingStock", "sd45dash2", 14),
-	minecartSD40dash2("ItemRollingStock", "sd40dash2", 13);
+	minecartSD40dash2("ItemRollingStock", "sd40dash2", 13),
+	minecart40highcube("ItemRollingStock", "40highcube", 3),
+	minecartFRED("ItemRollingStock", "fred", 5),
+	minecartCF7("ItemRollingStock", "cf7", 12),;
 	public Item item;
 	public String className;
 	public String iconName;

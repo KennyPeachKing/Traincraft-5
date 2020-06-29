@@ -634,11 +634,6 @@ public enum RenderEnum {
 	}, "", null, 0, false),
 	geometryCar(com.jcirmodelsquad.tcjcir.rollingstock.ExperimentalGeometryCar.class,new ModelGeometryCar(), "geometrycar", false, new float[] {0F, 0F, 0.0F }, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
 	driverlessMetro(com.jcirmodelsquad.tcjcir.locomotives.DriverlessMetro.class, new com.jcirmodelsquad.tcjcir.models.ModelPCH120Commute(), "pch120commute_", true,new float[] {-1.3F, 0.03F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
-	cf7(com.jcirmodelsquad.tcjcir.locomotives.DieselCF7.class, new com.jcirmodelsquad.tcjcir.models.ModelCF7(), "cf7", false, new float[] {0F, -0.1F, 0F},  new float[] { 0F, 180F, 180F }, null, "largesmoke", 2,  new ArrayList<double[]>() {
-		{
-			add(new double[]{0.9D, 1.4D, 0.0D});
-		}
-	}, "", null, 0, false),
 	amfleet(com.jcirmodelsquad.tcjcir.rollingstock.Amfleet.class, new com.jcirmodelsquad.tcjcir.models.ModelAmfleet(),"amfleet", false, new float[]{0F, -0.4F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
 	ribbedHopper(com.jcirmodelsquad.tcjcir.rollingstock.RibbedHopper.class, new com.jcirmodelsquad.tcjcir.models.ModelRibbedHopper(),"ribbed_hopper_", true, new float[]{0F, -0.2F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
 	SW1( com.jcirmodelsquad.tcjcir.locomotives.DieselSW1.class,  new com.jcirmodelsquad.tcjcir.models.ModelSW1(), "sw1_", true,new float[] {-1.1F, -0.05F, 0F},  new float[] { 0F, 180F, 180F }, null, "smoke", 2,  new ArrayList<double[]>() {
@@ -680,8 +675,16 @@ public enum RenderEnum {
 			add(new double[]{2.85D, 1.65D, 0.0D});
 
 		}
-	}, "", null, 0, false),;
+	}, "", null, 0, false),
+	bawx40highcube(com.jcirmodelsquad.tcjcir.rollingstock.bawx40highcube.class, new com.jcirmodelsquad.tcjcir.models.Model40highcube(),"40highcube_", true, new float[]{0F, 0.15F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
+	FRED(com.jcirmodelsquad.tcjcir.rollingstock.FRED.class, new com.jcirmodelsquad.tcjcir.models.ModelFRED(),"fred", false, new float[]{0F, 0.05F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
+	CF7( com.jcirmodelsquad.tcjcir.locomotives.DieselCF7.class,  new com.jcirmodelsquad.tcjcir.models.ModelCF7(), "cf7_", true,new float[] {-1.6F, -0.15F, 0F},  new float[] { 0F, 180F, 180F }, null, "smoke", 6,  new ArrayList<double[]>() {
+		{
+			add(new double[]{0.85D, 1.65D, 0.0D});
+			add(new double[]{1.2D, 1.65D, 0.0D});
 
+		}
+	}, "", null, 0, false),;
 
 	private Class<? extends AbstractTrains> entityClass;
 	private ModelBase model;

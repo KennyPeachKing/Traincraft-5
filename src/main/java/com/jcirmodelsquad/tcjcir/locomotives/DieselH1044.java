@@ -15,7 +15,7 @@ import train.common.library.GuiIDs;
 
 public class DieselH1044 extends DieselTrain {
     public DieselH1044(World world) {
-        super(world, EnumTrains.locoDieselGP7Red.getTankCapacity(), LiquidManager.dieselFilter());
+        super(world, EnumTrains.H1044.getTankCapacity(), LiquidManager.dieselFilter());
         initLoco();
         System.out.println("i sent Alaska to Iraq");
     }
@@ -38,6 +38,7 @@ public class DieselH1044 extends DieselTrain {
 
     @Override
     public void updateRiderPosition() {
+        if (riddenByEntity == null) {return;}
         double pitchRads = this.anglePitchClient * Math.PI / 180.0D;
         double distance = -0.3;
         double yOffset = 0.35;

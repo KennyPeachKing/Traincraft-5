@@ -15,7 +15,7 @@ import train.common.library.GuiIDs;
 
 public class DieselAlcoS2 extends DieselTrain {
     public DieselAlcoS2(World world) {
-        super(world, EnumTrains.locoDieselGP7Red.getTankCapacity(), LiquidManager.dieselFilter());
+        super(world, EnumTrains.locoAlcoS2.getTankCapacity(), LiquidManager.dieselFilter());
         initLoco();
         System.out.println("If we got here, that means the things have merged successfully. Good job!");
     }
@@ -38,6 +38,7 @@ public class DieselAlcoS2 extends DieselTrain {
 
     @Override
     public void updateRiderPosition() {
+        if (riddenByEntity == null) {return;}
         double pitchRads = this.anglePitchClient * Math.PI / 180.0D;
         double distance = -0.2;
         double yOffset = 0.5;

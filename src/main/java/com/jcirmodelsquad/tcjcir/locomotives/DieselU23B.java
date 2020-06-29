@@ -15,7 +15,7 @@ import train.common.library.GuiIDs;
 
 public class DieselU23B extends DieselTrain {
     public DieselU23B(World world) {
-        super(world, EnumTrains.locoDieselMILW_H1044.getTankCapacity(), LiquidManager.dieselFilter());
+        super(world, EnumTrains.U23B.getTankCapacity(), LiquidManager.dieselFilter());
         initLoco();
 
     }
@@ -38,6 +38,7 @@ public class DieselU23B extends DieselTrain {
 
     @Override
     public void updateRiderPosition() {
+        if (riddenByEntity == null) {return;}
         double pitchRads = this.anglePitchClient * Math.PI / 180.0D;
         double distance = 3.3;
         double yOffset = 0.5;

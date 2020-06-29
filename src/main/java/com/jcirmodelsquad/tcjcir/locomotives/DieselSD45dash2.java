@@ -16,7 +16,7 @@ import train.common.library.GuiIDs;
 
 public class DieselSD45dash2 extends DieselTrain {
     public DieselSD45dash2(World world) {
-        super(world, EnumTrains.locoDieselFOL_M1.getTankCapacity(), LiquidManager.dieselFilter());
+        super(world, EnumTrains.SD45dash2.getTankCapacity(), LiquidManager.dieselFilter());
         initLoco();
         //when the
     }
@@ -39,6 +39,7 @@ public class DieselSD45dash2 extends DieselTrain {
 
     @Override
     public void updateRiderPosition() {
+        if (riddenByEntity == null) {return;}
         double pitchRads = this.anglePitchClient * Math.PI / 180.0D;
         double distance = 4.2;
         double yOffset = 0.5;
