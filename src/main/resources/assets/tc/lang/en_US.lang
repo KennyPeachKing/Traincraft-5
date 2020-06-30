@@ -362,6 +362,7 @@ item.tc:minecartSD45dash2.name= EMD SD45-2
 item.tc:minecartSD40dash2.name= EMD SD40-2
 item.tc:minecart40highcube.name= 40 foot Highcube Boxcar
 item.tc:minecartFRED.name=Flashing Rear End Device that does'nt flash
+item.tc:minecartCF7.name= EMD CF7
 
 <!-- ## Achievements ## -->
 achievement.tc:engineer=Engineers clothes
@@ -658,6 +659,7 @@ entity.tc.SD45dash2.name= EMD SD45-2
 entity.tc.SD40dash2.name= EMD SD40-2
 entity.tc.40highcube.name= 40 foot Highcube Boxcar
 entity.tc.FRED.name=Flashing Rear End Device
+entity.tc.CF7.name= EMD CF7
 
 description.villager.profession.tc.station_chief=Station Chief
 

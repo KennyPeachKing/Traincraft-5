@@ -70,11 +70,11 @@ public enum RenderEnum {
 	}, "", null, 0, true),
 
 	/** Freight */
-	freightCartRed(EntityFreightCart2.class, new ModelFreightCart2(), "freightcart2", false, new float[] { 0.0F, -0.32F, 0.0F }, null, null, "", 0, null, "", null, 0, false),
+	freightCartRed(EntityFreightCart2.class, new ModelFreightCart2(), "freightcart2_", true, new float[] { 0.0F, -0.32F, 0.0F }, null, null, "", 0, null, "", null, 0, false),
 	freightCartYellow(EntityFreightCart.class, new ModelFreightCart2(), "freightcart", false, new float[] { 0.0F, -0.32F, 0.0F }, null, null, "", 0, null, "", null, 0, false),
 	freightWood(EntityFreightWood.class, new ModelWood(), "wood_Full", false, new float[] { 0.0F, -0.42F, 0.0F }, null, null, "", 0, null, "", null, 0, false),
 	freightHopper(EntityFreightGrain.class, new ModelGrain(), "hopper", false, new float[] { 0.0F, -0.42F, 0.0F }, null, null, "", 0, null, "", null, 0, false),
-	freightOpenWagon(EntityFreightOpenWagon.class, new ModelOpenWagon(), "openwagon", false, new float[] { 0.0F, -0.47F, 0.0F }, null, null, "", 0, null, "", null, 0, false),
+	freightOpenWagon(EntityFreightOpenWagon.class, new ModelOpenWagon(), "openwagon_", true, new float[] { 0.0F, -0.47F, 0.0F }, null, null, "", 0, null, "", null, 0, false),
 	//passenger4(EntityPassenger4.class, new ModelPassenger4(), "passenger4",false,new float[] {0.0F, -0.32F, 0.0F},null,null,"",0,null,"",null,0),//apparently has been removed
 	freightHopperUS(EntityFreightHopperUS.class, new ModelFreightHopper(), "freightHopperUS_", true,
 			new float[] { 0.0F, -0.47F, 0.0F }, null, null, "", 0, null, "", null, 0, false),
@@ -169,7 +169,7 @@ public enum RenderEnum {
 			add(new double[] { 0.45D, 1.3D, 0.0D });
 		}
 	}, "", null, 0, false),
-	loco44tonner(EntityLocoDiesel44TonSwitcher.class, new ModelLoco44TonSwitcher(), "loco_44tonswitcher", false, new float[] { -2.75F, -0.425F, 0.0F }, new float[] { 0F, 180F, 180F }, null, "smoke", 4, new ArrayList<double[]>() {
+	loco44tonner(EntityLocoDiesel44TonSwitcher.class, new ModelLoco44TonSwitcher(), "loco_44tonswitcher_", true, new float[] { -2.75F, -0.425F, 0.0F }, new float[] { 0F, 180F, 180F }, null, "smoke", 4, new ArrayList<double[]>() {
 		{
 			add(new double[] { 0.6D, 1.55D, 0.0D });
 			add(new double[] { 2D, 1.55D, 0.0D });
@@ -677,7 +677,7 @@ public enum RenderEnum {
 		}
 	}, "", null, 0, false),
 	bawx40highcube(com.jcirmodelsquad.tcjcir.rollingstock.bawx40highcube.class, new com.jcirmodelsquad.tcjcir.models.Model40highcube(),"40highcube_", true, new float[]{0F, 0.15F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
-	FRED(com.jcirmodelsquad.tcjcir.rollingstock.FRED.class, new com.jcirmodelsquad.tcjcir.models.ModelFRED(),"fred", false, new float[]{0F, 0.05F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
+	//FRED(com.jcirmodelsquad.tcjcir.rollingstock.FRED.class, new com.jcirmodelsquad.tcjcir.models.ModelFRED(),"fred", false, new float[]{0F, 0.05F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
 	CF7( com.jcirmodelsquad.tcjcir.locomotives.DieselCF7.class,  new com.jcirmodelsquad.tcjcir.models.ModelCF7(), "cf7_", true,new float[] {-1.6F, -0.15F, 0F},  new float[] { 0F, 180F, 180F }, null, "smoke", 6,  new ArrayList<double[]>() {
 		{
 			add(new double[]{0.85D, 1.65D, 0.0D});
