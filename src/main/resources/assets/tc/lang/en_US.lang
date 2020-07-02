@@ -363,6 +363,8 @@ item.tc:minecartSD40dash2.name= EMD SD40-2
 item.tc:minecart40highcube.name= 40 foot Highcube Boxcar
 item.tc:minecartFRED.name=Flashing Rear End Device that does'nt flash
 item.tc:minecartCF7.name= EMD CF7
+item.tc:minecartWoodchipHopper.name= Woodchip Hopper
+item.tc:minecartOreJenny.name= Ore Jenny
 
 <!-- ## Achievements ## -->
 achievement.tc:engineer=Engineers clothes
@@ -660,6 +662,9 @@ entity.tc.SD40dash2.name= EMD SD40-2
 entity.tc.40highcube.name= 40 foot Highcube Boxcar
 entity.tc.FRED.name=Flashing Rear End Device
 entity.tc.CF7.name= EMD CF7
+entity.tc.WoodchipHopper.name= Woodchip Hopper
+entity.tc.SD9.name= EMD SD9
+entity.tc.OreJenny.name= Ore Jenny
 
 description.villager.profession.tc.station_chief=Station Chief
 

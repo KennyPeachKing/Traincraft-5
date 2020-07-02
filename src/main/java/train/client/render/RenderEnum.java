@@ -691,7 +691,9 @@ public enum RenderEnum {
 			add(new double[]{1.65D, 1.7D, 0.0D});
 
 		}
-	}, "", null, 0, false),;
+	}, "", null, 0, false),
+	WoodchipHopper(com.jcirmodelsquad.tcjcir.rollingstock.WoodchipHopper.class, new com.jcirmodelsquad.tcjcir.models.ModelWoodchipHopper(),"woodchiphopper_", true, new float[]{0F, 0.15F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
+	OreJenny(com.jcirmodelsquad.tcjcir.rollingstock.OreJenny.class, new com.jcirmodelsquad.tcjcir.models.ModelOreJenny(),"orejenny_", true, new float[]{0F, 0.2F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),;
 
 	private Class<? extends AbstractTrains> entityClass;
 	private ModelBase model;
