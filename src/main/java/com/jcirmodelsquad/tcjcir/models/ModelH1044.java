@@ -978,7 +978,7 @@ public class ModelH1044 extends ModelConverter //Same as Filename
 		if(entity instanceof AbstractTrains && ((AbstractTrains) entity).getColor()==15){
 			Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/typea_Grey.png"));
 		} else {
-			Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/typea_black.png"));
+			Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/typea_Black.png"));
 		}
 		GL11.glPushMatrix();
 		GL11.glTranslatef(-1F ,0.15F,0F);
