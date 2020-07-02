@@ -1260,7 +1260,7 @@ public class ModelU23b extends ModelConverter //Same as Filename
 			GL11.glPopMatrix();
 
 		} else {
-			Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/typeb_black.png"));
+			Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/typeb_Black.png"));
 			GL11.glPushMatrix();
 			GL11.glTranslated(-1.52, 0, 0);
 			theTrucks1.render(entity, f, f1, f2, f3, f4, f5);
