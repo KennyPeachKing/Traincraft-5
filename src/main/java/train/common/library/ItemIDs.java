@@ -330,7 +330,9 @@ public enum ItemIDs {
 	minecartCF7("ItemRollingStock", "cf7", 12),
 	minecartSD9("ItemRollingStock", "sd9", 11),
 	minecartWoodchipHopper("ItemRollingStock", "woodchiphopper", 4),
-	minecartOreJenny("ItemRollingStock", "orejenny", 2),;
+	minecartOreJenny("ItemRollingStock", "orejenny", 2),
+	minecartSF30C("ItemRollingStock", "sf30c", 12),
+	minecartSDL39("ItemRollingStock", "SDL39", 10),;
 
 	public Item item;
 	public String className;

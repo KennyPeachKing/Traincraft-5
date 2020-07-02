@@ -693,7 +693,19 @@ public enum RenderEnum {
 		}
 	}, "", null, 0, false),
 	WoodchipHopper(com.jcirmodelsquad.tcjcir.rollingstock.WoodchipHopper.class, new com.jcirmodelsquad.tcjcir.models.ModelWoodchipHopper(),"woodchiphopper_", true, new float[]{0F, 0.15F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
-	OreJenny(com.jcirmodelsquad.tcjcir.rollingstock.OreJenny.class, new com.jcirmodelsquad.tcjcir.models.ModelOreJenny(),"orejenny_", true, new float[]{0F, 0.2F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),;
+	OreJenny(com.jcirmodelsquad.tcjcir.rollingstock.OreJenny.class, new com.jcirmodelsquad.tcjcir.models.ModelOreJenny(),"orejenny_", true, new float[]{0F, 0.2F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
+	SF30C( com.jcirmodelsquad.tcjcir.locomotives.DieselSF30C.class,  new com.jcirmodelsquad.tcjcir.models.ModelSF30C(), "SF30C", false,new float[] {-2.5F, -0.2F, 0F},  new float[] { 0F, 180F, 180F }, null, "smoke", 5,  new ArrayList<double[]>() {
+		{
+			add(new double[]{0.8D, 1.7D, 0.0D});
+
+		}
+	}, "", null, 0, false),
+	SDL39( com.jcirmodelsquad.tcjcir.locomotives.DieselSDL39.class,  new com.jcirmodelsquad.tcjcir.models.ModelSDL39(), "SDL39_", true,new float[] {-1.6F, -0.15F, 0F},  new float[] { 0F, 180F, 180F }, null, "smoke", 5,  new ArrayList<double[]>() {
+		{
+			add(new double[]{1.4D, 1.7D, 0.0D});
+
+		}
+	}, "", null, 0, false),;
 
 	private Class<? extends AbstractTrains> entityClass;
 	private ModelBase model;

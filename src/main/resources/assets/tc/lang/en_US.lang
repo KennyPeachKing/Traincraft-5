@@ -365,6 +365,7 @@ item.tc:minecartFRED.name=Flashing Rear End Device that does'nt flash
 item.tc:minecartCF7.name= EMD CF7
 item.tc:minecartWoodchipHopper.name= Woodchip Hopper
 item.tc:minecartOreJenny.name= Ore Jenny
+item.tc:minecartSD9.name= EMD SD9
 
 <!-- ## Achievements ## -->
 achievement.tc:engineer=Engineers clothes
