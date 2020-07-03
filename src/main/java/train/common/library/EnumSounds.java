@@ -51,7 +51,7 @@ public enum EnumSounds {
 	locoVL10(EntityLocoElectricVL10.class, "vl10_horn", 0.8F, "vl10_idle", 0.6F, 50, "vl10_idle", 0.6F, 50, false),
 	locoBR_E69(EntityLocoElectricBR_E69.class, "eu07_horn", 0.8F, "vl10_idle", 0.6F, 50, "vl10_idle", 0.6F, 50, false),
 	locoMineTrain(EntityLocoElectricMinetrain.class, "tram_horn", 0.8F, "vl10_idle", 0.6F, 50, "vl10_idle", 0.6F, 50, false),
-	locoHighSpeed(EntityLocoElectricHighSpeedZeroED.class, "high_speed_horn", 0.8F, "vl10_idle", 0.6F, 50, "vl10_idle", 0.6F, 50, false),
+	locoHighSpeed(EntityLocoElectricHighSpeedZeroED.class, "nathan_k5La_2", 0.8F, "vl10_idle", 0.6F, 50, "vl10_idle", 0.6F, 50, false),
 	locoSubwayNY(EntityLocoElectricTramNY.class, "subway_horn", 1F, "vl10_idle", 0.6F, 50, "vl10_idle", 0.6F, 50, false),
 	locoTramWood(EntityLocoElectricTramWood.class, "tram_horn", 1F, "vl10_idle", 0.6F, 50, "vl10_idle", 0.6F, 50, false),
 	locoIC4_DSB_MG(EntityLocoDieselIC4_DSB_MG.class, "mg_horn", 1F, "mg_run", 0.8F, 10, "mg_idle", 0.6F, 50, false),
@@ -100,7 +100,8 @@ public enum EnumSounds {
 	CF7(com.jcirmodelsquad.tcjcir.locomotives.DieselCF7.class, "nathan_k3la", 0.65F, "567_notch8", 0.65F, 10, "567_idle", 0.8F, 3, true),
 	SD9(com.jcirmodelsquad.tcjcir.locomotives.DieselSD9.class, "leslie_s3l", 2.5F, "567_notch8", 0.45F, 10, "567_idle", 0.75F, 3, true),
 	SF30C(com.jcirmodelsquad.tcjcir.locomotives.DieselSF30C.class, "leslie_s5t", 2F, "fdl16_notch8", 0.5F, 10, "fdl16_idle", 0.5F, 3, true),
-	SDL39(com.jcirmodelsquad.tcjcir.locomotives.DieselSDL39.class, "nathan_p3", 2F, "645e3_notch8", 0.65F, 10, "645e3_idle", 0.65F, 3, true);
+	SDL39(com.jcirmodelsquad.tcjcir.locomotives.DieselSDL39.class, "nathan_p3", 2F, "645e3_notch8", 0.65F, 10, "645e3_idle", 0.65F, 3, true),
+	geGenesis(com.jcirmodelsquad.tcjcir.locomotives.GeGenesis.class, "nathan_k5La", 2.5F, "7fdl-12_notch8", 0.65F, 40, "7fdl-12_idle", 0.65F, 50, true);
 
 
 	private Class entityClass;

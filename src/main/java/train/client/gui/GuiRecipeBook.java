@@ -88,7 +88,7 @@ public class GuiRecipeBook extends GuiScreen {
 				add(new StackToDraw(new ItemStack(ItemIDs.minecartCabooseLogging.item), 120, 175));
 			}
 		});
-		addPage("Special thanks to the JCIR-Traincraft contributors and developers:\n \nPeachMaster\nBidahochi\nJCRail\nProf. Binky\nBigJ\nMessicrew\n\nAnd JCRail for making a great server :)", "", "left", new ArrayList<StackToDraw>() {
+		addPage("Special thanks to the JCIR-Traincraft contributors and developers:\n \nPeachMaster\nBidahochi\nJCRail\nProf. Binky\nBigJ\nMessicrew\n\nimWastey\nAnd JCRail for making a great server :)", "", "left", new ArrayList<StackToDraw>() {
 			{
 				add(new StackToDraw(new ItemStack(ItemIDs.minecartAlcoS2.item), 20, 16));
 				add(new StackToDraw(new ItemStack(ItemIDs.minecartAmfleet.item), 170, 16));
