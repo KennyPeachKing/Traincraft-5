@@ -65,7 +65,6 @@ public enum ItemIDs {
 	recipeBook("ItemRecipeBook", "item_book_blue", 1),
 	adminBook("ItemAdminBook", "item_book_blue", 0),
 	wirelessTransmitter("ItemWirelessTransmitter", "wireless_transmitter", 3),
-	paintbrushThing("ItemPaintbrushThing", "paintbrush_thing", 9),
 	atoCard("ItemATOCard", "ato_card", 5),
 	minecartWork("ItemRollingStock", "train_work", 4),
 	minecartTender("ItemRollingStock", "train_tender", 4),
@@ -333,8 +332,8 @@ public enum ItemIDs {
 	minecartWoodchipHopper("ItemRollingStock", "woodchiphopper", 4),
 	minecartOreJenny("ItemRollingStock", "orejenny", 2),
 	minecartSF30C("ItemRollingStock", "sf30c", 12),
-	minecartSDL39("ItemRollingStock", "SDL39", 10),;
-
+	minecartSDL39("ItemRollingStock", "SDL39", 10),
+	paintbrushThing("ItemPaintbrushThing", "paintbrush_thing", 9),;
 	public Item item;
 	public String className;
 	public String iconName;

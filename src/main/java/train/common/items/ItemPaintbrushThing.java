@@ -6,6 +6,7 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumChatFormatting;
 import train.common.Traincraft;
 import train.common.library.Info;
 
@@ -25,7 +26,7 @@ public class ItemPaintbrushThing extends Item {
     @SideOnly(Side.CLIENT)
     @Override
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
-        par3List.add("\u00a77" + "Right click on a train to change it's texture.");
+        par3List.add("\u00a77" + EnumChatFormatting.GREEN + "Shift-right click" + EnumChatFormatting.RESET + " on a train to cycle through it's textures.");
         par3List.add("\u00a77" + "We couldn't think of a better name for it");
     }
 }

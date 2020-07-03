@@ -33,8 +33,10 @@ import train.common.core.TrainModCore;
 import train.common.core.handlers.*;
 import train.common.generation.ComponentVillageTrainstation;
 import train.common.generation.WorldGenWorld;
+import train.common.items.ItemPaintbrushThing;
 import train.common.items.TCItems;
 import train.common.library.Info;
+import train.common.library.ItemIDs;
 import train.common.recipes.AssemblyTableRecipes;
 
 import java.io.File;
@@ -123,6 +125,7 @@ public class Traincraft {
 		trainCloth = proxy.addArmor("Paintable");
 		trainCompositeSuit = proxy.addArmor("CompositeSuit");
 		TCBlocks.init();
+		ItemIDs.paintbrushThing.item = new ItemPaintbrushThing();
 		TCItems.init();
 		EntityHandler.init();
 		proxy.registerTileEntities();

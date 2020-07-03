@@ -96,8 +96,6 @@ public class TCItems {
 			ItemIDs.wirelessTransmitter.item = new ItemWirelessTransmitter();
 			ItemIDs.atoCard.item = new ItemATOCard();
 		}
-
-		ItemIDs.paintbrushThing.item = new ItemPaintbrushThing();
 	//	ItemIDs.remoteController.item = new ItemRemoteController();
 		//ItemIDs.remoteControllerModule.item = new ItemRemoteControllerModule();
 	}
