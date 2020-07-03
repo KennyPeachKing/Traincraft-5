@@ -1626,7 +1626,7 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 
 
 		//Really cool feature that Bidahochi suggested.
-		if (itemstack != null && itemstack.getItem() instanceof ItemContainer && this instanceof DieselTrain && entityplayer.isSneaking()) {
+		/*if (itemstack != null && itemstack.getItem() instanceof ItemContainer && this instanceof DieselTrain && entityplayer.isSneaking()) {
 
 			Item theItem = itemstack.getItem();
 			DieselTrain thisAsDieselTrain = (DieselTrain) this;
@@ -1636,7 +1636,7 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 				itemstack.stackSize--;
 
 
-				/*for (int i = 0; i < entityplayer.inventory.getSizeInventory(); i++) {
+				*//*for (int i = 0; i < entityplayer.inventory.getSizeInventory(); i++) {
 					if (entityplayer.inventory.getStackInSlot(i) != null && entityplayer.inventory.getStackInSlot(i).isItemEqual(itemstack)) {
 						if (itemstack.stackSize > 1) {
 							itemstack = new ItemStack(ItemIDs.diesel.item,itemstack.stackSize - 1);
@@ -1648,7 +1648,7 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 						}
 
 					}
-				}*/
+				}*//*
 
 			} else if (theItem == ItemIDs.emptyCanister.item) {
 				thisAsDieselTrain.getTank().drain(1000, true);
@@ -1665,7 +1665,7 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 					}
 				}
 			}
-		}
+		}*/
 			/*if (itemstack != null && itemstack.getItem() == ItemIDs.remoteController.item && worldObj.isRemote && this instanceof Locomotive) {
 				Locomotive thisAsLocomotive = (Locomotive)this;
 				if (thisAsLocomotive.trainIsRemoteControlSupported()) {
