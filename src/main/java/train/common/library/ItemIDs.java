@@ -333,7 +333,10 @@ public enum ItemIDs {
 	minecartOreJenny("ItemRollingStock", "orejenny", 2),
 	minecartSF30C("ItemRollingStock", "sf30c", 12),
 	minecartSDL39("ItemRollingStock", "SDL39", 10),
+	minecartF7A("ItemRollingStock", "f7a", 11),
+	minecartF7B("ItemRollingStock", "f7b", 11),
 	paintbrushThing("ItemPaintbrushThing", "paintbrush_thing", 9),;
+
 	public Item item;
 	public String className;
 	public String iconName;

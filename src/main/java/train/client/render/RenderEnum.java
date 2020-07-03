@@ -691,7 +691,7 @@ public enum RenderEnum {
 
 		}
 	}, "", null, 0, false),
-	SD9( com.jcirmodelsquad.tcjcir.locomotives.DieselSD9.class,  new com.jcirmodelsquad.tcjcir.models.ModelSD9(), "sd9_", true,new float[] {-1.6F, -0.0F, 0F},  new float[] { 0F, 180F, 180F }, null, "smoke", 3,  new ArrayList<double[]>() {
+	SD9( com.jcirmodelsquad.tcjcir.locomotives.DieselSD9.class,  new com.jcirmodelsquad.tcjcir.models.ModelSD9(), "SD9_", true,new float[] {-1.6F, -0.0F, 0F},  new float[] { 0F, 180F, 180F }, null, "smoke", 3,  new ArrayList<double[]>() {
 		{
 			add(new double[]{0.8D, 1.7D, 0.0D});
 			add(new double[]{1.65D, 1.7D, 0.0D});
@@ -707,6 +707,18 @@ public enum RenderEnum {
 		}
 	}, "", null, 0, false),
 	SDL39( com.jcirmodelsquad.tcjcir.locomotives.DieselSDL39.class,  new com.jcirmodelsquad.tcjcir.models.ModelSDL39(), "SDL39_", true,new float[] {-1.6F, -0.15F, 0F},  new float[] { 0F, 180F, 180F }, null, "smoke", 5,  new ArrayList<double[]>() {
+		{
+			add(new double[]{1.4D, 1.7D, 0.0D});
+
+		}
+	}, "", null, 0, false),
+	F7A( com.jcirmodelsquad.tcjcir.locomotives.DieselF7A.class,  new com.jcirmodelsquad.tcjcir.models.ModelF7A(), "f7a_", true,new float[] {-1.6F, 0.1F, 0F},  new float[] { 0F, 180F, 180F },  new float[]{1.0f,1.2f,1.0f}, "smoke", 3,  new ArrayList<double[]>() {
+		{
+			add(new double[]{1.4D, 1.7D, 0.0D});
+
+		}
+	}, "", null, 0, false),
+	F7B( com.jcirmodelsquad.tcjcir.locomotives.DieselF7B.class,  new com.jcirmodelsquad.tcjcir.models.ModelF7B(), "f7b_", true,new float[] {-1.6F, 0.1F, 0F},  new float[] { 0F, 180F, 180F },  new float[]{1.0f,1.2f,1.0f}, "smoke", 3,  new ArrayList<double[]>() {
 		{
 			add(new double[]{1.4D, 1.7D, 0.0D});
 
