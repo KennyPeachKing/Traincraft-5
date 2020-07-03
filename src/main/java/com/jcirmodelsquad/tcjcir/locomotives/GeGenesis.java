@@ -123,7 +123,7 @@ public class GeGenesis extends DieselTrain {
     }
 
     @Override
-    public float getOptimalDistance(EntityMinecart cart) { return 0.73F;
+    public float getOptimalDistance(EntityMinecart cart) { return 0.69F;
     }
 
     @Override
