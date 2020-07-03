@@ -32,7 +32,7 @@ tile.tc:mtcATOStopTransmitter.name=MTC ATO Stop Point Transmitter
 tile.tc:mtcReceiverMTC.name=MTC Status Receiver
 tile.tc:mtcReceiverDestination.name=MTC Destination Receiver
 tile.tc:pdmInstructionBlock.name=W-MTC Wireless Radio
-
+tile.tc:betterDetector.name= Better Detector
 <!-- ## Fluids ## -->
 fluid.diesel.name=Diesel Fuel
 fluid.refinedfuel.name=Refined Fuel
@@ -674,7 +674,7 @@ entity.tc.SDL39.name=EMD SDL39
 entity.tc.SF30C.name=GE SF30C
 entity.tc.F7A.name=EMD F7a
 entity.tc.F7B.name=EMD F7b
-
+entity.tc.GeGenesis.name= GE Genesis
 description.villager.profession.tc.station_chief=Station Chief
 
 key.categories.traincraft=Traincraft

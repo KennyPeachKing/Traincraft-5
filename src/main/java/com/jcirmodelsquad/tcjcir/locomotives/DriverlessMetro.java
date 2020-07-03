@@ -316,7 +316,7 @@ public class DriverlessMetro extends ElectricTrain {
                         }
                     }
                 }
-            }*/
+            }*
           /*  if (obstacleInWay && !obstacleBrakeDone) {
                 motionX *= brake;
                 motionZ *= brake;

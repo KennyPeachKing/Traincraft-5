@@ -37,7 +37,7 @@ public class GuiRecipeBook extends GuiScreen {
 	/** Update ticks since the gui was opened */
 	private int bookImageWidth = 206;
 	private int bookImageHeight = 200;
-	public static int bookTotalPages = 103;
+	public static int bookTotalPages = 110;
 	private int currPage;
 	private int currRecipe;
 	public ArrayList<String> leftPage = new ArrayList<String>();
@@ -56,6 +56,7 @@ public class GuiRecipeBook extends GuiScreen {
 	private RenderItem renderItem = new RenderItem();
 
 	public GuiRecipeBook(EntityPlayer par1EntityPlayer, ItemStack par2ItemStack) {
+		bookTotalPages = 110;
 		this.editingPlayer = par1EntityPlayer;
 		this.itemstackBook = par2ItemStack;
 		this.currPage = this.itemstackBook.getTagCompound().getInteger("currPage");

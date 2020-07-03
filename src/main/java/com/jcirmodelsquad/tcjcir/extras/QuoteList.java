@@ -67,6 +67,7 @@ public class QuoteList {
         importantQuotes.add(new JCIRQuote("JCRail likes trains.. and he likes the smell. ", "JCRail"));
         importantQuotes.add(new JCIRQuote("Ive been building dicks since the sixth grade ", "Rez"));
         importantQuotes.add(new JCIRQuote("Dude, i just got stabbed, Chill", "JCRail"));
+        importantQuotes.add(new JCIRQuote("Okey, thankies from mcspankies. No prob Rom the Don", "PeachMaster and JCRail"));
 
         return importantQuotes;
 

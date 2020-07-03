@@ -1611,10 +1611,16 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 				if (worldObj.isRemote && ConfigHandler.SHOW_POSSIBLE_COLORS) {
 					String concatColors = ": ";
 					for (int t = 0; t < this.acceptedColors.size(); t++) {
-						concatColors = concatColors.concat(getColorAsString(this.acceptedColors.get(t)) + ", ");
+						if (t == acceptedColors.size() - 1) {
+							concatColors = concatColors.concat(", or " +getColorAsString(this.acceptedColors.get(t)) + ".");
+						} else {
+							concatColors = concatColors.concat(getColorAsString(this.acceptedColors.get(t)) + ", ");
+						}
+
 					}
-					entityplayer.addChatMessage(new ChatComponentText("Possible colors" + concatColors));
-					entityplayer.addChatMessage(new ChatComponentText("To paint, click me with the right dye"));
+					entityplayer.addChatMessage(new ChatComponentText("The possible colors are: " + concatColors));
+					entityplayer.addChatMessage(new ChatComponentText("To paint, click me with the color dye, or use a Paintbrush."));
+					System.out.println("force reloiad");
 					return true;
 				}
 			}

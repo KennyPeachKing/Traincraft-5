@@ -1,5 +1,6 @@
 package train.common.core;
 
+import com.jcirmodelsquad.tcjcir.extras.blocks.TileBetterDetector;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
@@ -92,6 +93,7 @@ public class CommonProxy implements IGuiHandler {
 			GameRegistry.registerTileEntity(TileInfoGrabberDestination.class, "tileInfoReceiverDestination");
 			GameRegistry.registerTileEntity(TileATOTransmitterStopPoint.class, "tileATOTransmitterStopPoint");
 			GameRegistry.registerTileEntity(TilePDMInstructionRadio.class, "tilePDMInstructionRadio");
+			GameRegistry.registerTileEntity(TileBetterDetector.class, "tileBetterDetector");
 		}
 	}
 

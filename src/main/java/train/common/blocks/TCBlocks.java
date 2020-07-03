@@ -7,6 +7,8 @@
 
 package train.common.blocks;
 
+import com.jcirmodelsquad.tcjcir.extras.blocks.BlockBetterDetector;
+import com.jcirmodelsquad.tcjcir.extras.blocks.TileBetterDetector;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
@@ -59,6 +61,7 @@ public class TCBlocks {
 			BlockIDs.mtcReceiverMTC.block = new BlockInfoGrabberMTC(Material.rock).setHardness(3.5F).setStepSound(Block.soundTypeMetal).setBlockTextureName("tc:mtcreceiver").setBlockName("mtcstatusreceiver").setCreativeTab(Traincraft.tcTab);
 			BlockIDs.mtcReceiverDestination.block = new BlockInfoGrabberDestination(Material.rock).setHardness(3.5F).setStepSound(Block.soundTypeMetal).setBlockTextureName("tc:destinationreceiver").setBlockName("mtcdestinationreceiver").setCreativeTab(Traincraft.tcTab);
 			BlockIDs.pdmInstructionBlock.block = new BlockPDMInstructionRadio(Material.rock).setHardness(3.5F).setStepSound(Block.soundTypeMetal).setBlockTextureName("tc:pdmradio").setBlockName("pdmradio").setCreativeTab(Traincraft.tcTab);
+			BlockIDs.betterDetector.block = new BlockBetterDetector(Material.rock).setHardness(3.5F).setStepSound(Block.soundTypeMetal).setBlockTextureName("tc:better_detector").setBlockName("betterdetector").setCreativeTab(Traincraft.tcTab);;
 		}
 
 		//BlockIDs.book.block = new BlockBook(BlockIDs.book.blockID);
