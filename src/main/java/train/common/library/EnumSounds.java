@@ -98,10 +98,12 @@ public enum EnumSounds {
 	SD45dash2(com.jcirmodelsquad.tcjcir.locomotives.DieselSD45dash2.class, "leslie_s3l", 2.5F, "645e3_notch8", 0.65F, 10, "645e3_idle", 0.65F, 3, true),
 	SD40dash2(com.jcirmodelsquad.tcjcir.locomotives.DieselSD40dash2.class, "nathan_p3", 0.65F, "16-645e_notch8", 0.65F, 10, "16-645e_idle", 0.8F, 3, true),
 	CF7(com.jcirmodelsquad.tcjcir.locomotives.DieselCF7.class, "nathan_k3la", 0.65F, "567_notch8", 0.65F, 10, "567_idle", 0.8F, 3, true),
-	SD9(com.jcirmodelsquad.tcjcir.locomotives.DieselSD9.class, "leslie_s3l", 2.5F, "567_notch8", 0.45F, 10, "567_idle", 0.75F, 3, true),
+	SD9(com.jcirmodelsquad.tcjcir.locomotives.DieselSD9.class, "nathan_k3la", 2.5F, "567_notch8", 0.45F, 10, "567_idle", 0.75F, 3, true),
 	SF30C(com.jcirmodelsquad.tcjcir.locomotives.DieselSF30C.class, "leslie_s5t", 2F, "fdl16_notch8", 0.5F, 10, "fdl16_idle", 0.5F, 3, true),
 	SDL39(com.jcirmodelsquad.tcjcir.locomotives.DieselSDL39.class, "nathan_p3", 2F, "645e3_notch8", 0.65F, 10, "645e3_idle", 0.65F, 3, true),
-	geGenesis(com.jcirmodelsquad.tcjcir.locomotives.GeGenesis.class, "nathan_k5La", 2.5F, "7fdl-12_notch8", 0.65F, 40, "7fdl-12_idle", 0.65F, 50, true);
+	geGenesis(com.jcirmodelsquad.tcjcir.locomotives.GeGenesis.class, "nathan_k5La", 2.5F, "7fdl-12_notch8", 0.65F, 40, "7fdl-12_idle", 0.65F, 50, true),
+	F7A(com.jcirmodelsquad.tcjcir.locomotives.DieselF7A.class, "leslie_a200", 1F, "567_notch8", 0.45F, 15, "567_idle", 0.75F, 3, true),
+	F7B(com.jcirmodelsquad.tcjcir.locomotives.DieselF7B.class, "leslie_a200", 0F, "567_notch8", 0.45F, 15, "567_idle", 0.75F, 3, true),;
 
 
 	private Class entityClass;

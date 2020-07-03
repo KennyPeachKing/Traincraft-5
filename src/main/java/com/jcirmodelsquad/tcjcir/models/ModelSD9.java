@@ -1341,13 +1341,13 @@ public class ModelSD9 extends ModelConverter //Same as Filename
 			}
 		}
 
-		if (entity instanceof AbstractTrains && ((AbstractTrains) entity).getColor() == 15) {
-			Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/flexicoil_c1_Black.png"));
+		if (entity instanceof AbstractTrains && ((AbstractTrains) entity).getColor() == 15||entity instanceof AbstractTrains && ((AbstractTrains) entity).getColor() == 0) {
+			Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/flexicoil_c1_Grey.png"));
 			GL11.glPushMatrix();
-			GL11.glTranslated(-1.3, -0.01, 0);
+			GL11.glTranslated(-1.63, -0.17, 0);
 			theTrucc.render(entity, f, f1, f2, f3, f4, f5);
 
-			GL11.glTranslated(2.57, 0, 0);
+			GL11.glTranslated(3.12, 0, 0);
 			theTrucc.render(entity, f, f1, f2, f3, f4, f5);
 			GL11.glPopMatrix();
 		/*} else if (entity instanceof AbstractTrains && ((AbstractTrains) entity).getColor() == 11||entity instanceof AbstractTrains && ((AbstractTrains) entity).getColor() == 7||entity instanceof AbstractTrains && ((AbstractTrains) entity).getColor() == 5||entity instanceof AbstractTrains && ((AbstractTrains) entity).getColor() == 6||entity instanceof AbstractTrains && ((AbstractTrains) entity).getColor() == 13) {
