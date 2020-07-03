@@ -714,13 +714,15 @@ public enum RenderEnum {
 	}, "", null, 0, false),
 	F7A( com.jcirmodelsquad.tcjcir.locomotives.DieselF7A.class,  new com.jcirmodelsquad.tcjcir.models.ModelF7A(), "f7a_", true,new float[] {-1.6F, 0.1F, 0F},  new float[] { 0F, 180F, 180F },  new float[]{1.0f,1.2f,1.0f}, "smoke", 3,  new ArrayList<double[]>() {
 		{
-			add(new double[]{1.4D, 1.7D, 0.0D});
+			add(new double[]{1.1D, 1.7D, 0.0D});
+			add(new double[]{0.6D, 1.7D, 0.0D});
 
 		}
 	}, "", null, 0, false),
 	F7B( com.jcirmodelsquad.tcjcir.locomotives.DieselF7B.class,  new com.jcirmodelsquad.tcjcir.models.ModelF7B(), "f7b_", true,new float[] {-1.6F, 0.1F, 0F},  new float[] { 0F, 180F, 180F },  new float[]{1.0f,1.2f,1.0f}, "smoke", 3,  new ArrayList<double[]>() {
 		{
-			add(new double[]{1.4D, 1.7D, 0.0D});
+			add(new double[]{1.8D, 1.7D, 0.0D});
+			add(new double[]{0.9D, 1.7D, 0.0D});
 
 		}
 	}, "", null, 0, false),;
