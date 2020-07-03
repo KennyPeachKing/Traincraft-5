@@ -327,7 +327,7 @@ public enum ItemIDs {
 	minecartSD40dash2("ItemRollingStock", "sd40dash2", 13),
 	minecart40highcube("ItemRollingStock", "40highcube", 3),
 	//minecartFRED("ItemRollingStock", "fred", 5),
-	minecartGeGenesis("ItemRollingStock", "geGenesis", 14);
+	minecartGeGenesis("ItemRollingStock", "geGenesis", 14),
 	minecartCF7("ItemRollingStock", "cf7", 12),
 	minecartSD9("ItemRollingStock", "sd9", 11),
 	minecartWoodchipHopper("ItemRollingStock", "woodchiphopper", 4),
