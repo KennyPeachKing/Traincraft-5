@@ -7,6 +7,8 @@
 
 package train.common.core.handlers;
 
+import com.jcirmodelsquad.tcjcir.rollingstock.OreJenny;
+import com.jcirmodelsquad.tcjcir.rollingstock.WoodchipHopper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRailBase;
 import net.minecraft.block.material.Material;
@@ -56,10 +58,11 @@ public class ItemHandler {
 		}
 		if (entity instanceof EntityFreightCenterbeam_Wood_1 || entity instanceof EntityFreightCenterbeam_Wood_2 ||
 				entity instanceof EntityFlatCartWoodUS || entity instanceof EntityBulkheadFlatCart || entity instanceof EntityFlatCarLogs_DB ||
-				entity instanceof EntityFreightWood || entity instanceof EntityFreightWood2) {
+				entity instanceof EntityFreightWood || entity instanceof EntityFreightWood2 || entity instanceof WoodchipHopper)
+		{
             int isid = OreDictionary.getOreID(itemstack);
 			return isid == plankWood || isid == logWood || isid == slabWood || isid == stairWood ||
-					itemstack.getItem() == Item.getItemFromBlock(Blocks.ladder) || itemstack.getItem() == Item.getItemFromBlock(Blocks.fence) || itemstack.getItem() == Item.getItemFromBlock(Blocks.fence_gate);
+					itemstack.getItem() == Item.getItemFromBlock(Blocks.ladder) || itemstack.getItem() == Item.getItemFromBlock(Blocks.fence) || itemstack.getItem() == Item.getItemFromBlock(Blocks.fence_gate) || itemstack.getItem().getUnlocalizedName().contains("wood")|| itemstack.getItem().getUnlocalizedName().contains("plank");
 		}
 		else if (entity instanceof EntityFlatCarRails_DB) {
 			return block instanceof BlockRailBase || itemstack.getItem() instanceof ItemTCRail;
@@ -80,6 +83,8 @@ public class ItemHandler {
 		}
 		else if (entity instanceof EntityFreightIceWagon){
 			return block.getMaterial() == Material.ice || block.getMaterial() == Material.packedIce;
+		} else if (entity instanceof OreJenny) {
+			return itemstack.getItem().getUnlocalizedName().contains("ore");
 		}
 		else {
 			return true;

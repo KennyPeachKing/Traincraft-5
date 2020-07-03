@@ -1609,7 +1609,7 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 					}
 				}
 				if (worldObj.isRemote && ConfigHandler.SHOW_POSSIBLE_COLORS) {
-					String concatColors = ": ";
+					String concatColors = "";
 					for (int t = 0; t < this.acceptedColors.size(); t++) {
 						if (t == acceptedColors.size() - 1) {
 							concatColors = concatColors.concat(", or " +getColorAsString(this.acceptedColors.get(t)) + ".");
