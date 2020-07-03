@@ -211,7 +211,6 @@ public class DriverlessMetro extends ElectricTrain {
                 if (thing.get("trainMode") != null) {
                     //Update the train mode.
                     currentMode = thing.get("trainMode").getAsInt();
-                    System.out.println("Current mode: " + currentMode);
                     if (riddenByEntity != null && riddenByEntity instanceof EntityPlayer) {
                         ((EntityPlayer) riddenByEntity).addChatMessage(new ChatComponentText("Connected to main server successfully!"));
                     }
@@ -257,20 +256,15 @@ public class DriverlessMetro extends ElectricTrain {
                         theLastStation = new Station(theStation.get("stationName").getAsString(), theStation.get("stationX").getAsDouble(), theStation.get("stationY").getAsDouble(), theStation.get("stationZ").getAsDouble(), theStation.get("dwellTime").getAsInt(), true);
                     }
                     theNextStation = theTimetable.get(0);
-                    System.out.println("Added station " + theStation.get("stationName"));
                 }
 
-                System.out.println("Timetable created! Stations:");
 
                 for (Station pa : theTimetable) {
 
                     if (theLastStation.name.equals(pa.getStationName())) {
-                        System.out.println("Final station:" + pa.name);
                     } else {
-                        System.out.println(pa.name);
                     }
                 }
-                System.out.println("Timetable received! Next stop, " + theNextStation.getStationName() + "!");
                 operation = 1;
             }
         }
@@ -339,7 +333,6 @@ public class DriverlessMetro extends ElectricTrain {
             }
 
             //	if (mtcOverridePressed) {currentMode = 0;
-            System.out.println(trainID + ": " + atoStatus);
             switch (currentMode) {
                 case 0: { // Off. However, still transmit to the server. You never know when it might ask you to start.
                     speedLimit = 0;
@@ -409,7 +402,6 @@ public class DriverlessMetro extends ElectricTrain {
                                 JsonObject sendingObj = new JsonObject();
                                 sendingObj.addProperty("funct", "readyToDepart");
                                 sendingObj.addProperty("stationName", theCurrentStation.getStationName());
-                                System.out.println("Ready to depart!");
                                 sendMessage(new PDMMessage(this.trainID, serverUUID, sendingObj.toString(), 0));
                                 lastMillsRTD=0L;
                                 readyToDepart = true;
@@ -417,9 +409,7 @@ public class DriverlessMetro extends ElectricTrain {
 
                             if (System.currentTimeMillis() > lastMills+timeUntilDeparture) {
                                 if (theCurrentStation.isFinalStop() && otherSide != null && switchOverAtEnd) {
-                                    System.out.println("Final stop!");
                                     //Do switching over code soon
-                                    System.out.println("Switching over!");
                                     otherSide.isConnected = true;
                                     otherSide.serverUUID = this.serverUUID;
                                     otherSide.isLeading = true;
@@ -443,8 +433,6 @@ public class DriverlessMetro extends ElectricTrain {
                                     operation = 0;
                                 } else {
                                     //No? It isn't the final stop? Okay, continue on the route.
-                                    System.out.println("Departing!");
-
                                     if (isLeading) {
                                         stationStop = false;
                                         stationStopping = true;
@@ -489,14 +477,13 @@ public class DriverlessMetro extends ElectricTrain {
 
             }
 
-            if (this.getInventory()[1] != null && this.getInventory()[1].hasDisplayName() && !setUUID) {
+          /*  if (this.getInventory()[1] != null && this.getInventory()[1].hasDisplayName() && !setUUID) {
                 // System.out.println(this.getInventory()[whichOneToCheck].getItem().getClass().getName());
                 if (this.getInventory()[1].getDisplayName().startsWith("uuid=")) {
                     attemptConnection(this.getInventory()[1].getDisplayName().split("uuid=")[1]);
                     setUUID = true;
-                    System.out.println("Attempting!");
                 }
-            }
+            }*/
         }
     }
 
@@ -560,7 +547,6 @@ public class DriverlessMetro extends ElectricTrain {
                             } else {
                                 thePlayer.addChatMessage(new ChatComponentText("There is no other side on the consist. This shouldn't be used for service consists."));
                             }
-                            System.out.println(StringUtils.substringBetween(theBook, "|", "|"));
                             attemptConnection(StringUtils.substringBetween(theBook, "|", "|"));
                             thePlayer.addChatMessage(new ChatComponentText("Attempting connection to server."));
                         } else {
