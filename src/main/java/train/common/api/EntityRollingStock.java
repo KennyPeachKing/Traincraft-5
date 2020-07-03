@@ -1666,8 +1666,7 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 				}
 			}
 		}
-			System.out.println(worldObj.isRemote);
-			if (itemstack != null && itemstack.getItem() == ItemIDs.remoteController.item && worldObj.isRemote && this instanceof Locomotive) {
+			/*if (itemstack != null && itemstack.getItem() == ItemIDs.remoteController.item && worldObj.isRemote && this instanceof Locomotive) {
 				Locomotive thisAsLocomotive = (Locomotive)this;
 				if (thisAsLocomotive.trainIsRemoteControlSupported()) {
 					ItemRemoteController theItem2 = ((ItemRemoteController) itemstack.getItem());
@@ -1693,9 +1692,9 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 					entityplayer.addChatMessage(new ChatComponentText(EnumChatFormatting.RED +  "This train does not support remote control."));
 				}
 				return true;
-			} else if (itemstack != null && itemstack.getItem() == ItemIDs.remoteController.item && !worldObj.isRemote && this instanceof Locomotive) {
-				return true;
-			}
+			//} else if (itemstack != null && itemstack.getItem() == ItemIDs.remoteController.item && !worldObj.isRemote && this instanceof Locomotive) {
+			//	return true;
+			}*/
 
 		return worldObj.isRemote;
 	}

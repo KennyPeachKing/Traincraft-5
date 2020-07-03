@@ -684,6 +684,12 @@ public enum RenderEnum {
 			add(new double[]{1.2D, 1.65D, 0.0D});
 
 		}
+	}, "", null, 0, false),
+	geGenesis(com.jcirmodelsquad.tcjcir.locomotives.GeGenesis.class, new com.jcirmodelsquad.tcjcir.models.ModelGe_Genesis(), "genesis_", true, new float[] {-2.7F, -0.33F, 0F},  new float[] { 0F, 180F, 180F }, null, "smoke",  5,  new ArrayList<double[]>() {
+		{
+			add(new double[]{2D, 1.66D, 0D});
+
+		}
 	}, "", null, 0, false),;
 
 	private Class<? extends AbstractTrains> entityClass;

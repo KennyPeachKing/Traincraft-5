@@ -205,7 +205,7 @@ public class DriverlessMetro extends ElectricTrain {
                 if (thing.get("trainMode") != null) {
                     //Update the train mode.
                     currentMode = thing.get("trainMode").getAsInt();
-                    //  switchOverAtEnd = thing.get("switchOverAtEnd").getAsBoolean();
+                      switchOverAtEnd = thing.get("switchOverAtEnd").getAsBoolean();
                 }
             } else if (thing.get("funct").getAsString().equals("startlevel2")) {
                 if (thing.get("trainMode") != null) {
@@ -215,7 +215,6 @@ public class DriverlessMetro extends ElectricTrain {
                     if (riddenByEntity != null && riddenByEntity instanceof EntityPlayer) {
                         ((EntityPlayer) riddenByEntity).addChatMessage(new ChatComponentText("Connected to main server successfully!"));
                     }
-                    //  switchOverAtEnd = thing.get("switchOverAtEnd").getAsBoolean();
                 }
             } else if (thing.get("funct").getAsString().equals("startCoupling")) {
                 this.isAttaching = true;
@@ -626,5 +625,31 @@ public class DriverlessMetro extends ElectricTrain {
         this.yStationStop = 0.0;
         this.zStationStop = 0.0;
         Traincraft.atoSetStopPoint.sendToAllAround(new PacketATOSetStopPoint(this.getEntityId(), xFromStopPoint, yFromStopPoint, zFromStopPoint, xStationStop, yStationStop, zStationStop), new NetworkRegistry.TargetPoint(this.worldObj.provider.dimensionId, this.posX, this.posY, this.posZ, 150.0D));
+    }
+
+    @Override
+    public void sendMTCStatusUpdate() {
+        JsonObject sendingObj = new JsonObject();
+        sendingObj.addProperty("funct", "update");
+        sendingObj.addProperty("extraDetail", "AutoTrain|TestTrain");
+        sendingObj.addProperty("nextStation", theNextStation.getStationName());
+        sendingObj.addProperty("signalBlock", this.currentSignalBlock);
+        sendingObj.addProperty("trainLevel", this.trainLevel);
+        sendingObj.addProperty("trainName", this.getTrainName());
+        sendingObj.addProperty("destination", this.getDestinationGUI());
+        sendingObj.addProperty("posX", this.posX);
+        sendingObj.addProperty("posY", this.posY);
+        sendingObj.addProperty("posZ", this.posZ);
+        sendingObj.addProperty("atoStatus", this.atoStatus);
+        sendingObj.addProperty("currentMode", currentMode);
+        sendingObj.addProperty("operation", operation);
+        if (this.ridingEntity != null && this.ridingEntity instanceof EntityPlayer) {
+            sendingObj.addProperty("driverName", ((EntityPlayer)ridingEntity).getDisplayName());
+        } else {
+            sendingObj.addProperty("driverName", "Nobody");
+        }
+        sendingObj.addProperty("currentSpeed", (int)Math.abs(this.getSpeed()));
+        sendingObj.addProperty("speedOverrideActivated", overspeedOveridePressed);
+        sendMessage(new PDMMessage(this.trainID, this.serverUUID, sendingObj.toString(), 1));
     }
 }

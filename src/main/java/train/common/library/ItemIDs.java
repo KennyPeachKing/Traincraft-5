@@ -309,8 +309,8 @@ public enum ItemIDs {
 	tcRailVeryLargeSlopeBallast("ItemTCRail", "item_rail_straight_slope_ballast", 3),
 
 	//TC-JCIR
-	remoteController("ItemRemoteController", "remote_controller", 20),
-	remoteControllerModule("ItemRemoteControllerModule", "remote_controller_module", 15),
+	//remoteController("ItemRemoteController", "remote_controller", 20),
+	//remoteControllerModule("ItemRemoteControllerModule", "remote_controller_module", 15),
 	minecartAlcoS2("ItemRollingStock", "alco_s2", 9),
 	minecartRibbedHopper("ItemRollingStock", "ribbed_hopper", 3),
 	minecartGeometryCar("ItemRollingStock", "geometry_car", 15),
@@ -327,7 +327,8 @@ public enum ItemIDs {
 	minecartSD40dash2("ItemRollingStock", "sd40dash2", 13),
 	minecart40highcube("ItemRollingStock", "40highcube", 3),
 	//minecartFRED("ItemRollingStock", "fred", 5),
-	minecartCF7("ItemRollingStock", "cf7", 12),;
+	minecartCF7("ItemRollingStock", "cf7", 12),
+	minecartGeGenesis("ItemRollingStock", "geGenesis", 14);
 	public Item item;
 	public String className;
 	public String iconName;

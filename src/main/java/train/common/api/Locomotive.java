@@ -705,7 +705,7 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
             //4: Horn
 
             if (Minecraft.getMinecraft().thePlayer != null && Vec3.createVectorHelper(Minecraft.getMinecraft().thePlayer.posX, Minecraft.getMinecraft().thePlayer.posY, Minecraft.getMinecraft().thePlayer.posZ).distanceTo(Vec3.createVectorHelper(this.posX, posY, posZ)) < 200) {
-                if (TCKeyHandler.remoteControlForward.getIsKeyPressed() && hasController && isConnected && ((ItemRemoteController) currentItem).attachedLocomotive == this) {
+            /*    if (TCKeyHandler.remoteControlForward.getIsKeyPressed() && hasController && isConnected && ((ItemRemoteController) currentItem).attachedLocomotive == this) {
                     ItemRemoteController theController = (ItemRemoteController) currentItem;
                     Traincraft.remoteControlKey.sendToServer(new RemoteControlKeyPacket(this.getEntityId(), 1));
                 }
@@ -725,7 +725,7 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
                     ItemRemoteController theController = (ItemRemoteController) currentItem;
 
                     Traincraft.remoteControlKey.sendToServer(new RemoteControlKeyPacket(this.getEntityId(), 4));
-                }
+                }*/
             }
 
         }
@@ -971,27 +971,8 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
                 if (mtcType == 2) {
                     //Send updates every few seconds
                     if (this.ticksExisted % 20 == 0) {
-                        JsonObject sendingObj = new JsonObject();
-                        sendingObj.addProperty("funct", "update");
-                        sendingObj.addProperty("signalBlock", this.currentSignalBlock);
-                        sendingObj.addProperty("trainLevel", this.trainLevel);
-                        sendingObj.addProperty("trainName", this.getTrainName());
-                        sendingObj.addProperty("destination", this.getDestinationGUI());
-                        sendingObj.addProperty("posX", this.posX);
-                        sendingObj.addProperty("posY", this.posY);
-                        sendingObj.addProperty("posZ", this.posZ);
-                        sendingObj.addProperty("atoStatus", this.atoStatus);
-                        if (this.ridingEntity != null && this.ridingEntity instanceof EntityPlayer) {
-                            sendingObj.addProperty("driverName", ((EntityPlayer)ridingEntity).getDisplayName());
-                        } else {
-                            sendingObj.addProperty("driverName", "Nobody");
-                        }
-                        sendingObj.addProperty("currentSpeed", (int)Math.abs(this.getSpeed()));
-                        sendingObj.addProperty("speedOverrideActivated", overspeedOveridePressed);
-                        sendMessage(new PDMMessage(this.trainID, this.serverUUID, sendingObj.toString(), 1));
 
-                        EntityRollingStock theEnd;
-
+                    sendMTCStatusUpdate();
 
                     }
 
@@ -1188,6 +1169,26 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
         }
     }
 
+    public void sendMTCStatusUpdate() {
+        JsonObject sendingObj = new JsonObject();
+        sendingObj.addProperty("funct", "update");
+        sendingObj.addProperty("signalBlock", this.currentSignalBlock);
+        sendingObj.addProperty("trainLevel", this.trainLevel);
+        sendingObj.addProperty("trainName", this.getTrainName());
+        sendingObj.addProperty("destination", this.getDestinationGUI());
+        sendingObj.addProperty("posX", this.posX);
+        sendingObj.addProperty("posY", this.posY);
+        sendingObj.addProperty("posZ", this.posZ);
+        sendingObj.addProperty("atoStatus", this.atoStatus);
+        if (this.ridingEntity != null && this.ridingEntity instanceof EntityPlayer) {
+            sendingObj.addProperty("driverName", ((EntityPlayer)ridingEntity).getDisplayName());
+        } else {
+            sendingObj.addProperty("driverName", "Nobody");
+        }
+        sendingObj.addProperty("currentSpeed", (int)Math.abs(this.getSpeed()));
+        sendingObj.addProperty("speedOverrideActivated", overspeedOveridePressed);
+        sendMessage(new PDMMessage(this.trainID, this.serverUUID, sendingObj.toString(), 1));
+    }
 
 
     @Override

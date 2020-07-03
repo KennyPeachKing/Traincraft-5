@@ -210,7 +210,7 @@ public enum EnumTrains {
 	locoElectricMineTrain("Loco Electric Minetrain",EntityLocoElectricMinetrain.class,ItemIDs.minecartLocoMineTrain.item,"electric",500,40,0,80,0,160,0.5,0.97,0,null,18,-1),
 	locoElectricSpeedZeroED("Loco Electric High Speed ZeroED", EntityLocoElectricHighSpeedZeroED.class, ItemIDs.minecartLocoHighSpeedZeroED.item, "electric", 700, 237, 0, 3, 0,230, 1.4, 0.98, 0, null, 13,  -3.4),
 	locoElectricICE1("Loco Electric ICE 1", EntityLocoElectricICE1.class, ItemIDs.minecartICE1_Loco.item,
-			"electric", 6539, 280, 0, 4, 0, 250, 1.5, 0.98, 0, null, 13, -5),
+			"electric", 1400, 280, 0, 4, 0, 250, 1.5, 0.98, 0, null, 13, -5),
 	//locoSpeedGrey("Loco High Speed",EntityLocoElectricNewHighSpeedLoco.class, null,null),
 	locoElectricTramYellow("Loco Electric Yellow Wood Tram",EntityLocoElectricTramWood.class, ItemIDs.minecartTramWood.item,"electric",300,55,0,10,0,140,0.5,0.965,0,null,14,-2),
 	locoElectricTramNY("Loco Electric Tram NY", EntityLocoElectricTramNY.class,  ItemIDs.minecartNYTram.item,
@@ -287,7 +287,9 @@ public enum EnumTrains {
 	SD40dash2("SD40dash2", com.jcirmodelsquad.tcjcir.locomotives.DieselSD40dash2.class, ItemIDs.minecartSD40dash2.item, "diesel", 3000, 105, 0, 60, 0, 190, 0.75, 0.89, 20000, TraincraftUtil.getBytesFromColors(new String[] {"Orange", "Green", "Pink", "Magenta", "White"}), 10, -4.6, "Model by the great and powerful Bida"),
 	bawx40highcube("40highcube", com.jcirmodelsquad.tcjcir.rollingstock.bawx40highcube.class, ItemIDs.minecart40highcube.item, "freight", 4, TraincraftUtil.getBytesFromColors(new String[] {"Brown", "Green", "Cyan", "Orange", "Grey"}), 0, 40, "Model by Prof Binky"),
 	//FRED("FRED", com.jcirmodelsquad.tcjcir.rollingstock.FRED.class, ItemIDs.minecartFRED.item, "misc", 0.2, null, 0, 1, "i figured this would be fun to have -bida"), //stupid thing doesnt break or even couple
-	CF7("CF7", com.jcirmodelsquad.tcjcir.locomotives.DieselCF7.class, ItemIDs.minecartCF7.item, "diesel", 1500, 116, 0, 45, 0, 185, 0.8, 0.9, 20000, TraincraftUtil.getBytesFromColors(new String[] {"Yellow", "Red", "LightGrey", "White", "Cyan", "Lime", "Magenta", "Purple"}), 10, -3, "Model version: 4. By Bida"),;
+	CF7("CF7", com.jcirmodelsquad.tcjcir.locomotives.DieselCF7.class, ItemIDs.minecartCF7.item, "diesel", 1500, 116, 0, 45, 0, 185, 0.8, 0.9, 20000, TraincraftUtil.getBytesFromColors(new String[] {"Yellow", "Red", "LightGrey", "White", "Cyan", "Lime", "Magenta", "Purple"}), 10, -4.6, "Model version: 4. By Bida"),
+	geGenesis("Ge Genesis", com.jcirmodelsquad.tcjcir.locomotives.GeGenesis.class, ItemIDs.minecartGeGenesis.item, "diesel", 4250, 117, 0, 55, 0, 175, 0.93, 0.94, 20000, TraincraftUtil.getBytesFromColors(new String[] {"" +
+					"LightGrey", "Grey", "White"}), 10, -5.5, "Model by Messicrew");
 
 
 	/*passengerICE1_Restaurant("ICE Restaurant", EntityPassengerICE_Restaurant.class,
