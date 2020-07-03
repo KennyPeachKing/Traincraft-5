@@ -292,7 +292,7 @@ public enum EnumTrains {
 	WoodchipHopper("WoodchipHopper", com.jcirmodelsquad.tcjcir.rollingstock.WoodchipHopper.class, ItemIDs.minecartWoodchipHopper.item, "freight", 5, TraincraftUtil.getBytesFromColors(new String[] {"Brown", "Blue", "Green", "Orange", "Red"}), 0, 50, "Cargo: Wood things (once i figure that out), Model by Binky"),
 	OreJenny("OreJenny", com.jcirmodelsquad.tcjcir.rollingstock.OreJenny.class, ItemIDs.minecartOreJenny.item, "freight", 1, TraincraftUtil.getBytesFromColors(new String[] {"Brown", "Red", "Orange", "Pink"}), 0, 27, "Cargo: Ore (dUh), Model by Binky"),
 	SF30C("SF30C", com.jcirmodelsquad.tcjcir.locomotives.DieselSF30C.class, ItemIDs.minecartSF30C.item, "diesel", 3000, 121, 0, 55, 0, 195, 0.7, 0.8, 21000, null, 10, -4.3, "model by BIda"),
-	SDL39("SDL39", com.jcirmodelsquad.tcjcir.locomotives.DieselSDL39.class, ItemIDs.minecartSDL39.item, "diesel", 2300, 152, 0, 60, 0, 180, 0.8, 0.9, 15000, TraincraftUtil.getBytesFromColors(new String[] {"Orange", "Blue"}), 10, -3, "model by binky");
+	SDL39("SDL39", com.jcirmodelsquad.tcjcir.locomotives.DieselSDL39.class, ItemIDs.minecartSDL39.item, "diesel", 2300, 152, 0, 60, 0, 180, 0.8, 0.9, 15000, TraincraftUtil.getBytesFromColors(new String[] {"Orange", "Blue"}), 10, -3, "model by binky"),
 	geGenesis("Ge Genesis", com.jcirmodelsquad.tcjcir.locomotives.GeGenesis.class, ItemIDs.minecartGeGenesis.item, "diesel", 4250, 117, 0, 55, 0, 175, 0.93, 0.94, 20000, TraincraftUtil.getBytesFromColors(new String[] {"" +
 					"LightGrey", "Grey", "White"}), 10, -5.5, "Model by Messicrew");
 
