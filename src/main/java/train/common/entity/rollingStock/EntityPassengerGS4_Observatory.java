@@ -26,7 +26,9 @@ public class EntityPassengerGS4_Observatory extends EntityRollingStock implement
 	}
 	@Override
 	public void updateRiderPosition() {
-		TraincraftUtil.updateRider(this,  -0.05, 0.15);
+		if(riddenByEntity!=null) {
+			riddenByEntity.setPosition(posX, posY + getMountedYOffset() + riddenByEntity.getYOffset() + 0.17, posZ);
+		}
 	}
 
 	@Override

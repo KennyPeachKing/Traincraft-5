@@ -1682,6 +1682,6 @@ public class ModelCF7 extends ModelConverter //Same as Filename
 	{
 	}
 
-	public ModelRendererTurbo SW1500Model[];
+	public ModelRendererTurbo ModelCF7[];
 
 }

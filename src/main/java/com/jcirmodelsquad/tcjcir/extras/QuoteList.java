@@ -52,6 +52,21 @@ public class QuoteList {
         importantQuotes.add(new JCIRQuote("A RECTANGLE IS A SQUARE!!", "Bidahochi"));
         importantQuotes.add(new JCIRQuote("No, don't sit on my CF7 book", "Bidahochi"));
         importantQuotes.add(new JCIRQuote("THat's weird, it works in the test enviorment..", "Bida"));
+        importantQuotes.add(new JCIRQuote("HELP ME! THE PIGMEN HAVE GUNS!", "New Players on the Server"));
+        importantQuotes.add(new JCIRQuote("oOooO we'll give this one an h!", "SDM"));
+        importantQuotes.add(new JCIRQuote("the cubes pissed on your face and you died!", "Bida"));
+        importantQuotes.add(new JCIRQuote(" i hate you but i like you no homo ARE YOU SHITTING ON ME!?", "JCRail"));
+        importantQuotes.add(new JCIRQuote("What are you sUcking gUAHH gUAHH!!", "Peach"));
+        importantQuotes.add(new JCIRQuote("Squidward, I require your nutt for my splattershot", "SteampunkBobby"));
+        importantQuotes.add(new JCIRQuote("I will lick whipped cream off of your fursuit", "Wastey"));
+        importantQuotes.add(new JCIRQuote("The literal JCIR Server falls into a pit and dies.", "Hunger Games"));
+        importantQuotes.add(new JCIRQuote("Meowcat likes to show is hot buns with chocolate all over them", "Meowcats Mom"));
+        importantQuotes.add(new JCIRQuote("Introducing Solar-Powered Communism!", "JCRaeyroader"));
+        importantQuotes.add(new JCIRQuote("Well damnit i was gonna tell him about the Butt Ship! ", "JC"));
+        importantQuotes.add(new JCIRQuote("god damnit lionel", "Rez"));
+        importantQuotes.add(new JCIRQuote("JCRail likes trains.. and he likes the smell. ", "JCRail"));
+        importantQuotes.add(new JCIRQuote("Ive been building dicks since the sixth grade ", "Rez"));
+
         return importantQuotes;
 
     }

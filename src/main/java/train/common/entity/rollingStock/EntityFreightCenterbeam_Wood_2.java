@@ -101,6 +101,11 @@ public class EntityFreightCenterbeam_Wood_2 extends Freight implements IInventor
 	}
 
 	@Override
+	public int getInventoryStackLimit() {
+		return 64;
+	}
+
+	@Override
 	public boolean isItemValidForSlot(int i, ItemStack itemstack) {
 		return true;
 	}

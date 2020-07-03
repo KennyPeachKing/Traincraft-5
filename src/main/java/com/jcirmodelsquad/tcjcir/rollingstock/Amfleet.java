@@ -26,7 +26,9 @@ public class Amfleet extends EntityRollingStock implements IPassenger {
 
     @Override
     public void updateRiderPosition() {
-        TraincraftUtil.updateRider(this, -0.1, 0);
+        if(riddenByEntity!=null) {
+            riddenByEntity.setPosition(posX, posY + getMountedYOffset() + riddenByEntity.getYOffset() + 0.2, posZ);
+        }
     }
 
     @Override
