@@ -56,7 +56,6 @@ public class GuiRecipeBook extends GuiScreen {
 	private RenderItem renderItem = new RenderItem();
 
 	public GuiRecipeBook(EntityPlayer par1EntityPlayer, ItemStack par2ItemStack) {
-		bookTotalPages = 110;
 		this.editingPlayer = par1EntityPlayer;
 		this.itemstackBook = par2ItemStack;
 		this.currPage = this.itemstackBook.getTagCompound().getInteger("currPage");
@@ -89,7 +88,7 @@ public class GuiRecipeBook extends GuiScreen {
 				add(new StackToDraw(new ItemStack(ItemIDs.minecartCabooseLogging.item), 120, 175));
 			}
 		});
-		addPage("Special thanks to the JCIR-Traincraft contributors and developers:\n \nPeachMaster\nBidahochi\nJCRail\nProf. Binky\nBigJ\nMessicrew\n\nimWastey\nAnd JCRail for making a great server :)", "", "left", new ArrayList<StackToDraw>() {
+		addPage("Special thanks to the JCIR-Traincraft contributors and developers:\n \nPeachMaster\nBidahochi\nProf. Binky\nBigJ\nMessicrew\n\nimWastey\nAnd JCRail for making a great server :)", "", "left", new ArrayList<StackToDraw>() {
 			{
 				add(new StackToDraw(new ItemStack(ItemIDs.minecartAlcoS2.item), 20, 16));
 				add(new StackToDraw(new ItemStack(ItemIDs.minecartAmfleet.item), 170, 16));
@@ -379,7 +378,7 @@ public class GuiRecipeBook extends GuiScreen {
 		});
 		addPage("this page was intentionally left blank, as a joke.","","right",null);
 		if (rightPage != null && recipeList != null && recipeListWB != null)
-			bookTotalPages = this.rightPage.size() + (recipeList.size() / 2) + (recipeListWB.size() / 2);
+				bookTotalPages = this.rightPage.size() + (recipeList.size() / 2 + 2) + (recipeListWB.size() / 2);
 	}
 
 	public class StackToDraw {

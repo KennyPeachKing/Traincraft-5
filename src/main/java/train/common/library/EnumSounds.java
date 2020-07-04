@@ -103,7 +103,8 @@ public enum EnumSounds {
 	SDL39(com.jcirmodelsquad.tcjcir.locomotives.DieselSDL39.class, "nathan_p3", 2F, "645e3_notch8", 0.65F, 10, "645e3_idle", 0.65F, 3, true),
 	geGenesis(com.jcirmodelsquad.tcjcir.locomotives.GeGenesis.class, "nathan_k5La", 2.5F, "7fdl-12_notch8", 0.65F, 40, "7fdl-12_idle", 0.65F, 50, true),
 	F7A(com.jcirmodelsquad.tcjcir.locomotives.DieselF7A.class, "leslie_a200", 1F, "567_notch8", 0.45F, 15, "567_idle", 0.75F, 3, true),
-	F7B(com.jcirmodelsquad.tcjcir.locomotives.DieselF7B.class, "leslie_a200", 0F, "567_notch8", 0.45F, 15, "567_idle", 0.75F, 3, true),;
+	F7B(com.jcirmodelsquad.tcjcir.locomotives.DieselF7B.class, "leslie_a200", 0F, "567_notch8", 0.45F, 15, "567_idle", 0.75F, 3, true),
+	;
 
 
 	private Class entityClass;
