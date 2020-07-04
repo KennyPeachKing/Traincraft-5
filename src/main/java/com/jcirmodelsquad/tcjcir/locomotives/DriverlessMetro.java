@@ -13,7 +13,9 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagInt;
 import net.minecraft.nbt.NBTTagList;
+import net.minecraft.nbt.NBTTagString;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.MathHelper;
@@ -23,6 +25,7 @@ import org.apache.commons.lang3.StringUtils;
 import train.common.Traincraft;
 import train.common.api.ElectricTrain;
 import train.common.api.EntityRollingStock;
+import train.common.api.SteamTrain;
 import train.common.library.GuiIDs;
 import train.common.mtc.PDMMessage;
 import train.common.mtc.packets.PacketATO;
@@ -52,7 +55,7 @@ public class DriverlessMetro extends ElectricTrain {
         2: Fully Automatic
      */
     public int operation = 0;
-
+    public boolean justLoaded;
     public boolean requestedTimetable = false;
 
     public ArrayList<Station> theTimetable = new ArrayList<Station>();
@@ -69,6 +72,8 @@ public class DriverlessMetro extends ElectricTrain {
     private long lastMills = 0L;
     private long lastMillsRTD = 0L;
     private boolean readyToDepart;
+    public ArrayList<Station> initalTimetable = new ArrayList<Station>();
+    public String initalPosition = "n";
 
     public DriverlessMetro(World world) {
         super(world);
@@ -150,7 +155,57 @@ public class DriverlessMetro extends ElectricTrain {
                 nbttaglist.appendTag(nbttagcompound1);
             }
         }
+        NBTTagList theTimetable = new NBTTagList();
+        NBTTagList theInitalimetable = new NBTTagList();
+        for (Station station : this.theTimetable) {
+            NBTTagCompound theStation = new NBTTagCompound();
+            theStation.setString("stationName", station.getStationName());
+            theStation.setInteger("dwellTime", station.getDwellTime());
+            theStation.setDouble("x", station.getStationX());
+            theStation.setDouble("y", station.getStationY());
+            theStation.setDouble("z", station.getStationZ());
+            theStation.setBoolean("isFinalStop", station.isFinalStop);
+            theTimetable.appendTag(theStation);
+        }
+
+        for (Station station : initalTimetable) {
+            NBTTagCompound theStation = new NBTTagCompound();
+            theStation.setString("stationName", station.getStationName());
+            theStation.setInteger("dwellTime", station.getDwellTime());
+            theStation.setDouble("x", station.getStationX());
+            theStation.setDouble("y", station.getStationY());
+            theStation.setDouble("z", station.getStationZ());
+            theStation.setBoolean("isFinalStop", station.isFinalStop);
+            theInitalimetable.appendTag(theStation);
+        }
+        if (theNextStation != null) {
+            nbttagcompound.setString("theNextStation", theNextStation.getStationName());
+        } else {
+            nbttagcompound.setString("theNextStation", "null");
+        }
+        if (theCurrentStation != null) {
+            nbttagcompound.setString("theCurrentStation", theCurrentStation.getStationName());
+        } else {
+            nbttagcompound.setString("theCurrentStation", "null");
+        }
+        if (theLastStation != null) {
+            nbttagcompound.setString("theLastStation", theLastStation.getStationName());
+        } else {
+            nbttagcompound.setString("theLastStation", "null");
+        }
+
+        nbttagcompound.setBoolean("switchOverAtEnd", switchOverAtEnd);
+        nbttagcompound.setBoolean("isLeading", switchOverAtEnd);
+        //nbttagcompound.setLong("lastMills", lastMillsRTD);
+        nbttagcompound.setBoolean("readyToDepart", readyToDepart);
+        nbttagcompound.setString("initalPosition", initalPosition);
         nbttagcompound.setTag("Items", nbttaglist);
+        nbttagcompound.setTag("Stations", theTimetable);
+        nbttagcompound.setTag("InitalStations", theInitalimetable);
+        nbttagcompound.setInteger("atoStatus", atoStatus);
+        nbttagcompound.setBoolean("stationStopping", stationStopping);
+        nbttagcompound.setInteger("operation", operation);
+        nbttagcompound.setInteger("currentMode", currentMode);
     }
 
     @Override
@@ -167,6 +222,55 @@ public class DriverlessMetro extends ElectricTrain {
                 locoInvent[j] = ItemStack.loadItemStackFromNBT(nbttagcompound1);
             }
         }
+        NBTTagList stationsTagList = nbttagcompound.getTagList("Stations", Constants.NBT.TAG_COMPOUND);
+
+        for (int i = 0; i < stationsTagList.tagCount(); i++) {
+            NBTTagCompound theCompound = stationsTagList.getCompoundTagAt(i);
+            theTimetable.add(new Station(theCompound.getString("stationName"), theCompound.getDouble("x"),theCompound.getDouble("y"),theCompound.getDouble("z"), theCompound.getInteger("dwellTime"), theCompound.getBoolean("isFinalStop")));
+        }
+
+        NBTTagList initalStationsTagList = nbttagcompound.getTagList("InitalStations", Constants.NBT.TAG_COMPOUND);
+
+        for (int i = 0; i < initalStationsTagList.tagCount(); i++) {
+            NBTTagCompound theCompound = initalStationsTagList.getCompoundTagAt(i);
+            initalTimetable.add(new Station(theCompound.getString("stationName"), theCompound.getDouble("x"),theCompound.getDouble("y"),theCompound.getDouble("z"), theCompound.getInteger("dwellTime"), theCompound.getBoolean("isFinalStop")));
+        }
+
+        if (!nbttagcompound.getString("theNextStation").equals("null")) {
+            for (Station c : theTimetable) {
+                if (c.name.equals(nbttagcompound.getString("theNextStation"))) {
+                    theNextStation = theTimetable.get(theTimetable.indexOf(c));
+                    break;
+                }
+            }
+        }
+        if (!nbttagcompound.getString("theCurrentStation").equals("null")) {
+            for (Station c : theTimetable) {
+                if (c.name.equals(nbttagcompound.getString("theCurrentStation"))) {
+                    theCurrentStation = theTimetable.get(theTimetable.indexOf(c));
+                    break;
+                }
+            }
+        }
+        if (!nbttagcompound.getString("theLastStation").equals("null")) {
+            for (Station c : theTimetable) {
+                if (c.name.equals(nbttagcompound.getString("theLastStation"))) {
+                    theLastStation = theTimetable.get(theTimetable.indexOf(c));
+                    break;
+                }
+            }
+        }
+        switchOverAtEnd = nbttagcompound.getBoolean("switchOverAtEnd");
+        isLeading = nbttagcompound.getBoolean("isLeading");
+        //lastMills = nbttagcompound.getLong("lastMills");
+        //lastMillsRTD = nbttagcompound.getLong("lastMillsRTD");
+        readyToDepart = nbttagcompound.getBoolean("readyToDepart");
+        initalPosition = nbttagcompound.getString(initalPosition);
+        atoStatus = nbttagcompound.getInteger("atoStatus");
+        stationStopping = nbttagcompound.getBoolean("stationStopping");
+        currentMode = nbttagcompound.getInteger("currentMode");
+        operation = nbttagcompound.getInteger("operation");
+        justLoaded = true;
     }
 
     @Override
@@ -257,14 +361,7 @@ public class DriverlessMetro extends ElectricTrain {
                     }
                     theNextStation = theTimetable.get(0);
                 }
-
-
-                for (Station pa : theTimetable) {
-
-                    if (theLastStation.name.equals(pa.getStationName())) {
-                    } else {
-                    }
-                }
+                initalTimetable = theTimetable;
                 operation = 1;
             }
         }
@@ -275,9 +372,15 @@ public class DriverlessMetro extends ElectricTrain {
     @Override
     public void onUpdate() {
         super.onUpdate();
+
+
         //Whatever, handle current W-MTC stuff. But here, let's add a couple of new things.
         if (!worldObj.isRemote) {
-
+            if (justLoaded) {
+                lastMillsRTD = System.currentTimeMillis();
+                lastMills = System.currentTimeMillis();
+                justLoaded = false;
+            }
             if (rotation < 90.0 && rotation > 0 || rotation == 90.0) { // Works
                 boundingBox = AxisAlignedBB.getBoundingBox(posX, posY, posZ, posX - 5, posY + 2, posZ);
             } else if (rotation < 180.0 && rotation > 90.0 || rotation == -180 || rotation == 180) { // Works
@@ -309,7 +412,7 @@ public class DriverlessMetro extends ElectricTrain {
 
                 for (Object obj : animalEntityList) {
                     System.out.println(obj.getClass().getName());
-                    if (!this.getClass().isInstance(obj)) {
+                    if (!theRadio.sendMessage(sentFrom, owo)this.getClass().isInstance(obj)) {
                         System.out.println("something 2");
                         if (obj instanceof EntityAnimal) {
                             soundHorn();
@@ -331,8 +434,7 @@ public class DriverlessMetro extends ElectricTrain {
                 int dir = MathHelper
                         .floor_double((((EntityPlayer) riddenByEntity).rotationYaw * 4F) / 360F + 0.5D) & 3;
             }
-
-            //	if (mtcOverridePressed) {currentMode = 0;
+            if (mtcOverridePressed) {currentMode = 0;};
             switch (currentMode) {
                 case 0: { // Off. However, still transmit to the server. You never know when it might ask you to start.
                     speedLimit = 0;
@@ -371,7 +473,6 @@ public class DriverlessMetro extends ElectricTrain {
                 }
                 case 3: {
                     mtcStatus = 1;
-
                     if (operation == 1) {
                         double distanceFromNextStation = 0.0;
                         if ( theTimetable.size() != 0) {
@@ -431,6 +532,11 @@ public class DriverlessMetro extends ElectricTrain {
                                     stationStop = false;
                                     theCurrentStation = null;
                                     operation = 0;
+                                } else if (theCurrentStation.isFinalStop() && otherSide != null && !switchOverAtEnd) {
+                                    JsonObject sendingObj = new JsonObject();
+                                    sendingObj.addProperty("funct", "readyforinstructions");
+                                    sendingObj.addProperty("position", theCurrentStation.getStationName());
+                                    sendMessage(new PDMMessage(otherSide.trainID, serverUUID, sendingObj.toString(), 0));
                                 } else {
                                     //No? It isn't the final stop? Okay, continue on the route.
                                     if (isLeading) {
@@ -525,6 +631,7 @@ public class DriverlessMetro extends ElectricTrain {
                     if (list != null) {
                         String theBook = list.getStringTagAt(0);
                         operatingMode = Integer.valueOf(StringUtils.substringBetween(theBook, "/", "/"));
+                        String initalPosition = StringUtils.substringBetween(theBook, "~");
                         thePlayer.addChatMessage(new ChatComponentText("Operating mode: " + operatingMode));
                         if (operatingMode == 2) {
                             if (cartLinked1 != null) {
@@ -547,6 +654,11 @@ public class DriverlessMetro extends ElectricTrain {
                             } else {
                                 thePlayer.addChatMessage(new ChatComponentText("There is no other side on the consist. This shouldn't be used for service consists."));
                             }
+
+                            if (initalPosition != null) {
+                                this.initalPosition = initalPosition;
+                                thePlayer.addChatMessage(new ChatComponentText("Inital position confirmed: " + initalPosition));
+                            }
                             attemptConnection(StringUtils.substringBetween(theBook, "|", "|"));
                             thePlayer.addChatMessage(new ChatComponentText("Attempting connection to server."));
                         } else {
@@ -556,12 +668,17 @@ public class DriverlessMetro extends ElectricTrain {
                     }
 
 
+                } else {
+                    currentMode = 6;
                 }
             } catch (Exception e) {
+                e.printStackTrace();
                 thePlayer.addChatMessage(new ChatComponentText("Something happened. Self-test failed. " + e.getMessage()));
+                this.currentMode = 6;
             }
         } else if (!set) {
             disconnectFromServer();
+            theTimetable.clear();
         }
 
     }
@@ -617,8 +734,35 @@ public class DriverlessMetro extends ElectricTrain {
     public void sendMTCStatusUpdate() {
         JsonObject sendingObj = new JsonObject();
         sendingObj.addProperty("funct", "update");
-        sendingObj.addProperty("extraDetail", "AutoTrain|TestTrain");
-        sendingObj.addProperty("nextStation", theNextStation.getStationName());
+        sendingObj.addProperty("extraDetail", "AutoTrain");
+
+        if (theTimetable != null)  {
+
+            JsonArray timetableListArray = new JsonArray();
+            if (theNextStation != null) {
+                sendingObj.addProperty("nextStation", theNextStation.getStationName());
+            }
+            if (theCurrentStation != null) {
+                sendingObj.addProperty("currentStation", theCurrentStation.getStationName());
+            }
+            if (theCurrentStation != null) {
+                sendingObj.addProperty("finalStation", theLastStation.getStationName());
+            }
+
+            if (initalTimetable != null) {
+                for (Station station : initalTimetable) {
+                    JsonObject stationObject = new JsonObject();
+                    stationObject.addProperty("position", initalTimetable.indexOf(station));
+                    stationObject.addProperty("name", station.getStationName());
+                    stationObject.addProperty("x", station.getStationX());
+                    stationObject.addProperty("y", station.getStationY());
+                    stationObject.addProperty("z", station.getStationZ());
+                    stationObject.addProperty("dwellTime", station.getDwellTime());
+                    timetableListArray.add(stationObject);
+                }
+                sendingObj.add("initalTimetable", timetableListArray);
+            }
+        }
         sendingObj.addProperty("signalBlock", this.currentSignalBlock);
         sendingObj.addProperty("trainLevel", this.trainLevel);
         sendingObj.addProperty("trainName", this.getTrainName());
@@ -628,6 +772,7 @@ public class DriverlessMetro extends ElectricTrain {
         sendingObj.addProperty("posZ", this.posZ);
         sendingObj.addProperty("atoStatus", this.atoStatus);
         sendingObj.addProperty("currentMode", currentMode);
+        sendingObj.addProperty("stationStop", stationStop);
         sendingObj.addProperty("operation", operation);
         if (this.ridingEntity != null && this.ridingEntity instanceof EntityPlayer) {
             sendingObj.addProperty("driverName", ((EntityPlayer)ridingEntity).getDisplayName());
@@ -638,4 +783,29 @@ public class DriverlessMetro extends ElectricTrain {
         sendingObj.addProperty("speedOverrideActivated", overspeedOveridePressed);
         sendMessage(new PDMMessage(this.trainID, this.serverUUID, sendingObj.toString(), 1));
     }
+    @Override
+    public void attemptConnection(String theServerUUID) {
+        //Oh, that's great! We just got the servers UUID. Now let's try connecting to it.
+        //Check if it is one of the supported trains
+        //Check for support
+        if ( trainIsWMTCSupported() && this.worldObj != null && !worldObj.isRemote) {
+            if (theServerUUID != null && !serverUUID.equals(theServerUUID) && !canBePulled) {
+                //	System.out.println("Oh, that's great! We just got the servers UUID. Now let's try connecting to it.");
+                JsonObject sendTo = new JsonObject();
+                sendTo.addProperty("funct", "attemptconnection");
+                sendTo.addProperty("trainType", this.trainLevel);
+                sendTo.addProperty("extraDetail", "AutoTrain");
+                sendTo.addProperty("initalPosition", initalPosition);
+                sendTo.addProperty("destination", this.getDestinationGUI());
+                sendMessage(new PDMMessage(this.trainID, theServerUUID, sendTo.toString(), 0));
+            }
+        } else {
+            isConnecting = false;
+            connectingUUID = "";
+
+        }
+    }
+
+
+
 }
