@@ -63,7 +63,7 @@ public enum EnumSounds {
 
 	locoCD742(EntityLocoDieselCD742.class, "742_horn", 0.8F, "742_motor_slow", 0.65F, 40, "742_motor", 0.65F, 40,
 			false),
-	locoChME3(EntityLocoDieselChME3.class, "chme3_horn", 0.8F, "chme3_idle", 0.65F, 40, "chme3_idle", 0.65F, 40, false),
+	locoChME3(EntityLocoDieselChME3.class, "chme3_horn", 0.8F, "chme3_run", 0.65F, 40, "chme3_idle", 0.65F, 40, false),
 	locoGP7Red(EntityLocoDieselGP7Red.class, "gp_horn", 0.8F, "chme3_run", 0.65F, 40, "chme3_idle", 0.65F, 40, false),
 	locoBP4(EntityLocoElectricBP4.class, "gp_horn", 0.8F, "mg_run", 0.6F, 8, "mg_idle", 0.4F, 50, false),
 	locoFOLM1(EntityLocoDieselFOLM1.class, "gp40-2_horn", 0.8F, "chme3_run", 0.65F, 40, "chme3_idle", 0.65F, 40, false),
@@ -75,7 +75,7 @@ public enum EnumSounds {
 	locoDD35A(EntityLocoDieselDD35A.class, "sd70_horn", 0.8F, "chme3_run", 0.65F, 40, "chme3_idle", 0.65F, 40, false),
 	locoShunter(EntityLocoDieselShunter.class, "british_two_tone", 0.8F, "chme3_idle", 0.65F, 40, "chme3_idle", 0.65F, 40, false),
 	locoV60_DB(EntityLocoDieselV60_DB.class, "v60_horn", 0.8F, "chme3_idle", 0.65F, 40, "chme3_idle", 0.65F, 40, false),
-	loco44tonSwitcher(EntityLocoDiesel44TonSwitcher.class, "v60_horn", 0.8F, "chme3_run", 0.65F, 40, "chme3_idle", 0.65F, 40, false),
+	loco44tonSwitcher(EntityLocoDiesel44TonSwitcher.class, "leslie_a200", 0.8F, "chme3_run", 0.65F, 40, "chme3_idle", 0.65F, 40, false),
 	locoF7(EntityLocoDieselEMDF7.class, "sd70_horn", 0.8F, "chme3_run", 0.65F, 40, "chme3_idle", 0.65F, 40, false),
 	locoF3(EntityLocoDieselEMDF3.class, "sd70_horn", 0.8F, "chme3_run", 0.65F, 40, "chme3_idle", 0.65F, 40, false),
 	MILW_H1044(EntityLocoDieselMILW_H1044.class, "eu07_horn", 0.8F, "vl10_idle", 0.65F, 40, "vl10_idle", 0.65F, 40, false),

@@ -124,7 +124,7 @@ public class DieselSW1500 extends DieselTrain {
     }
 
     @Override
-    public float getOptimalDistance(EntityMinecart cart) { return 0.8F;
+    public float getOptimalDistance(EntityMinecart cart) { return 0.9F;
     }
 
     @Override

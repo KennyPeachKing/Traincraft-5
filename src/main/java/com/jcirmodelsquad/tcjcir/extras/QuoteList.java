@@ -69,6 +69,8 @@ public class QuoteList {
         importantQuotes.add(new JCIRQuote("Dude, i just got stabbed, Chill", "JCRail"));
         importantQuotes.add(new JCIRQuote("Okey, thankies from mcspankies. No prob Rom the Don", "PeachMaster and JCRail"));
         importantQuotes.add(new JCIRQuote("My dad went outside with a can of propane and told me not to follow him!", "Wastey"));
+        importantQuotes.add(new JCIRQuote("They changed the cum robot!? you cant just change the cum robot!", "Bida"));
+        importantQuotes.add(new JCIRQuote("wooAOOAAAAAAAAAHHH its upSIDEdoWWWNNN!", "Binky"));
 
         return importantQuotes;
 

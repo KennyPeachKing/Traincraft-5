@@ -657,7 +657,7 @@ public enum RenderEnum {
 			add(new double[]{0.9D, 1.6D, 0.0D});
 		}
 	}, "", null, 0, false),
-	SW1500( com.jcirmodelsquad.tcjcir.locomotives.DieselSW1500.class,  new com.jcirmodelsquad.tcjcir.models.ModelSW1500(), "sw1500_", true,new float[] {-1.6F, -0F, 0F},  new float[] { 0F, 180F, 180F }, null, "largesmoke", 1,  new ArrayList<double[]>() {
+	SW1500( com.jcirmodelsquad.tcjcir.locomotives.DieselSW1500.class,  new com.jcirmodelsquad.tcjcir.models.ModelSW1500(), "sw1500_", true,new float[] {-1.2F, -0.01F, 0F},  new float[] { 0F, 180F, 180F }, null, "largesmoke", 1,  new ArrayList<double[]>() {
 		{
 			add(new double[]{1.3D, 2D, 0.0D});
 
