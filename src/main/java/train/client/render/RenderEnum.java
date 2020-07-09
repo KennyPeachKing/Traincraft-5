@@ -725,6 +725,12 @@ public enum RenderEnum {
 			add(new double[]{0.9D, 1.7D, 0.0D});
 
 		}
+	}, "", null, 0, false),
+	ES44( com.jcirmodelsquad.tcjcir.locomotives.DieselES44.class,  new com.jcirmodelsquad.tcjcir.models.ModelES44(), "es44_", true,new float[] {-2.3F, 0.15F, 0F},  new float[] { 0F, 180F, 180F }, null, "smoke", 5,  new ArrayList<double[]>() {
+		{
+			add(new double[]{1.4D, 1.7D, 0.0D});
+
+		}
 	}, "", null, 0, false),;
 
 	private Class<? extends AbstractTrains> entityClass;

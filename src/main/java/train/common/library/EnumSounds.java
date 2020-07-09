@@ -104,6 +104,7 @@ public enum EnumSounds {
 	geGenesis(com.jcirmodelsquad.tcjcir.locomotives.GeGenesis.class, "nathan_k5La", 2.5F, "7fdl-12_notch8", 0.65F, 40, "7fdl-12_idle", 0.65F, 50, true),
 	F7A(com.jcirmodelsquad.tcjcir.locomotives.DieselF7A.class, "leslie_a200", 1F, "567_notch8", 0.45F, 15, "567_idle", 0.75F, 3, true),
 	F7B(com.jcirmodelsquad.tcjcir.locomotives.DieselF7B.class, "leslie_a200", 0F, "567_notch8", 0.45F, 15, "567_idle", 0.75F, 3, true),
+	ES44(com.jcirmodelsquad.tcjcir.locomotives.DieselES44.class, "nathan_k5hl", 1F, "gevo12_notch8", 0.65F, 20, "gevo12_idle", 0.75F, 50, true),
 	;
 
 
