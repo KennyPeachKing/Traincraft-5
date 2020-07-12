@@ -5,7 +5,7 @@ import train.common.entity.rollingStock.*;
 public enum EnumSounds {
 
 	locoCherepanov(EntityLocoSteamCherepanov.class, "steam_horn", 0.6F, "steam_run", 0.2F, 20, "steam_run", 0.2F, 20, true),
-	locoHeavySteam(EntityLocoSteamHeavy.class, "steam_horn", 0.6F, "steam_run", 0.4F, 20, "steam_run", 0.4F, 20, true),
+	locoHeavySteam(EntityLocoSteamHeavy.class, "heavy_whistle", 1F, "steam_run", 0.4F, 20, "steam_run", 0.4F, 20, true),
 	locoSteam(EntityLocoSteam4_4_0.class, "american_steam_horn", 0.8F, "steam_run", 0.2F, 20, "steam_run", 0.2F, 20, true),
 	locoA4(EntityLocoSteamMallardA4.class, "steam_horn", 0.6F, "steam_run", 0.2F, 20, "steam_run", 0.2F, 20, true),
 	locoSteamBig(EntityLocoSteamHeavy.class, "steam_horn", 0.6F, "steam_run", 0.4F, 20, "steam_run", 0.4F, 20, true),

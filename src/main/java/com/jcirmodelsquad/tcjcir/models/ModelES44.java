@@ -952,8 +952,8 @@ public class ModelES44 extends ModelConverter //Same as Filename
 			}
 		}
 
-		if(entity instanceof AbstractTrains && ((AbstractTrains) entity).getColor()==15){
-			Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/gevotruck_Black.png")); //i love the smell of pointless code in the morning
+		if(entity instanceof AbstractTrains && ((AbstractTrains) entity).getColor()==14){
+			Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/gevotruck_Grey.png")); //i love the smell of pointless code in the morning
 		} else {
 			Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/gevotruck_Black.png"));
 		}

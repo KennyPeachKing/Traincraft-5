@@ -8,9 +8,9 @@ import train.common.api.Freight;
 public class ModelFreightCenterBeam_Wood_2 extends ModelBase {
 
 	public ModelFreightCenterBeam_Wood_2() {
-		box = new CustomModelRenderer(this, 1, 7, 256, 128);
-		box.addBox(0F, 0F, 0F, 1, 6, 14);
-		box.setPosition(5F, 0F, 10F);
+		box = new CustomModelRenderer(this, 1, 7, 256, 128); //texture position and texture size
+		box.addBox(0F, 0F, 0F, 1, 6, 14); // first three are offset, then width, height, and depth, but you assemble them in the order they are in the code
+		box.setPosition(5F, 0F, 10F); //position of cube, assemble in the order they are in the code
 
 		box0 = new CustomModelRenderer(this, 4, 29, 256, 128);
 		box0.addBox(0F, 0F, 0F, 1, 4, 10);

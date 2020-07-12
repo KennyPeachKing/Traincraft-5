@@ -81,6 +81,8 @@ public class QuoteList {
         importantQuotes.add(new JCIRQuote("Ive got to put my Gold Quality Eggplant away!", "Bida"));
         importantQuotes.add(new JCIRQuote("Ghosts shop at K-Mart!", "JCRail"));
         importantQuotes.add(new JCIRQuote("That egg's been in my pocket for two weeks! That doesnt matter. . .", "Bida and Binky"));
+        importantQuotes.add(new JCIRQuote("Preserve the Furry Hentai!", "Chrispy"));
+
         return importantQuotes;
 
     }

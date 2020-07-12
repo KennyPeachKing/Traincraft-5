@@ -59,5 +59,6 @@
   "nathan_k5La_2": {"category": "master", "sounds": [{"name": "nathan_k5La_2","stream": true}]},
   "nathan_k5hl": {"category": "master", "sounds": [{"name": "nathan_k5hl","stream": true}]},
   "gevo12_idle": {"category": "master", "sounds": [{"name": "gevo12_idle","stream": true}]},
-  "gevo12_notch8": {"category": "master", "sounds": [{"name": "gevo12_notch8","stream": true}]}
+  "gevo12_notch8": {"category": "master", "sounds": [{"name": "gevo12_notch8","stream": true}]},
+  "heavy_whistle": {"category": "master", "sounds": [{"name": "heavy_whistle", "stream":  true}]}
 }
