@@ -68,8 +68,8 @@ public class QuoteList {
         importantQuotes.add(new JCIRQuote("Ive been building dicks since the sixth grade ", "Rez"));
         importantQuotes.add(new JCIRQuote("Dude, i just got stabbed, Chill", "JCRail"));
         importantQuotes.add(new JCIRQuote("Okey, thankies from mcspankies. No prob Rom the Don", "PeachMaster and JCRail"));
-
-        return importantQuotes;
+        importantQuotes.add(new JCIRQuote("You got to beat your meat in the right way, and then it wil turn out right.", "PeachMaster"));
+    return importantQuotes;
 
     }
 

@@ -56,6 +56,8 @@ public class GuiRecipeBook extends GuiScreen {
 	private RenderItem renderItem = new RenderItem();
 
 	public GuiRecipeBook(EntityPlayer par1EntityPlayer, ItemStack par2ItemStack) {
+
+		bookTotalPages = 105;
 		this.editingPlayer = par1EntityPlayer;
 		this.itemstackBook = par2ItemStack;
 		this.currPage = this.itemstackBook.getTagCompound().getInteger("currPage");
@@ -75,6 +77,7 @@ public class GuiRecipeBook extends GuiScreen {
 				add(new StackToDraw(new ItemStack(ItemIDs.minecartV60_DB.item), 160, 175));
 			}
 		});
+
 		addPage("Modelers:\nDAYdiecast,\nhelldiver,\nBlockStormTwo,\nChandlerBingUA.\n\nGitHub 1.7.10 port Team: \nEternal BlueFlame,\nNitroxydeX,\nFirEmerald,\nHagurd\n \nWebsite:\nhttp://traincraft-mod.\nblogspot.com", "", "right", new ArrayList<StackToDraw>() {
 			{
 				add(new StackToDraw(new ItemStack(ItemIDs.minecartLocoSteamAdler.item), 20, 16));
@@ -88,7 +91,7 @@ public class GuiRecipeBook extends GuiScreen {
 				add(new StackToDraw(new ItemStack(ItemIDs.minecartCabooseLogging.item), 120, 175));
 			}
 		});
-		addPage("Special thanks to the JCIR-Traincraft contributors and developers:\n \nPeachMaster\nBidahochi\nProf. Binky\nBigJ\nMessicrew\n\nimWastey\nAnd JCRail for making a great server :)", "", "left", new ArrayList<StackToDraw>() {
+		addPage("Special thanks to the JCIR-Traincraft contributors and developers:\n \nPeachMaster\nBidahochi\nProf. Binky\nBigJ\nMessicrew\n\nimWastey\n JCRail", "", "left", new ArrayList<StackToDraw>() {
 			{
 				add(new StackToDraw(new ItemStack(ItemIDs.minecartAlcoS2.item), 20, 16));
 				add(new StackToDraw(new ItemStack(ItemIDs.minecartAmfleet.item), 170, 16));
@@ -378,7 +381,11 @@ public class GuiRecipeBook extends GuiScreen {
 		});
 		addPage("this page was intentionally left blank, as a joke.","","right",null);
 		if (rightPage != null && recipeList != null && recipeListWB != null)
-				bookTotalPages = this.rightPage.size() + (recipeList.size() / 2 + 2) + (recipeListWB.size() / 2);
+			System.out.println("Right page size: " + this.rightPage.size());
+		System.out.println("Left page size: " + this.leftPage.size());
+		System.out.println("recipeList size: " + this.recipeList.size());
+		System.out.println("recipeListWB size: " + this.recipeListWB.size());
+				bookTotalPages = this.rightPage.size() + (recipeList.size() / 2) + (recipeListWB.size() / 2);
 	}
 
 	public class StackToDraw {
@@ -544,7 +551,7 @@ public class GuiRecipeBook extends GuiScreen {
 				drawWorkBenchRecipe(recipeListWB, var5, var6, page - 1, var9, "right");
 				drawWorkBenchRecipe(recipeListWB, var5, var6, page, var9, "left");
 			}
-			else if ((page - recipeListWB.size()) >= 0 && (page - recipeListWB.size()) < recipeList.size() && recipeList.get(page - recipeListWB.size()) != null) {
+			else if ((page - recipeListWB.size()) >= 0 && (page - recipeListWB.size()) < recipeList.size()&& recipeList.get(page - recipeListWB.size()) != null) {
 				drawAssemblyBackground(recipeList, var5 - 125, var6 - 33, page - recipeListWB.size(), var9, "right");
 				drawAssemblyBackground(recipeList, var5 - 50, var6 - 33, page - recipeListWB.size() - 1, var9, "left");
 				RenderHelper.enableGUIStandardItemLighting();
@@ -556,6 +563,11 @@ public class GuiRecipeBook extends GuiScreen {
 	}
 
 	private void drawAssemblyBackground(List<TierRecipe> recipeList, int var5, int var6, int page, int var9, String side) {
+			/*	for (TierRecipe recipe: recipeList) {
+					System.out.println(recipe.getOutput().getUnlocalizedName());
+				}*/
+			/*System.out.println(bookTotalPages);
+			System.out.println("What are we drawing? " + recipeList.get(page).getOutput().getDisplayName());*/
 		if (page < 0)
 			return;
 		int tier = recipeList.get(page).getTier();
