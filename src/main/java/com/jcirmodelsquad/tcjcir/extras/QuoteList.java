@@ -68,7 +68,20 @@ public class QuoteList {
         importantQuotes.add(new JCIRQuote("Ive been building dicks since the sixth grade ", "Rez"));
         importantQuotes.add(new JCIRQuote("Dude, i just got stabbed, Chill", "JCRail"));
         importantQuotes.add(new JCIRQuote("Okey, thankies from mcspankies. No prob Rom the Don", "PeachMaster and JCRail"));
-        importantQuotes.add(new JCIRQuote("You got to beat your meat in the right way, and then it wil turn out right.", "PeachMaster"));
+        importantQuotes.add(new JCIRQuote("My dad went outside with a can of propane and told me not to follow him!", "Wastey"));
+        importantQuotes.add(new JCIRQuote("They changed the cum robot!? you cant just change the cum robot!", "Bida"));
+        importantQuotes.add(new JCIRQuote("wooAOOAAAAAAAAAHHH its upSIDEdoWWWNNN!", "Binky"));
+        importantQuotes.add(new JCIRQuote("JC is bullying the sentient explosives!", "Bida"));
+        importantQuotes.add(new JCIRQuote("42 Dollars for a Snow Cone??", "JCRail"));
+        importantQuotes.add(new JCIRQuote("i think i need a scooby doo tie-fighter now", "JCRail"));
+        importantQuotes.add(new JCIRQuote("Don't make me feed you Opium!", "Hariesh"));
+        importantQuotes.add(new JCIRQuote("I like sweet old ladies!", "JCRail"));
+        importantQuotes.add(new JCIRQuote("I'm a level 1 hoe!", "Hariesh"));
+        importantQuotes.add(new JCIRQuote("*leans in real close* I got a fROZeN nUTsAcK!", "JCRail"));
+        importantQuotes.add(new JCIRQuote("Ive got to put my Gold Quality Eggplant away!", "Bida"));
+        importantQuotes.add(new JCIRQuote("Ghosts shop at K-Mart!", "JCRail"));
+        importantQuotes.add(new JCIRQuote("That egg's been in my pocket for two weeks! That doesnt matter. . .", "Bida and Binky"));
+        importantQuotes.add(new JCIRQuote("Preserve the Furry Hentai!", "Chrispy"));
     return importantQuotes;
 
     }

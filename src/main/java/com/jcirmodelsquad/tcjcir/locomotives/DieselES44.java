@@ -14,13 +14,13 @@ import train.common.library.EnumTrains;
 import train.common.library.GuiIDs;
 
 
-public class DieselSW1500 extends DieselTrain {
-    public DieselSW1500(World world) {
-        super(world, EnumTrains.locoDieselMILW_H1044.getTankCapacity(), LiquidManager.dieselFilter());
+public class DieselES44 extends DieselTrain {
+    public DieselES44(World world) {
+        super(world, EnumTrains.ES44.getTankCapacity(), LiquidManager.dieselFilter());
         initLoco();
-        //when the
+        //i think i need a scooby doo tie-fighter now
     }
-    public DieselSW1500(World world, double d, double d1, double d2){
+    public DieselES44(World world, double d, double d1, double d2){
         this(world);
         setPosition(d, d1 + yOffset, d2);
         motionX = 0.0D;
@@ -29,7 +29,7 @@ public class DieselSW1500 extends DieselTrain {
         prevPosX = d;
         prevPosY = d1;
         prevPosZ = d2;
-        System.out.println("rer");
+        System.out.println("emd es44 lawl");
     }
 
     public void initLoco() {
@@ -41,8 +41,8 @@ public class DieselSW1500 extends DieselTrain {
     public void updateRiderPosition() {
         if (riddenByEntity == null) {return;}
         double pitchRads = this.anglePitchClient * Math.PI / 180.0D;
-        double distance = 0.1;
-        double yOffset = 0.5;
+        double distance = 4.1;
+        double yOffset = 0.6;
         float rotationCos1 = (float) Math.cos(Math.toRadians(this.renderYaw + 90));
         float rotationSin1 = (float) Math.sin(Math.toRadians((this.renderYaw + 90)));
         if(side.isServer()){
@@ -124,7 +124,7 @@ public class DieselSW1500 extends DieselTrain {
     }
 
     @Override
-    public float getOptimalDistance(EntityMinecart cart) { return 0.9F;
+    public float getOptimalDistance(EntityMinecart cart) { return 1.3F;
     }
 
     @Override
@@ -134,7 +134,7 @@ public class DieselSW1500 extends DieselTrain {
 
     @Override
     public String getInventoryName() {
-        return "EMD SW1500";
+        return "GE ES44";
     }
 
     @Override

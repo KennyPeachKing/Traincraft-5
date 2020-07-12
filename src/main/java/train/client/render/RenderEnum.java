@@ -128,7 +128,7 @@ public enum RenderEnum {
 
 	/** Tenders */
 	tenderSmall(EntityTenderSmall.class, new ModelTender(), "tender2_", true, new float[] { 0.0F, -0.5F, 0.0F }, new float[] { 0F, 90F, 0F }, new float[] { 0.75F, 0.75F, 0.75F }, "", 0, null, "", null, 0, false),
-	tenderHeavy(EntityTenderHeavy.class, new ModelTenderHeavy(), "tender_heavy", false, new float[] { 0.0F, 1F, 0.0F }, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
+	tenderHeavy(EntityTenderHeavy.class, new ModelTenderHeavy(), "heavytender", false, new float[] { 0.0F, -0.3F, 0.0F }, new float[] { 0F, 180F, 0F }, null, "", 0, null, "", null, 0, false),
 	tender4_4_0(EntityTender4_4_0.class, new ModelNormalSteamTender(), "4-4-0-loco_tender_", true, new float[] { 0.0F, -0.44F, 0.0F }, new float[] { 0F, 90F, 0F }, null, "", 0, null, "", null, 0, false),
 	tenderBR01(EntityTenderBR01_DB.class, new ModelTenderBR01_DB(), "tenderBR01_DB", false, new float[] { 0.0F, -0.44F, 0.0F }, null, null, "", 0, null, "", null, 0, false),
 	tenderEr_Ussr(EntityTenderEr_Ussr.class, new ModelTenderEr_Ussr(), "tenderEr_Ussr", false, new float[] { 0.06F, -0.44F, 0.0F }, new float[] { 0F, 180F, 0F }, null, "", 0, null, "", null, 0, false),
@@ -657,7 +657,7 @@ public enum RenderEnum {
 			add(new double[]{0.9D, 1.6D, 0.0D});
 		}
 	}, "", null, 0, false),
-	SW1500( com.jcirmodelsquad.tcjcir.locomotives.DieselSW1500.class,  new com.jcirmodelsquad.tcjcir.models.ModelSW1500(), "sw1500_", true,new float[] {-1.6F, -0F, 0F},  new float[] { 0F, 180F, 180F }, null, "largesmoke", 1,  new ArrayList<double[]>() {
+	SW1500( com.jcirmodelsquad.tcjcir.locomotives.DieselSW1500.class,  new com.jcirmodelsquad.tcjcir.models.ModelSW1500(), "sw1500_", true,new float[] {-1.2F, -0.01F, 0F},  new float[] { 0F, 180F, 180F }, null, "largesmoke", 1,  new ArrayList<double[]>() {
 		{
 			add(new double[]{1.3D, 2D, 0.0D});
 
@@ -723,6 +723,12 @@ public enum RenderEnum {
 		{
 			add(new double[]{1.8D, 1.7D, 0.0D});
 			add(new double[]{0.9D, 1.7D, 0.0D});
+
+		}
+	}, "", null, 0, false),
+	ES44( com.jcirmodelsquad.tcjcir.locomotives.DieselES44.class,  new com.jcirmodelsquad.tcjcir.models.ModelES44(), "es44_", true,new float[] {-2.3F, 0.15F, 0F},  new float[] { 0F, 180F, 180F }, null, "smoke", 5,  new ArrayList<double[]>() {
+		{
+			add(new double[]{1.4D, 1.7D, 0.0D});
 
 		}
 	}, "", null, 0, false),;

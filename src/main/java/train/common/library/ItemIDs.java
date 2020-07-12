@@ -88,7 +88,7 @@ public enum ItemIDs {
 	minecartVL10("ItemRollingStock", "train_vl10", 10),
 	minecartTramWood("ItemRollingStock", "train_tram", 7),
 	minecartChmE3("ItemRollingStock", "train_chme3", 8),
-	//minecartHeavySteam("ItemRollingStock", "steam", HandleMaxAttachedCarts.HEAVY_STEAM_CARTS, 0D, (int) SpeedHandler.HEAVYSTEAM, "train_steam_heavy"),//TODO put it back once Heavy Steam is back
+	minecartHeavySteam("ItemRollingStock", "train_steam_heavy", 7), //HandleMaxAttachedCarts.HEAVY_STEAM_CARTS, 0D, (int) SpeedHandler.HEAVYSTEAM, "train_steam_heavy"),TODO put it back once Heavy Steam is back
 	minecartTenderHeavy("ItemRollingStock", "train_tender_heavy", 5),
 	minecartFlatCart("ItemRollingStock", "train_flat", 1),
 	//minecartNewHighSpeedLoco("ItemRollingStock","train_speed",10),
@@ -335,6 +335,7 @@ public enum ItemIDs {
 	minecartSDL39("ItemRollingStock", "SDL39", 10),
 	minecartF7A("ItemRollingStock", "f7a", 11),
 	minecartF7B("ItemRollingStock", "f7b", 11),
+	minecartES44("ItemRollingStock", "es44", 13),
 	paintbrushThing("ItemPaintbrushThing", "paintbrush_thing", 9),;
 
 	public Item item;

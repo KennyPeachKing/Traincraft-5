@@ -297,7 +297,7 @@ public class ModelSD9 extends ModelConverter //Same as Filename
 		bodyModel[262] = new ModelRendererTurbo(this, 97, 73, textureX, textureY); // Box 205
 		bodyModel[263] = new ModelRendererTurbo(this, 393, 113, textureX, textureY); // Box 206
 		bodyModel[264] = new ModelRendererTurbo(this, 505, 105, textureX, textureY); // Box 267
-		bodyModel[265] = new ModelRendererTurbo(this, 441, 73, textureX, textureY); // Box 268
+		bodyModel[265] = new ModelRendererTurbo(this, 441, 73, textureX, textureY, "lamp"); // Box 268
 		bodyModel[266] = new ModelRendererTurbo(this, 353, 17, textureX, textureY); // Box 269
 		bodyModel[267] = new ModelRendererTurbo(this, 9, 81, textureX, textureY); // Box 114
 		bodyModel[268] = new ModelRendererTurbo(this, 153, 81, textureX, textureY); // Box 74
