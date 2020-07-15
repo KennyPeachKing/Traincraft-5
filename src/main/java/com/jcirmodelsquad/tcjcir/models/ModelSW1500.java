@@ -292,8 +292,8 @@ public class ModelSW1500 extends ModelConverter //Same as Filename
 			bodyModel[251] = new ModelRendererTurbo(this, 233, 33, textureX, textureY); // Box 78
 			bodyModel[252] = new ModelRendererTurbo(this, 49, 81, textureX, textureY); // Box 245
 			bodyModel[253] = new ModelRendererTurbo(this, 249, 41, textureX, textureY); // Box 418
-			bodyModel[254] = new ModelRendererTurbo(this, 481, 81, textureX, textureY); // Box 419
-			bodyModel[255] = new ModelRendererTurbo(this, 497, 81, textureX, textureY); // Box 420
+			bodyModel[254] = new ModelRendererTurbo(this, 481, 81, textureX, textureY, "cull"); // Box 419
+			bodyModel[255] = new ModelRendererTurbo(this, 497, 81, textureX, textureY, "cull"); // Box 420
 			bodyModel[256] = new ModelRendererTurbo(this, 289, 33, textureX, textureY); // Box 164
 			bodyModel[257] = new ModelRendererTurbo(this, 489, 33, textureX, textureY); // Box 165
 			bodyModel[258] = new ModelRendererTurbo(this, 49, 41, textureX, textureY); // Box 166
@@ -1310,7 +1310,11 @@ public class ModelSW1500 extends ModelConverter //Same as Filename
 				Minecraft.getMinecraft().entityRenderer.disableLightmap(1D);
 				bodyModel[i].render(f5);
 				Minecraft.getMinecraft().entityRenderer.enableLightmap(1D);
-			} else {
+			}else if (bodyModel[i].boxName != null && bodyModel[i].boxName.contains("cull")) {
+				GL11.glDisable(GL11.GL_CULL_FACE);
+				bodyModel[i].render(f5);
+				GL11.glEnable(GL11.GL_CULL_FACE);
+			}else{
 				bodyModel[i].render(f5);
 			}
 		}

@@ -82,6 +82,19 @@ public class QuoteList {
         importantQuotes.add(new JCIRQuote("Ghosts shop at K-Mart!", "JCRail"));
         importantQuotes.add(new JCIRQuote("That egg's been in my pocket for two weeks! That doesnt matter. . .", "Bida and Binky"));
         importantQuotes.add(new JCIRQuote("Preserve the Furry Hentai!", "Chrispy"));
+        importantQuotes.add(new JCIRQuote("Smother you in my toe juices!", "JCRail"));
+        importantQuotes.add(new JCIRQuote("whERES thE qUoTE lISt!??", "Bida"));
+        importantQuotes.add(new JCIRQuote("oOoOO that grill! f o a m", "Orion"));
+        importantQuotes.add(new JCIRQuote("gAaAah Fluidic Meat!", "Bida"));
+        importantQuotes.add(new JCIRQuote("i guess that fluid meat penis is gonna stay there forever", "JCRail"));
+        importantQuotes.add(new JCIRQuote("Who wants to help Sculpt my ass?", "JCRail"));
+        importantQuotes.add(new JCIRQuote("I will go get the aSS and i will smOTHer you with it!", "JCRail"));
+        importantQuotes.add(new JCIRQuote("Let me introduce you to Villager Milking Chamber Number 3!", "Hariesh"));
+        importantQuotes.add(new JCIRQuote("You colonizing prick! give me my slaves back!", "JCRail"));
+        importantQuotes.add(new JCIRQuote("Just because i colonized your children does'nt mean you can take me to court!", "Hariesh"));
+        importantQuotes.add(new JCIRQuote("That ones got a Butt Steering Wheel! you don't see that everyday!", "Bida"));
+        importantQuotes.add(new JCIRQuote("My banana has Crits! i wonder what this tastes like!", "Syrup"));
+
     return importantQuotes;
 
     }
