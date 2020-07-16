@@ -12,6 +12,8 @@ import cpw.mods.fml.common.network.NetworkRegistry.TargetPoint;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.audio.MovingSoundMinecart;
+import net.minecraft.client.audio.PositionedSoundRecord;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.passive.EntityAnimal;
@@ -464,7 +466,6 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
 
         //Hey uhh..let's update the datawatcher, just so that things stay in sync.
         dataWatcher.updateObject(5,trainID);
-
     }
 
 
@@ -835,9 +836,11 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
             for (EnumSounds sounds : EnumSounds.values()) {
                 if (sounds.getEntityClass() != null && !sounds.getHornString().equals("") && sounds.getEntityClass().equals(this.getClass()) && whistleDelay == 0) {
                     if (getFuel() > 0 && this.isLocoTurnedOn()) {
+
                         double speed = Math.sqrt(motionX * motionX + motionZ * motionZ);
                         if (speed > -0.001D && speed < 0.01D && soundPosition == 0) {
-                            worldObj.playSoundAtEntity(this, Info.resourceLocation + ":" + sounds.getIdleString(), sounds.getIdleVolume(), 0.001F);
+                            worldObj.playSoundAtEntity(this, Info.resourceLocation + ":" + sounds.getIdleString(), sounds.getIdleVolume(), 1F);
+                        //    worldObj.playSoundAtEntity(this, Info.resourceLocation + ":" + sounds.getIdleString(), sounds.getIdleVolume(), 0.001F);
                             soundPosition = sounds.getIdleSoundLenght();
                         }
                         if (sounds.getSoundChangeWithSpeed() && !sounds.getHornString().equals("") && sounds.getEntityClass().equals(this.getClass()) && whistleDelay == 0) {
@@ -910,6 +913,8 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
                 }
             }
         }
+
+
         if (!worldObj.isRemote) {
             //System.out.println(motionX +" "+motionZ);
             dataWatcher.updateObject(25, (int) convertSpeed(Math.sqrt(motionX * motionX + motionZ * motionZ)));

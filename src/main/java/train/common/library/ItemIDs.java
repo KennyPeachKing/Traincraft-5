@@ -314,6 +314,7 @@ public enum ItemIDs {
 	minecartRibbedHopper("ItemRollingStock", "ribbed_hopper", 3),
 	//minecartGeometryCar("ItemRollingStock", "geometry_car", 15),
 	minecartDriverlessMetro("ItemRollingStock", "driverless_metro", 20),
+	minecartDriverlessMetroCar("ItemRollingStock", "driverless_metro_car", 15),
 	minecartAmfleet("ItemRollingStock", "Amfleet", 3),
 	//minecartBaldwinMineLoco("ItemRollingStock", "baldwinmineloco", 1),
 	minecartSW1("ItemRollingStock","sw1", 9),
