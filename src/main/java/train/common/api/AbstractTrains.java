@@ -176,13 +176,14 @@ public abstract class AbstractTrains extends EntityMinecart implements IMinecart
 		this.setPosition(x, y, z);
 	}
 
-	@Override
 	public AxisAlignedBB getCollisionBox(Entity p_70114_1_) {
-		if(riddenByEntity!=p_70114_1_){
-			return super.getCollisionBox(p_70114_1_);
-		} else {
+		if(riddenByEntity==p_70114_1_){
 			return null;
 		}
+		if (getCollisionHandler() != null) {
+			return getCollisionHandler().getCollisionBox(this, p_70114_1_);
+		}
+		return p_70114_1_.boundingBox;
 	}
 	/**
 	 * this is basically NBT for entity spawn, to keep data between client and server in sync because some data is not automatically shared.
@@ -543,7 +544,7 @@ public abstract class AbstractTrains extends EntityMinecart implements IMinecart
 			itemdropped=true;
 			for (ItemStack item : getItemsDropped()) {
 				if (item.getItem() instanceof ItemRollingStock){
-					ItemStack stack = ItemRollingStock.setPersistentData(item,this,this.getUniqueTrainID(),null);
+					ItemStack stack = ItemRollingStock.setPersistentData(item,this,this.getUniqueTrainID(),trainCreator, trainOwner, getColor());
 					entityDropItem(stack!=null?stack:item,0);
 				} else {
 					entityDropItem(item, 0);
@@ -640,7 +641,7 @@ public abstract class AbstractTrains extends EntityMinecart implements IMinecart
 	public boolean doesCartMatchFilter(ItemStack stack, EntityMinecart cart) {
 		if (stack == null || cart == null) { return false; }
 		ItemStack cartItem = cart.getCartItem();
-		return cartItem != null && stack.isItemEqual(cartItem);
+		return cartItem.getItem() == stack.getItem();
 	}
 
 	@Override
@@ -695,6 +696,16 @@ public abstract class AbstractTrains extends EntityMinecart implements IMinecart
 	}
 
 
+	public AxisAlignedBB getBoundingBox()
+	{
+		if (getCollisionHandler() != null)
+		{
+			return getCollisionHandler().getBoundingBox(this);
+		}
+		return AxisAlignedBB.getBoundingBox(
+				posX-0.5,posY,posZ-0.5,
+				posX+0.5, posY+2, posZ+0.5);
+	}
 
 
 	public String getPersistentUUID() {

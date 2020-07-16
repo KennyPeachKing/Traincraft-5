@@ -38,7 +38,7 @@ repositories {
         name "ChickenBones"
         url "http://chickenbones.net/maven/"
     }
-    maven {
+    maven { 
         url = "http://maven.cil.li/"
     }
 }
