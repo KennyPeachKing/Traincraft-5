@@ -133,7 +133,7 @@ public class ModelTankWagonUS extends ModelBase {
 		box32.rotateAngleX = -0.7853981633974483F;
 
 		box33 = new CustomModelRenderer(this, 0, 19, 128, 128);
-		box33.addBox(0F, 0F, 0F, 16, 3, 6);
+		box33.addBox(0F, 0F, 0F, 16, 3, 6); //part to cull
 		box33.setPosition(-8F, 26F, -3F);
 
 		box34 = new CustomModelRenderer(this, 107, 19, 128, 128);
