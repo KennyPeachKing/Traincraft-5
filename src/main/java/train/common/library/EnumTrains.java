@@ -296,7 +296,7 @@ public enum EnumTrains {
 	F7A("F7A", com.jcirmodelsquad.tcjcir.locomotives.DieselF7A.class, ItemIDs.minecartF7A.item, "diesel", 1500, 133, 0, 50, 0, 180, 0.7, 0.79, 20000, TraincraftUtil.getBytesFromColors(new String[] {"White", "Black", "Orange", "Yellow", "Grey", "Red"}), 10, -3, "Model by Binky and Bida"),
 	F7B("F7B", com.jcirmodelsquad.tcjcir.locomotives.DieselF7B.class, ItemIDs.minecartF7B.item, "diesel", 1500, 133, 0, 50, 0, 180, 0.7, 0.79, 20000, TraincraftUtil.getBytesFromColors(new String[] {"White", "Black", "Orange", "Grey", "Red"}), 10, -3, "Model by Binky and Bida. Its a B unit, but it can move on its own!"),
 	geGenesis("Ge Genesis", com.jcirmodelsquad.tcjcir.locomotives.GeGenesis.class, ItemIDs.minecartGeGenesis.item, "diesel", 4250, 177, 0, 55, 0, 175, 0.93, 0.94, 20000, TraincraftUtil.getBytesFromColors(new String[] {"" + "LightGrey", "Grey", "White"}), 10, -5.5, "Model by MessicOOmer"),
-	ES44("ES44", com.jcirmodelsquad.tcjcir.locomotives.DieselES44.class, ItemIDs.minecartES44.item, "diesel", 4400, 120, 0, 60, 0, 190, 0.7, 0.8, 25000, TraincraftUtil.getBytesFromColors(new String[] {"Lime", "Orange", "Red", "Yellow", "Blue"}), 10, -4.3, "Model by Eddie Dalton, upgraded by Bida"),;
+	ES44("ES44", com.jcirmodelsquad.tcjcir.locomotives.DieselES44.class, ItemIDs.minecartES44.item, "diesel", 4400, 120, 0, 60, 0, 190, 0.7, 0.8, 25000, TraincraftUtil.getBytesFromColors(new String[] {"Lime", "Orange", "Red", "Yellow", "Blue", "LightGrey"}), 10, -4.3, "Model by Eddie Dalton, upgraded by Bida"),;
 
 
 	/*passengerICE1_Restaurant("ICE Restaurant", EntityPassengerICE_Restaurant.class,
