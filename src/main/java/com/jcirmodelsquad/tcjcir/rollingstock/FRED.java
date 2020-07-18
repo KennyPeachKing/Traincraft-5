@@ -11,10 +11,11 @@ import net.minecraftforge.common.util.Constants;
 import train.common.Traincraft;
 import train.common.api.EntityRollingStock;
 import train.common.api.Freight;
+import train.common.api.IPassenger;
 import train.common.core.util.TraincraftUtil;
 import train.common.library.GuiIDs;
 
-public class FRED extends EntityRollingStock{
+public class FRED extends EntityRollingStock implements IPassenger {
     public int freightInventorySize;
     public int numFreightSlots;
     public FRED(World world) {
@@ -39,8 +40,36 @@ public class FRED extends EntityRollingStock{
         super.setDead();
         isDead = true;
     }
+    @Override
+    public void updateRiderPosition() {
+        if(riddenByEntity!=null) {
+            riddenByEntity.setPosition(posX, posY + getMountedYOffset() + riddenByEntity.getYOffset() + 0.7, posZ);
+        }
+    }
 
-    @Override public boolean interactFirst(EntityPlayer entityplayer) { return false;}
+    @Override
+    public boolean interactFirst(EntityPlayer entityplayer) {
+        playerEntity = entityplayer;
+        if ((super.interactFirst(entityplayer))) {
+            return false;
+        }
+        if (!worldObj.isRemote) {
+            ItemStack itemstack = entityplayer.inventory.getCurrentItem();
+            if(lockThisCart(itemstack, entityplayer))return true;
+            if (riddenByEntity != null && (riddenByEntity instanceof EntityPlayer) && riddenByEntity != entityplayer) {
+                return true;
+            }
+            if (!worldObj.isRemote) {
+                entityplayer.mountEntity(this);
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public boolean canBeRidden() {
+        return true;
+    }
 
     @Override
     public boolean isStorageCart() {
@@ -50,6 +79,14 @@ public class FRED extends EntityRollingStock{
     @Override
     public float getOptimalDistance(EntityMinecart cart) {
         return 0.1F;
+    }
+
+    @Override
+    public boolean shouldRiderSit(){return false;}
+
+    @Override
+    public boolean isPoweredCart() {
+        return false;
     }
 }
 

@@ -678,7 +678,7 @@ public enum RenderEnum {
 		}
 	}, "", null, 0, false),
 	bawx40highcube(com.jcirmodelsquad.tcjcir.rollingstock.bawx40highcube.class, new com.jcirmodelsquad.tcjcir.models.Model40highcube(),"40highcube_", true, new float[]{0F, 0.15F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
-	//FRED(com.jcirmodelsquad.tcjcir.rollingstock.FRED.class, new com.jcirmodelsquad.tcjcir.models.ModelFRED(),"fred", false, new float[]{0F, 0.05F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
+	FRED(com.jcirmodelsquad.tcjcir.rollingstock.FRED.class, new com.jcirmodelsquad.tcjcir.models.ModelFRED(),"fred", false, new float[]{0F, 0.05F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
 	CF7( com.jcirmodelsquad.tcjcir.locomotives.DieselCF7.class,  new com.jcirmodelsquad.tcjcir.models.ModelCF7(), "cf7_", true,new float[] {-1.6F, -0.15F, 0F},  new float[] { 0F, 180F, 180F }, null, "smoke", 6,  new ArrayList<double[]>() {
 		{
 			add(new double[]{0.85D, 1.65D, 0.0D});

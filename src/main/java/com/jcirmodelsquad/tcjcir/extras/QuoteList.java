@@ -94,6 +94,8 @@ public class QuoteList {
         importantQuotes.add(new JCIRQuote("Just because i colonized your children does'nt mean you can take me to court!", "Hariesh"));
         importantQuotes.add(new JCIRQuote("That ones got a Butt Steering Wheel! you don't see that everyday!", "Bida"));
         importantQuotes.add(new JCIRQuote("My banana has Crits! i wonder what this tastes like!", "Syrup"));
+        importantQuotes.add(new JCIRQuote("ThiCC bOx brOo can i mount it!?", "Peachy"));
+        importantQuotes.add(new JCIRQuote("Go bite me in the ass Tumblr!!", "JCRail"));
 
     return importantQuotes;
 

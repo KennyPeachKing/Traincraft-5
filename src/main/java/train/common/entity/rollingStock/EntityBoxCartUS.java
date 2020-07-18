@@ -82,7 +82,7 @@ public class EntityBoxCartUS extends Freight implements IInventory {
 
 	@Override
 	public String getInventoryName() {
-		return "Freight cart";
+		return "Box Cart US";
 	}
 
 	@Override
