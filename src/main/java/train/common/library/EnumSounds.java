@@ -91,7 +91,7 @@ public enum EnumSounds {
 	alcoS2(com.jcirmodelsquad.tcjcir.locomotives.DieselAlcoS2.class, "leslie_a200", 1F, "539t_notch8", 0.50F, 40, "539t_idle", 0.65F, 40, true),
 	SW1(com.jcirmodelsquad.tcjcir.locomotives.DieselSW1.class, "leslie_a200", 0.9F, "567_notch8", 0.45F, 40, "567_idle", 0.75F, 40, false),
 	H1044(com.jcirmodelsquad.tcjcir.locomotives.DieselH1044.class, "shunter_horn", 1.1F, "h10_notch8", 0.65F, 40, "h10_idle", 0.65F, 40, false),
-	Thanos(com.jcirmodelsquad.tcjcir.locomotives.Thanos.class, "thanos_horn", 5, "thanos_run", 0.6F, 200, "thanos_idle", 0.65F, 100, false),
+	Thanos(com.jcirmodelsquad.tcjcir.locomotives.Thanos.class, "thanos_horn", 5, "thanos_run", 0.6F, 10, "thanos_idle", 0.65F, 10, false),
 	HighrailTruck(com.jcirmodelsquad.tcjcir.locomotives.DieselHighrailTruck.class, "subway_horn", 0.8F, "chme3_run", 0.65F, 40, "chme3_idle", 0.65F, 40, true),
 	U23B(com.jcirmodelsquad.tcjcir.locomotives.DieselU23B.class, "leslie_s3l", 2.5F, "7fdl-12_notch8", 0.65F, 40, "7fdl-12_idle", 0.65F, 50, true),
 	SW1500(com.jcirmodelsquad.tcjcir.locomotives.DieselSW1500.class, "nathan_p3", 0.65F, "16-645e_notch8", 0.65F, 10, "16-645e_idle", 0.8F, 3, true),
