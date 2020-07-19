@@ -695,7 +695,6 @@ public abstract class AbstractTrains extends EntityMinecart implements IMinecart
 		}
 	}
 
-
 	public AxisAlignedBB getBoundingBox()
 	{
 		if (getCollisionHandler() != null)
@@ -706,6 +705,9 @@ public abstract class AbstractTrains extends EntityMinecart implements IMinecart
 				posX-0.5,posY,posZ-0.5,
 				posX+0.5, posY+2, posZ+0.5);
 	}
+
+
+
 
 
 	public String getPersistentUUID() {

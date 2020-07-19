@@ -679,7 +679,7 @@ entity.tc.F7A.name=EMD F7a
 entity.tc.F7B.name=EMD F7b
 entity.tc.GeGenesis.name= GE Genesis
 description.villager.profession.tc.station_chief=Station Chief
-
+tile.tc:FortyFootContainer.name= Forty Foot Container
 key.categories.traincraft=Traincraft
 key.traincraft.horn=Horn
 key.traincraft.inventory=Inventory

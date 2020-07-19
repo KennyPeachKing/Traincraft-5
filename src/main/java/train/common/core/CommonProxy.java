@@ -1,5 +1,8 @@
 package train.common.core;
 
+import com.jcirmodelsquad.tcjcir.containers.ContainerStorage;
+import com.jcirmodelsquad.tcjcir.containers.GuiFortyFootContainer;
+import com.jcirmodelsquad.tcjcir.containers.TileFortyFootContainer;
 import com.jcirmodelsquad.tcjcir.extras.blocks.TileBetterDetector;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.common.FMLCommonHandler;
@@ -95,6 +98,7 @@ public class CommonProxy implements IGuiHandler {
 			GameRegistry.registerTileEntity(TilePDMInstructionRadio.class, "tilePDMInstructionRadio");
 			GameRegistry.registerTileEntity(TileBetterDetector.class, "tileBetterDetector");
 		}
+		GameRegistry.registerTileEntity(TileFortyFootContainer.class, "tileFortyFootContainer");
 	}
 
 	public void registerComputerCraftPeripherals() throws ClassNotFoundException {
@@ -173,7 +177,9 @@ public class CommonProxy implements IGuiHandler {
 			return entity1 != null && entity1 instanceof EntityTracksBuilder ? new InventoryBuilder(player.inventory, (EntityTracksBuilder) entity1) : null;
 		case (GuiIDs.LIQUID):
 			return entity1 != null && entity1 instanceof LiquidTank ? new InventoryLiquid(player.inventory, (LiquidTank) entity1) : null;
-		default:
+			case (GuiIDs.FORTY_FOOT_CONTAINER):
+				return new ContainerStorage((TileFortyFootContainer)te, player);
+			default:
 			return null;
 		}
 	}

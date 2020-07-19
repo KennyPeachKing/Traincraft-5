@@ -1,5 +1,8 @@
 package train.client.core;
 
+import com.jcirmodelsquad.tcjcir.containers.GuiFortyFootContainer;
+import com.jcirmodelsquad.tcjcir.containers.ItemRenderFortyFootContainer;
+import com.jcirmodelsquad.tcjcir.containers.TileFortyFootContainer;
 import com.jcirmodelsquad.tcjcir.extras.HUDGeometryCar;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
@@ -117,6 +120,9 @@ public class ClientProxy extends CommonProxy {
 		
 		ClientRegistry.bindTileEntitySpecialRenderer(TileBridgePillar.class, new RenderBridgePillar());
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockIDs.bridgePillar.block), new ItemRenderBridgePillar());
+
+		ClientRegistry.bindTileEntitySpecialRenderer(TileFortyFootContainer.class, TileFortyFootContainer.specialRenderer);
+		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockIDs.FortyFootContainer.block), new ItemRenderFortyFootContainer());
 	}
 
 	@Override
@@ -182,6 +188,8 @@ public class ClientProxy extends CommonProxy {
 			return new GuiLantern(player, (TileLantern)te);
 		case (GuiIDs.JUKEBOX):
 			return entity1 != null ? new GuiJukebox(player,(EntityJukeBoxCart)entity1) : null;
+			case (GuiIDs.FORTY_FOOT_CONTAINER):
+				return new GuiFortyFootContainer((TileFortyFootContainer)te, player);
 		default:
 			return null;
 		}

@@ -1585,8 +1585,6 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 					this.setColor(acceptedColors.get(scrollPosition));
 					scrollPosition++;
 				}
-
-
 			}
 
 			if (this.acceptedColors != null && this.acceptedColors.size() == 0) {

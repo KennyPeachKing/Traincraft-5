@@ -732,7 +732,8 @@ public enum RenderEnum {
 			add(new double[]{1.4D, 1.7D, 0.0D});
 
 		}
-	}, "", null, 0, false),;
+	}, "", null, 0, false),
+	fifty6FootWellcar(com.jcirmodelsquad.tcjcir.rollingstock.A56AFootWellcar.class, new com.jcirmodelsquad.tcjcir.models.ModelA56AFootWellcar(), "56footwellcar", false, new float[]{0F, 0.4F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),;
 
 	private Class<? extends AbstractTrains> entityClass;
 	private ModelBase model;
