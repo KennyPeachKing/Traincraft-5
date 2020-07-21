@@ -227,9 +227,8 @@ public class ModelHuskyStackWellcar extends ModelConverter
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
     {
-        for(int i = 0; i < bodyModel.length; i++)
+        for(int i = 0; i < 45; i++)
         {
-            System.out.println(ModelHuskyStackWellcar[i]==null);
             ModelHuskyStackWellcar[i].render(f5);
         }
         Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/70truck_Black.png"));
