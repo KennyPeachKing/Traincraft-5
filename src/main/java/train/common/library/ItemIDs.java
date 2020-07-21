@@ -337,7 +337,8 @@ public enum ItemIDs {
 	minecartF7A("ItemRollingStock", "f7a", 11),
 	minecartF7B("ItemRollingStock", "f7b", 11),
 	minecartES44("ItemRollingStock", "es44", 13),
-	fifty6footwellcar("ItemRollingStock", "wellcar", 3),
+	minecartBombCart("ItemRollingStock", "payload", 7),
+	minecartHuskyStackWellcar("ItemRollingStock", "huskystack", 3),
 	paintbrushThing("ItemPaintbrushThing", "paintbrush_thing", 9),;
 
 	public Item item;

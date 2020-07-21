@@ -1,9 +1,8 @@
 package train.client.render;
 
-import com.jcirmodelsquad.tcjcir.locomotives.DieselAlcoS2;
 import com.jcirmodelsquad.tcjcir.models.ModelAlcoS2;
 import com.jcirmodelsquad.tcjcir.models.ModelGeometryCar;
-import com.jcirmodelsquad.tcjcir.models.ModelSW1;
+import com.jcirmodelsquad.tcjcir.models.ModelHuskyStackWellcar;
 import tmt.ModelBase;
 import train.client.render.models.*;
 import train.common.api.AbstractTrains;
@@ -733,7 +732,8 @@ public enum RenderEnum {
 
 		}
 	}, "", null, 0, false),
-	fifty6FootWellcar(com.jcirmodelsquad.tcjcir.rollingstock.A56AFootWellcar.class, new com.jcirmodelsquad.tcjcir.models.ModelA56AFootWellcar(), "56footwellcar", false, new float[]{0F, 0.4F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),;
+	HuskyStackWellcar(com.jcirmodelsquad.tcjcir.rollingstock.HuskyStackWellcar.class, new com.jcirmodelsquad.tcjcir.models.ModelHuskyStackWellcar(), "huskystack_", true, new float[]{0F, 0.4F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
+	BombCart(com.jcirmodelsquad.tcjcir.rollingstock.BombCart.class, new com.jcirmodelsquad.tcjcir.models.ModelBombCart(), "payload_", true, new float[]{0F, 0.15F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),;
 
 	private Class<? extends AbstractTrains> entityClass;
 	private ModelBase model;
