@@ -1395,7 +1395,9 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
                 riddenByEntity.mountEntity(this);
             }
             this.setDead();
-            disconnectFromServer();
+            if (trainIsWMTCSupported() && mtcStatus == 1) {
+                disconnectFromServer(true);
+            }
             ServerLogger.deleteWagon(this);
             if (damagesource.getEntity() instanceof EntityPlayer) {
                 dropCartAsItem(((EntityPlayer)damagesource.getEntity()).capabilities.isCreativeMode);
@@ -1845,6 +1847,19 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
         return this instanceof EntityLocoElectricHighSpeedZeroED || this instanceof EntityLocoElectricTramNY || this instanceof EntityLocoElectricICE1 || this instanceof EntityLocoDieselIC4_DSB_MG || this instanceof com.jcirmodelsquad.tcjcir.locomotives.DriverlessMetro || support;
 
     }
+    public void disconnectFromServer(boolean yes) {
+        if (this.worldObj != null && !worldObj.isRemote){
+            JsonObject sendTo = new JsonObject();
+            sendTo.addProperty("funct", "disconnect");
+            sendMessage(new PDMMessage(this.trainID, serverUUID, sendTo.toString(), 0));
+            this.mtcType = 1;
+            this.serverUUID = "";
+            isConnected = false;
+
+        }
+
+    }
+
 
     public void disconnectFromServer() {
         if (this.worldObj != null && !worldObj.isRemote){
