@@ -260,10 +260,10 @@ public class ModelSD9 extends ModelConverter //Same as Filename
 		bodyModel[225] = new ModelRendererTurbo(this, 505, 49, textureX, textureY); // Box 333
 		bodyModel[226] = new ModelRendererTurbo(this, 217, 113, textureX, textureY); // Box 334
 		bodyModel[227] = new ModelRendererTurbo(this, 353, 113, textureX, textureY); // Box 335
-		bodyModel[228] = new ModelRendererTurbo(this, 497, 105, textureX, textureY); // Box 336
-		bodyModel[229] = new ModelRendererTurbo(this, 89, 121, textureX, textureY); // Box 337
-		bodyModel[230] = new ModelRendererTurbo(this, 257, 121, textureX, textureY); // Box 338
-		bodyModel[231] = new ModelRendererTurbo(this, 273, 121, textureX, textureY); // Box 339
+		bodyModel[228] = new ModelRendererTurbo(this, 497, 105, textureX, textureY, "cull"); // Box 336
+		bodyModel[229] = new ModelRendererTurbo(this, 89, 121, textureX, textureY, "cull"); // Box 337
+		bodyModel[230] = new ModelRendererTurbo(this, 257, 121, textureX, textureY, "cull"); // Box 338
+		bodyModel[231] = new ModelRendererTurbo(this, 273, 121, textureX, textureY, "cull"); // Box 339
 		bodyModel[232] = new ModelRendererTurbo(this, 497, 97, textureX, textureY); // Box 197
 		bodyModel[233] = new ModelRendererTurbo(this, 1, 105, textureX, textureY); // Box 198
 		bodyModel[234] = new ModelRendererTurbo(this, 257, 97, textureX, textureY); // Box 199
@@ -1336,6 +1336,10 @@ public class ModelSD9 extends ModelConverter //Same as Filename
 				Minecraft.getMinecraft().entityRenderer.disableLightmap(1D);
 				bodyModel[i].render(f5);
 				Minecraft.getMinecraft().entityRenderer.enableLightmap(1D);
+			}else if (bodyModel[i].boxName != null && bodyModel[i].boxName.contains("cull")) {
+				GL11.glDisable(GL11.GL_CULL_FACE);
+				bodyModel[i].render(f5);
+				GL11.glEnable(GL11.GL_CULL_FACE);
 			} else {
 				bodyModel[i].render(f5);
 			}

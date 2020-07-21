@@ -14,21 +14,21 @@ import train.common.api.EntityRollingStock;
 import train.common.api.IPassenger;
 import train.common.library.BlockIDs;
 
-public class A56AFootWellcar extends EntityRollingStock implements IPassenger {
+public class HuskyStackWellcar extends EntityRollingStock implements IPassenger {
     public BasicallyContainer container1;
     public BasicallyContainer container2;
 
-    public A56AFootWellcar(World world) {
+    public HuskyStackWellcar(World world) {
         super(world);
     }
 
-    public A56AFootWellcar(World world, double d, double d1, double d2) {
+    public HuskyStackWellcar(World world, double d, double d1, double d2) {
         super(world, d, d1, d2);
     }
 
     @Override
     public float getOptimalDistance(EntityMinecart cart) {
-        return 0;
+        return 2F;
     }
     @Override
     public void setDead() {

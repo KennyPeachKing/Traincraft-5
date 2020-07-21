@@ -1,9 +1,8 @@
 package train.client.render;
 
-import com.jcirmodelsquad.tcjcir.locomotives.DieselAlcoS2;
 import com.jcirmodelsquad.tcjcir.models.ModelAlcoS2;
 import com.jcirmodelsquad.tcjcir.models.ModelGeometryCar;
-import com.jcirmodelsquad.tcjcir.models.ModelSW1;
+import com.jcirmodelsquad.tcjcir.models.ModelHuskyStackWellcar;
 import tmt.ModelBase;
 import train.client.render.models.*;
 import train.common.api.AbstractTrains;
@@ -209,14 +208,14 @@ public enum RenderEnum {
 	}, "", null, 0, false),
 	locoEMDF7(EntityLocoDieselEMDF7.class, new ModelEMDF7(), "emdf7_", true, new float[]{-2.2f,0.1f,0}, new float[] { 0F, 180F, 180F }, new float[]{0.9f,1f,0.9f}, "smoke", 4, new ArrayList<double[]>() {
 		{
-					add(new double[] { -0.15D, 1.6D, 0.0D });
-					add(new double[] { 0.5D, 1.6D, 0.0D });
+			add(new double[] { -0.15D, 1.6D, 0.0D });
+			add(new double[] { 0.5D, 1.6D, 0.0D });
 		}
 	}, "", null, 0, false),
 	locoEMDF3(EntityLocoDieselEMDF3.class, new ModelEMDF3(), "emdf3_", true, new float[]{-2.2f,0.1f,0}, new float[] { 0F, 180F, 180F }, new float[]{0.9f,1f,0.9f}, "smoke", 4, new ArrayList<double[]>() {
 		{
-					add(new double[] { -0.15D, 1.6D, 0.0D });
-					add(new double[] { 0.55D, 1.6D, 0.0D });
+			add(new double[] { -0.15D, 1.6D, 0.0D });
+			add(new double[] { 0.55D, 1.6D, 0.0D });
 		}
 	}, "", null, 0, false),
 	locoEMDF7b(EntityBUnitEMDF7.class, new ModelEMDF7B(), "emdf7b_", true, new float[]{0,0.1f,0}, new float[] { 0F, 180F, 180F }, new float[]{0.9f,1f,0.9f}, "", 4, null, "", null, 0, false),
@@ -352,11 +351,11 @@ public enum RenderEnum {
 	}, 2, true),
 	locoCoranationClass(EntityLocoSteamCoranationClass.class, new ModelCoranationClass(), "CoranationClass", false, new float[] { -3.8F, 0.2F, 0.0F }, new float[] { 0F, 180F, 180F }, null, "largesmoke", 3, new ArrayList<double[]>() {
 		{
-					add(new double[] { 5.45D, 1.9D, 0.0D });
+			add(new double[] { 5.45D, 1.9D, 0.0D });
 		}
 	}, "explode", new ArrayList<double[]>() {
 		{
-					add(new double[] {4.8D, 0.15D, 0.5D });
+			add(new double[] {4.8D, 0.15D, 0.5D });
 		}
 	}, 2, true),
 	locoBR80(EntityLocoSteamBR80_DB.class, new ModelLocoBR80_DB(), "locoBR80_DB_", true, new float[] { -0.75F, -0.44F, 0.0F }, null, null, "largesmoke", 3, new ArrayList<double[]>() {
@@ -733,7 +732,14 @@ public enum RenderEnum {
 
 		}
 	}, "", null, 0, false),
-	fifty6FootWellcar(com.jcirmodelsquad.tcjcir.rollingstock.A56AFootWellcar.class, new com.jcirmodelsquad.tcjcir.models.ModelA56AFootWellcar(), "56footwellcar", false, new float[]{0F, 0.4F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),;
+	HuskyStackWellcar(com.jcirmodelsquad.tcjcir.rollingstock.HuskyStackWellcar.class, new com.jcirmodelsquad.tcjcir.models.ModelHuskyStackWellcar(), "huskystack_", true, new float[]{0F, 0.4F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
+	BombCart(com.jcirmodelsquad.tcjcir.rollingstock.BombCart.class, new com.jcirmodelsquad.tcjcir.models.ModelBombCart(), "payload_", true, new float[]{0F, 0.15F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
+	Boxcab23Ton( com.jcirmodelsquad.tcjcir.locomotives.DieselBoxcab23Ton.class,  new com.jcirmodelsquad.tcjcir.models.ModelBoxcab23Ton(), "boxcab_", true,new float[] {-0.85F, 0.2F, 0F},  new float[] { 0F, 0F, 180F }, null, "smoke", 5,  new ArrayList<double[]>() {
+		{ //note: use {-0.5F, 0.2F, 0F} and -1 for main hitbox and bogie position if the "fliparound" error is fixed, knowing eternal, not likely. sorry about extra thicc hitboxes -bid
+			add(new double[]{0.6D, 1.4D, 0.0D});
+
+		}
+	}, "", null, 0, false),;
 
 	private Class<? extends AbstractTrains> entityClass;
 	private ModelBase model;

@@ -372,6 +372,11 @@ item.tc:minecartSF30C.name= GE SF30C
 item.tc:minecartF7A.name= EMD F7a
 item.tc:minecartF7B.name= EMD F7b
 item.tc:minecartGeGenesis.name= GE Genesis
+item.tc:minecartDriverlessMetroCar.name= PCH-120 Coach
+item.tc:minecartES44.name=GE ES44
+item.tc:minecartHuskyStackWellcar.name=53 Foot HuskyStack Wellcar
+item.tc:minecartBoxcab23Ton.name=GE 23 Ton Boxcab
+item.tc:minecartBombCart.name=Payload Cart
 
 <!-- ## Achievements ## -->
 achievement.tc:engineer=Engineers clothes
@@ -678,6 +683,12 @@ entity.tc.SF30C.name=GE SF30C
 entity.tc.F7A.name=EMD F7a
 entity.tc.F7B.name=EMD F7b
 entity.tc.GeGenesis.name= GE Genesis
+entity.tc.DriverlessMetroCar.name= PCH-120 Coach
+entity.tc.ES44.name=GE ES44
+entity.tc.HuskyStackWellcar.name=53 Foot HuskyStack Wellcar
+entity.tc.Boxcab23Ton.name=GE 23 Ton Boxcab
+entity.tc.BombCart.name=Payload Cart
+
 description.villager.profession.tc.station_chief=Station Chief
 tile.tc:FortyFootContainer.name= Forty Foot Container
 key.categories.traincraft=Traincraft
