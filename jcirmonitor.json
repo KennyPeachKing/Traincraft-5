@@ -1,13 +1,14 @@
 {
   "PR" : {
-    "color" : "#231B34"
+    "color" : "#231B34",
+    "name" : "PeachRail"
   },
   "BR" : {
-    "color" : "#084058"
+    "color" : "#084058",
+    "name" : "British Rail"
   },
   "OWO" : {
-    "color" : "#B6D5B3"
+    "color" : "#B6D5B3",
+    "name" : "OWO's Full Name here"
   }
-
-
 }
