@@ -299,7 +299,10 @@ public enum EnumTrains {
 	geGenesis("Ge Genesis", com.jcirmodelsquad.tcjcir.locomotives.GeGenesis.class, ItemIDs.minecartGeGenesis.item, "diesel", 4250, 177, 0, 55, 0, 175, 0.93, 0.94, 20000, TraincraftUtil.getBytesFromColors(new String[] {"Grey", "LightGrey", "White"}), 10, -5.5, "Model by MessicOOmer"),
 	ES44("ES44", com.jcirmodelsquad.tcjcir.locomotives.DieselES44.class, ItemIDs.minecartES44.item, "diesel", 4400, 120, 0, 60, 0, 190, 0.7, 0.8, 25000, TraincraftUtil.getBytesFromColors(new String[] {"Lime", "Orange", "Red", "Yellow", "Blue", "LightGrey", "Grey", "Black"}), 10, -4.3, "Model by Eddie Dalton, upgraded by Bida"),
 	BombCart("Payload", com.jcirmodelsquad.tcjcir.rollingstock.BombCart.class, ItemIDs.minecartBombCart.item, "misc", 3, TraincraftUtil.getBytesFromColors(new String[]{"LightBlue", "Red", "Black", "Blue", "Cyan", "Green", "Grey", "Brown", "LightGrey", "Lime", "Magenta", "Orange", "Pink", "Purple", "Yellow", "White"}), 0, 0, "Who is not pushing ze Cart!?"),
-	HuskyStackWellcar("53' HuskyStack Wellcar", com.jcirmodelsquad.tcjcir.rollingstock.HuskyStackWellcar.class, ItemIDs.minecartHuskyStackWellcar.item, "freight", 4, TraincraftUtil.getBytesFromColors(new String[] {"Yellow", "Pink"}), 0,0, "Model by Bidahochi"),;
+	HuskyStackWellcar("53' HuskyStack Wellcar", com.jcirmodelsquad.tcjcir.rollingstock.HuskyStackWellcar.class, ItemIDs.minecartHuskyStackWellcar.item, "freight", 4, TraincraftUtil.getBytesFromColors(new String[] {"Yellow", "Pink"}), 0,0, "Model by Bidahochi"),
+	Boxcab23Ton("23 Ton Boxcab", com.jcirmodelsquad.tcjcir.locomotives.DieselBoxcab23Ton.class, ItemIDs.minecartBoxcab23Ton.item, "diesel", 150, 40, 0, 20, 0, 100, 0.7, 0.8, 5000,  TraincraftUtil.getBytesFromColors(new String[] {"Blue", "White", "Black"}), 10, -1.5, "Bida Model, as per the usual"),
+	//note on the boxcab: check the RenderEnum for more info related to its hitboxes
+	;
 
 
 	/*passengerICE1_Restaurant("ICE Restaurant", EntityPassengerICE_Restaurant.class,
