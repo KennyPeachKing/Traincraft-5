@@ -10,5 +10,9 @@
   "OWO" : {
     "color" : "#B6D5B3",
     "name" : "Washaska & Old Fox Rail Co"
+  },
+  "YR" : {
+    "color": "#FFFFFF",
+    "name" : "Yeet Railroad"
   }
 }
