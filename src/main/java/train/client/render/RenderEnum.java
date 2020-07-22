@@ -732,7 +732,7 @@ public enum RenderEnum {
 
 		}
 	}, "", null, 0, false),
-	HuskyStackWellcar(com.jcirmodelsquad.tcjcir.rollingstock.HuskyStackWellcar.class, new com.jcirmodelsquad.tcjcir.models.ModelHuskyStackWellcar(), "huskystack_", true, new float[]{0F, 0.4F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
+	HuskyStackWellcar(com.jcirmodelsquad.tcjcir.rollingstock.HuskyStackWellcar.class, new com.jcirmodelsquad.tcjcir.models.ModelHuskyStackWellcar(), "huskystack_", true, new float[]{0F, 0.15F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
 	BombCart(com.jcirmodelsquad.tcjcir.rollingstock.BombCart.class, new com.jcirmodelsquad.tcjcir.models.ModelBombCart(), "payload_", true, new float[]{0F, 0.15F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
 	Boxcab23Ton( com.jcirmodelsquad.tcjcir.locomotives.DieselBoxcab23Ton.class,  new com.jcirmodelsquad.tcjcir.models.ModelBoxcab23Ton(), "boxcab_", true,new float[] {-0.85F, 0.2F, 0F},  new float[] { 0F, 0F, 180F }, null, "smoke", 5,  new ArrayList<double[]>() {
 		{ //note: use {-0.5F, 0.2F, 0F} and -1 for main hitbox and bogie position if the "fliparound" error is fixed, knowing eternal, not likely. sorry about extra thicc hitboxes -bid
