@@ -9,6 +9,7 @@
 
 package train.client.render.models;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import tmt.ModelBase;
 import tmt.ModelRendererTurbo;
@@ -105,7 +106,7 @@ public class ModelLocoClimax extends ModelBase
         lococlimaxModel[81] = new ModelRendererTurbo(this, 329, 17, textureX, textureY); // Box 83
         lococlimaxModel[82] = new ModelRendererTurbo(this, 353, 17, textureX, textureY); // Box 84
         lococlimaxModel[83] = new ModelRendererTurbo(this, 361, 17, textureX, textureY); // Box 85
-        lococlimaxModel[84] = new ModelRendererTurbo(this, 409, 17, textureX, textureY); // Box 86
+        lococlimaxModel[84] = new ModelRendererTurbo(this, 409, 17, textureX, textureY, "lamp"); // Box 86
         lococlimaxModel[85] = new ModelRendererTurbo(this, 25, 9, textureX, textureY); // Box 87
         lococlimaxModel[86] = new ModelRendererTurbo(this, 57, 9, textureX, textureY); // Box 88
         lococlimaxModel[87] = new ModelRendererTurbo(this, 465, 33, textureX, textureY); // Box 89
@@ -265,7 +266,7 @@ public class ModelLocoClimax extends ModelBase
         lococlimaxModel[241] = new ModelRendererTurbo(this, 409, 73, textureX, textureY); // Box 242
         lococlimaxModel[242] = new ModelRendererTurbo(this, 249, 89, textureX, textureY); // Box 243
         lococlimaxModel[243] = new ModelRendererTurbo(this, 401, 89, textureX, textureY); // Box 244
-        lococlimaxModel[244] = new ModelRendererTurbo(this, 497, 81, textureX, textureY); // Box 245
+        lococlimaxModel[244] = new ModelRendererTurbo(this, 497, 81, textureX, textureY, "lamp"); // Box 245
         lococlimaxModel[245] = new ModelRendererTurbo(this, 337, 65, textureX, textureY); // Box 246
         lococlimaxModel[246] = new ModelRendererTurbo(this, 97, 73, textureX, textureY); // Box 247
         lococlimaxModel[247] = new ModelRendererTurbo(this, 401, 89, textureX, textureY); // Box 248
@@ -1260,14 +1261,15 @@ public class ModelLocoClimax extends ModelBase
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
     {
-        for(int i = 0; i < 303; i++)
-        {
-            lococlimaxModel[i].render(f5);
+        for(int i = 0; i < 303; i++) {
+            if (lococlimaxModel[i].boxName != null && lococlimaxModel[i].boxName.contains("lamp")) {
+                Minecraft.getMinecraft().entityRenderer.disableLightmap(1D);
+                lococlimaxModel[i].render(f5);
+                Minecraft.getMinecraft().entityRenderer.enableLightmap(1D);
+            } else {
+                lococlimaxModel[i].render(f5);
+            }
         }
-    }
-
-    public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5)
-    {
     }
 
     public ModelRendererTurbo lococlimaxModel[];

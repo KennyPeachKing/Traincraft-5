@@ -27,7 +27,7 @@ public class ModelCF7 extends ModelConverter //Same as Filename
 
 	public ModelCF7() //Same as Filename
 		{
-			bodyModel = new ModelRendererTurbo[401];
+			bodyModel = new ModelRendererTurbo[415];
 
 			initbodyModel_1();
 
@@ -440,6 +440,20 @@ public class ModelCF7 extends ModelConverter //Same as Filename
 			bodyModel[398] = new ModelRendererTurbo(this, 505, 105, textureX, textureY); // Box 373
 			bodyModel[399] = new ModelRendererTurbo(this, 374, 76, textureX, textureY); // Box 401
 			bodyModel[400] = new ModelRendererTurbo(this, 60, 85, textureX, textureY); // Box 402
+			bodyModel[401] = new ModelRendererTurbo(this, 9, 154, textureX, textureY); // DBox 89
+			bodyModel[402] = new ModelRendererTurbo(this, 1, 138, textureX, textureY); // DBox 91
+			bodyModel[403] = new ModelRendererTurbo(this, 45, 143, textureX, textureY); // DBox 101
+			bodyModel[404] = new ModelRendererTurbo(this, 62, 143, textureX, textureY); // DBox 105
+			bodyModel[405] = new ModelRendererTurbo(this, 77, 143, textureX, textureY); // DBox 172
+			bodyModel[406] = new ModelRendererTurbo(this, 45, 138, textureX, textureY); // DBox 173
+			bodyModel[407] = new ModelRendererTurbo(this, 62, 138, textureX, textureY); // DBox 176
+			bodyModel[408] = new ModelRendererTurbo(this, 77, 138, textureX, textureY); // DBox 177
+			bodyModel[409] = new ModelRendererTurbo(this, 28, 138, textureX, textureY); // DBox 178
+			bodyModel[410] = new ModelRendererTurbo(this, 59, 150, textureX, textureY); // DBox 179
+			bodyModel[411] = new ModelRendererTurbo(this, 59, 155, textureX, textureY); // DBox 180
+			bodyModel[412] = new ModelRendererTurbo(this, 28, 143, textureX, textureY); // DBox 181
+			bodyModel[413] = new ModelRendererTurbo(this, 44, 155, textureX, textureY); // DBox 182
+			bodyModel[414] = new ModelRendererTurbo(this, 44, 150, textureX, textureY); // DBox 183
 
 			bodyModel[0].addBox(0F, 0F, 0F, 22, 2, 22, 0F); // Box 7
 			bodyModel[0].setRotationPoint(-31F, -5F, -11F);
@@ -1671,13 +1685,58 @@ public class ModelCF7 extends ModelConverter //Same as Filename
 
 			bodyModel[400].addBox(0F, 0F, 0F, 1, 1, 1, 0F); // Box 402
 			bodyModel[400].setRotationPoint(-15F, -28F, -8F);
+
+
+			bodyModel[401].addShapeBox(0F, 0F, 0F, 6, 1, 6, 0F,0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F, 0F, -0.5F, 0F); // DBox 89
+			bodyModel[401].setRotationPoint(5.5F, -26.5F, -2.5F);
+
+			bodyModel[402].addBox(0F, 0F, 0F, 6, 1, 14, 0F); // DBox 91
+			bodyModel[402].setRotationPoint(5.5F, -26F, -7F);
+
+			bodyModel[403].addShapeBox(0F, 0F, 0F, 6, 2, 2, 0F,0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -1F, 0F, 0F, -1F); // DBox 101
+			bodyModel[403].setRotationPoint(5.5F, -24F, 7F);
+
+			bodyModel[404].addShapeBox(0F, 0F, 0F, 5, 2, 2, 0F,0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -2F, 0F, -1.5F, 0F, 0F, 0F, 0F, 0F, 0F, -1F, 0F, -1.5F, -2F); // DBox 105
+			bodyModel[404].setRotationPoint(0.5F, -24F, 7F);
+
+			bodyModel[405].addShapeBox(0F, 0F, 0F, 5, 2, 2, 0F,0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -2F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -1.5F, 0F, 0F, -1.5F, -2F, 0F, 0F, -1F); // DBox 172
+			bodyModel[405].setRotationPoint(11.5F, -24F, 7F);
+
+			bodyModel[406].addShapeBox(0F, 0F, 0F, 6, 2, 2, 0F,0F, 0F, 0F, 0F, 0F, 0F, 0F, -1F, 0F, 0F, -1F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F); // DBox 173
+			bodyModel[406].setRotationPoint(5.5F, -26F, 7F);
+
+			bodyModel[407].addShapeBox(0F, 0F, 0F, 5, 2, 2, 0F,0F, -1F, 0F, 0F, 0F, 0F, 0F, -1F, 0F, 0F, -1F, -2F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -2F); // DBox 176
+			bodyModel[407].setRotationPoint(0.5F, -26F, 7F);
+
+			bodyModel[408].addShapeBox(0F, 0F, 0F, 5, 2, 2, 0F,0F, 0F, 0F, 0F, -1F, 0F, 0F, -1F, -2F, 0F, -1F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -2F, 0F, 0F, 0F); // DBox 177
+			bodyModel[408].setRotationPoint(11.5F, -26F, 7F);
+
+			bodyModel[409].addShapeBox(0F, 0F, 0F, 6, 2, 2, 0F,0F, -1F, 0F, 0F, -1F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F); // DBox 178
+			bodyModel[409].setRotationPoint(5.5F, -26F, -9F);
+
+			bodyModel[410].addShapeBox(0F, 0F, 0F, 5, 2, 2, 0F,0F, -1F, 0F, 0F, -1F, -2F, 0F, -1F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -2F, 0F, 0F, 0F, 0F, 0F, 0F); // DBox 179
+			bodyModel[410].setRotationPoint(11.5F, -26F, -9F);
+
+			bodyModel[411].addShapeBox(0F, 0F, 0F, 5, 2, 2, 0F,0F, 0F, 0F, 0F, 0F, -2F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -1F, 0F, -1.5F, -2F, 0F, -1.5F, 0F, 0F, 0F, 0F); // DBox 180
+			bodyModel[411].setRotationPoint(11.5F, -24F, -9F);
+
+			bodyModel[412].addShapeBox(0F, 0F, 0F, 6, 2, 2, 0F,0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -1F, 0F, 0F, -1F, 0F, 0F, 0F, 0F, 0F, 0F); // DBox 181
+			bodyModel[412].setRotationPoint(5.5F, -24F, -9F);
+
+			bodyModel[413].addShapeBox(0F, 0F, 0F, 5, 2, 2, 0F,0F, 0F, -2F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -1.5F, -2F, 0F, 0F, -1F, 0F, 0F, 0F, 0F, -1.5F, 0F); // DBox 182
+			bodyModel[413].setRotationPoint(0.5F, -24F, -9F);
+
+			bodyModel[414].addShapeBox(0F, 0F, 0F, 5, 2, 2, 0F,0F, -1F, -2F, 0F, -1F, 0F, 0F, 0F, 0F, 0F, -1F, 0F, 0F, 0F, -2F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F); // DBox 183
+			bodyModel[414].setRotationPoint(0.5F, -26F, -9F);
+
 		}
 	ModelBlombergB theTrucks2 = new ModelBlombergB();
 	ModelFB2 theTrucks1 = new ModelFB2();
+	ModelTypeB theTrucks3 = new ModelTypeB();
 
 	@Override
 	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
-		for (int i = 0; i < 401; i++) {
+		for (int i = 0; i < 415; i++) {
 			if (bodyModel[i].boxName != null && bodyModel[i].boxName.contains("lamp")) {
 				Minecraft.getMinecraft().entityRenderer.disableLightmap(1D);
 				bodyModel[i].render(f5);
@@ -1708,6 +1767,16 @@ public class ModelCF7 extends ModelConverter //Same as Filename
 
 			GL11.glTranslated(2.55, 0, 0);
 			theTrucks2.render(entity, f, f1, f2, f3, f4, f5);
+			GL11.glPopMatrix();
+
+		} else if (entity instanceof AbstractTrains && ((AbstractTrains) entity).getColor() == 14) {
+			Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/typeB_Black.png"));
+			GL11.glPushMatrix();
+			GL11.glTranslated(-1.3, -0.01, 0);
+			theTrucks3.render(entity, f, f1, f2, f3, f4, f5);
+
+			GL11.glTranslated(2.57, 0, 0);
+			theTrucks3.render(entity, f, f1, f2, f3, f4, f5);
 			GL11.glPopMatrix();
 		} else {
 			Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/blombergB_Black.png"));

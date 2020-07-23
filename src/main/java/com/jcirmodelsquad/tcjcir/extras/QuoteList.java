@@ -97,6 +97,8 @@ public class QuoteList {
         importantQuotes.add(new JCIRQuote("ThiCC bOx brOo can i mount it!?", "Peachy"));
         importantQuotes.add(new JCIRQuote("Go bite me in the ass Tumblr!!", "JCRail"));
         importantQuotes.add(new JCIRQuote("Bill Nye is the new Trans Guy!", "Bida"));
+        importantQuotes.add(new JCIRQuote("Ah, so you had sex with the gas station pole?", "Bida"));
+        importantQuotes.add(new JCIRQuote("Just to satisfy my fucking ego. . .", "Hariesh"));
 
     return importantQuotes;
 
