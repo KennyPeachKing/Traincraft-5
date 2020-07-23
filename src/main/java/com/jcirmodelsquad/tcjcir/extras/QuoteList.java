@@ -11,7 +11,7 @@ public class QuoteList {
 
     public static ArrayList<JCIRQuote> getQuotes() {
         importantQuotes = new ArrayList<JCIRQuote>();
-        importantQuotes.add(new JCIRQuote("Southern Pacific, more like sucking p***s.", "JCRail"));
+        importantQuotes.add(new JCIRQuote("Southern Pacific, more like sucking Penis.", "JCRail"));
         importantQuotes.add(new JCIRQuote("Stop putting liquids in the pit!!", "JCRail"));
         importantQuotes.add(new JCIRQuote("This is BS.", "JCRail"));
         importantQuotes.add(new JCIRQuote("Crock and Rail Torture", "PeachMaster"));
@@ -22,7 +22,7 @@ public class QuoteList {
         importantQuotes.add(new JCIRQuote("Oh hey it's Nutttt", "Bidahochi"));
         importantQuotes.add(new JCIRQuote("Nutt is a better fuel than Reinforced Fuel", "PeachMaster"));
         importantQuotes.add(new JCIRQuote("uWu Everybady, welcum to thuh south", "JCRail"));
-        importantQuotes.add(new JCIRQuote("Hardcore P**n Factory: Pumping Industrial Nudes Since BR!", "JCRail"));
+        importantQuotes.add(new JCIRQuote("Hardcore Porn Factory: Pumping Industrial Nudes Since BR!", "JCRail"));
         importantQuotes.add(new JCIRQuote("Ima write an erotic JCIR fanfic tmmr", "imWastey"));
         importantQuotes.add(new JCIRQuote("I swear the Steven X Connie it will happen and IM GONNA MAKE IT AND NOBODY IS GONNA STOP ME", "JCRail"));
         importantQuotes.add(new JCIRQuote("It's not gay if you are god", "JCRail"));
@@ -31,9 +31,9 @@ public class QuoteList {
         importantQuotes.add(new JCIRQuote("Your a dumbaxe", "PeachMaster"));
         importantQuotes.add(new JCIRQuote("Villagers are just sentient emerald ore, it's fine.", "Bidahochi"));
         importantQuotes.add(new JCIRQuote("Why are there so many GIANT FLAMING BONER WHEELS??", "JCRail"));
-        importantQuotes.add(new JCIRQuote("Don't you love it when you have a bunch of angry boners in a pit? ", "JCRail"));
-        importantQuotes.add(new JCIRQuote("Oh no the boner caster teleported away!", "JCRail"));
-        importantQuotes.add(new JCIRQuote("I apparently have danny devito foot fe**ish", "JCRAil"));
+        importantQuotes.add(new JCIRQuote("Don't you love it when you have a bunch of Angry Boners in a pit? ", "JCRail"));
+        importantQuotes.add(new JCIRQuote("Oh no the Boner Caster teleported away!", "JCRail"));
+        importantQuotes.add(new JCIRQuote("I apparently have danny devito foot fetish", "JCRAil"));
         importantQuotes.add(new JCIRQuote("gENital jOUSting on the NES!?", "Bidahochi"));
         importantQuotes.add(new JCIRQuote("Peach is gonna go add that to his Wank Bank", "Hariesh"));
         importantQuotes.add(new JCIRQuote("You illegally trespassed on your own property", "JCRail"));
@@ -51,7 +51,7 @@ public class QuoteList {
         importantQuotes.add(new JCIRQuote("WhaT! I'm not doing insect with the bees!", "Hariesh"));
         importantQuotes.add(new JCIRQuote("A RECTANGLE IS A SQUARE!!", "Bidahochi"));
         importantQuotes.add(new JCIRQuote("No, don't sit on my CF7 book", "Bidahochi"));
-        importantQuotes.add(new JCIRQuote("THat's weird, it works in the test enviorment..", "Bida"));
+        importantQuotes.add(new JCIRQuote("That's weird, it works in the Test Enviorment..", "Bida"));
         importantQuotes.add(new JCIRQuote("HELP ME! THE PIGMEN HAVE GUNS!", "New Players on the Server"));
         importantQuotes.add(new JCIRQuote("oOooO we'll give this one an h!", "SDM"));
         importantQuotes.add(new JCIRQuote("the cubes pissed on your face and you died!", "Bida"));
@@ -67,13 +67,13 @@ public class QuoteList {
         importantQuotes.add(new JCIRQuote("JCRail likes trains.. and he likes the smell. ", "JCRail"));
         importantQuotes.add(new JCIRQuote("Ive been building dicks since the sixth grade ", "Rez"));
         importantQuotes.add(new JCIRQuote("Dude, i just got stabbed, Chill", "JCRail"));
-        importantQuotes.add(new JCIRQuote("Okey, thankies from mcspankies. No prob Rom the Don", "PeachMaster and JCRail"));
+        importantQuotes.add(new JCIRQuote("Okey, thankies from mcspankies. No prob Ron the Don", "PeachMaster and JCRail"));
         importantQuotes.add(new JCIRQuote("My dad went outside with a can of propane and told me not to follow him!", "Wastey"));
         importantQuotes.add(new JCIRQuote("They changed the cum robot!? you cant just change the cum robot!", "Bida"));
         importantQuotes.add(new JCIRQuote("wooAOOAAAAAAAAAHHH its upSIDEdoWWWNNN!", "Binky"));
         importantQuotes.add(new JCIRQuote("JC is bullying the sentient explosives!", "Bida"));
         importantQuotes.add(new JCIRQuote("42 Dollars for a Snow Cone??", "JCRail"));
-        importantQuotes.add(new JCIRQuote("i think i need a scooby doo tie-fighter now", "JCRail"));
+        importantQuotes.add(new JCIRQuote("i think i need a Scooby Doo tie-fighter now", "JCRail"));
         importantQuotes.add(new JCIRQuote("Don't make me feed you Opium!", "Hariesh"));
         importantQuotes.add(new JCIRQuote("I like sweet old ladies!", "JCRail"));
         importantQuotes.add(new JCIRQuote("I'm a level 1 hoe!", "Hariesh"));
@@ -99,7 +99,8 @@ public class QuoteList {
         importantQuotes.add(new JCIRQuote("Bill Nye is the new Trans Guy!", "Bida"));
         importantQuotes.add(new JCIRQuote("Ah, so you had sex with the gas station pole?", "Bida"));
         importantQuotes.add(new JCIRQuote("Just to satisfy my fucking ego. . .", "Hariesh"));
-
+        importantQuotes.add(new JCIRQuote("Im gonna fucking deck you. . .", "JCRail"));
+        importantQuotes.add(new JCIRQuote("Crash report saved to: #@!@#. . .", "IntelliJ"));
     return importantQuotes;
 
     }

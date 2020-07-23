@@ -64,6 +64,7 @@
   "boxcab_notch8": {"category": "master", "sounds": [{"name": "boxcab_notch8", "stream":  true}]},
   "boxcab_idle": {"category": "master", "sounds": [{"name": "boxcab_idle", "stream":  true}]},
   "wabco_e2": {"category": "master", "sounds": [{"name": "wabco_e2", "stream":  true}]},
+"daylight_whistle": {"category": "master", "sounds": [{"name": "daylight_whistle", "stream":  true}]},
   "leslie_rs3k": {"category": "master", "sounds": [{"name": "leslie_rs3k", "stream":  true}]},
-  "truck_horn": {"category": "master", "sounds": [{"name": "truck_horn", "stream":  true}]}
-}
+  "truck_horn": {"category": "master", "sounds": [{"name": "truck_horn", "stream":  true}]},
+  "765_whistle": {"category": "master", "sounds": [{"name": "765_whistle", "stream":  true}]}}
