@@ -28,15 +28,43 @@ public class HuskyStackWellcar extends EntityRollingStock implements IPassenger 
 
     @Override
     public float getOptimalDistance(EntityMinecart cart) {
-        return 2F;
+        return 3.3F;
     }
     @Override
     public void setDead() {
         super.setDead();
+        ItemStack stackToPlace = new ItemStack(BlockIDs.FortyFootContainer.block, 1);
+
+        if (container1 != null) {
+            container1.savedData.removeTag("x");
+            container1.savedData.removeTag("y");
+            container1.savedData.removeTag("z");
+            stackToPlace.setTagCompound(container1.savedData);
+            if (!worldObj.isRemote) {
+                EntityItem dropItem = new EntityItem(this.worldObj, this.posX, this.posY, this.posZ, stackToPlace.copy());
+                dropItem.delayBeforeCanPickup = 1;
+                worldObj.spawnEntityInWorld(dropItem);
+            }
+        }
+
+        if (container2 != null) {
+            container2.savedData.removeTag("x");
+            container2.savedData.removeTag("y");
+            container2.savedData.removeTag("z");
+            stackToPlace.setTagCompound(container2.savedData);
+            if (!worldObj.isRemote) {
+                EntityItem dropItem = new EntityItem(this.worldObj, this.posX, this.posY, this.posZ, stackToPlace.copy());
+                dropItem.delayBeforeCanPickup = 1;
+                worldObj.spawnEntityInWorld(dropItem);
+            }
+
+        }
+
         isDead = true;
     }
     @Override
     public boolean interactFirst(EntityPlayer entityplayer) {
+        super.interactFirst(entityplayer);
         playerEntity = entityplayer;
         if (entityplayer.getHeldItem() != null && entityplayer.getHeldItem().getUnlocalizedName().equals("tile.tc:FortyFootContainer")) {
             ItemStack theItem = entityplayer.getHeldItem();
@@ -44,13 +72,13 @@ public class HuskyStackWellcar extends EntityRollingStock implements IPassenger 
                 if (theItem.getTagCompound() != null) {
                     this.container1 = new BasicallyContainer("FortyFootContainer", theItem.getTagCompound().getString("currentColorString"), theItem.getTagCompound());
                 } else {
-                    this.container1 = new BasicallyContainer("FortyFootContainer", "grey", null);
+                    this.container1 = new BasicallyContainer("FortyFootContainer", "Grey", null);
                 }
             } else {
                 if (theItem.getTagCompound() != null) {
                     this.container2 = new BasicallyContainer("FortyFootContainer", theItem.getTagCompound().getString("currentColorString"), theItem.getTagCompound());
                 } else {
-                    this.container2 = new BasicallyContainer("FortyFootContainer", "grey", null);
+                    this.container2 = new BasicallyContainer("FortyFootContainer", "Grey", null);
                 }
             }
             if (!worldObj.isRemote) {
@@ -66,10 +94,12 @@ public class HuskyStackWellcar extends EntityRollingStock implements IPassenger 
         } else if (entityplayer.getHeldItem() == null && entityplayer.isSneaking()) {
             ItemStack theItemStack = new ItemStack(BlockIDs.FortyFootContainer.block, 1);
             if (container2 != null) {
-                container2.savedData.removeTag("x");
-                container2.savedData.removeTag("y");
-                container2.savedData.removeTag("z");
-                theItemStack.setTagCompound(container2.savedData);
+                if (container2.savedData != null) {
+                    container2.savedData.removeTag("x");
+                    container2.savedData.removeTag("y");
+                    container2.savedData.removeTag("z");
+                    theItemStack.setTagCompound(container2.savedData);
+                }
                 if (!worldObj.isRemote) {
                     EntityItem dropItem = new EntityItem(entityplayer.getEntityWorld(), entityplayer.posX, entityplayer.posY, entityplayer.posZ, theItemStack.copy());
                     dropItem.delayBeforeCanPickup = 1;
@@ -78,10 +108,12 @@ public class HuskyStackWellcar extends EntityRollingStock implements IPassenger 
                 container2 = null;
 
             } else {
-                container1.savedData.removeTag("x");
-                container1.savedData.removeTag("y");
-                container1.savedData.removeTag("z");
-                theItemStack.setTagCompound(container1.savedData);
+                if (container1.savedData != null) {
+                    container1.savedData.removeTag("x");
+                    container1.savedData.removeTag("y");
+                    container1.savedData.removeTag("z");
+                    theItemStack.setTagCompound(container1.savedData);
+                }
                 if (!worldObj.isRemote) {
                     EntityItem dropItem = new EntityItem(entityplayer.getEntityWorld(), entityplayer.posX, entityplayer.posY, entityplayer.posZ, theItemStack.copy());
                     dropItem.delayBeforeCanPickup = 1;
