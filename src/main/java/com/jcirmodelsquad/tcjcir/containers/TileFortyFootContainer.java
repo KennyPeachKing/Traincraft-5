@@ -22,14 +22,18 @@ import java.util.ArrayList;
 
 public class TileFortyFootContainer extends TileEntity implements IInventory {
     public ItemStack[] inventory;
-    private String customName;
+    public int directionPlaced;
     public int currentColor = 0;
 
     public TileFortyFootContainer() {
         this.inventory = new ItemStack[this.getSizeInventory()];
     }
 
-    ;
+    public TileFortyFootContainer(int pl) {
+        this.inventory = new ItemStack[this.getSizeInventory()];
+        this.directionPlaced = pl;
+    }
+
 
 
     @Override

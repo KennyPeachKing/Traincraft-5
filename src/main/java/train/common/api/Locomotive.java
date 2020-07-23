@@ -794,10 +794,10 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
                 updateFuelTrain(this.getFuelConsumption());
             }
             fuelUpdateTicks++;
-
+            
             if (!this.isLocoTurnedOn()) {
-                motionX *= 0;
-                motionZ *= 0;
+               // motionX *= 0;
+               // motionZ *= 0;
             }
 
         }

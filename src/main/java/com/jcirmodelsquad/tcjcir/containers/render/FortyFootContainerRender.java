@@ -34,9 +34,6 @@ public class FortyFootContainerRender extends TileEntitySpecialRenderer {
         //tessellator.setBrightness(theBlock.getMixedBrightnessForBlock(tileEntity.getWorldObj(), (int)x, (int)y, (int)z));
         tessellator.setBrightness(15);
 
-        if (theTileEntity.currentColor == 1) {
-            System.out.println(three.getUnlocalizedName());
-        }
         GL11.glPushMatrix();
         if (two instanceof BlockFortyFootContainer) {
             GL11.glTranslated(x + 0.5, y + 1.3, z + 0.44F);
@@ -44,6 +41,9 @@ public class FortyFootContainerRender extends TileEntitySpecialRenderer {
             GL11.glTranslated(x + 0.5, y + 1.3, z + 0.44F);
         } else {
             GL11.glTranslated(x+ 0.5 ,y + 1, z+ 0.44F);
+        }
+        if (theTileEntity.directionPlaced == 0) {
+            GL11.glRotated(10, 0,0,0);
         }
         if (theTileEntity.currentColor == 1) {
 

@@ -14,6 +14,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.Constants;
@@ -45,7 +46,6 @@ public class BlockFortyFootContainer extends BlockContainer {
     public TileEntity createNewTileEntity(World p_149915_1_, int p_149915_2_) {
         if (theTile == null) {
             theTile = new TileFortyFootContainer();
-            System.out.println("Creating new tile");
         }
         return new TileFortyFootContainer();
     }
@@ -200,10 +200,11 @@ public class BlockFortyFootContainer extends BlockContainer {
     public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase player, ItemStack stack)
     {
         TileFortyFootContainer te = (TileFortyFootContainer) world.getTileEntity(x, y, z);
+        int playerYaw = MathHelper.floor_double((player.rotationYaw / 90.0F) + 2.5D) & 3;
 
         if (te != null && stack.getTagCompound() != null)
         {
-            System.out.println(stack.getTagCompound().toString());
+            te.directionPlaced = playerYaw;
             stack.getTagCompound().setInteger("x", x);
             stack.getTagCompound().setInteger("y", y);
             stack.getTagCompound().setInteger("z", z);
