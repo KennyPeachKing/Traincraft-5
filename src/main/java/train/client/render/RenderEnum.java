@@ -479,7 +479,7 @@ public enum RenderEnum {
 			add(new double[] { 1.45D, -0.2D, 0.8D });
 		}
 	}, 2, true),
-	locoSteamShay(EntityLocoSteamShay.class, new ModelLocoSteamShay(), "locoShay", false, new float[] { -0.4F, -0.45F, -0.0F }, new float[] { 0F, 180F, 0F }, null, "largesmoke", 20, new ArrayList<double[]>() {
+	locoSteamShay(EntityLocoSteamShay.class, new ModelLocoSteamShay(), "locoShay_", true, new float[] { -0.4F, -0.45F, -0.0F }, new float[] { 0F, 180F, 0F }, null, "largesmoke", 20, new ArrayList<double[]>() {
 		{
 			add(new double[] { 1.8D, 1.7D, 0.2D });
 		}
