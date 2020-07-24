@@ -70,6 +70,9 @@
   "1225_whistle": {"category": "master", "sounds": [{"name": "1225_whistle", "stream":  true}]},
   "southern_3chime": {"category": "master", "sounds": [{"name": "southern_3chime", "stream":  true}]},
   "drgw_5chime": {"category": "master", "sounds": [{"name": "drgw_5chime", "stream":  true}]},
+  "drgw_3chime": {"category": "master", "sounds": [{"name": "drgw_3chime", "stream":  true}]},
+  "ebt_5chime": {"category": "master", "sounds": [{"name": "ebt_5chime", "stream":  true}]},
   "lukenhimer_3chime": {"category": "master", "sounds": [{"name": "lukenhimer_3chime", "stream":  true}]},
   "crosby_3chime": {"category": "master", "sounds": [{"name": "crosby_3chime", "stream":  true}]},
+  "tram_bell": {"category": "master", "sounds": [{"name": "tram_bell", "stream":  true}]},
   "765_whistle": {"category": "master", "sounds": [{"name": "765_whistle", "stream":  true}]}}
