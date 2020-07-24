@@ -207,7 +207,7 @@ public class ModelCF7 extends ModelConverter //Same as Filename
 			bodyModel[165] = new ModelRendererTurbo(this, 201, 81, textureX, textureY); // Box 278
 			bodyModel[166] = new ModelRendererTurbo(this, 217, 81, textureX, textureY); // Box 279
 			bodyModel[167] = new ModelRendererTurbo(this, 233, 81, textureX, textureY); // Box 280
-			bodyModel[168] = new ModelRendererTurbo(this, 321, 33, textureX, textureY, "lamp"); // Box 281 cull
+			bodyModel[168] = new ModelRendererTurbo(this, 321, 33, textureX, textureY, "cull"); // Box 281 cull
 			bodyModel[169] = new ModelRendererTurbo(this, 281, 81, textureX, textureY); // Box 282
 			bodyModel[170] = new ModelRendererTurbo(this, 169, 17, textureX, textureY); // Box 283
 			bodyModel[171] = new ModelRendererTurbo(this, 401, 17, textureX, textureY); // Box 284
