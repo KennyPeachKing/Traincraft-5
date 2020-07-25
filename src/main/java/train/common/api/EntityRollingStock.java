@@ -1594,7 +1594,7 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 			return true;
 		}
 
-		if (itemstack != null && itemstack.getItem() instanceof ItemDye) {
+		/*if (itemstack != null && itemstack.getItem() instanceof ItemDye) {
 			if (this.acceptedColors != null && this.acceptedColors.size() > 0) {
 				for (int i = 0; i < this.acceptedColors.size(); i++) {
 					if (itemstack.getItemDamage() == this.acceptedColors.get(i)) {
@@ -1625,12 +1625,12 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 			else if (this.acceptedColors != null && this.acceptedColors.size() == 0) {
 				entityplayer.addChatMessage(new ChatComponentText("No other colors available"));
 			}
-		}
+		}*/
 		else if ((trainsOnClick.onClickWithStake(this, itemstack, playerEntity, worldObj))) { return true; }
 
 
 		//Really cool feature that Bidahochi suggested.
-		/*if (itemstack != null && itemstack.getItem() instanceof ItemContainer && this instanceof DieselTrain && entityplayer.isSneaking()) {
+		if (itemstack != null && itemstack.getItem() instanceof ItemContainer && this instanceof DieselTrain && entityplayer.isSneaking() && !worldObj.isRemote) {
 
 			Item theItem = itemstack.getItem();
 			DieselTrain thisAsDieselTrain = (DieselTrain) this;
@@ -1640,7 +1640,7 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 				itemstack.stackSize--;
 
 
-				*//*for (int i = 0; i < entityplayer.inventory.getSizeInventory(); i++) {
+				for (int i = 0; i < entityplayer.inventory.getSizeInventory(); i++) {
 					if (entityplayer.inventory.getStackInSlot(i) != null && entityplayer.inventory.getStackInSlot(i).isItemEqual(itemstack)) {
 						if (itemstack.stackSize > 1) {
 							itemstack = new ItemStack(ItemIDs.diesel.item,itemstack.stackSize - 1);
@@ -1652,7 +1652,7 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 						}
 
 					}
-				}*//*
+				}
 
 			} else if (theItem == ItemIDs.emptyCanister.item) {
 				thisAsDieselTrain.getTank().drain(1000, true);
@@ -1660,16 +1660,16 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 					if (entityplayer.inventory.getStackInSlot(i) != null && entityplayer.inventory.getStackInSlot(i).isItemEqual(itemstack)) {
 						if (itemstack.stackSize > 1) {
 							entityplayer.inventory.setInventorySlotContents(i, new ItemStack(ItemIDs.emptyCanister.item, itemstack.stackSize - 1));
-							entityplayer.inventory.addItemStackToInventory(new ItemStack(ItemIDs.diesel.item, 1));
 						} else {
 							entityplayer.inventory.setInventorySlotContents(i, null);
-							entityplayer.inventory.addItemStackToInventory(new ItemStack(ItemIDs.diesel.item, 1));
 						}
+						entityplayer.inventory.addItemStackToInventory(new ItemStack(ItemIDs.diesel.item, 1));
 						break;
 					}
 				}
 			}
-		}*/
+			return true;
+		}
 			/*if (itemstack != null && itemstack.getItem() == ItemIDs.remoteController.item && worldObj.isRemote && this instanceof Locomotive) {
 				Locomotive thisAsLocomotive = (Locomotive)this;
 				if (thisAsLocomotive.trainIsRemoteControlSupported()) {
