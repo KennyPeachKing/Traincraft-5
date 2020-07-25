@@ -28,7 +28,6 @@ public class DieselBoxcab23Ton extends DieselTrain {
         prevPosX = d;
         prevPosY = d1;
         prevPosZ = d2;
-        System.out.println("emd es44 lawl");
     }
 
     public void initLoco() {

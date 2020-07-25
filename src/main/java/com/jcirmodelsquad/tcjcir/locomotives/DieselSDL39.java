@@ -29,7 +29,6 @@ public class DieselSDL39 extends DieselTrain {
         prevPosX = d;
         prevPosY = d1;
         prevPosZ = d2;
-        System.out.println("i am ready to initiate self destruct");
     }
 
     public void initLoco() {

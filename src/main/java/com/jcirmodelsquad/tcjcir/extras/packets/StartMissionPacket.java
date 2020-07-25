@@ -43,7 +43,6 @@ public class StartMissionPacket implements IMessage {
                 }
                 if (!message.status) {
                     ((ExperimentalGeometryCar)theCar).missionStarted = false;
-                    System.out.println("Stopped!");
                 }
             }
             return null;

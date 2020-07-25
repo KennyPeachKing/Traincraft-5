@@ -29,6 +29,7 @@ import net.minecraftforge.common.util.Constants;
 import train.common.Traincraft;
 import train.common.api.EntityRollingStock;
 import train.common.api.IPassenger;
+import train.common.blocks.BlockTCRail;
 import train.common.tile.TileTCRailGag;
 
 import java.io.File;
@@ -71,11 +72,10 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
         prevPosX = d;
         prevPosY = d1;
         prevPosZ = d2;
-        missionStartLocation = new TrackPosition(new Double(posX).intValue(), new Double(posY).intValue(), new Double(posZ).intValue());
-//        dataWatcher.addObject(31, railroadLine);
+        dataWatcher.addObject(31, railroadLine);
 //        dataWatcher.addObject(30, geometryCarName);
-       // dataWatcher.addObject(29, lineType);
-        //dataWatcher.addObject(28, standard);
+        dataWatcher.addObject(29, lineType);
+        dataWatcher.addObject(28, standard);
        // dataWatcher.addObject(27, missionStarted + ":" + currentTrackReport);
        // dataWatcher.addObject(32, currentTrackReport);
     }
@@ -109,11 +109,10 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
                 return true;
             }
 
-            if (itemstack != null && itemstack.getItem() == Items.paper) {
+           /* if (itemstack != null && itemstack.getItem() == Items.paper) {
                 //Start mission.
                 missionStartLocation = new TrackPosition(new Double(posX).intValue(), new Double(posY).intValue(), new Double(posZ).intValue());
                 missionStarted = true;
-                System.out.println("Started!");
                 problematicTrackLocations.clear();
             }
 
@@ -150,7 +149,7 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
                 }
 
             }
-
+*/
             if (!worldObj.isRemote) {
                 entityplayer.mountEntity(this);
             }
@@ -187,7 +186,7 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
 
 
             Block blockAboveCar = getBlockThatIsntAir(this.posX, this.posY + 2, this.posZ);
-            Block blockAboveCar2 = worldObj.getBlock(doubleToInt(this.posX), doubleToInt(this.posY +2), doubleToInt(this.posZ));
+            Block blockAboveCar2 = worldObj.getBlock(doubleToInt(this.posX), doubleToInt(this.posY + 2), doubleToInt(this.posZ));
             Block blockOneAboveCar = getBlockThatIsntAir(this.posX, this.posY + 3, this.posZ);
             Block blockLeft = null;
             Block blockRight = null;
@@ -217,8 +216,12 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
                 blockRight = getBlockThatIsntAir(doubleToInt(posX), doubleToInt(posY + 1), doubleToInt(posZ - 1));
             }
 
-            if (blockLeft != null) { System.out.println(blockLeft.getLocalizedName());}
-            if (blockRight != null) { System.out.println(blockRight.getLocalizedName());}
+            if (blockLeft != null) {
+                System.out.println(blockLeft.getLocalizedName());
+            }
+            if (blockRight != null) {
+                System.out.println(blockRight.getLocalizedName());
+            }
 
             if (blockLeft != null && blockRight != null && blockAboveCar != null && blockOneAboveCar != null) {
                 System.out.println("Left: " + blockLeft.getLocalizedName());
@@ -236,9 +239,9 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
 
             //Detect if there is a block one above the top of the train, and to the left, or, if there is a block one above the train, and to the right, and if there is, report it.
             // Type BLOCK_TOO_CLOSE_TO_TRACK_IN_TUNNEL.
-          //  if ((blockOneAboveCar != null && blockLeft != null) || (blockOneAboveCar != null && blockRight != null)) {
+            //  if ((blockOneAboveCar != null && blockLeft != null) || (blockOneAboveCar != null && blockRight != null)) {
             //    addIssue(new PotentialIssue(doubleToInt(posX), doubleToInt(posY), doubleToInt(posZ), PotentialIssue.IssueType.BLOCK_TOO_CLOSE_TO_TRACK_IN_TUNNEL));
-           // }
+            // }
 
 
             //Detect if a block's light level is too low. If so, report it.
@@ -262,7 +265,9 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
             }*/
 
 
-
+            if (tileBottom != null) {
+                System.out.println(tileBottom.getClass().getName());
+            }
             if (tileBottom instanceof TileTCRailGag) {
                 TileTCRailGag track = (TileTCRailGag) tileBottom;
 
@@ -272,14 +277,14 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
                     addIssue(new PotentialIssue(doubleToInt(posX), doubleToInt(posY), doubleToInt(posZ), PotentialIssue.IssueType.WOODEN_SLOPE));
                 }
                 // Detect if there are normal slopes on mainlines. If so, report it.
-                if (track.type.equals("SLOPE_GRAVEL") || track.type.equals("SLOPE_BALLAST") && lineType.equals("mainline")  && getPotentialIssueByCoordinates(posX, posY, posZ) == null)  {
+                if (track.type.equals("SLOPE_GRAVEL") || track.type.equals("SLOPE_BALLAST") && lineType.equals("mainline") && getPotentialIssueByCoordinates(posX, posY, posZ) == null) {
                     addIssue(new PotentialIssue(doubleToInt(posX), doubleToInt(posY), doubleToInt(posZ), PotentialIssue.IssueType.SMALL_SLOPE_ON_MAINLINE));
                 }
 
                 //Detect if we are on a slope, and there is a block above us, and if so, report it.
-              //  if (track.type.contains("SLOPE") && blockAboveCar != null || blockOneAboveCar != null  && getPotentialIssueByCoordinates(posX, posY, posZ) == null) {
+                //  if (track.type.contains("SLOPE") && blockAboveCar != null || blockOneAboveCar != null  && getPotentialIssueByCoordinates(posX, posY, posZ) == null) {
                 //    addIssue(new PotentialIssue(doubleToInt(posX), doubleToInt(posY), doubleToInt(posZ), PotentialIssue.IssueType.BLOCK_TOO_CLOSE_TO_TRACK_ON_SLOPE) );
-               // }
+                // }
             }
 
             // if (blockLeft != null && !(blockLeft instanceof BlockAir) && checkForSameIssueType(blockLeft.x, this.posY + 2, this.posZ, PotentialIssue.IssueType.BLOCK_TOO_CLOSE_TO_TRACK)) {
@@ -325,9 +330,19 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
 
 
         }
+/*
+       if (worldObj != null && !worldObj.isRemote && ticksExisted % 5 == 0) {
+        dataWatcher.updateObject(29, lineType);
+        dataWatcher.updateObject(28, standard);
+        dataWatcher.updateObject(27, missionStarted + ":" + currentTrackReport);
+        //   Traincraft.updateGeometryCarFromServerChannel.sendToAll(new UpdateGeometryCarFromServer(this.getEntityId(), railroadLine, lineType, operatingCrew, missionStarted));
 
-//        if (worldObj != null && !worldObj.isRemote && ticksExisted % 5 == 0) {
-//
+    }*/
+//     dataWatcher.addObject(31, railroadLine);
+//        dataWatcher.addObject(30, geometryCarName);
+//        dataWatcher.addObject(29, lineType);
+//        dataWatcher.addObject(28, standard);
+//        dataWatcher.addObject(27, missionStarted + ":" + currentTrackReport);
 //
 //               dataWatcher.updateObject(31, railroadLine);
 //                 dataWatcher.updateObject(30, geometryCarName);
@@ -347,7 +362,7 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
 //
 
 //        }
-        if (worldObj != null && !worldObj.isRemote && justLoaded) {
+        if (worldObj != null && !worldObj.isRemote && justLoaded && ticksExisted % 20 == 0) {
             justLoaded = false;
             Traincraft.updateGeometryCarFromServerChannel.sendToAll(new UpdateGeometryCarFromServer(this.getEntityId(), railroadLine, lineType, operatingCrew, missionStarted));
         }
@@ -387,8 +402,8 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
     public void startMission() {
         missionStartLocation = new TrackPosition(new Double(posX).intValue(), new Double(posY).intValue(), new Double(posZ).intValue());
         missionStarted = true;
-        System.out.println("Started!");
         dataWatcher.updateObject(27, missionStarted + ":" + currentTrackReport);
+        missionStartLocation = new TrackPosition(new Double(posX).intValue(), new Double(posY).intValue(), new Double(posZ).intValue());
         problematicTrackLocations.clear();
     }
     public String createTrackReport() {
@@ -448,7 +463,9 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
             Format f = new SimpleDateFormat("MM-dd");
             String strDate = f.format(new Date());
             File myObj = new File(Loader.instance().getConfigDir() + File.separator + "traincraft" + File.separator + railroadLine + " Track Report" + "-" + strDate + ".txt");
-            System.out.println(Loader.instance().getConfigDir() + File.separator + "traincraft" + File.separator + railroadLine + " Track Report" + "-" + strDate + ".txt");
+            if (riddenByEntity instanceof EntityPlayer) {
+                Traincraft.tcLog.info(((EntityPlayer)this.riddenByEntity).getDisplayName() + " generated a new track report.");
+            }
             myObj.createNewFile();
 
             myWriter = new FileWriter(myObj);
@@ -500,12 +517,12 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
         nbt.setBoolean("missionStarted", missionStarted);
         nbt.setString("operatingCrew", operatingCrew);
         NBTTagList issues = new NBTTagList();
-        for (int i = 0; i < problematicTrackLocations.size(); i++) {
+        for (PotentialIssue problematicTrackLocation : problematicTrackLocations) {
             NBTTagCompound compound = new NBTTagCompound();
-            compound.setString("issueType", problematicTrackLocations.get(i).issue.name());
-            compound.setInteger("x", doubleToInt(problematicTrackLocations.get(i).thePosition.x));
-            compound.setInteger("y", doubleToInt(problematicTrackLocations.get(i).thePosition.y));
-            compound.setInteger("z", doubleToInt(problematicTrackLocations.get(i).thePosition.z));
+            compound.setString("issueType", problematicTrackLocation.issue.name());
+            compound.setInteger("x", doubleToInt(problematicTrackLocation.thePosition.x));
+            compound.setInteger("y", doubleToInt(problematicTrackLocation.thePosition.y));
+            compound.setInteger("z", doubleToInt(problematicTrackLocation.thePosition.z));
             issues.appendTag(compound);
         }
         nbt.setTag("Issues", issues);

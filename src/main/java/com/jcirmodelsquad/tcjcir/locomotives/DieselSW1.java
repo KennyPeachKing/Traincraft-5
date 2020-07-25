@@ -29,7 +29,6 @@ public class DieselSW1 extends DieselTrain {
         prevPosX = d;
         prevPosY = d1;
         prevPosZ = d2;
-        System.out.println("If we got here, that means the things have merged successfully. Good job!");
     }
 
     public void initLoco() {

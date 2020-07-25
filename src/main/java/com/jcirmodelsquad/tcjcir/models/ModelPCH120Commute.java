@@ -512,6 +512,9 @@ public class ModelPCH120Commute extends ModelConverter //Same as Filename
 		}
 		for(int i = 0; i < 112; i++)
 		{
+			if (i == 109) {
+
+			}
 			bodyModel[i].render(f5);
 		}
 		Tessellator.bindTexture(new ResourceLocation("tc:textures/trains/pch120_bogie.png"));

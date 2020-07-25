@@ -28,7 +28,6 @@ public class DieselU23B extends DieselTrain {
         prevPosX = d;
         prevPosY = d1;
         prevPosZ = d2;
-        System.out.println("If we got here, Uboat mounted!");
     }
 
     public void initLoco() {

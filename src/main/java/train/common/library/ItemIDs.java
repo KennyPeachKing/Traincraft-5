@@ -312,7 +312,7 @@ public enum ItemIDs {
 	//remoteControllerModule("ItemRemoteControllerModule", "remote_controller_module", 15),
 	minecartAlcoS2("ItemRollingStock", "alco_s2", 9),
 	minecartRibbedHopper("ItemRollingStock", "ribbed_hopper", 3),
-	//minecartGeometryCar("ItemRollingStock", "geometry_car", 15),
+	minecartGeometryCar("ItemRollingStock", "geometry_car", 15),
 	minecartDriverlessMetro("ItemRollingStock", "driverless_metro", 20),
 	minecartDriverlessMetroCar("ItemRollingStock", "driverless_metro_car", 15),
 	minecartAmfleet("ItemRollingStock", "Amfleet", 3),

@@ -29,7 +29,6 @@ public class DieselSD9 extends DieselTrain {
         prevPosX = d;
         prevPosY = d1;
         prevPosZ = d2;
-        System.out.println("tier 4 nubs be like rEEERefsdfgijxhd fkjfd gpp");
     }
 
     public void initLoco() {

@@ -26,7 +26,6 @@ public class GuiGeometryCar extends GuiScreen {
     private GuiButton startStopButton;
     private GuiButton railroadType;
     private GuiButton lockButton;
-    private GuiButton saveTrackReport;
     private GuiButton allTrackIssues;
     private GuiTCTextField operatingCrew;
     public int xSize = 305;
@@ -53,7 +52,7 @@ public class GuiGeometryCar extends GuiScreen {
         operatingCrew = new GuiTCTextField(fontRendererObj, guiLeft + 110, guiTop + 72, 120, 15);
        // geometryCarName = new GuiTCTextField(fontRendererObj, guiLeft + 110, guiTop + 56, 120,15);
       //  railroadType = new GuiTCTextField(fontRendererObj, guiLeft + 85, guiTop + 46, 80,15);
-        railroadType = new GuiButton(0, guiLeft + 110, guiTop + 48, 120, 20, "Mainline");
+        railroadType = new GuiButton(0, guiLeft + 110, guiTop + 48, 120, 20, theCar.lineType);
 
         //railroadStandard = new GuiTCTextField(fontRendererObj, guiLeft + 5, guiTop + 546, 160,140);
 
@@ -69,10 +68,10 @@ public class GuiGeometryCar extends GuiScreen {
         if (theCar != null && theCar.getDataWatcher() != null) {
             railroadName.setText(theCar.railroadLine);
         }
-        saveTrackReport = new GuiButton(2,guiLeft + 110, guiTop + 115,130,20,"Generate Track Report");
-        allTrackIssues = new GuiButton(3,guiLeft + 110, guiTop + 140,130,20,"Show all track issues");
+       // saveTrackReport = new GuiButton(2,guiLeft + 110, guiTop + 115,130,20,"Generate Track Report");
+        allTrackIssues = new GuiButton(3,guiLeft + 110, guiTop + 115,130,20,"Show all track issues");
+        operatingCrew.setText(theCar.operatingCrew);
         this.buttonList.add(startStopButton);
-        this.buttonList.add(saveTrackReport);
         this.buttonList.add(railroadType);
         buttonList.add(allTrackIssues);
     }
@@ -112,6 +111,7 @@ public class GuiGeometryCar extends GuiScreen {
             if (theCar.missionStarted)  {
                 theCar.missionStarted = false;
                 Traincraft.startMissionPacketChannel.sendToServer(new StartMissionPacket(theCar.getEntityId(), false));
+                Traincraft.generateTrackReportChannel.sendToServer(new GenerateTrackReport(theCar.getEntityId(), 1));
             } else {
                 theCar.missionStarted = true;
                 Traincraft.startMissionPacketChannel.sendToServer(new StartMissionPacket(theCar.getEntityId(), true));
@@ -141,7 +141,6 @@ public class GuiGeometryCar extends GuiScreen {
                 allTrackIssues = new GuiButton(3,guiLeft + 110, guiTop + 140,130,20,"Show all track issues");
                 buttonList.add(allTrackIssues);
                 this.buttonList.add(startStopButton);
-                this.buttonList.add(saveTrackReport);
                 this.buttonList.add(railroadType);
             }
 
@@ -155,10 +154,8 @@ public class GuiGeometryCar extends GuiScreen {
             railroadName.updateCursorCounter();
         }
         if ( theCar.missionStarted) {
-            saveTrackReport.enabled = true;
             startStopButton.displayString = "Stop Recording";
         } else {
-            saveTrackReport.enabled = false;
             startStopButton.displayString = "Start Recording";
         }
 
@@ -168,12 +165,9 @@ public class GuiGeometryCar extends GuiScreen {
     @Override
     protected void keyTyped(char par1, int par2) {
         if (par2 == Keyboard.KEY_ESCAPE) {
-            System.out.println(theCar==null);
-            System.out.println(Traincraft.updateGeometryCarChannel==null);
-            System.out.println(railroadName==null);
-            System.out.println(geometryCarName==null);
-            System.out.println(railroadType==null);
-            System.out.println(railroadStandard==null);
+            theCar.railroadLine = railroadName.getText();
+            theCar.lineType = railroadType.displayString;
+            theCar.operatingCrew = operatingCrew.getText();
             Traincraft.updateGeometryCarChannel.sendToServer(new UpdateGeometryCar(theCar.getEntityId(), railroadName.getText(), railroadType.displayString, operatingCrew.getText()));
             mc.thePlayer.closeScreen();
         }

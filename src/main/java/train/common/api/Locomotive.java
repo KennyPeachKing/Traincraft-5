@@ -809,9 +809,10 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
             this.lastEntityRider = (this.riddenByEntity);
         }
 
-        if (!this.worldObj.isRemote && this.getParkingBrakeFromPacket() && !getState().equals("broken")) {
+        if (!this.worldObj.isRemote && this.getParkingBrakeFromPacket() && !getState().equals("broken") && !canBePulled) {
             motionX *= 0.0;
             motionZ *= 0.0;
+
         }
         if (ConfigHandler.SOUNDS) {
             for (EnumSounds sounds : EnumSounds.values()) {
@@ -851,14 +852,14 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
         }
         if (getState().equals("cold")) {
             this.extinguish();
-            if (getCurrentMaxSpeed() >= (getMaxSpeed() * 0.6)) {
+            if (getCurrentMaxSpeed() >= (getMaxSpeed() * 0.6) && !canBePulled) {
                 motionX *= 0.0;
                 motionZ *= 0.0;
             }
         }
         if (getState().equals("warm")) {
             this.extinguish();
-            if (getCurrentMaxSpeed() >= (getMaxSpeed() * 0.7)) {
+            if (getCurrentMaxSpeed() >= (getMaxSpeed() * 0.7) && !canBePulled) {
                 motionX *= 0.94;
                 motionZ *= 0.94;
             }

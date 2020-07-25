@@ -29,7 +29,6 @@ public class DieselCF7 extends DieselTrain {
         prevPosX = d;
         prevPosY = d1;
         prevPosZ = d2;
-        System.out.println("lemme show you how to scratch it");
     }
 
     public void initLoco() {

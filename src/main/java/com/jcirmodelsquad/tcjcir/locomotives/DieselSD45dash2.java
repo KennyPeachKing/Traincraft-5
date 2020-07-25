@@ -29,7 +29,6 @@ public class DieselSD45dash2 extends DieselTrain {
         prevPosX = d;
         prevPosY = d1;
         prevPosZ = d2;
-        System.out.println("rer2");
     }
 
     public void initLoco() {

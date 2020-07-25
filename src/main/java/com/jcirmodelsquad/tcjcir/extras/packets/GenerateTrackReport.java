@@ -34,12 +34,8 @@ public class GenerateTrackReport implements IMessage {
             Entity theCar = ctx.getServerHandler().playerEntity.worldObj.getEntityByID(message.entityID);
             if (theCar instanceof ExperimentalGeometryCar) {
                 ExperimentalGeometryCar theGeoCar = (ExperimentalGeometryCar)theCar;
-                if (message.mode == 1) {
-                    theGeoCar.generateTrackReportAsBook();
-                }
-                if (message.mode == 2) {
-                    theGeoCar.generateTrackReportAsFile();
-                }
+                theGeoCar.generateTrackReportAsFile();
+
             }
             return null;
         }

@@ -6,6 +6,7 @@ import cpw.mods.fml.common.network.simpleimpl.IMessage;
 import cpw.mods.fml.common.network.simpleimpl.IMessageHandler;
 import cpw.mods.fml.common.network.simpleimpl.MessageContext;
 import io.netty.buffer.ByteBuf;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 
 public class UpdateGeometryCarFromServer implements IMessage {
@@ -45,7 +46,7 @@ public class UpdateGeometryCarFromServer implements IMessage {
     public static class Handler implements IMessageHandler<UpdateGeometryCarFromServer, IMessage> {
         @Override
         public IMessage onMessage(UpdateGeometryCarFromServer message, MessageContext ctx) {
-            Entity theCar = ctx.getServerHandler().playerEntity.worldObj.getEntityByID(message.entity);
+            Entity theCar = Minecraft.getMinecraft().theWorld.getEntityByID(message.entity);
             if (theCar instanceof ExperimentalGeometryCar) {
                 ExperimentalGeometryCar theGeoCar = (ExperimentalGeometryCar)theCar;
                 theGeoCar.railroadLine = message.railroadName;

@@ -29,7 +29,6 @@ public class DieselF7B extends DieselTrain {
         prevPosX = d;
         prevPosY = d1;
         prevPosZ = d2;
-        System.out.println("Put on your Sunday clothes when you feel down and out!");
     }
 
     public void initLoco() {

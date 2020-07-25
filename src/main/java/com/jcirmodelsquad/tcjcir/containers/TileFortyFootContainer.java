@@ -138,7 +138,6 @@ public class TileFortyFootContainer extends TileEntity implements IInventory {
     @Override
     public void readFromNBT(NBTTagCompound nbt)
     {
-        System.out.println(nbt.toString());
         super.readFromNBT(nbt);
         NBTTagList list = nbt.getTagList("Items", Constants.NBT.TAG_COMPOUND);
         inventory = new ItemStack[getSizeInventory()];
@@ -182,8 +181,6 @@ public class TileFortyFootContainer extends TileEntity implements IInventory {
     }
 
     public void goToNextColor() {
-        System.out.println("Going tonext color");
-        System.out.println(currentColor);
         if (getAvailableColors().size() > 0) {
             if (currentColor > getAvailableColors().size() -2) {
                 currentColor = 0;

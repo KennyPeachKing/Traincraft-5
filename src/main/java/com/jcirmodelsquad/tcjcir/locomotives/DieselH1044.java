@@ -17,7 +17,6 @@ public class DieselH1044 extends DieselTrain {
     public DieselH1044(World world) {
         super(world, EnumTrains.H1044.getTankCapacity(), LiquidManager.dieselFilter());
         initLoco();
-        System.out.println("i sent Alaska to Iraq");
     }
     public DieselH1044(World world, double d, double d1, double d2) {
         this(world);
@@ -28,7 +27,6 @@ public class DieselH1044 extends DieselTrain {
         prevPosX = d;
         prevPosY = d1;
         prevPosZ = d2;
-        System.out.println("If we got here, that means the things have merged successfully. Good job!");
     }
 
     public void initLoco() {

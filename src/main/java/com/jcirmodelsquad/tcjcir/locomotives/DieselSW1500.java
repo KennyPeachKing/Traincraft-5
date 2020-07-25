@@ -29,7 +29,6 @@ public class DieselSW1500 extends DieselTrain {
         prevPosX = d;
         prevPosY = d1;
         prevPosZ = d2;
-        System.out.println("rer");
     }
 
     public void initLoco() {
