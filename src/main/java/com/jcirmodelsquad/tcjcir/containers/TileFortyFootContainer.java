@@ -177,6 +177,9 @@ public class TileFortyFootContainer extends TileEntity implements IInventory {
         ArrayList<String> leColors = new ArrayList<String>();
         leColors.add("Grey");
         leColors.add("Blue");
+        leColors.add("Orange");
+        leColors.add("White");
+        leColors.add("Purple");
         return leColors;
     }
 

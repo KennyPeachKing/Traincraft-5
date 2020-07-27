@@ -302,6 +302,8 @@ public enum EnumTrains {
 	HuskyStackWellcar("53' HuskyStack Wellcar", com.jcirmodelsquad.tcjcir.rollingstock.HuskyStackWellcar.class, ItemIDs.minecartHuskyStackWellcar.item, "freight", 4, TraincraftUtil.getBytesFromColors(new String[] {"Yellow", "Pink"}), 0,0, "Model by Bidahochi"),
 	Boxcab23Ton("23 Ton Boxcab", com.jcirmodelsquad.tcjcir.locomotives.DieselBoxcab23Ton.class, ItemIDs.minecartBoxcab23Ton.item, "diesel", 150, 40, 0, 20, 0, 100, 0.7, 0.8, 5000,  TraincraftUtil.getBytesFromColors(new String[] {"Blue", "White", "Black"}), 10, -1.5, "Bida Model, as per the usual"),
 	//note on the boxcab: check the RenderEnum for more info related to its hitboxes
+	LUengine("London Underground Engine", com.jcirmodelsquad.tcjcir.locomotives.ElectricLUengine.class, ItemIDs.minecartLUengine.item, "electric", 600, 100, 0, 10, 0, 100, 0.7, 0.8, 1000, null, 18, -2, "LU Models by Hariesh"),
+	LUpassenger("London Underground Passenger Car", com.jcirmodelsquad.tcjcir.rollingstock.LUpassenger.class, ItemIDs.minecartLUpassenger.item, "passenger", 0.3, null, 0, 0, "LU Models by Hariesh"),
 	;
 
 

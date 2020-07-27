@@ -340,6 +340,8 @@ public enum ItemIDs {
 	minecartBombCart("ItemRollingStock", "payload", 7),
 	minecartHuskyStackWellcar("ItemRollingStock", "huskystack", 3),
 	minecartBoxcab23Ton("ItemRollingStock", "boxcab", 4),
+	minecartLUengine("ItemRollingStock", "luengine", 4),
+	minecartLUpassenger("ItemRollingStock", "lupassenger", 4),
 	paintbrushThing("ItemPaintbrushThing", "paintbrush_thing", 9),;
 
 	public Item item;

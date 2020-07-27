@@ -739,7 +739,10 @@ public enum RenderEnum {
 			add(new double[]{0.6D, 1.4D, 0.0D});
 
 		}
-	}, "", null, 0, false),;
+	}, "", null, 0, false),
+	LUengine(com.jcirmodelsquad.tcjcir.locomotives.ElectricLUengine.class, new com.jcirmodelsquad.tcjcir.models.ModelLUengine(), "lu_engine", false,new float[] {-1.0F, 0.16F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
+	LUpassenger(com.jcirmodelsquad.tcjcir.rollingstock.LUpassenger.class, new com.jcirmodelsquad.tcjcir.models.ModelLUpassenger(), "lu_passenger",false,new float[] {0F, 0.16F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
+	;
 
 	private Class<? extends AbstractTrains> entityClass;
 	private ModelBase model;
