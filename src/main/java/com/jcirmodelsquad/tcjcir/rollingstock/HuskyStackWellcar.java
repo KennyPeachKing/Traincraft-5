@@ -36,10 +36,12 @@ public class HuskyStackWellcar extends EntityRollingStock implements IPassenger 
         ItemStack stackToPlace = new ItemStack(BlockIDs.FortyFootContainer.block, 1);
 
         if (container1 != null) {
-            container1.savedData.removeTag("x");
-            container1.savedData.removeTag("y");
-            container1.savedData.removeTag("z");
-            stackToPlace.setTagCompound(container1.savedData);
+            if (container1.savedData != null) {
+                container1.savedData.removeTag("x");
+                container1.savedData.removeTag("y");
+                container1.savedData.removeTag("z");
+                stackToPlace.setTagCompound(container1.savedData);
+            }
             if (!worldObj.isRemote) {
                 EntityItem dropItem = new EntityItem(this.worldObj, this.posX, this.posY, this.posZ, stackToPlace.copy());
                 dropItem.delayBeforeCanPickup = 1;
@@ -48,10 +50,12 @@ public class HuskyStackWellcar extends EntityRollingStock implements IPassenger 
         }
 
         if (container2 != null) {
-            container2.savedData.removeTag("x");
-            container2.savedData.removeTag("y");
-            container2.savedData.removeTag("z");
-            stackToPlace.setTagCompound(container2.savedData);
+            if (container2.savedData != null) {
+                container2.savedData.removeTag("x");
+                container2.savedData.removeTag("y");
+                container2.savedData.removeTag("z");
+                stackToPlace.setTagCompound(container2.savedData);
+            }
             if (!worldObj.isRemote) {
                 EntityItem dropItem = new EntityItem(this.worldObj, this.posX, this.posY, this.posZ, stackToPlace.copy());
                 dropItem.delayBeforeCanPickup = 1;
