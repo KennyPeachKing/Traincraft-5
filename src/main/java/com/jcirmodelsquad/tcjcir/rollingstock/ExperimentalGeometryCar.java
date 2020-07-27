@@ -56,11 +56,11 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
     public boolean justLoaded = false;
     public ExperimentalGeometryCar(World world) {
         super(world);
-        dataWatcher.addObject(31, railroadLine);
+        /*dataWatcher.addObject(31, railroadLine);
         dataWatcher.addObject(30, geometryCarName);
         dataWatcher.addObject(29, lineType);
         dataWatcher.addObject(28, standard);
-        dataWatcher.addObject(27, missionStarted + ":" + currentTrackReport);
+        dataWatcher.addObject(27, missionStarted + ":" + currentTrackReport);*/
     }
 
     public ExperimentalGeometryCar(World world, double d, double d1, double d2) {
@@ -72,7 +72,7 @@ public class ExperimentalGeometryCar extends EntityRollingStock implements IPass
         prevPosX = d;
         prevPosY = d1;
         prevPosZ = d2;
-        dataWatcher.addObject(31, railroadLine);
+      dataWatcher.addObject(31, railroadLine);
 //        dataWatcher.addObject(30, geometryCarName);
         dataWatcher.addObject(29, lineType);
         dataWatcher.addObject(28, standard);
