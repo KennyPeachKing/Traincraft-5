@@ -115,7 +115,7 @@ public class ElectricLUengine extends ElectricTrain {
 
     @Override
     public String getInventoryName() {
-        return "Thanos Cart";
+        return "LU 1996 Stock";
     }
 
     @Override
