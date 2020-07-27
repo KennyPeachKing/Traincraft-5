@@ -111,6 +111,7 @@ public class QuoteList {
         importantQuotes.add(new JCIRQuote("MFW planters peanut angsty teen years", "Bida"));
         importantQuotes.add(new JCIRQuote("its not yiff if its trains", "Bida"));
         importantQuotes.add(new JCIRQuote("fuck i got my dick stuck in an assembler", "Techman"));
+        importantQuotes.add(new JCIRQuote("BigJ! i got a present for you! It's a load of Sewage!", "Hariesh"));
         //jc if your reading this, dont edit existing quotes k thnx -bida
     return importantQuotes;
 
