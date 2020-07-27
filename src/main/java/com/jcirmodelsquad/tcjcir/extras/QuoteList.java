@@ -101,6 +101,17 @@ public class QuoteList {
         importantQuotes.add(new JCIRQuote("Just to satisfy my fucking ego. . .", "Hariesh"));
         importantQuotes.add(new JCIRQuote("Im gonna fucking deck you. . .", "JCRail"));
         importantQuotes.add(new JCIRQuote("Crash report saved to: #@!@#. . .", "IntelliJ"));
+        importantQuotes.add(new JCIRQuote("do you want to IMPORT FERN", "Bida"));
+        importantQuotes.add(new JCIRQuote("giant happy furnaces, now sponsored by the british government", "Hariesh"));
+        importantQuotes.add(new JCIRQuote("british empire vs one thicc boi", "Hariesh"));
+        importantQuotes.add(new JCIRQuote("that junction looks like a dick, cant unsee", "Bida"));
+        importantQuotes.add(new JCIRQuote("the ability to force people out of TC stock is one power many consider to be unnatural. . . sorry bigj this is my peen caboodle", "Bida"));
+        importantQuotes.add(new JCIRQuote("we dont want to hear your vast intellect about dolphin pleasure times", "Bida"));
+        importantQuotes.add(new JCIRQuote("then damn jc your kidney is some good fucking food", "Bida"));
+        importantQuotes.add(new JCIRQuote("MFW planters peanut angsty teen years", "Bida"));
+        importantQuotes.add(new JCIRQuote("its not yiff if its trains", "Bida"));
+        importantQuotes.add(new JCIRQuote("fuck i got my dick stuck in an assembler", "Techman"));
+        //jc if your reading this, dont edit existing quotes k thnx -bida
     return importantQuotes;
 
     }
