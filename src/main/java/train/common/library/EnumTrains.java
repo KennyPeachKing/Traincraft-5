@@ -305,7 +305,7 @@ public enum EnumTrains {
 	//note on the boxcab: check the RenderEnum for more info related to its hitboxes
 	LUengine("London Underground Engine", com.jcirmodelsquad.tcjcir.locomotives.ElectricLUengine.class, ItemIDs.minecartLUengine.item, "electric", 600, 100, 0, 10, 0, 100, 0.7, 0.8, 1000, null, 18, -2, "LU Models by Hariesh"),
 	LUpassenger("London Underground Passenger Car", com.jcirmodelsquad.tcjcir.rollingstock.LUpassenger.class, ItemIDs.minecartLUpassenger.item, "passenger", 0.3, null, 0, 0, "LU Models by Hariesh"),
-	;
+
 	testControlCar("Test Control Car", TestControlCar.class, ItemIDs.testControlCar.item, "passenger", 0, 0, 2, 0, 0, 0, 0, 0, 0, TraincraftUtil.getBytesFromColors(new String[]{"White", "LightGrey"}), 18, 0),
 	PCH100H("PCH-100H", com.jcirmodelsquad.tcjcir.locomotives.PCH100H.class, ItemIDs.minecartExperimentalHydrogenTrain.item, "hydrogen",900, 100, 0, 6, 0, 160, 0.8, 0.985, 7000, null, 18,  -2.6, "Powered by Mekanism Hydrogen, Original model by Bidahochi, modified by PeachMaster"),
 	PCH100Coach("PCH-100H Coach", com.jcirmodelsquad.tcjcir.rollingstock.PCH100HCoach.class, ItemIDs.minecartPCH100HCoach.item, "passenger",0, 0, 2, 0, 0, 0, 0, 0, 0,null, 0, 0,"Original model by Bidahochi, modified by PeachMaster");
