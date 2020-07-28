@@ -633,7 +633,7 @@ public enum RenderEnum {
 			add(new double[]{0.8D, 1.4D, -0.2D});
 		}
 	}, "", null, 0, false),
-	geometryCar(com.jcirmodelsquad.tcjcir.rollingstock.ExperimentalGeometryCar.class,new ModelGeometryCar(), "geometrycar", false, new float[] {0F, 0F, 0.0F }, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
+	geometryCar(com.jcirmodelsquad.tcjcir.rollingstock.ExperimentalGeometryCar.class,new ModelGeometryCar(), "geometrycar_", true, new float[] {0F, 0F, 0.0F }, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
 	driverlessMetro(com.jcirmodelsquad.tcjcir.locomotives.DriverlessMetro.class, new com.jcirmodelsquad.tcjcir.models.ModelPCH120Commute(), "pch120commute_", true,new float[] {-1.3F, 0.03F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
 	driverlessMetroCar(com.jcirmodelsquad.tcjcir.rollingstock.PCH120Car.class, new com.jcirmodelsquad.tcjcir.models.ModelPCH120Car(), "pch120car_", true,new float[] {0F, 0.03F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
 	amfleet(com.jcirmodelsquad.tcjcir.rollingstock.Amfleet.class, new com.jcirmodelsquad.tcjcir.models.ModelAmfleet(),"amfleet_", true, new float[]{0F, -0.4F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
@@ -745,6 +745,10 @@ public enum RenderEnum {
 	testControlCar(TestControlCar.class, new ModelPassengerHighSpeedCarZeroED(), "passengerHighSpeedCarZeroED_", true, new float[] { 0.0F, -0.47F, 0.0F }, null, null, "", 0, null, "", null, 0, false),
 	pch100(com.jcirmodelsquad.tcjcir.locomotives.PCH100H.class, new ModelPCH100H(), "pch100h", false, new float[]{-3.2F, 0.03F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
 	pch100coach(com.jcirmodelsquad.tcjcir.rollingstock.PCH100HCoach.class, new ModelPCH100HCoach(), "pch100h_coach", false, new float[]{-2F, 0.03F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),;
+	}, "", null, 0, false),
+	LUengine(com.jcirmodelsquad.tcjcir.locomotives.ElectricLUengine.class, new com.jcirmodelsquad.tcjcir.models.ModelLUengine(), "lu_engine", false,new float[] {-1.0F, 0.16F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
+	LUpassenger(com.jcirmodelsquad.tcjcir.rollingstock.LUpassenger.class, new com.jcirmodelsquad.tcjcir.models.ModelLUpassenger(), "lu_passenger",false,new float[] {0F, 0.16F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
+	;
 
 	private Class<? extends AbstractTrains> entityClass;
 	private ModelBase model;

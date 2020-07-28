@@ -7,12 +7,12 @@ import net.minecraft.world.World;
 import train.common.api.EntityRollingStock;
 import train.common.api.IPassenger;
 
-public class Amfleet extends EntityRollingStock implements IPassenger {
-    public Amfleet(World world) {
+public class LUpassenger extends EntityRollingStock implements IPassenger {
+    public LUpassenger(World world) {
         super(world);
     }
 
-    public Amfleet(World world, double d, double d1, double d2){
+    public LUpassenger(World world, double d, double d1, double d2){
         this(world);
         setPosition(d, d1 + yOffset, d2);
         motionX = 0.0D;
@@ -26,8 +26,8 @@ public class Amfleet extends EntityRollingStock implements IPassenger {
     @Override
     public void updateRiderPosition() {
         if(riddenByEntity!=null) {
-            riddenByEntity.setPosition(posX, posY + getMountedYOffset() + riddenByEntity.getYOffset() + 0.2, posZ);
-        }
+            riddenByEntity.setPosition(posX, posY + getMountedYOffset() + riddenByEntity.getYOffset() + 0.0, posZ);
+        }//ew yucky rider position code, good thing its a passenger car so it doesnt matter! Wheeze.png
     }
 
     @Override
@@ -72,6 +72,6 @@ public class Amfleet extends EntityRollingStock implements IPassenger {
 
     @Override
     public float getOptimalDistance(EntityMinecart cart) {
-        return 2.4F;
+        return 1.7F;
     }
 }
