@@ -76,4 +76,7 @@
   "lukenhimer_3chime": {"category": "master", "sounds": [{"name": "lukenhimer_3chime", "stream":  true}]},
   "crosby_3chime": {"category": "master", "sounds": [{"name": "crosby_3chime", "stream":  true}]},
   "tram_bell": {"category": "master", "sounds": [{"name": "tram_bell", "stream":  true}]},
+  "a4_whistle": {"category": "master", "sounds": [{"name": "a4_whistle", "stream":  true}]},
+  "pch100h_idle": {"category": "master", "sounds": [{"name": "pch100h_idle", "stream":  true}]},
+  "pch100h_notch8": {"category": "master", "sounds": [{"name": "pch100h_notch8", "stream":  true}]},
   "765_whistle": {"category": "master", "sounds": [{"name": "765_whistle", "stream":  true}]}}
