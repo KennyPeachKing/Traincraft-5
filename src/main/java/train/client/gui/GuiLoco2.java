@@ -269,8 +269,10 @@ public class GuiLoco2 extends GuiContainer {
 		if (loco instanceof SteamTrain) {
 			i = Info.guiPrefix + "gui_loco_steam.png";
 		}
-		if (loco instanceof DieselTrain || loco instanceof HydrogenTrain) {
+		if (loco instanceof DieselTrain) {
 			i = Info.guiPrefix + "gui_loco_diesel.png";
+		} else if (loco instanceof HydrogenTrain) {
+			i = Info.guiPrefix + "gui_loco_hydrogen.png";
 		}
 
 		GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
