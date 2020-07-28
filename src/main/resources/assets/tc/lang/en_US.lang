@@ -377,7 +377,8 @@ item.tc:minecartES44.name=GE ES44
 item.tc:minecartHuskyStackWellcar.name=53 Foot HuskyStack Wellcar
 item.tc:minecartBoxcab23Ton.name=GE 23 Ton Boxcab
 item.tc:minecartBombCart.name=Payload Cart
-
+item.tc:minecartExperimentalHydrogenTrain.name=PCH-100H
+item.tc:minecartPCH100HCoach.name=PCH-100H Coach
 <!-- ## Achievements ## -->
 achievement.tc:engineer=Engineers clothes
 achievement.tc:engineer.desc=A true trainman!
@@ -688,7 +689,8 @@ entity.tc.ES44.name=GE ES44
 entity.tc.HuskyStackWellcar.name=53 Foot HuskyStack Wellcar
 entity.tc.Boxcab23Ton.name=GE 23 Ton Boxcab
 entity.tc.BombCart.name=Payload Cart
-
+entity.tc.ExperimentalHydrogenTrain.name=PCH-100H
+entity.tc.PCH100HCoach.name=PCH-100H Coach
 description.villager.profession.tc.station_chief=Station Chief
 tile.tc:FortyFootContainer.name= Forty Foot Container
 key.categories.traincraft=Traincraft

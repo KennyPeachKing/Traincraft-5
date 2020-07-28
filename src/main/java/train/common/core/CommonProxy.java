@@ -21,10 +21,7 @@ import net.minecraft.world.WorldServer;
 import net.minecraftforge.common.ForgeChunkManager;
 import net.minecraftforge.common.MinecraftForge;
 import train.common.Traincraft;
-import train.common.api.EntityRollingStock;
-import train.common.api.Freight;
-import train.common.api.LiquidTank;
-import train.common.api.Tender;
+import train.common.api.*;
 import train.common.containers.*;
 import train.common.core.handlers.ChunkEvents;
 import train.common.core.handlers.WorldEvents;
@@ -154,6 +151,10 @@ public class CommonProxy implements IGuiHandler {
 			return te != null && te instanceof TileTrainWbench ? new ContainerTrainWorkbench(player.inventory, player.worldObj, (TileTrainWbench) te) : null;
 		case (GuiIDs.LOCO):
 			return riddenByEntity != null ? new InventoryLoco(riddenByEntity.inventory, (EntityRollingStock) entity) : null;
+		case (GuiIDs.CONTROL_CAR):
+			if (entity instanceof ControlCar && ((ControlCar)entity).connectedLocomotive != null) {
+				return riddenByEntity != null ? new InventoryLoco(riddenByEntity.inventory, ((ControlCar)entity).connectedLocomotive) : null;
+			}
 		case (GuiIDs.FORNEY):
 			return riddenByEntity != null ? new InventoryForney(player.inventory, (EntityRollingStock) entity) : null;
 		case (GuiIDs.CRAFTING_CART):

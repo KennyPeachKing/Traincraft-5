@@ -63,14 +63,14 @@ public class TCKeyHandler {
         }
 
 
-      /*  remoteControlForward = new KeyBinding("Remote Control Forward", Keyboard.KEY_NUMPAD8, "key.categories.traincraft");
+        remoteControlForward = new KeyBinding("Remote Control Forward", Keyboard.KEY_NUMPAD8, "key.categories.traincraft");
         remoteControlBackwards = new KeyBinding("Remote Control Backwards", Keyboard.KEY_NUMPAD8, "key.categories.traincraft");
         remoteControlBrake = new KeyBinding("Remote Control Brake", Keyboard.KEY_NUMPAD0, "key.categories.traincraft");
         remoteControlHorn = new KeyBinding("Remote Control Horn", Keyboard.KEY_NUMPADENTER, "key.categories.traincraft");
         ClientRegistry.registerKeyBinding(remoteControlForward);
         ClientRegistry.registerKeyBinding(remoteControlBackwards);
         ClientRegistry.registerKeyBinding(remoteControlBrake);
-        ClientRegistry.registerKeyBinding(remoteControlHorn);*/
+        ClientRegistry.registerKeyBinding(remoteControlHorn);
     }
 
     @SubscribeEvent

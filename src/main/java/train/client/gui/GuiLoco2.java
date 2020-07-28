@@ -227,7 +227,7 @@ public class GuiLoco2 extends GuiContainer {
 				drawHoveringText(Collections.singletonList("Water: " + (((SteamTrain) loco).getWater()) + "mb / " + (((SteamTrain) loco).getCartTankCapacity()) +"mb"),
 						mouseX, mouseY, fontRendererObj);
 			}
-		} else 	if(loco instanceof DieselTrain){
+		} else if(loco instanceof DieselTrain){
 			int j = (width - xSize) / 2;
 			int k = (height - ySize) / 2;
 			if (mouseX>j+143 && mouseX<j+161 && mouseY>k+18 && mouseY<k+68){
@@ -238,6 +238,21 @@ public class GuiLoco2 extends GuiContainer {
 				}else {
 					drawHoveringText(Collections.singletonList("Fuel: " +
 									"0mb / " + (((DieselTrain) loco).getCartTankCapacity()) + "mb"),
+							mouseX, mouseY, fontRendererObj);
+				}
+			}
+		} else if (loco instanceof HydrogenTrain) {
+			int j = (width - xSize) / 2;
+			int k = (height - ySize) / 2;
+			if (mouseX>j+143 && mouseX<j+161 && mouseY>k+18 && mouseY<k+68){
+				if (((HydrogenTrain) loco).getDiesel()!=0){
+
+					drawHoveringText(Collections.singletonList(StatCollector.translateToLocal("fluid.hydrogen") + " " +
+									((HydrogenTrain) loco).getDiesel() +"mb / " + (((HydrogenTrain) loco).getCartTankCapacity()) + "mb"),
+							mouseX, mouseY, fontRendererObj);
+				}else {
+					drawHoveringText(Collections.singletonList("Fuel: " +
+									"0mb / " + (((HydrogenTrain) loco).getCartTankCapacity()) + "mb"),
 							mouseX, mouseY, fontRendererObj);
 				}
 			}
@@ -254,7 +269,7 @@ public class GuiLoco2 extends GuiContainer {
 		if (loco instanceof SteamTrain) {
 			i = Info.guiPrefix + "gui_loco_steam.png";
 		}
-		if (loco instanceof DieselTrain) {
+		if (loco instanceof DieselTrain || loco instanceof HydrogenTrain) {
 			i = Info.guiPrefix + "gui_loco_diesel.png";
 		}
 
@@ -276,9 +291,17 @@ public class GuiLoco2 extends GuiContainer {
 				drawTexturedModalRect(j + 8, (k + 36 + 12) - l, 176, 12 - l, 14, l + 2);
 			}
 		}
-		else if (loco instanceof DieselTrain) {
-			int load = (((DieselTrain) loco).getDiesel());
-			int lo2 = Math.abs(((load * 50) / (((DieselTrain) loco).getCartTankCapacity())));
+		else if (loco instanceof DieselTrain || loco instanceof HydrogenTrain) {
+			int load = 0;
+			int lo2 = 0;
+			if (loco instanceof DieselTrain) {
+				 load = (((DieselTrain) loco).getDiesel());
+				lo2 = Math.abs(((load * 50) / (((DieselTrain) loco).getCartTankCapacity())));
+			} else {
+				load = (((HydrogenTrain) loco).getDiesel());
+				lo2 = Math.abs(((load * 50) / (((HydrogenTrain) loco).getCartTankCapacity())));
+			}
+
 			drawTexturedModalRect(j + 143, (k + 68) - lo2, 192, 120 - lo2, 18, lo2);
 			if (loco.getIsFuelled()) {
 				int l = loco.getFuelDiv(12);

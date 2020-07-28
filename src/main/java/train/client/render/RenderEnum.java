@@ -2,7 +2,9 @@ package train.client.render;
 
 import com.jcirmodelsquad.tcjcir.models.ModelAlcoS2;
 import com.jcirmodelsquad.tcjcir.models.ModelGeometryCar;
-import com.jcirmodelsquad.tcjcir.models.ModelHuskyStackWellcar;
+import com.jcirmodelsquad.tcjcir.models.ModelPCH100H;
+import com.jcirmodelsquad.tcjcir.models.ModelPCH100HCoach;
+import com.jcirmodelsquad.tcjcir.rollingstock.TestControlCar;
 import tmt.ModelBase;
 import train.client.render.models.*;
 import train.common.api.AbstractTrains;
@@ -739,7 +741,10 @@ public enum RenderEnum {
 			add(new double[]{0.6D, 1.4D, 0.0D});
 
 		}
-	}, "", null, 0, false),;
+	}, "", null, 0, false),
+	testControlCar(TestControlCar.class, new ModelPassengerHighSpeedCarZeroED(), "passengerHighSpeedCarZeroED_", true, new float[] { 0.0F, -0.47F, 0.0F }, null, null, "", 0, null, "", null, 0, false),
+	pch100(com.jcirmodelsquad.tcjcir.locomotives.PCH100H.class, new ModelPCH100H(), "pch100h", false, new float[]{-3.2F, 0.03F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
+	pch100coach(com.jcirmodelsquad.tcjcir.rollingstock.PCH100HCoach.class, new ModelPCH100HCoach(), "pch100h_coach", false, new float[]{-2F, 0.03F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),;
 
 	private Class<? extends AbstractTrains> entityClass;
 	private ModelBase model;

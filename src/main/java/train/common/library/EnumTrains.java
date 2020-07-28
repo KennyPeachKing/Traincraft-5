@@ -1,5 +1,6 @@
 package train.common.library;
 
+import com.jcirmodelsquad.tcjcir.rollingstock.TestControlCar;
 import cpw.mods.fml.common.Loader;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
@@ -272,7 +273,7 @@ public enum EnumTrains {
 	locoSteamSnowPlow("Loco Steam Snow Plow", EntityLocoSteamSnowPlow.class, ItemIDs.minecartLocoSnowPlow.item, "steam, snow plow", 200, 20, 0, 10, 120, 170, 0.7, 0.965, 6850, null, 18, -4.75),
 
 	//JCIR-TC
-	locoAlcoS2("Alco S2",  com.jcirmodelsquad.tcjcir.locomotives.DieselAlcoS2.class, ItemIDs.minecartAlcoS2.item, "diesel", 1000, 96, 0, 45, 0, 170, 0.7, 0.965, 8000,TraincraftUtil.getBytesFromColors(new String[] {"Black", "Grey", "Green", "Orange", "Pink", "White", "Blue", "LightGrey", "Magenta"}), 18, -2, "Created by Bidahochi"),
+	locoAlcoS2("Alco S2",  com.jcirmodelsquad.tcjcir.locomotives.DieselAlcoS2.class, ItemIDs.minecartAlcoS2.item, "diesel", 1000, 96, 0, 45, 0, 170, 0.7, 0.965, 8000,TraincraftUtil.getBytesFromColors(new String[] {"Black", "Grey", "Green", "Orange", "Pink", "White", "Blue", "LightGrey", "Magenta", "Mayeeta"}), 18, -2, "Created by Bidahochi"),
 	driverlessMetro("PCH-120 Commute", com.jcirmodelsquad.tcjcir.locomotives.DriverlessMetro.class, ItemIDs.minecartDriverlessMetro.item, "electric",1400, 120, 0, 5, 0, 160, 0.8, 0.985, 0, TraincraftUtil.getBytesFromColors(new String[] {"White", "Blue", "Red"}), 18, -2.7, "Model by Bidahochi, train by PeachMaster"),
 	driverlessMetroCar("PCH-120 Commute Car", com.jcirmodelsquad.tcjcir.rollingstock.PCH120Car.class, ItemIDs.minecartDriverlessMetroCar.item, "passenger",0, 0, 2, 0, 0, 0, 0, 0, 0,TraincraftUtil.getBytesFromColors(new String[] {"White", "Blue", "Red"}), 0, 0,"Model by Bidahochi"),
 	geometryCar("NXTrack Geometry Car", com.jcirmodelsquad.tcjcir.rollingstock.ExperimentalGeometryCar.class, ItemIDs.minecartGeometryCar.item, "geometry car", 0, 0, 2, 0, 0, 0, 0, 0, 0, null, 18, 0, "Model by Bidahochi, train by PeachMaster.\n It checks the railroad for things not up to standard."),
@@ -302,7 +303,9 @@ public enum EnumTrains {
 	HuskyStackWellcar("53' HuskyStack Wellcar", com.jcirmodelsquad.tcjcir.rollingstock.HuskyStackWellcar.class, ItemIDs.minecartHuskyStackWellcar.item, "freight", 4, TraincraftUtil.getBytesFromColors(new String[] {"Yellow", "Pink"}), 0,0, "Model by Bidahochi"),
 	Boxcab23Ton("23 Ton Boxcab", com.jcirmodelsquad.tcjcir.locomotives.DieselBoxcab23Ton.class, ItemIDs.minecartBoxcab23Ton.item, "diesel", 150, 40, 0, 20, 0, 100, 0.7, 0.8, 5000,  TraincraftUtil.getBytesFromColors(new String[] {"Blue", "White", "Black"}), 10, -1.5, "Bida Model, as per the usual"),
 	//note on the boxcab: check the RenderEnum for more info related to its hitboxes
-	;
+	testControlCar("Test Control Car", TestControlCar.class, ItemIDs.testControlCar.item, "passenger", 0, 0, 2, 0, 0, 0, 0, 0, 0, TraincraftUtil.getBytesFromColors(new String[]{"White", "LightGrey"}), 18, 0),
+	PCH100H("PCH-100H", com.jcirmodelsquad.tcjcir.locomotives.PCH100H.class, ItemIDs.minecartExperimentalHydrogenTrain.item, "hydrogen",900, 100, 0, 6, 0, 160, 0.8, 0.985, 7000, null, 18,  -2.6, "Powered by Mekanism Hydrogen, Original model by Bidahochi, modified by PeachMaster"),
+	PCH100Coach("PCH-100H Coach", com.jcirmodelsquad.tcjcir.rollingstock.PCH100HCoach.class, ItemIDs.minecartPCH100HCoach.item, "passenger",0, 0, 2, 0, 0, 0, 0, 0, 0,null, 0, 0,"Original model by Bidahochi, modified by PeachMaster");
 
 
 	/*passengerICE1_Restaurant("ICE Restaurant", EntityPassengerICE_Restaurant.class,
@@ -310,7 +313,7 @@ public enum EnumTrains {
 	*/
 
 //String trainType,int MHP,int maxSpeed, double mass, int fuelConsumption, int waterConsumption, int heatingTime, double accelerationRate, double brakeRate, int tankCapacity, String[] colors,
-	
+
 	private String internalName;
 	private Class entityClass;
 	private Item item;
@@ -329,9 +332,9 @@ public enum EnumTrains {
 	private double bogieLocoPosition;
 	private String additionnalTooltip;
 	private int cargoCapacity;
-	
+
 	/**
-	 * 
+	 *
 	 * @param internalName : Only used by EntityRegistry
 	 * @param entityClass
 	 * @param item
@@ -366,7 +369,7 @@ public enum EnumTrains {
 		this.guiRenderScale = guiRenderScale;
 		this.bogieLocoPosition = bogieLocoPosition;
 	}
-	
+
 	/**
 	 * Constructor for additionnal tooltips on the item
 	 * @param internalName
@@ -406,7 +409,7 @@ public enum EnumTrains {
 		this.bogieLocoPosition = bogieLocoPositions;
 		this.additionnalTooltip=additionnalTooltip;
 	}
-	
+
 	/**
 	 * Constructor for freight carts
 	 * @param internalName
@@ -432,11 +435,11 @@ public enum EnumTrains {
 		this.additionnalTooltip=additionnalTooltip;
 		this.cargoCapacity = cargoCapacity;
 	}
-	
+
 	public String getInternalName(){
 		return this.internalName;
 	}
-	
+
 	public Item getItem(){
 		return this.item;
 	}
@@ -444,68 +447,68 @@ public enum EnumTrains {
 	public String getTrainType(){
 		return this.trainType;
 	}
-	
+
 	public int getMHP(){
 		return this.MHP;
 	}
-	
+
 	public int getMaxSpeed(){
 		return this.maxSpeed;
 	}
-	
+
 	public double getMass(){
 		return this.mass;
 	}
-	
+
 	public int getFuelConsumption(){
 		return this.fuelConsumption;
 	}
-	
+
 	public int getWaterConsumption(){
 		return this.waterConsumption;
 	}
-	
+
 	public int getHeatingTime(){
 		return this.heatingTime;
 	}
-	
+
 	public double getAccelerationRate(){
 		return this.accelerationRate;
 	}
-	
+
 	public double getBrakeRate(){
 		return this.brakeRate;
 	}
-	
+
 	public int getTankCapacity(){
 		return this.tankCapacity;
 	}
-	
+
 	public byte[] getColors(){
 		return this.colors;
 	}
-	
+
 	public double getBogieLocoPosition(){
 		return this.bogieLocoPosition;
 	}
 
-	
+
 	public Class getEntityClass() {
 		return this.entityClass;
 	}
-	
+
 	public int getGuiRenderScale(){
 		return this.guiRenderScale;
 	}
-	
+
 	public String getAdditionnalTooltip(){
 		return this.additionnalTooltip;
 	}
-	
+
 	public int getCargoCapacity(){
 		return cargoCapacity;
 	}
-	
+
 	public static EnumTrains getCurrentTrain(Item item){
 		if(item==null)return null;
 		for (EnumTrains trains : EnumTrains.values()) {
@@ -513,9 +516,9 @@ public enum EnumTrains {
 				return trains;
 			}
 		}
-		return null;	
+		return null;
 	}
-	
+
 	public static AbstractTrains getEntityWithItem(Item item, World world, double x, double y, double z){
 		if(item==null)return null;
 		for (EnumTrains trains : EnumTrains.values()) {
@@ -525,7 +528,7 @@ public enum EnumTrains {
 		}
 		return null;
 	}
-	
+
 	public AbstractTrains getEntity(World world){
 		try {
 			return (AbstractTrains) entityClass.getConstructor(World.class).newInstance(world);
@@ -544,7 +547,7 @@ public enum EnumTrains {
 		}
 		return null;
 	}
-	
+
 	public AbstractTrains getEntity(World world, double x, double y, double z){
 		try {
 			if(world.isRemote){

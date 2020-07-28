@@ -34,6 +34,7 @@ import train.client.gui.*;
 import train.client.render.*;
 import train.common.Traincraft;
 import train.common.adminbook.GUIAdminBook;
+import train.common.api.ControlCar;
 import train.common.api.EntityBogie;
 import train.common.api.EntityRollingStock;
 import train.common.core.CommonProxy;
@@ -131,6 +132,7 @@ public class ClientProxy extends CommonProxy {
 		TileEntity te = world.getTileEntity(x, y, z);
 		EntityPlayer riddenByEntity = null;
 		Entity entity = player.ridingEntity;
+		System.out.println("Breakpoint!");
 		if (player.ridingEntity != null) {
 			riddenByEntity = (EntityPlayer) entity.riddenByEntity;
 		}
@@ -159,6 +161,13 @@ public class ClientProxy extends CommonProxy {
 			return te != null && te instanceof TileTrainWbench ? new GuiTrainCraftingBlock(player.inventory, player.worldObj, (TileTrainWbench) te) : null;
 		case (GuiIDs.LOCO):
 			return riddenByEntity != null ? new GuiLoco2(riddenByEntity.inventory, entity) : null;
+		case (GuiIDs.CONTROL_CAR):
+			System.out.println("Owo");
+			if (riddenByEntity != null && entity instanceof ControlCar && ((ControlCar)entity).connectedLocomotive != null) {
+				//(ControlCar)entity).connectedLocomotive.getInventory()
+				return new GuiLoco2(riddenByEntity.inventory, ((ControlCar)entity).connectedLocomotive);
+			}
+			return null;
 		case (GuiIDs.FORNEY):
 			return riddenByEntity != null ? new GuiForney(riddenByEntity.inventory, entity) : null;
 		case (GuiIDs.CRAFTING_CART):

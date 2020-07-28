@@ -308,8 +308,8 @@ public enum ItemIDs {
 	tcRailVeryLargeSlopeBallast("ItemTCRail", "item_rail_straight_slope_ballast", 3),
 
 	//TC-JCIR
-	//remoteController("ItemRemoteController", "remote_controller", 20),
-	//remoteControllerModule("ItemRemoteControllerModule", "remote_controller_module", 15),
+	remoteController("ItemRemoteController", "remote_controller", 20),
+	remoteControllerModule("ItemRemoteControllerModule", "remote_controller_module", 15),
 	minecartAlcoS2("ItemRollingStock", "alco_s2", 9),
 	minecartRibbedHopper("ItemRollingStock", "ribbed_hopper", 3),
 	minecartGeometryCar("ItemRollingStock", "geometry_car", 15),
@@ -340,7 +340,10 @@ public enum ItemIDs {
 	minecartBombCart("ItemRollingStock", "payload", 7),
 	minecartHuskyStackWellcar("ItemRollingStock", "huskystack", 3),
 	minecartBoxcab23Ton("ItemRollingStock", "boxcab", 4),
-	paintbrushThing("ItemPaintbrushThing", "paintbrush_thing", 9),;
+	minecartExperimentalHydrogenTrain("ItemRollingStock", "pch100h", 21),
+	minecartPCH100HCoach("ItemRollingStock", "pch100h_coach", 15),
+	paintbrushThing("ItemPaintbrushThing", "paintbrush_thing", 9),
+	testControlCar("ItemRollingStock", "test_controlcar", 100000);
 
 	public Item item;
 	public String className;
