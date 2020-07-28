@@ -291,6 +291,8 @@ public enum EnumTrains {
 	FRED("FRED", com.jcirmodelsquad.tcjcir.rollingstock.FRED.class, ItemIDs.minecartFRED.item, "misc", 0.2, null, 0, 1, "i figured this would be fun to have -bida"), //stupid thing doesnt break or even couple
 	CF7("CF7", com.jcirmodelsquad.tcjcir.locomotives.DieselCF7.class, ItemIDs.minecartCF7.item, "diesel", 1500, 116, 0, 45, 0, 185, 0.8, 0.9, 20000, TraincraftUtil.getBytesFromColors(new String[] {"Yellow", "Red", "LightGrey", "White", "Cyan", "Lime", "Magenta", "Purple", "Green", "Blue", "Orange", "Pink"}), 10, -3, "Model version: 4.5 By Bida"),
 	SD9("SD9", com.jcirmodelsquad.tcjcir.locomotives.DieselSD9.class, ItemIDs.minecartSD9.item, "diesel", 1750, 104, 0, 50, 0, 190, 0.75, 0.89, 19000, TraincraftUtil.getBytesFromColors(new String[] {"Black", "Green", "Cyan", "Orange", "Grey", "White", "Red"}), 10, -3.1, "Bida made this, surprising isnt it?"),
+	//SD9 note: model is getting a huge upgrade and skins will need to be remade, so if you encounter texture issues on the SD9 in the next while, thats most likely because the new skins havent been made yet for it. -Bid
+
 	WoodchipHopper("Woodchip Hopper", com.jcirmodelsquad.tcjcir.rollingstock.WoodchipHopper.class, ItemIDs.minecartWoodchipHopper.item, "freight", 5, TraincraftUtil.getBytesFromColors(new String[] {"Brown", "Blue", "Green", "Orange", "Red"}), 0, 50, "Cargo: Wood, Model by Binky"),
 	OreJenny("Ore Jenny", com.jcirmodelsquad.tcjcir.rollingstock.OreJenny.class, ItemIDs.minecartOreJenny.item, "freight", 0.5, TraincraftUtil.getBytesFromColors(new String[] {"Brown", "Red", "Orange", "Pink", "Black"}), 0, 27, "Cargo: Ore (dUh), Model by Binky"),
 	SF30C("SF30C", com.jcirmodelsquad.tcjcir.locomotives.DieselSF30C.class, ItemIDs.minecartSF30C.item, "diesel", 3000, 121, 0, 55, 0, 195, 0.7, 0.8, 21000, null, 10, -4.3, "model by BIda"),
@@ -303,9 +305,9 @@ public enum EnumTrains {
 	HuskyStackWellcar("53' HuskyStack Wellcar", com.jcirmodelsquad.tcjcir.rollingstock.HuskyStackWellcar.class, ItemIDs.minecartHuskyStackWellcar.item, "freight", 4, TraincraftUtil.getBytesFromColors(new String[] {"Yellow", "Pink"}), 0,0, "Model by Bidahochi"),
 	Boxcab23Ton("23 Ton Boxcab", com.jcirmodelsquad.tcjcir.locomotives.DieselBoxcab23Ton.class, ItemIDs.minecartBoxcab23Ton.item, "diesel", 150, 40, 0, 20, 0, 100, 0.7, 0.8, 5000,  TraincraftUtil.getBytesFromColors(new String[] {"Blue", "White", "Black"}), 10, -1.5, "Bida Model, as per the usual"),
 	//note on the boxcab: check the RenderEnum for more info related to its hitboxes
+
 	LUengine("London Underground Engine", com.jcirmodelsquad.tcjcir.locomotives.ElectricLUengine.class, ItemIDs.minecartLUengine.item, "electric", 600, 100, 0, 10, 0, 100, 0.7, 0.8, 1000, null, 18, -2, "LU Models by Hariesh"),
 	LUpassenger("London Underground Passenger Car", com.jcirmodelsquad.tcjcir.rollingstock.LUpassenger.class, ItemIDs.minecartLUpassenger.item, "passenger", 0.3, null, 0, 0, "LU Models by Hariesh"),
-
 	testControlCar("Test Control Car", TestControlCar.class, ItemIDs.testControlCar.item, "passenger", 0, 0, 2, 0, 0, 0, 0, 0, 0, TraincraftUtil.getBytesFromColors(new String[]{"White", "LightGrey"}), 18, 0),
 	PCH100H("PCH-100H", com.jcirmodelsquad.tcjcir.locomotives.PCH100H.class, ItemIDs.minecartExperimentalHydrogenTrain.item, "hydrogen",900, 100, 0, 6, 0, 160, 0.8, 0.985, 7000, null, 18,  -2.6, "Powered by Mekanism Hydrogen, Original model by Bidahochi, modified by PeachMaster"),
 	PCH100Coach("PCH-100H Coach", com.jcirmodelsquad.tcjcir.rollingstock.PCH100HCoach.class, ItemIDs.minecartPCH100HCoach.item, "passenger",0, 0, 2, 0, 0, 0, 0, 0, 0,null, 0, 0,"Original model by Bidahochi, modified by PeachMaster");
