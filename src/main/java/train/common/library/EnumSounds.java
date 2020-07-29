@@ -7,7 +7,7 @@ public enum EnumSounds {
 	locoCherepanov(EntityLocoSteamCherepanov.class, "steam_horn", 0.6F, "steam_run", 0.2F, 20, "steam_run", 0.2F, 20, true),
 	locoHeavySteam(EntityLocoSteamHeavy.class, "heavy_whistle", 1F, "steam_run", 0.4F, 20, "steam_run", 0.4F, 20, true),
 	locoSteam(EntityLocoSteam4_4_0.class, "american_steam_horn", 0.8F, "steam_run", 0.2F, 20, "steam_run", 0.2F, 20, true),
-	locoA4(EntityLocoSteamMallardA4.class, "steam_horn", 0.6F, "steam_run", 0.2F, 20, "steam_run", 0.2F, 20, true),
+	locoA4(EntityLocoSteamMallardA4.class, "a4_whistle", 0.6F, "steam_run", 0.2F, 20, "steam_run", 0.2F, 20, true),
 	locoSteamBig(EntityLocoSteamHeavy.class, "steam_horn", 0.6F, "steam_run", 0.4F, 20, "steam_run", 0.4F, 20, true),
 	locoSteamBR01_DB(EntityLocoSteamBR01_DB.class, "german_steam_horn", 0.8F, "steam_run", 0.4F, 20, "steam_run", 0.4F, 20, true),
 	locoSteamBR80_DB(EntityLocoSteamBR80_DB.class, "german_steam_horn", 0.8F, "steam_run", 0.2F, 20, "steam_run", 0.2F, 20, true),
@@ -106,8 +106,8 @@ public enum EnumSounds {
 	F7B(com.jcirmodelsquad.tcjcir.locomotives.DieselF7B.class, "leslie_a200", 0F, "567_notch8", 0.45F, 15, "567_idle", 0.75F, 3, true),
 	ES44(com.jcirmodelsquad.tcjcir.locomotives.DieselES44.class, "nathan_k5hl", 1F, "gevo12_notch8", 0.65F, 20, "gevo12_idle", 0.75F, 50, true),
 	Boxcab23Ton(com.jcirmodelsquad.tcjcir.locomotives.DieselBoxcab23Ton.class, "wabco_e2", 10F, "boxcab_notch8", 0.5F, 15, "boxcab_idle", 0.5F, 25, false),
-	testControlCar(com.jcirmodelsquad.tcjcir.rollingstock.TestControlCar.class, "leslie_rs3k", 1F, "mg_run", 0.6F, 8, "mg_idle", 0.4F, 50, false),;
-
+	testControlCar(com.jcirmodelsquad.tcjcir.rollingstock.TestControlCar.class, "leslie_rs3k", 1F, "mg_run", 0.6F, 8, "mg_idle", 0.4F, 50, false),
+	PCH100H(com.jcirmodelsquad.tcjcir.locomotives.PCH100H.class, "leslie_rs3k", 1F, "pch100h_notch8", 0.6F, 8, "pch100h_idle", 0.4F, 50, false),;
 
 	private Class entityClass;
 	private String horn;
