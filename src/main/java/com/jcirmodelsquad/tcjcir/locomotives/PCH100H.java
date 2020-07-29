@@ -37,12 +37,38 @@ public class PCH100H extends HydrogenTrain{
         if(riddenByEntity!=null) {
             riddenByEntity.setPosition(posX +0, posY + getMountedYOffset() + riddenByEntity.getYOffset() + 0.5, posZ + 0.3);
         }
+        float pitch = (float) (posY + ((Math.tan(pitchRads) * distance) + getMountedYOffset())
+                + riddenByEntity.getYOffset() + yOffset);
+        float pitch1 = (float) (posY + getMountedYOffset() + riddenByEntity.getYOffset() + yOffset);
+        double bogieX1 = (this.posX + (rotationCos1 * distance));
+        double bogieZ1 = (this.posZ + (rotationSin1 * distance));
+        // System.out.println(rotationCos1+" "+rotationSin1);
+        if (anglePitchClient > 20 && rotationCos1 == 1) {
+            bogieX1 -= pitchRads * 2;
+            pitch -= pitchRads * 1.2;
+        }
+        if (anglePitchClient > 20 && rotationSin1 == 1) {
+            bogieZ1 -= pitchRads * 2;
+            pitch -= pitchRads * 1.2;
+        }
+        if (pitchRads == 0.0) {
+            riddenByEntity.setPosition(bogieX1, pitch1, bogieZ1);
+        }
+        if (pitchRads > -1.01 && pitchRads < 1.01) {
+            riddenByEntity.setPosition(bogieX1, pitch, bogieZ1);
+        }
     }
 
     @Override
     public void setDead() {
         super.setDead();
         isDead = true;
+    }
+
+    @Override
+    public void onUpdate() {
+        checkInvent(locoInvent[0]);
+        super.onUpdate();
     }
 
     @Override
@@ -98,7 +124,7 @@ public class PCH100H extends HydrogenTrain{
 
     @Override
     public String getInventoryName() {
-        return "Aipkit Experimental Hydrogen Train";
+        return "PCH-100H";
     }
 
     @Override
@@ -110,5 +136,12 @@ public class PCH100H extends HydrogenTrain{
     public boolean canBeAdjusted(EntityMinecart cart) {
         return canBeAdjusted;
     }
+
+    @Override
+    public int refuelingSlurpAmount() {
+        return 1;
+    }
+
+
 
 }
