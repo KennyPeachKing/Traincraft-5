@@ -35,14 +35,20 @@ public class PCH100H extends HydrogenTrain{
     @Override
     public void updateRiderPosition() {
         if(riddenByEntity!=null) {
+            riddenByEntity.setPosition(posX +2.5, posY + getMountedYOffset() + riddenByEntity.getYOffset() + 0.5, posZ + 0.3);
             riddenByEntity.setPosition(posX +0, posY + getMountedYOffset() + riddenByEntity.getYOffset() + 0.5, posZ + 0.3);
         }
     }
-
     @Override
     public void setDead() {
         super.setDead();
         isDead = true;
+    }
+
+    @Override
+    public void onUpdate() {
+        checkInvent(locoInvent[0]);
+        super.onUpdate();
     }
 
     @Override
@@ -98,7 +104,7 @@ public class PCH100H extends HydrogenTrain{
 
     @Override
     public String getInventoryName() {
-        return "Aipkit Experimental Hydrogen Train";
+        return "PCH-100H";
     }
 
     @Override
@@ -110,5 +116,12 @@ public class PCH100H extends HydrogenTrain{
     public boolean canBeAdjusted(EntityMinecart cart) {
         return canBeAdjusted;
     }
+
+    @Override
+    public int refuelingSlurpAmount() {
+        return 1;
+    }
+
+
 
 }

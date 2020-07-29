@@ -1,11 +1,15 @@
 package train.common.api;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.common.util.ForgeDirection;
 import net.minecraftforge.fluids.*;
+import train.common.library.EnumTrains;
 
 public abstract class HydrogenTrain extends Locomotive implements IFluidHandler {
     public int fuelSlot = 1;
@@ -54,6 +58,31 @@ public abstract class HydrogenTrain extends Locomotive implements IFluidHandler 
                 }
             }
         }
+    }
+    public ItemStack checkInvent(ItemStack locoInvent0) {
+        if (!this.canCheckInvent)
+            return locoInvent0;
+
+        if (getDiesel() > 0) {
+            fuelTrain = (getDiesel());
+        }
+        if (fuelTrain <= 0 && !this.canBePulled) {
+            motionX *= 0.88;
+            motionZ *= 0.88;
+        }
+        if (locoInvent0 != null && locoInvent0.getTagCompound() != null && !worldObj.isRemote) {
+            if (locoInvent0.getTagCompound().getTagList("fluidTank",  Constants.NBT.TAG_COMPOUND) != null) {
+                NBTTagCompound theTagList = locoInvent0.getTagCompound().getCompoundTag("fluidTank");
+                if (theTagList.getString("FluidName").equals("hydrogen")) {
+
+                    int fill = fill(ForgeDirection.UNKNOWN, new FluidStack(FluidRegistry.getFluid("hydrogen"), theTagList.getInteger("Amount")), true);
+                    int theFinalAmount = theTagList.getInteger("Amount") - fill;
+                       theTagList.setInteger("Amount", theFinalAmount);
+                    locoInvent0.setTagCompound(locoInvent0.getTagCompound());
+                }
+            }
+        }
+        return locoInvent0;
     }
 
     public int getDiesel() {
@@ -187,5 +216,9 @@ public abstract class HydrogenTrain extends Locomotive implements IFluidHandler 
     @Override
     public boolean canOverheat() {
         return false;
+    }
+
+    public int refuelingSlurpAmount() {
+        return 100;
     }
 }

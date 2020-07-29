@@ -7,10 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import org.lwjgl.opengl.GL11;
-import train.common.api.ControlCar;
-import train.common.api.DieselTrain;
-import train.common.api.Locomotive;
-import train.common.api.SteamTrain;
+import train.common.api.*;
 import train.common.items.ItemRemoteController;
 import train.common.library.Info;
 
@@ -115,6 +112,10 @@ public class HUDloco extends GuiScreen {
 			l = ((((DieselTrain) loco).getDiesel()));
 
 			l = Math.abs(((l * 70) / (((DieselTrain) loco).getCartTankCapacity())));
+		} else if (loco instanceof HydrogenTrain) {
+			l = ((((HydrogenTrain) loco).getDiesel()));
+
+			l = Math.abs(((l * 70) / (((HydrogenTrain) loco).getCartTankCapacity())));
 		}
 		else {
 			l = loco.getFuelDiv(70);//scaled on 70 pixels 
