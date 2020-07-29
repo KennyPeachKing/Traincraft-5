@@ -47,6 +47,13 @@ public class RecipeHandler {
 		GameRegistry.addRecipe(new ItemStack(BlockIDs.assemblyTableIII.block, 1),  "GPG", "DLD", "OPO", Character.valueOf('G'), Items.gold_ingot, Character.valueOf('P'), Blocks.piston, Character.valueOf('D'), Items.diamond, Character.valueOf('L'), Blocks.glowstone, Character.valueOf('O'), Blocks.obsidian );
 		//TEST adding tc small straight recipe
 		GameRegistry.addRecipe(new ItemStack(ItemIDs.tcRailSmallStraight.item, 16),  "G G", "GPG", "G G", Character.valueOf('G'), Items.iron_ingot, Character.valueOf('P'), Blocks.planks );
+		GameRegistry.addRecipe(new ItemStack(ItemIDs.tcRailMediumStraight.item, 1),  "G  ", "G  ", "G  ", Character.valueOf('G'), ItemIDs.tcRailSmallStraight.item );
+		GameRegistry.addRecipe(new ItemStack(ItemIDs.tcRailLongStraight.item, 1),  "G  ", "G  ", "   ", Character.valueOf('G'), ItemIDs.tcRailMediumStraight.item );
+		GameRegistry.addRecipe(new ItemStack(ItemIDs.tcRailMediumTurn.item, 1),  "GG ", "G  ", "   ", Character.valueOf('G'), ItemIDs.tcRailSmallStraight.item );
+		GameRegistry.addRecipe(new ItemStack(ItemIDs.tcRailMediumSwitch.item, 1),  "G  ", "GHG", "G  ", Character.valueOf('G'), ItemIDs.tcRailSmallStraight.item, Character.valueOf('H'), ItemIDs.tcRailMediumTurn.item );
+		GameRegistry.addRecipe(new ItemStack(ItemIDs.tcRailMediumParallelSwitch.item, 1),  "I G", "IHH", "IH ", Character.valueOf('G'), ItemIDs.tcRailSmallStraight.item, Character.valueOf('H'), ItemIDs.tcRailMediumTurn.item, Character.valueOf('I'), ItemIDs.tcRailMediumStraight.item );
+		GameRegistry.addRecipe(new ItemStack(ItemIDs.tcRailLargeTurn.item, 1),  " GG", "GG ", "G  ", Character.valueOf('G'), ItemIDs.tcRailSmallStraight.item );
+		GameRegistry.addRecipe(new ItemStack(ItemIDs.tcRailLargeSwitch.item, 1),  "G  ", "HIG", "G  ", Character.valueOf('G'), ItemIDs.tcRailSmallStraight.item, Character.valueOf('H'), ItemIDs.tcRailMediumStraight.item, Character.valueOf('I'), ItemIDs.tcRailLargeTurn.item );
 
 
 		if (!ConfigHandler.DISABLE_TRAIN_WORKBENCH) {
