@@ -180,6 +180,7 @@ public class TileFortyFootContainer extends TileEntity implements IInventory {
         leColors.add("Orange");
         leColors.add("White");
         leColors.add("Purple");
+        leColors.add("Red");
         return leColors;
     }
 
