@@ -161,7 +161,7 @@ public class BlockFortyFootContainer extends BlockContainer {
         if (player.capabilities.isCreativeMode) {
             harvestBlock(world, player, x,y,z, 0);
         }
-        return super.removedByPlayer(world, player, x, y, z, willHarvest);
+        return super.removedByPlayer(world, player, x, y, z, false);
     }
 
     @Override
