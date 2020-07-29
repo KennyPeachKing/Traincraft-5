@@ -107,8 +107,8 @@ public enum EnumSounds {
 	ES44(com.jcirmodelsquad.tcjcir.locomotives.DieselES44.class, "nathan_k5hl", 1F, "gevo12_notch8", 0.65F, 20, "gevo12_idle", 0.75F, 50, true),
 	Boxcab23Ton(com.jcirmodelsquad.tcjcir.locomotives.DieselBoxcab23Ton.class, "wabco_e2", 10F, "boxcab_notch8", 0.5F, 15, "boxcab_idle", 0.5F, 25, false),
 	testControlCar(com.jcirmodelsquad.tcjcir.rollingstock.TestControlCar.class, "leslie_rs3k", 1F, "mg_run", 0.6F, 8, "mg_idle", 0.4F, 50, false),
-	PCH100H(com.jcirmodelsquad.tcjcir.locomotives.PCH100H.class, "leslie_rs3k", 1F, "pch100h_notch8", 0.6F, 8, "pch100h_idle", 0.4F, 50, false),;
-
+	PCH100H(com.jcirmodelsquad.tcjcir.locomotives.PCH100H.class, "leslie_rs3k", 1F, "pch100h_notch8", 0.6F, 8, "pch100h_idle", 0.4F, 50, false),
+	LU96Stock(com.jcirmodelsquad.tcjcir.locomotives.ElectricLUengine.class, "lu_whistle", 1F, "mg_run", 0.6F, 8, "mg_idle", 0.4F, 50, false),;
 	private Class entityClass;
 	private String horn;
 	private float hornVolume;
