@@ -68,6 +68,7 @@ public enum AchievementIDs {
 			ItemIDs.minecartFlatCartSU.item, ItemIDs.minecartFlatCartUS.item,
 			ItemIDs.minecartFlatCartWoodUS.item }),
 	mail(new Item[] { ItemIDs.minecartMailWagon_DB.item }),
+	mtg(new Item[] { ItemIDs.minecartLUengine.item }),
 	caboose(new Item[] { ItemIDs.minecartCaboose.item, ItemIDs.minecartCaboose3.item,
 			ItemIDs.minecartCabooseWork.item }),
 	stockCar(new Item[] { ItemIDs.minecartStockCar.item, ItemIDs.minecartDRWGStockCar.item }),
