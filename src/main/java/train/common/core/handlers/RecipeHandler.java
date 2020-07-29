@@ -54,8 +54,9 @@ public class RecipeHandler {
 		GameRegistry.addRecipe(new ItemStack(ItemIDs.tcRailMediumParallelSwitch.item, 1),  "I G", "IHH", "IH ", Character.valueOf('G'), ItemIDs.tcRailSmallStraight.item, Character.valueOf('H'), ItemIDs.tcRailMediumTurn.item, Character.valueOf('I'), ItemIDs.tcRailMediumStraight.item );
 		GameRegistry.addRecipe(new ItemStack(ItemIDs.tcRailLargeTurn.item, 1),  " GG", "GG ", "G  ", Character.valueOf('G'), ItemIDs.tcRailSmallStraight.item );
 		GameRegistry.addRecipe(new ItemStack(ItemIDs.tcRailLargeSwitch.item, 1),  "G  ", "HIG", "G  ", Character.valueOf('G'), ItemIDs.tcRailSmallStraight.item, Character.valueOf('H'), ItemIDs.tcRailMediumStraight.item, Character.valueOf('I'), ItemIDs.tcRailLargeTurn.item );
-
-
+		GameRegistry.addRecipe(new ItemStack(ItemIDs.tcRailSlopeGravel.item, 1),  " GH", "GHH", "HHH", Character.valueOf('G'), ItemIDs.tcRailMediumStraight.item, Character.valueOf('H'), Blocks.gravel );
+		GameRegistry.addRecipe(new ItemStack(ItemIDs.tcRailLargeSlopeGravel.item, 1),"   ", "  G", " G ", Character.valueOf('G'), ItemIDs.tcRailSlopeGravel.item);
+		GameRegistry.addRecipe(new ItemStack(ItemIDs.tcRailVeryLargeSlopeGravel.item, 1),"   ", " G ", " H ", Character.valueOf('G'), ItemIDs.tcRailLargeSlopeGravel.item, Character.valueOf('H'), Blocks.gravel );
 		if (!ConfigHandler.DISABLE_TRAIN_WORKBENCH) {
 			for (ItemStack ironingot : iron) {
 				addDictRecipe(new ItemStack(BlockIDs.trainWorkbench.block, 1), "###", "IFI", "###", Character.valueOf('#'), "plankWood", Character.valueOf('F'), Blocks.furnace, Character.valueOf('I'), ironingot);
