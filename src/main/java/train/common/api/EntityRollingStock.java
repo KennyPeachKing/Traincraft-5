@@ -1594,7 +1594,7 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 			return true;
 		}
 
-		/*if (itemstack != null && itemstack.getItem() instanceof ItemDye) {
+		if (itemstack != null && itemstack.getItem() instanceof ItemDye) {
 			if (this.acceptedColors != null && this.acceptedColors.size() > 0) {
 				for (int i = 0; i < this.acceptedColors.size(); i++) {
 					if (itemstack.getItemDamage() == this.acceptedColors.get(i)) {
@@ -1625,7 +1625,7 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 			else if (this.acceptedColors != null && this.acceptedColors.size() == 0) {
 				entityplayer.addChatMessage(new ChatComponentText("No other colors available"));
 			}
-		}*/
+		}
 		else if ((trainsOnClick.onClickWithStake(this, itemstack, playerEntity, worldObj))) { return true; }
 
 
