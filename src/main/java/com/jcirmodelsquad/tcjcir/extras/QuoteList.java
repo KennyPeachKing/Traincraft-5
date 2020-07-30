@@ -114,7 +114,8 @@ public class QuoteList {
         importantQuotes.add(new JCIRQuote("A prick sounds so much fun!", "Hariesh"));
         importantQuotes.add(new JCIRQuote("BigJ! I got a present for you! It's a load of Sewage!", "Hariesh"));
         importantQuotes.add(new JCIRQuote("Vertical boiler doesn't do blowjobs anymore.", "Bida"));
-        importantQuotes.add(new JCIRQuote("who is the Mayeeta Bandit?", "Bida"));
+        importantQuotes.add(new JCIRQuote("Who is the Mayeeta Bandit?", "Bida"));
+        importantQuotes.add(new JCIRQuote("My pants...?", "SDM"));
         //jc if your reading this, dont edit existing quotes k thnx -bida
     return importantQuotes;
 
