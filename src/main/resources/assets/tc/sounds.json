@@ -81,4 +81,5 @@
   "pch100h_notch8": {"category": "master", "sounds": [{"name": "pch100h_notch8", "stream":  true}]},
   "lu_whistle": {"category": "master", "sounds": [{"name": "lu_whistle", "stream":  true}]},
   "jnr_5chime": {"category": "master", "sounds": [{"name": "jnr_5chime", "stream":  true}]},
+  "k5la_4": {"category": "master", "sounds": [{"name": "k5la_4", "stream":  true}]},
   "765_whistle": {"category": "master", "sounds": [{"name": "765_whistle", "stream":  true}]}}
