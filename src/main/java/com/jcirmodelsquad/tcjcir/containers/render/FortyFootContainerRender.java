@@ -35,21 +35,19 @@ public class FortyFootContainerRender extends TileEntitySpecialRenderer {
         tessellator.setBrightness(15);
 
         GL11.glPushMatrix();
-        if (two instanceof BlockFortyFootContainer) {
-            GL11.glTranslated(x + 0.5, y + 1.3, z + 0.44F);
-        } else if (three instanceof BlockFortyFootContainer) {
-            GL11.glTranslated(x + 0.5, y + 1.3, z + 0.44F);
-        } else {
-            GL11.glTranslated(x+ 0.5 ,y + 1, z+ 0.44F);
-        }
-        if (theTileEntity.directionPlaced == 0) {
-            GL11.glRotated(10, 0,0,0);
-        }
-        if (theTileEntity.currentColor == 1) {
 
+       //GL11.glRotatef(180,0,10,1);
+
+        if (two instanceof BlockFortyFootContainer) {
+            GL11.glTranslated(x + 0.5, y + 0.8, z + 0.44F);
+        } else if (three instanceof BlockFortyFootContainer) {
+            GL11.glTranslated(x + 0.5, y + 1, z + 0.44F);
+        } else {
+            GL11.glTranslated(x+ 0.5 ,y + 0.5, z+ 0.44F);
         }
+        GL11.glRotatef(180,0,0,1);
         ModelA40AFootContainer theContainer = new ModelA40AFootContainer();
-        theContainer.render(null,10f, 10f, 10f,10f, 0, .0625f);
+        theContainer.render(null,0, 0, 0,0, 0, .0625f);
         GL11.glPopMatrix();
     }
 
