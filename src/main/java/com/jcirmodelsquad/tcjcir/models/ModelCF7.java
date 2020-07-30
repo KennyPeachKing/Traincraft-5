@@ -1770,7 +1770,7 @@ public class ModelCF7 extends ModelConverter //Same as Filename
 			GL11.glPopMatrix();
 
 		} else if (entity instanceof AbstractTrains && ((AbstractTrains) entity).getColor() == 14) {
-			Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/typeB_Black.png"));
+			Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/typeb_Black.png"));
 			GL11.glPushMatrix();
 			GL11.glTranslated(-1.3, -0.01, 0);
 			theTrucks3.render(entity, f, f1, f2, f3, f4, f5);
