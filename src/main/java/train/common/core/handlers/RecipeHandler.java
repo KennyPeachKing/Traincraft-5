@@ -15,6 +15,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.ShapedOreRecipe;
+import scala.Char;
 import train.common.inventory.TrainCraftingManager;
 import train.common.library.BlockIDs;
 import train.common.library.ItemIDs;
@@ -45,7 +46,7 @@ public class RecipeHandler {
 		}
 		GameRegistry.addRecipe(new ItemStack(BlockIDs.assemblyTableII.block, 1),  "GPG", "O O", "OPO", Character.valueOf('G'), Items.gold_ingot, Character.valueOf('P'), Blocks.piston, Character.valueOf('O'), Blocks.obsidian );
 		GameRegistry.addRecipe(new ItemStack(BlockIDs.assemblyTableIII.block, 1),  "GPG", "DLD", "OPO", Character.valueOf('G'), Items.gold_ingot, Character.valueOf('P'), Blocks.piston, Character.valueOf('D'), Items.diamond, Character.valueOf('L'), Blocks.glowstone, Character.valueOf('O'), Blocks.obsidian );
-		//TEST adding tc small straight recipe
+		//Porting over TC track recipes to crafting table. Ta ta -hariesh
 		GameRegistry.addRecipe(new ItemStack(ItemIDs.tcRailSmallStraight.item, 16),  "G G", "GPG", "G G", Character.valueOf('G'), Items.iron_ingot, Character.valueOf('P'), Blocks.planks );
 		GameRegistry.addRecipe(new ItemStack(ItemIDs.tcRailMediumStraight.item, 1),  "G  ", "G  ", "G  ", Character.valueOf('G'), ItemIDs.tcRailSmallStraight.item );
 		GameRegistry.addRecipe(new ItemStack(ItemIDs.tcRailLongStraight.item, 1),  "G  ", "G  ", "   ", Character.valueOf('G'), ItemIDs.tcRailMediumStraight.item );
@@ -54,6 +55,13 @@ public class RecipeHandler {
 		GameRegistry.addRecipe(new ItemStack(ItemIDs.tcRailMediumParallelSwitch.item, 1),  "I G", "IHH", "IH ", Character.valueOf('G'), ItemIDs.tcRailSmallStraight.item, Character.valueOf('H'), ItemIDs.tcRailMediumTurn.item, Character.valueOf('I'), ItemIDs.tcRailMediumStraight.item );
 		GameRegistry.addRecipe(new ItemStack(ItemIDs.tcRailLargeTurn.item, 1),  " GG", "GG ", "G  ", Character.valueOf('G'), ItemIDs.tcRailSmallStraight.item );
 		GameRegistry.addRecipe(new ItemStack(ItemIDs.tcRailLargeSwitch.item, 1),  "G  ", "HIG", "G  ", Character.valueOf('G'), ItemIDs.tcRailSmallStraight.item, Character.valueOf('H'), ItemIDs.tcRailMediumStraight.item, Character.valueOf('I'), ItemIDs.tcRailLargeTurn.item );
+		GameRegistry.addRecipe(new ItemStack(ItemIDs.tcRailSlopeGravel.item, 1),  " GH", "GHH", "HHH", Character.valueOf('G'), ItemIDs.tcRailMediumStraight.item, Character.valueOf('H'), Blocks.gravel );
+		GameRegistry.addRecipe(new ItemStack(ItemIDs.tcRailLargeSlopeGravel.item, 1),"   ", "  G", " G ", Character.valueOf('G'), ItemIDs.tcRailSlopeGravel.item);
+		GameRegistry.addRecipe(new ItemStack(ItemIDs.tcRailVeryLargeSlopeGravel.item, 1),"   ", " G ", " H ", Character.valueOf('G'), ItemIDs.tcRailLargeSlopeGravel.item, Character.valueOf('H'), Blocks.gravel );
+		GameRegistry.addRecipe(new ItemStack(ItemIDs.tcRailVeryLargeTurn.item, 1),"GG ","G  ","   ", Character.valueOf('G'), ItemIDs.tcRailMediumTurn.item );
+
+		//weird, this one doesnt seem to work?V -hariesh Seems to fail each time after i moved paintbrushthing up the array in itemsid.java  , also has directry of -1
+		//GameRegistry.addRecipe(new ItemStack(ItemIDs.paintbrushThing.item, 1),"GB ","RIS"," ST", Character.valueOf('G'),new ItemStack(Items.dye, 1, 2), Character.valueOf('B'), new ItemStack(Items.dye, 1, 4), Character.valueOf('R'), new ItemStack(Items.dye, 1, 1), Character.valueOf('I'), Items.iron_ingot, Character.valueOf('S'), Items.string, Character.valueOf('T'), Items.stick );
 
 
 		if (!ConfigHandler.DISABLE_TRAIN_WORKBENCH) {
@@ -72,7 +80,7 @@ public class RecipeHandler {
 
 		/* Lantern */
 		for (ItemStack ironingot : iron) {
-			GameRegistry.addRecipe(new ItemStack(BlockIDs.lantern.block, 4), "III", "PTP", "III", Character.valueOf('I'), ironingot, Character.valueOf('P'), Blocks.glass_pane, Character.valueOf('T'), Blocks.torch);
+			GameRegistry.addRecipe(new ItemStack(BlockIDs.lantern.block, 8), "III", "PTP", "III", Character.valueOf('I'), ironingot, Character.valueOf('P'), Blocks.glass_pane, Character.valueOf('T'), Blocks.torch);
 		}
 
 

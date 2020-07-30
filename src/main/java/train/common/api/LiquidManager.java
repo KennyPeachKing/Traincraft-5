@@ -34,6 +34,7 @@ public class LiquidManager {
 	public static Fluid biofuel;
 	public static Fluid bioDiesel;
 	public static Fluid bioethanol;
+	public static Fluid creosote;
 
 	public static final Fluid DIESEL = new Fluid("Diesel").setUnlocalizedName("diesel.name").setDensity(860);
 	public static final Fluid REFINED_FUEL = new Fluid("RefinedFuel").setDensity(820).setUnlocalizedName("refinedfuel.name");
@@ -100,6 +101,7 @@ public class LiquidManager {
 		bioethanol = FluidRegistry.getFluid("bioethanol");
 		biofuel = FluidRegistry.getFluid("biofuel");
 		bioDiesel = FluidRegistry.getFluid("biodiesel");
+		creosote = FluidRegistry.getFluid("creosote");
 	}
 
 	public boolean isDieselLocoFuel(ItemStack stack) {
