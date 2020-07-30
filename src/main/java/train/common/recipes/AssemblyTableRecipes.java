@@ -9,6 +9,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 import train.common.api.crafting.ITierCraftingManager;
 import train.common.core.managers.TierRecipeManager;
+import train.common.library.BlockIDs;
 import train.common.library.ItemIDs;
 
 import java.util.ArrayList;
@@ -36,6 +37,7 @@ public class AssemblyTableRecipes {
 		ArrayList<ItemStack> dyeWhite = OreDictionary.getOres("dyeWhite");
 		ArrayList<ItemStack> dyeMagenta = OreDictionary.getOres("dyeMagenta");
 		ArrayList<ItemStack> dyeLime = OreDictionary.getOres("dyeLime");
+		ArrayList<ItemStack> dyeLightBlue = OreDictionary.getOres("dyeLightBlue");
 		List<ItemStack> coal = new ArrayList<ItemStack>();
 		coal.add(new ItemStack(Items.coal));
 		coal.addAll(OreDictionary.getOres("coal"));
@@ -444,13 +446,16 @@ public class AssemblyTableRecipes {
 			for (ItemStack dye : dyeOrange) {
 				cm.addRecipe(3, new ItemStack(ItemIDs.controls.item, 2), new ItemStack(ItemIDs.bogie.item, 3), new ItemStack(ItemIDs.steelframe.item, 2), new ItemStack(itemSteel, 2, itemDamageSteel), new ItemStack(ItemIDs.steelchimney.item, 1), new ItemStack(ItemIDs.steelcab.item, 1), new ItemStack(ItemIDs.electmotor.item, 4), new ItemStack(ItemIDs.dieselengine.item, 4), new ItemStack(ItemIDs.generator.item, 4), dye, new ItemStack(ItemIDs.minecartLocoSD70.item, 1), 1);
 			}
-			for(ItemStack dye :dyeGreen){
+			for(ItemStack dye : dyeGreen){
 				cm.addRecipe(3, new ItemStack(ItemIDs.controls.item, 2), new ItemStack(ItemIDs.bogie.item, 3), new ItemStack(ItemIDs.steelframe.item, 2), new ItemStack(itemSteel, 2, itemDamageSteel), new ItemStack(ItemIDs.steelchimney.item, 1), new ItemStack(ItemIDs.steelcab.item, 1), new ItemStack(ItemIDs.transformer.item, 2), new ItemStack(ItemIDs.electmotor.item, 2), null, dye, new ItemStack(ItemIDs.minecartLocoBP4.item, 1), 1);
 			}
 			for (ItemStack dye : dyeLime){
 				cm.addRecipe(3, new ItemStack(ItemIDs.controls.item, 6), new ItemStack(ItemIDs.bogie.item, 5) ,new ItemStack(ItemIDs.steelframe.item, 5),  new ItemStack(itemSteel, 2, itemDamageSteel), new ItemStack(ItemIDs.steelchimney.item, 2), new ItemStack(ItemIDs.steelcab.item, 3),new ItemStack(ItemIDs.electmotor.item, 4),new ItemStack(ItemIDs.dieselengine.item, 5),new ItemStack(ItemIDs.generator.item, 4), dye, new ItemStack(ItemIDs.minecartES44.item,1), 1);
 			}
 
+			for (ItemStack dye : dyeLightBlue){
+				cm.addRecipe(3, null, new ItemStack(ItemIDs.bogie.item, 4), new ItemStack(ItemIDs.steelframe.item, 4), null, new ItemStack(ItemIDs.steelcab.item, 2), null, null, null, new ItemStack(ItemIDs.seats.item, 2), dye, new ItemStack(ItemIDs.minecartPCH100HCoach.item, 1),1);
+			}
 
 			cm.addRecipe(3, new ItemStack(itemSteel, 5, itemDamageSteel), new ItemStack(ItemIDs.bogie.item, 2), new ItemStack(ItemIDs.steelframe.item, 2), new ItemStack(itemSteel, 2, itemDamageSteel), null, null, null, null, new ItemStack(Blocks.hopper, 1), null, new ItemStack(ItemIDs.minecartOpenWagon.item, 1), 1);
 			cm.addRecipe(3, new ItemStack(itemSteel, 6, itemDamageSteel), new ItemStack(ItemIDs.bogie.item, 2), new ItemStack(ItemIDs.steelframe.item, 2), new ItemStack(itemSteel, 2, itemDamageSteel), null, null, null, null, new ItemStack(Blocks.hopper, 1), null, new ItemStack(ItemIDs.minecartFreightGTNG.item, 1), 1);
@@ -484,6 +489,11 @@ public class AssemblyTableRecipes {
 
 			for (ItemStack dye : dyeYellow){
 				cm.addRecipe(3, null, new ItemStack(ItemIDs.bogie.item, 2), new ItemStack(ItemIDs.steelframe.item, 1), null, null, new ItemStack(ItemIDs.steelcab.item, 1), null, null, new ItemStack(Blocks.chest, 1), dye, new ItemStack(ItemIDs.minecartFreightGermanPost.item, 1), 1);
+			}
+
+			for (ItemStack dye : dyeGray){
+				cm.addRecipe(3, new ItemStack(ItemIDs.controls.item, 6),new ItemStack(ItemIDs.bogie.item, 5),new ItemStack(ItemIDs.steelframe.item, 5),new ItemStack(itemSteel, 2, itemDamageSteel),new ItemStack(ItemIDs.seats.item, 2),new ItemStack(ItemIDs.steelcab.item, 2),new ItemStack(BlockIDs.betterDetector.block, 2),new ItemStack(Blocks.daylight_detector, 2),new ItemStack(ItemIDs.electronicCircuit.item, 6),dye,new ItemStack(ItemIDs.minecartGeometryCar.item, 1), 1);
+				cm.addRecipe(3, null, new ItemStack(ItemIDs.bogie.item, 4), new ItemStack(ItemIDs.steelframe.item, 4), null, new ItemStack(ItemIDs.steelcab.item, 2), null, null, null, new ItemStack(ItemIDs.seats.item, 2), dye, new ItemStack(ItemIDs.minecartPCH100HCoach.item, 1),1);
 			}
 
 			cm.addRecipe(3, new ItemStack(itemSteel, 5, itemDamageSteel), new ItemStack(ItemIDs.bogie.item, 2), new ItemStack(ItemIDs.steelframe.item, 2), new ItemStack(itemSteel, 2, itemDamageSteel), null, null, null, null, new ItemStack(Blocks.rail, 1), null, new ItemStack(ItemIDs.minecartFlatCartRail_DB.item, 1), 1);
