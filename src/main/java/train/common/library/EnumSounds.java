@@ -29,9 +29,9 @@ public enum EnumSounds {
 	locoSteamMogul(EntityLocoSteamMogulBlue.class, "american_steam_horn", 0.8F, "steam_run", 0.2F, 20, "steam_run", 0.2F, 20, true),
 	locoSteamSmall(EntityLocoSteamSmall.class, "steam_horn", 0.5F, "steam_run", 0.2F, 20, "steam_run", 0.2F, 20, true),
 	locoSteamShay(EntityLocoSteamShay.class, "lukenhimer_3chime", 0.6F, "steam_run", 0.2F, 20, "steam_run", 0.2F, 20, true),
-	locoSteamClass62(EntityLocoSteamC62Class.class, "class62_horn", 0.8F, "steam_run", 0.2F, 20, "steam_run", 0.2F, 20, true),
-	locoSteamD51S(EntityLocoSteamD51.class, "class62_horn", 0.8F, "steam_run", 0.2F, 20, "steam_run", 0.2F, 20, true),
-	locoSteamD51L(EntityLocoSteamD51Long.class, "class62_horn", 0.8F, "steam_run", 0.2F, 20, "steam_run", 0.2F, 20, true),
+	locoSteamClass62(EntityLocoSteamC62Class.class, "jnr_5chime", 0.8F, "steam_run", 0.2F, 20, "steam_run", 0.2F, 20, true),
+	locoSteamD51S(EntityLocoSteamD51.class, "jnr_5chime", 0.8F, "steam_run", 0.2F, 20, "steam_run", 0.2F, 20, true),
+	locoSteamD51L(EntityLocoSteamD51Long.class, "jnr_5chime", 0.8F, "steam_run", 0.2F, 20, "steam_run", 0.2F, 20, true),
 	locoSteamSnowPlow(EntityLocoSteamSnowPlow.class, "class62_horn", 0.8F, "steam_run", 0.2F, 20, "steam_run", 0.2F, 20, true),
 	locoSteamAdler(EntityLocoSteamAdler.class, "adler_whistle", 0.8F, "adler_run", 0.2F, 20, "adler_run", 0.2F, 20,
 			true),
@@ -57,7 +57,7 @@ public enum EnumSounds {
 	locoIC4_DSB_MG(EntityLocoDieselIC4_DSB_MG.class, "mg_horn", 1F, "mg_run", 0.8F, 10, "mg_idle", 0.6F, 50, false),
 	locoSpeedGrey(EntityLocoElectricNewHighSpeed.class, "high_speed_horn", 0.8F, "vl10_idle", 0.6F, 50, "vl10_idle", 0.6F, 50, false),
 	ICE1(EntityLocoElectricICE1.class, "mg_horn", 1F, "mg_run", 0.8F, 10, "mg_idle", 0.6F, 50, false),
-	E10(EntityLocoElectricE10_DB.class, "mg_horn", 1F, "mg_run", 0.6F, 8, "mg_idle", 0.4F, 50, false),
+	E10(EntityLocoElectricE10_DB.class, "k5la_4", 1F, "mg_run", 0.6F, 8, "mg_idle", 0.4F, 50, false),
 	locoBR185(EntityLocoElectricBR185.class, "mg_horn", 1F, "vl10_idle", 0.8F, 10, "vl10_idle", 0.6F, 50, false),
 	locoClass85(EntityLocoElectricClass85.class, "mg_horn", 1F, "vl10_idle", 0.8F, 10, "vl10_idle", 0.6F, 50, false),
 
@@ -107,8 +107,8 @@ public enum EnumSounds {
 	ES44(com.jcirmodelsquad.tcjcir.locomotives.DieselES44.class, "nathan_k5hl", 1F, "gevo12_notch8", 0.65F, 20, "gevo12_idle", 0.75F, 50, true),
 	Boxcab23Ton(com.jcirmodelsquad.tcjcir.locomotives.DieselBoxcab23Ton.class, "wabco_e2", 10F, "boxcab_notch8", 0.5F, 15, "boxcab_idle", 0.5F, 25, false),
 	testControlCar(com.jcirmodelsquad.tcjcir.rollingstock.TestControlCar.class, "leslie_rs3k", 1F, "mg_run", 0.6F, 8, "mg_idle", 0.4F, 50, false),
-	PCH100H(com.jcirmodelsquad.tcjcir.locomotives.PCH100H.class, "leslie_rs3k", 1F, "pch100h_notch8", 0.6F, 8, "pch100h_idle", 0.4F, 50, false),;
-
+	PCH100H(com.jcirmodelsquad.tcjcir.locomotives.PCH100H.class, "leslie_rs3k", 1F, "pch100h_notch8", 0.6F, 8, "pch100h_idle", 0.4F, 50, false),
+	LU96Stock(com.jcirmodelsquad.tcjcir.locomotives.ElectricLUengine.class, "lu_whistle", 1F, "mg_run", 0.6F, 8, "mg_idle", 0.4F, 50, false),;
 	private Class entityClass;
 	private String horn;
 	private float hornVolume;

@@ -66,6 +66,8 @@ public enum ItemIDs {
 	adminBook("ItemAdminBook", "item_book_blue", 0),
 	wirelessTransmitter("ItemWirelessTransmitter", "wireless_transmitter", 3),
 	atoCard("ItemATOCard", "ato_card", 5),
+	paintbrushThing("ItemPaintbrushThing", "paintbrush_thing", 9),
+
 	minecartWork("ItemRollingStock", "train_work", 4),
 	minecartTender("ItemRollingStock", "train_tender", 4),
 	minecartChest("ItemRollingStock", "train_freight_1", 4),
@@ -342,7 +344,6 @@ public enum ItemIDs {
 	minecartBoxcab23Ton("ItemRollingStock", "boxcab", 4),
 	minecartExperimentalHydrogenTrain("ItemRollingStock", "pch100h", 21),
 	minecartPCH100HCoach("ItemRollingStock", "pch100h_coach", 15),
-	paintbrushThing("ItemPaintbrushThing", "paintbrush_thing", 9),
 	testControlCar("ItemRollingStock", "test_controlcar", 100000),
 	minecartLUengine("ItemRollingStock", "luengine", 4),
 	minecartLUpassenger("ItemRollingStock", "lupassenger", 4);

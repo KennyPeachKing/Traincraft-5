@@ -111,6 +111,7 @@ item.tc:chunkLoaderActivator.name=Chunk Loader Activator
 item.tc:emptyCanister.name=Empty Canister
 item.tc:recipeBook.name=Traincraft guide
 item.tc:paintbrushThing.name=Paintbrush Thing
+item.null.name=Paintbrush Thing
 item.tc:adminBook.name=Traincraft Admin Book
 item.tc:wirelessTransmitter.name= MTC Wireless Transmitter
 item.tc:atoCard.name= ATO Card
@@ -379,6 +380,9 @@ item.tc:minecartBoxcab23Ton.name=GE 23 Ton Boxcab
 item.tc:minecartBombCart.name=Payload Cart
 item.tc:minecartExperimentalHydrogenTrain.name=PCH-100H
 item.tc:minecartPCH100HCoach.name=PCH-100H Coach
+item.tc:minecartLUpassenger.name=LU 1996 Passenger
+item.tc:minecartLUengine.name=LU 1996 Engine
+
 <!-- ## Achievements ## -->
 achievement.tc:engineer=Engineers clothes
 achievement.tc:engineer.desc=A true trainman!
@@ -454,6 +458,8 @@ achievement.tc:flatCart=Flat car
 achievement.tc:flatCart.desc=Flat like a pancake!
 achievement.tc:caboose=Caboose
 achievement.tc:caboose.desc=The last one!
+achievement.tc:mtg=Mind The Gap
+achievement.tc:mtg.desc=Stand behind the yellow line!
 
 <!-- ## GUI ## -->
 builder.follow.name=Follow tracks
@@ -691,6 +697,8 @@ entity.tc.Boxcab23Ton.name=GE 23 Ton Boxcab
 entity.tc.BombCart.name=Payload Cart
 entity.tc.ExperimentalHydrogenTrain.name=PCH-100H
 entity.tc.PCH100HCoach.name=PCH-100H Coach
+entity.tc.LUengine.name=LU 1996 Engine
+entity.tc.LUpassenger.name=LU 1996 Passenger
 description.villager.profession.tc.station_chief=Station Chief
 tile.tc:FortyFootContainer.name= Forty Foot Container
 key.categories.traincraft=Traincraft

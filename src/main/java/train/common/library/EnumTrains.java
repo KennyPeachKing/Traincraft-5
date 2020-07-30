@@ -15,7 +15,7 @@ public enum EnumTrains {
 	/**
 	 * Passengers
 	 */
-	passengerCartBlue("Passenger Blue", EntityPassengerBlue.class, ItemIDs.minecartPassengerBlue.item, "passenger", 0, 0, 1, 0, 0, 0, 0, 0, 0, TraincraftUtil.getBytesFromColors(new String[]{"Blue", "Red", "Green", "White", "Black", "Cyan", "Orange", "Grey", "LightGrey"}), 18, 0),
+	passengerCartBlue("Passenger Blue", EntityPassengerBlue.class, ItemIDs.minecartPassengerBlue.item, "passenger", 0, 0, 1, 0, 0, 0, 0, 0, 0, TraincraftUtil.getBytesFromColors(new String[]{"Blue", "Red", "Green", "White", "Black", "Cyan", "Orange", "Grey", "LightGrey", "Lime"}), 18, 0),
 	passengerCartBlackSmall("Passenger Small Black", EntityPassenger2.class, ItemIDs.minecartPassenger2.item, "passenger", 0, 0, 0.5, 0, 0, 0, 0, 0, 0, null, 18, 0),
 	passengerLongGreen("Passenger Green Long", EntityPassenger5.class, ItemIDs.minecartPassenger5.item, "passenger", 0, 0, 1, 0, 0, 0, 0, 0, 0, TraincraftUtil.getBytesFromColors(new String[]{"Green", "Yellow"}), 18, 0),
 	passengerShortGreen("Passenger Short Green", EntityPassenger7.class, ItemIDs.minecartPassenger7.item, "passenger", 0, 0, 1, 0, 0, 0, 0, 0, 0, null, 18, 0),
@@ -217,8 +217,8 @@ public enum EnumTrains {
 	locoElectricTramNY("Loco Electric Tram NY", EntityLocoElectricTramNY.class,  ItemIDs.minecartNYTram.item,
 			"electric", 1327, 89, 0, 10, 0, 170, 0.7, 0.965, 0, null, 18, -3),
 	locoElectricBR185("Loco Electric BR 185", EntityLocoElectricBR185.class, ItemIDs.minecartLocoBR185.item,
-			"electric", 2428, 160, 0, 6, 0, 170, 0.7, 0.965, 0, TraincraftUtil.getBytesFromColors(new String[]{"Red", "Blue", "Magenta", "Cyan", "Grey", "LightBlue", "LightGrey", "Orange", "Pink", "Purple", "White", "Yellow", "Black"}), 18, -5),
-	locoDieselE10lDB("Loco Electric E10 DB",EntityLocoElectricE10_DB.class, ItemIDs.minecartE10_DB.item,"electric",2473,150,0,8,0,170,0.66,0.96,8000,TraincraftUtil.getBytesFromColors(new String[] {"Blue","Red", "Grey", "Brown", "Green"}),15,-3.8),
+			"electric", 2428, 160, 0, 6, 0, 170, 0.7, 0.965, 0, TraincraftUtil.getBytesFromColors(new String[]{"Red", "Blue", "Magenta", "Cyan", "Grey", "LightBlue", "LightGrey", "Orange", "Pink", "Purple", "White", "Yellow", "Black", "Brown"}), 18, -5),
+	locoDieselE10lDB("Loco Electric E10 DB",EntityLocoElectricE10_DB.class, ItemIDs.minecartE10_DB.item,"electric",2473,150,0,8,0,170,0.66,0.96,8000,TraincraftUtil.getBytesFromColors(new String[] {"Blue","Red", "Grey", "Brown", "Green","LightGrey", "Pink", "Purple"}),15,-3.8),
 	locoDieselE103("Loco Electric E103",EntityLocoElectricE103.class, ItemIDs.minecartE103.item,"electric",2806,200,0,8,0,170,0.66,0.96,8000,TraincraftUtil.getBytesFromColors(new String[] {"Red","Blue"}),15,-3.6),
 	locoElectricClass85("Loco Electric Class 85", EntityLocoElectricClass85.class,
 			ItemIDs.minecartLocoClass85.item, "electric", 1997, 160, 0, 10, 0, 170, 0.7, 0.965, 0, null, 18, -5),
@@ -273,7 +273,7 @@ public enum EnumTrains {
 	locoSteamSnowPlow("Loco Steam Snow Plow", EntityLocoSteamSnowPlow.class, ItemIDs.minecartLocoSnowPlow.item, "steam, snow plow", 200, 20, 0, 10, 120, 170, 0.7, 0.965, 6850, null, 18, -4.75),
 
 	//JCIR-TC
-	locoAlcoS2("Alco S2",  com.jcirmodelsquad.tcjcir.locomotives.DieselAlcoS2.class, ItemIDs.minecartAlcoS2.item, "diesel", 1000, 96, 0, 45, 0, 170, 0.7, 0.965, 8000,TraincraftUtil.getBytesFromColors(new String[] {"Black", "Grey", "Green", "Orange", "Pink", "White", "Blue", "LightGrey", "Magenta", "Mayeeta"}), 18, -2, "Created by Bidahochi"),
+	locoAlcoS2("Alco S2",  com.jcirmodelsquad.tcjcir.locomotives.DieselAlcoS2.class, ItemIDs.minecartAlcoS2.item, "diesel", 1000, 96, 0, 45, 0, 170, 0.7, 0.965, 8000,TraincraftUtil.getBytesFromColors(new String[] {"Black", "Grey", "Green", "Orange", "Pink", "White", "Blue", "LightGrey", "Magenta", "Mayeeta", "Red"}), 18, -2, "Created by Bidahochi"),
 	driverlessMetro("PCH-120 Commute", com.jcirmodelsquad.tcjcir.locomotives.DriverlessMetro.class, ItemIDs.minecartDriverlessMetro.item, "electric",1400, 120, 0, 5, 0, 160, 0.8, 0.985, 0, TraincraftUtil.getBytesFromColors(new String[] {"White", "Blue", "Red"}), 18, -2.7, "Model by Bidahochi, train by PeachMaster"),
 	driverlessMetroCar("PCH-120 Commute Car", com.jcirmodelsquad.tcjcir.rollingstock.PCH120Car.class, ItemIDs.minecartDriverlessMetroCar.item, "passenger",0, 0, 2, 0, 0, 0, 0, 0, 0,TraincraftUtil.getBytesFromColors(new String[] {"White", "Blue", "Red"}), 0, 0,"Model by Bidahochi"),
 	geometryCar("NXTrack Geometry Car", com.jcirmodelsquad.tcjcir.rollingstock.ExperimentalGeometryCar.class, ItemIDs.minecartGeometryCar.item, "geometry car", 0, 0, 2, 0, 0, 0, 0, 0, 0, TraincraftUtil.getBytesFromColors(new String[] {"Grey", "LightGrey"}), 18, 0, "Model by Bidahochi, train by PeachMaster.\n It checks the railroad for things not up to standard."),
@@ -283,8 +283,8 @@ public enum EnumTrains {
 	HighrailTruck("Highrail Truck", com.jcirmodelsquad.tcjcir.locomotives.DieselHighrailTruck.class, ItemIDs.minecartHighrailTruck.item, "diesel", 90, 80, 0, 10, 0, 140, 0.7, 0.8, 1000,TraincraftUtil.getBytesFromColors(new String[] {"Yellow", "White", "LightGrey"}),18, 2.7, "Model by MessibOOmer"),
 	freightRibbedHopper("Ribbed Hopper", com.jcirmodelsquad.tcjcir.rollingstock.RibbedHopper.class, ItemIDs.minecartRibbedHopper.item, "freight", 6, TraincraftUtil.getBytesFromColors(new String[] {"Grey", "Cyan", "LightGrey", "Red", "Brown"}), 0, 54, "Model by Bidahochi"),
 	Thanos("Thanos", com.jcirmodelsquad.tcjcir.locomotives.Thanos.class, ItemIDs.minecartThanos.item, "electric", 1000001, 6210000, 0, 69, 0, 1, 6, 3, 0, null, 18, -1, "You don't want to mess with the Universe's Best"),
-	U23B("U23B", com.jcirmodelsquad.tcjcir.locomotives.DieselU23B.class, ItemIDs.minecartU23B.item, "diesel", 2250, 70, 0, 55, 0, 180, 0.7, 0.91, 18000, TraincraftUtil.getBytesFromColors(new String[] {"Grey", "Orange", "LightGrey", "Pink", "Lime", "Blue", "LightBlue", "Black", "Green","Purple"}), 10, -3.7, "Made by Bida"),
-	SW1500("SW1500", com.jcirmodelsquad.tcjcir.locomotives.DieselSW1500.class, ItemIDs.minecartSW1500.item, "diesel", 1500, 105, 0, 50, 0, 180, 0.85, 0.97, 18000, TraincraftUtil.getBytesFromColors(new String[] {"LightBlue", "Blue", "Orange", "Pink"}), 10, -2.3, "Expertly Crafted by Bida"),
+	U23B("U23B", com.jcirmodelsquad.tcjcir.locomotives.DieselU23B.class, ItemIDs.minecartU23B.item, "diesel", 2250, 70, 0, 55, 0, 180, 0.7, 0.91, 18000, TraincraftUtil.getBytesFromColors(new String[] {"Grey", "Orange", "LightGrey", "Pink", "Lime", "Blue", "LightBlue", "Black", "Green","Purple", "Brown"}), 10, -3.7, "Made by Bida"),
+	SW1500("SW1500", com.jcirmodelsquad.tcjcir.locomotives.DieselSW1500.class, ItemIDs.minecartSW1500.item, "diesel", 1500, 105, 0, 50, 0, 180, 0.85, 0.97, 18000, TraincraftUtil.getBytesFromColors(new String[] {"LightBlue", "Blue", "Orange", "Pink", "White"}), 10, -2.3, "Expertly Crafted by Bida"),
 	SD45dash2("SD45-2", com.jcirmodelsquad.tcjcir.locomotives.DieselSD45dash2.class, ItemIDs.minecartSD45dash2.item, "diesel", 3600, 132, 0, 65, 0, 190, 0.75, 0.89, 20000, TraincraftUtil.getBytesFromColors(new String[] {"Green", "White", "Black", "Orange", "Blue", "Pink", "Magenta", "LightBlue"}), 10, -4.6, "Model by Bida"),
 	SD40dash2("SD40-2", com.jcirmodelsquad.tcjcir.locomotives.DieselSD40dash2.class, ItemIDs.minecartSD40dash2.item, "diesel", 3000, 105, 0, 60, 0, 190, 0.75, 0.89, 20000, TraincraftUtil.getBytesFromColors(new String[] {"Orange", "Green", "Pink", "Magenta", "White", "Yellow", "Black", "Blue", "LightGrey"}), 10, -4.6, "Model by the great and powerful Bida"),
 	bawx40highcube("40highcube", com.jcirmodelsquad.tcjcir.rollingstock.bawx40highcube.class, ItemIDs.minecart40highcube.item, "freight", 4, TraincraftUtil.getBytesFromColors(new String[] {"Brown", "Green", "Cyan", "Orange", "Grey", "Red"}), 0, 40, "Model by Prof Binky"),
