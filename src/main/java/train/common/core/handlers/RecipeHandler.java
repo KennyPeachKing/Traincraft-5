@@ -85,7 +85,6 @@ public class RecipeHandler {
 
 
 
-
 		/* Clothes */
 		GameRegistry.addRecipe(new ItemStack(ItemIDs.overalls.item, 1),  " # ", "X$X", "X$X", Character.valueOf('X'), new ItemStack(Items.dye, 1, 4), Character.valueOf('$'), Items.leather_leggings, Character.valueOf('#'), new ItemStack(Items.dye, 1, 1) );
 		GameRegistry.addRecipe(new ItemStack(ItemIDs.jacket.item, 1),  "X X", "X$X", "X#X", Character.valueOf('X'), new ItemStack(Items.dye, 1, 14), Character.valueOf('$'), Items.leather_chestplate, Character.valueOf('#'), Items.string );
@@ -173,8 +172,10 @@ public class RecipeHandler {
 		TrainCraftingManager.instance.addRecipe(new ItemStack(ItemIDs.pants_ticketMan_paintable.item, 1),  "XXX", "XLX", "X$X", Character.valueOf('L'), Items.leather_leggings,Character.valueOf('$'), new ItemStack(Items.dye, 1, 8), Character.valueOf('X'), Items.string);
 		TrainCraftingManager.instance.addRecipe(new ItemStack(ItemIDs.jacket_ticketMan_paintable.item, 1),  "X X", "XPX", "X#X", Character.valueOf('P'), Items.leather_chestplate, Character.valueOf('#'), new ItemStack(Items.dye, 1, 4), Character.valueOf('X'), Items.string);
 		TrainCraftingManager.instance.addRecipe(new ItemStack(ItemIDs.hat_ticketMan_paintable.item, 1), "#$#", "# #", Character.valueOf('$'), new ItemStack(Items.dye, 1, 0), Character.valueOf('#'), Items.string );
-		
-		
+		TrainCraftingManager.instance.addRecipe(new ItemStack(ItemIDs.minecartFRED.item, 1)," T "," CY"," S ", Character.valueOf('T'),new ItemStack(Blocks.redstone_torch, 1), Character.valueOf('C'), new ItemStack(ItemIDs.electronicCircuit.item, 1), Character.valueOf('Y'), new ItemStack(Items.dye, 1, 11), Character.valueOf('S'),new ItemStack(ItemIDs.steel.item, 1) );
+
+
+
 
 		if (plastics != null && plastics.size() >= 0) {
 			for (ItemStack plastic : plastics) {
