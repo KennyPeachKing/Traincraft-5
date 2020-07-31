@@ -17,7 +17,7 @@ public enum EnumSounds {
 	locoSteamC41080(EntityLocoSteamC41_080.class, "drgw_5chime", 0.6F, "steam_run", 0.4F, 20, "steam_run", 0.4F, 20, true),
 	locoSteamfowler(EntityLocoSteamFowler.class, "steam_horn", 0.6F, "steam_run", 0.4F, 20, "steam_run", 0.4F, 20, true),
 	locoSteamberk765(EntityLocoSteamBerk765.class, "765_whistle", 0.6F, "steam_run", 0.4F, 20, "steam_run", 0.4F, 20, true),
-	locoSteamberk1225(EntityLocoSteamBerk1225.class, "1225_whistle", 0.6F, "steam_run", 0.4F, 20, "steam_run", 0.4F, 20, true),
+	locoSteamberk1225(EntityLocoSteamBerk1225.class, "pe_whistle", 0.6F, "steam_run", 0.4F, 20, "steam_run", 0.4F, 20, true),
 	locoSteamAlcoSC4(EntityLocoSteamAlcoSC4.class, "ebt_5chime", 0.6F, "steam_run", 0.4F, 20, "steam_run", 0.4F, 20, true),
 	locoSteamS100UK(EntityLocoSteamUSATCUK.class, "german_steam_horn", 0.6F, "steam_run", 0.4F, 20, "steam_run", 0.4F, 20, true),
 	locoSteamS100US(EntityLocoSteamUSATCUS.class, "american_steam_horn", 0.6F, "steam_run", 0.4F, 20, "steam_run", 0.4F, 20, true),

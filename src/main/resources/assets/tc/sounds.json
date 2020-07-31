@@ -68,7 +68,7 @@
 "daylight_whistle": {"category": "master", "sounds": [{"name": "daylight_whistle", "stream":  true}]},
   "leslie_rs3k": {"category": "master", "sounds": [{"name": "leslie_rs3k", "stream":  true}]},
   "truck_horn": {"category": "master", "sounds": [{"name": "truck_horn", "stream":  true}]},
-  "1225_whistle": {"category": "master", "sounds": [{"name": "1225_whistle", "stream":  true}]},
+  "pe_whistle": {"category": "master", "sounds": [{"name": "pe_whistle", "stream":  true}]},
   "southern_3chime": {"category": "master", "sounds": [{"name": "southern_3chime", "stream":  true}]},
   "drgw_5chime": {"category": "master", "sounds": [{"name": "drgw_5chime", "stream":  true}]},
   "drgw_3chime": {"category": "master", "sounds": [{"name": "drgw_3chime", "stream":  true}]},

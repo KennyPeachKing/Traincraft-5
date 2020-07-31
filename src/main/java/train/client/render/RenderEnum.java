@@ -580,7 +580,7 @@ public enum RenderEnum {
 			add(new double[] { 3.6D, -0.4D, 0.8D });//steam
 		}
 	}, 2, true),
-	LocoSteamBerk1225(EntityLocoSteamBerk1225.class, new Model1225(), "Berk1225_Locomotive", false, new float[] {-2.0F, -0.65F, 0.0625F },/*position*/  new float[] { 0F, 0F, 180F }, new float[]{1f,1f,1f},/*scale*/ "largesmoke", 20, new ArrayList<double[]>() {
+	LocoSteamBerk1225(EntityLocoSteamBerk1225.class, new Model1225(), "Berk1225_Locomotive_", true, new float[] {-2.0F, -0.65F, 0.0625F },/*position*/  new float[] { 0F, 0F, 180F }, new float[]{1f,1f,1f},/*scale*/ "largesmoke", 20, new ArrayList<double[]>() {
 		{
 			add(new double[] { 4.65D, 1.7D, 0.0D });//smoke
 		}
