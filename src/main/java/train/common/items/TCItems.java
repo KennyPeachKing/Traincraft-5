@@ -97,8 +97,8 @@ public class TCItems {
 			ItemIDs.atoCard.item = new ItemATOCard();
 		}
 		ItemIDs.paintbrushThing.item = new ItemPaintbrushThing();
-	ItemIDs.remoteController.item = new ItemRemoteController();
-		ItemIDs.remoteControllerModule.item = new ItemRemoteControllerModule();
+	//ItemIDs.remoteController.item = new ItemRemoteController();
+		//ItemIDs.remoteControllerModule.item = new ItemRemoteControllerModule();
 	}
 	
 	private static void registerItems() {

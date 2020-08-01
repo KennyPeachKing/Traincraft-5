@@ -89,4 +89,6 @@ public class BlockLantern extends Block {
 	public IIcon getIcon(int i, int j) {
 		return texture;
 	}
+
+
 }

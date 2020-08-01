@@ -123,8 +123,8 @@ public class ClientProxy extends CommonProxy {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileBridgePillar.class, new RenderBridgePillar());
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockIDs.bridgePillar.block), new ItemRenderBridgePillar());
 
-		ClientRegistry.bindTileEntitySpecialRenderer(TileFortyFootContainer.class, new FortyFootContainerRender());
-		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockIDs.FortyFootContainer.block), new ItemRenderFortyFootContainer());
+		//ClientRegistry.bindTileEntitySpecialRenderer(TileFortyFootContainer.class, new FortyFootContainerRender());
+	//	MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockIDs.FortyFootContainer.block), new ItemRenderFortyFootContainer());
 	}
 
 	@Override
@@ -132,7 +132,6 @@ public class ClientProxy extends CommonProxy {
 		TileEntity te = world.getTileEntity(x, y, z);
 		EntityPlayer riddenByEntity = null;
 		Entity entity = player.ridingEntity;
-		System.out.println("Breakpoint!");
 		if (player.ridingEntity != null) {
 			riddenByEntity = (EntityPlayer) entity.riddenByEntity;
 		}
@@ -162,7 +161,6 @@ public class ClientProxy extends CommonProxy {
 		case (GuiIDs.LOCO):
 			return riddenByEntity != null ? new GuiLoco2(riddenByEntity.inventory, entity) : null;
 		case (GuiIDs.CONTROL_CAR):
-			System.out.println("Owo");
 			if (riddenByEntity != null && entity instanceof ControlCar && ((ControlCar)entity).connectedLocomotive != null) {
 				//(ControlCar)entity).connectedLocomotive.getInventory()
 				return new GuiLoco2(riddenByEntity.inventory, ((ControlCar)entity).connectedLocomotive);

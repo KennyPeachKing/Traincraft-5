@@ -40,3 +40,5 @@ runserver
 buildtotest.bat
 
 src/main/java/train/common/api/TrainsOnClick.java
+
+src/main/resources/assets/tc/models.zip

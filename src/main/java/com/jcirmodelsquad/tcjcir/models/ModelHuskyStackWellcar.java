@@ -1,3 +1,4 @@
+/*
 //This File was created with the Minecraft-SMP Modelling Toolbox 2.3.0.0
 // Copyright (C) 2020 Minecraft-SMP.de
 // This file is for Flan's Flying Mod Version 4.0.x+
@@ -9,7 +10,6 @@
 
 package com.jcirmodelsquad.tcjcir.models;
 
-import com.jcirmodelsquad.tcjcir.rollingstock.HuskyStackWellcar;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
@@ -263,4 +263,4 @@ public class ModelHuskyStackWellcar extends ModelBase
     }
 
     public ModelRendererTurbo huskystackwellcarModel[];
-}
+}*/
