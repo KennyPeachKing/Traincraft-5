@@ -109,7 +109,7 @@ public enum EnumSounds {
 	testControlCar(com.jcirmodelsquad.tcjcir.rollingstock.TestControlCar.class, "leslie_rs3k", 1F, "mg_run", 0.6F, 8, "mg_idle", 0.4F, 50, false),
 	PCH100H(com.jcirmodelsquad.tcjcir.locomotives.PCH100H.class, "leslie_rs3k", 1F, "pch100h_notch8", 0.6F, 8, "pch100h_idle", 0.4F, 50, false),
 	LU96Stock(com.jcirmodelsquad.tcjcir.locomotives.ElectricLUengine.class, "lu_whistle", 1F, "mg_run", 0.6F, 8, "mg_idle", 0.4F, 50, false),
-	GP13(com.jcirmodelsquad.tcjcir.locomotives.DieselGP13.class, "nathan_k5La_2", 0.8F, "chme3_run", 0.65F, 40, "chme3_idle", 0.65F, 40, false),
+	GP13(com.jcirmodelsquad.tcjcir.locomotives.DieselGP13.class, "nathan_k5La_2", 0.8F, "chme3_run", 0.65F, 35, "chme3_idle", 0.65F, 40, false),
 	;
 	private Class entityClass;
 	private String horn;
