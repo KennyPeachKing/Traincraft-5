@@ -747,6 +747,12 @@ public enum RenderEnum {
 	pch100coach(com.jcirmodelsquad.tcjcir.rollingstock.PCH100HCoach.class, new ModelPCH100HCoach(), "pch100h_coach", false, new float[]{-2F, 0.03F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
 	LUengine(com.jcirmodelsquad.tcjcir.locomotives.ElectricLUengine.class, new com.jcirmodelsquad.tcjcir.models.ModelLUengine(), "lu_engine", false,new float[] {-1.0F, 0.16F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
 	LUpassenger(com.jcirmodelsquad.tcjcir.rollingstock.LUpassenger.class, new com.jcirmodelsquad.tcjcir.models.ModelLUpassenger(), "lu_passenger",false,new float[] {0F, 0.16F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
+	GP13(com.jcirmodelsquad.tcjcir.locomotives.DieselGP13.class, new com.jcirmodelsquad.tcjcir.models.ModelGP13(), "gp13_", true, new float[] { -0.8F, -0.47F, 0.0F }, new float[] { 0F, 180F, 0F }, null, "smoke", 4, new ArrayList<double[]>() {
+		{
+			add(new double[] { -0.2D, 1.3D, 0.0D });
+			add(new double[] { 0.45D, 1.3D, 0.0D });
+		}
+	}, "", null, 0, false),
 	;
 
 	private Class<? extends AbstractTrains> entityClass;
