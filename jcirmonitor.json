@@ -14,5 +14,9 @@
   "YR" : {
     "color": "#FFFFFF",
     "name" : "Yeet Railroad"
+  },
+  "AK" : {
+    "color": "#169C9D",
+    "name" : "Aipkit Factory"
   }
 }
