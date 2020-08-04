@@ -15,8 +15,21 @@
     "color": "#FFFFFF",
     "name" : "Yeet Railroad"
   },
-  "AK" : {
+  "BNSF" : {
+    "color": "#E06100",
+    "name" : "BNSF"
+  },
+  "FWWR" : {
     "color": "#169C9D",
-    "name" : "Aipkit Factory"
+    "name" : "Fort Worth Western Railroad"
+  },
+  "TXCN" : {
+    "color": "#BF0D3E",
+    "name" : "Texas Central"
+  },
+  "JCT" : {
+    "color": "#004A7F",
+    "name" : "JCTransit"
   }
 }
+
