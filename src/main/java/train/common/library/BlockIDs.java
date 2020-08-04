@@ -42,6 +42,7 @@ public enum BlockIDs {
 	mtcReceiverMTC(false, null),
 	mtcReceiverDestination(false, null),
 	pdmInstructionBlock(false, null),
+	actualSignalBlock(false, null),
 	betterDetector(false, null),
 //	FortyFootContainer(true, ItemFortyFootContainer.class),
 	//Liquids

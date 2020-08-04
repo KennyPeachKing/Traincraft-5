@@ -8,6 +8,7 @@
 package train.common.blocks;
 
 import com.jcirmodelsquad.tcjcir.containers.BlockFortyFootContainer;
+import com.jcirmodelsquad.tcjcir.extras.blocks.BlockActualSignalBlock;
 import com.jcirmodelsquad.tcjcir.extras.blocks.BlockBetterDetector;
 import com.jcirmodelsquad.tcjcir.extras.blocks.TileBetterDetector;
 import cpw.mods.fml.common.Loader;
@@ -63,6 +64,7 @@ public class TCBlocks {
 			BlockIDs.pdmInstructionBlock.block = new BlockPDMInstructionRadio(Material.rock).setHardness(3.5F).setStepSound(Block.soundTypeMetal).setBlockTextureName("tc:pdmradio").setBlockName("pdmradio").setCreativeTab(Traincraft.tcTab);
 			BlockIDs.betterDetector.block = new BlockBetterDetector(Material.rock).setHardness(3.5F).setStepSound(Block.soundTypeMetal).setBlockTextureName("tc:better_detector").setBlockName("betterdetector").setCreativeTab(Traincraft.tcTab);;
 		}
+		BlockIDs.actualSignalBlock.block = new BlockActualSignalBlock(Material.rock).setHardness(3.5F).setStepSound(Block.soundTypeMetal).setBlockTextureName("tc:actual_signal_block").setBlockName("actualsignalblock").setCreativeTab(Traincraft.tcTab);;
 		//BlockIDs.FortyFootContainer.block = new BlockFortyFootContainer(Material.rock).setHardness(4.5F).setCreativeTab(Traincraft.tcTab).setStepSound(Block.soundTypeMetal);
 		//BlockIDs.book.block = new BlockBook(BlockIDs.book.blockID);
 	}
