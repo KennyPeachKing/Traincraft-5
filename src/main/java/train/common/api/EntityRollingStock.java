@@ -1050,6 +1050,27 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 			 }
 
 			 }
+			 else if (d9 < 0 && d10 > 0) {
+			 d9 = 0;
+			 d10 += 2;
+			 }
+			 else if (d10 < 0 && d9 < 0) {
+			 d10 -= 2;
+			 d9 = 0;
+			 }
+			 else if (d9 > 0 && d10 > 0) {
+			 d10 += 2;
+			 d9 = 0;
+			 }
+			 if (FMLCommonHandler.instance().getMinecraftServerInstance() != null &&
+			 this.riddenByEntity != null && this.riddenByEntity instanceof EntityPlayer) {
+			 FMLCommonHandler.instance().getMinecraftServerInstance().getConfigurationManager().sendChatMsg(new
+						ChatComponentText(((EntityPlayer) this.riddenByEntity).getDisplayName() + "derailed"
+								+ this.trainOwner + "'s locomotive"));
+			 }
+			 }
+			
+			 }
 			 posX = d18 + d9 * d17;
 			 posZ = d19 + d10 * d17;
 			setPosition(posX, posY + yOffset + 0.35, posZ);
@@ -1117,7 +1138,7 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 			limitSpeedOnTCRail();
 			if(worldObj.getTileEntity(i,j,k)==null || !(worldObj.getTileEntity(i,j,k) instanceof TileTCRail))return;
 			TileTCRail tile = (TileTCRail) worldObj.getTileEntity(i, j, k);
-			//j+=0.2;
+			j+=0.2;
 
 			//System.out.println(tile.getType());
 			if (ItemTCRail.isTCTurnTrack(tile)) {
@@ -1152,7 +1173,7 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 				moveOnTCStraight(i, j, k, tile.xCoord, tile.zCoord, tile.getBlockMetadata());
 			}
 			if (ItemTCRail.isTCSlopeTrack(tile)) {
-				moveOnTCSlope(j, tile.xCoord, tile.zCoord, tile.slopeAngle, tile.getBlockMetadata());
+				moveOnTCSlope( j, tile.xCoord, tile.zCoord, tile.slopeAngle, tile.slopeHeight, tile.getBlockMetadata());
 			}
 			if (ItemTCRail.isTCTwoWaysCrossingTrack(tile)) {
 				moveOnTCTwoWaysCrossing(i, j, k, tile.xCoord, tile.yCoord, tile.zCoord, tile.getBlockMetadata());
@@ -1175,7 +1196,7 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 					moveOnTCStraight(i, j, k, tile.xCoord, tile.zCoord, tile.getBlockMetadata());
 				}
 				if (ItemTCRail.isTCSlopeTrack(tile)) {
-					moveOnTCSlope(j, tile.xCoord, tile.zCoord, tile.slopeAngle, tile.getBlockMetadata());
+					moveOnTCSlope(j, tile.xCoord, tile.zCoord, tile.slopeAngle, tile.slopeHeight, tile.getBlockMetadata());
 				}
 			}
 		}
@@ -1241,7 +1262,7 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 		if (meta == 2 || meta == 0) {
 			norm = Math.sqrt(motionX * motionX + motionZ * motionZ);
 
-			setPosition(cx + 0.5, posY + yOffset+this.ySize+0.5, posZ);
+			setPosition(cx + 0.5, posY + yOffset, posZ);
 			//setPosition(posX, posY + yOffset, posZ);
 
 			motionX = 0;
@@ -1254,16 +1275,15 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 					return;
 				}
 			}
-			setPosition((this.boundingBox.minX + this.boundingBox.maxX) *0.5,
-					this.boundingBox.minY + this.yOffset - this.ySize-0.5,
-					(this.boundingBox.minZ + this.boundingBox.maxZ)*0.5
-			);
+			this.posX = (this.boundingBox.minX + this.boundingBox.maxX) / 2.0D;
+			this.posY = this.boundingBox.minY + (double)this.yOffset - (double)this.ySize;
+			this.posZ = (this.boundingBox.minZ + this.boundingBox.maxZ) / 2.0D;
 
 			//System.out.println("straight z "+Math.copySign(norm, motionZ));
 		}
 		if (meta == 1 || meta == 3) {
 
-			setPosition(posX, posY + yOffset+this.ySize+0.5, cz + 0.5);
+			setPosition(posX, posY + yOffset, cz + 0.5);
 			//setPosition(posX, posY + yOffset, posZ);
 
 			motionX = Math.copySign(Math.sqrt(motionX * motionX + motionZ * motionZ), motionX);
@@ -1276,23 +1296,34 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 					return;
 				}
 			}
-			setPosition((this.boundingBox.minX + this.boundingBox.maxX) *0.5,
-					this.boundingBox.minY + this.yOffset - this.ySize-0.5,
-					(this.boundingBox.minZ + this.boundingBox.maxZ)*0.5
-			);
+			this.posX = (this.boundingBox.minX + this.boundingBox.maxX) / 2.0D;
+			this.posY = this.boundingBox.minY + (double)this.yOffset - (double)this.ySize;
+			this.posZ = (this.boundingBox.minZ + this.boundingBox.maxZ) / 2.0D;
 
 			//System.out.println("straight x "+Math.copySign(norm, motionX));
 		}
 	}
 
-	private void moveOnTCSlope(int j, double cx, double cz, double slopeAngle, int meta) {
-		posY = j;// + 0.5;
+	private void moveOnTCSlope(int j, double cx, double cz, double slopeAngle, double slopeHeight, int meta) {
+		//posY = j + 2.5;
 		if (meta == 2 || meta == 0) {
 
 			if (meta == 2) {
 				cz += 1;
-				if (!(this instanceof Locomotive) && !(this instanceof EntityTracksBuilder)) {
-					motionZ += rotationPitch<90?0.01:-0.01;
+			}
+
+			double norm = Math.sqrt(this.motionX * this.motionX + this.motionZ * this.motionZ);
+			this.setPosition(cx + 0.5D,  Math.abs(j + (Math.tan(slopeAngle * Math.abs(cz - this.posZ))) + this.yOffset +0.3), this.posZ);
+			this.boundingBox.offset(0, 0 , Math.copySign(norm, this.motionZ));
+			this.posX = (this.boundingBox.minX + this.boundingBox.maxX) / 2.0D;
+			this.posY = this.boundingBox.minY + (double)this.yOffset - (double)this.ySize;
+			this.posZ = (this.boundingBox.minZ + this.boundingBox.maxZ) / 2.0D;
+
+			if (!(this instanceof Locomotive) && !(this instanceof EntityTracksBuilder)) {
+				if ((this.posY - this.prevPosY) < 0) {
+					norm *= 1.02;
+				} else if ((this.posY - this.prevPosY) > 0) {
+					norm *= 0.98;
 				}
 			} else if (!(this instanceof Locomotive) && !(this instanceof EntityTracksBuilder)) {
 				motionZ += rotationPitch>90?0.01:-0.01;
@@ -1311,7 +1342,12 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 				motionX += rotationPitch>90?0.01:-0.01;
 			}
 
-			this.setPosition(this.posX+motionX, (j + (Math.tan(slopeAngle * Math.abs(cx - this.posX))) + this.yOffset-this.ySize+0.1), cz + 0.5D);
+			double norm = Math.sqrt(this.motionX * this.motionX + this.motionZ * this.motionZ);
+			this.setPosition(this.posX, (j + (Math.tan(slopeAngle * Math.abs(cx - this.posX))) + this.yOffset+0.3), cz + 0.5D);
+			this.boundingBox.offset(Math.copySign(norm, this.motionX), 0 ,0);
+			this.posX = (this.boundingBox.minX + this.boundingBox.maxX) / 2.0D;
+			this.posY = this.boundingBox.minY + (double)this.yOffset - (double)this.ySize;
+			this.posZ = (this.boundingBox.minZ + this.boundingBox.maxZ) / 2.0D;
 
 			this.motionZ = 0.0D;
 		}
@@ -1321,7 +1357,6 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 
 	protected void moveOnTC90TurnRail(int i, int j, int k, double r, double cx, double cz) {
 		//System.out.println("curve");
-		posY = j;
 		double cpx = posX - cx;
 		double cpz = posZ - cz;
 		double cp_norm = Math.sqrt(cpx * cpx + cpz * cpz);
@@ -1339,7 +1374,7 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 		vx2 = Math.copySign(vx2, (cx + ((px2_cx / norm) * r)) - posX);
 		vz2 = Math.copySign(vz2, (cz + ((pz2_cz / norm) * r)) - posZ);
 
-		setPosition(cx + ((cpx / cp_norm) * r), posY + yOffset-this.ySize, cz + ((cpz / cp_norm) * r));
+		setPosition(cx + ((cpx / cp_norm) * r), posY + yOffset, cz + ((cpz / cp_norm) * r));
 
 		moveEntity(vx2, 0.0D, vz2);
 
@@ -1349,7 +1384,7 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 	}
 
 	protected void moveOnTCTwoWaysCrossing(int i, int j, int k, double cx, double cy, double cz, int meta) {
-		posY = j+0.1;
+
 		if (!(this instanceof Locomotive)) {
 			int l = MathHelper.floor_double(serverRealRotation * 4.0F / 360.0F + 0.5D) & 3;
 			//System.out.println(l);
