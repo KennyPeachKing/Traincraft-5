@@ -1262,7 +1262,7 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 		if (meta == 2 || meta == 0) {
 			norm = Math.sqrt(motionX * motionX + motionZ * motionZ);
 
-			setPosition(cx + 0.5, posY + yOffset, posZ);
+			setPosition(cx + 0.5, posY + yOffset +0.5, posZ);
 			//setPosition(posX, posY + yOffset, posZ);
 
 			motionX = 0;
@@ -1275,15 +1275,15 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 					return;
 				}
 			}
-			this.posX = (this.boundingBox.minX + this.boundingBox.maxX) / 2.0D;
+			this.posX = (this.boundingBox.minX + this.boundingBox.maxX) *0.5d;
 			this.posY = this.boundingBox.minY + (double)this.yOffset - (double)this.ySize;
-			this.posZ = (this.boundingBox.minZ + this.boundingBox.maxZ) / 2.0D;
+			this.posZ = (this.boundingBox.minZ + this.boundingBox.maxZ) *0.5d;
 
 			//System.out.println("straight z "+Math.copySign(norm, motionZ));
 		}
 		if (meta == 1 || meta == 3) {
 
-			setPosition(posX, posY + yOffset, cz + 0.5);
+			setPosition(posX, posY + yOffset+0.5, cz + 0.5);
 			//setPosition(posX, posY + yOffset, posZ);
 
 			motionX = Math.copySign(Math.sqrt(motionX * motionX + motionZ * motionZ), motionX);
@@ -1357,6 +1357,7 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 
 	protected void moveOnTC90TurnRail(int i, int j, int k, double r, double cx, double cz) {
 		//System.out.println("curve");
+		//posY = j;
 		double cpx = posX - cx;
 		double cpz = posZ - cz;
 		double cp_norm = Math.sqrt(cpx * cpx + cpz * cpz);
