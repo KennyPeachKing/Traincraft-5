@@ -16,6 +16,8 @@ import org.lwjgl.opengl.GL11;
 import tmt.ModelConverter;
 import tmt.ModelRendererTurbo;
 import tmt.Tessellator;
+import train.common.api.AbstractTrains;
+import train.common.library.Info;
 
 public class ModelSW1 extends ModelConverter //Same as Filename
 {
@@ -855,36 +857,55 @@ public class ModelSW1 extends ModelConverter //Same as Filename
         bodyModel[199].setRotationPoint(13F, -26.5F, -2.5F);
     }
 
-    ModelTypeASmol theTrucks = new ModelTypeASmol();
+    ModelTypeASmol theTrucks1 = new ModelTypeASmol();
+    ModelBluntTruck theTrucks2 = new ModelBluntTruck();
 
     @Override
-    public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
-    {
-        for(int i = 0; i < 200; i++) {
+    public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5) {
+        for (int i = 0; i < 200; i++) {
             if (bodyModel[i].boxName != null && bodyModel[i].boxName.contains("lamp")) {
                 Minecraft.getMinecraft().entityRenderer.disableLightmap(1D);
                 bodyModel[i].render(f5);
                 Minecraft.getMinecraft().entityRenderer.enableLightmap(1D);
-            }else if (bodyModel[i].boxName != null && bodyModel[i].boxName.contains("cull")) {
+            } else if (bodyModel[i].boxName != null && bodyModel[i].boxName.contains("cull")) {
                 GL11.glDisable(GL11.GL_CULL_FACE);
                 bodyModel[i].render(f5);
                 GL11.glEnable(GL11.GL_CULL_FACE);
-            }else{
+            } else {
                 bodyModel[i].render(f5);
             }
 
         }
-        Tessellator.bindTexture(new ResourceLocation("tc:textures/trains/typeasmol_Black.png"));
-        GL11.glPushMatrix();
-        GL11.glTranslatef(-0.6F ,0.05F,0F);
-        //GL11.glScalef(0.9f,0.9f,0.8f);
-        theTrucks.render(entity,f,f1,f2,f3,f4,f5);
-        GL11.glPopMatrix();
+        if (entity instanceof AbstractTrains && ((AbstractTrains) entity).getColor() == 15) {
+            Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/blunttruck_Brown.png"));
+            GL11.glPushMatrix();
+            GL11.glTranslated(-0.6, 0.04, 0);
+            theTrucks2.render(entity, f, f1, f2, f3, f4, f5);
 
-        GL11.glPushMatrix();
-        GL11.glTranslated(1.35F,0.05F,0);
-        theTrucks.render(entity,f,f1,f2,f3,f4,f5);
-        GL11.glPopMatrix();
+            GL11.glRotatef(180, 0, 1, 0);
+            GL11.glTranslated(-1.83, 0.0, 0);
+            theTrucks2.render(entity, f, f1, f2, f3, f4, f5);
+            GL11.glPopMatrix();
+
+        } else if (entity instanceof AbstractTrains && ((AbstractTrains) entity).getColor() == 4) { //this is for the emd demo skin to have silver trucks eventually
+            Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/typeasmol_Black.png"));// replace with grey eventually
+            GL11.glPushMatrix();
+            GL11.glTranslated(-0.6F ,0.05F,0F);
+            theTrucks1.render(entity, f, f1, f2, f3, f4, f5);
+
+            GL11.glTranslated(1.95F,0.0F,0);
+            theTrucks1.render(entity, f, f1, f2, f3, f4, f5);
+            GL11.glPopMatrix();
+        } else {
+            Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/typeasmol_Black.png"));
+            GL11.glPushMatrix();
+            GL11.glTranslated(-0.6F ,0.05F,0F);
+            theTrucks1.render(entity, f, f1, f2, f3, f4, f5);
+
+            GL11.glTranslated(1.95F,0.0F,0);
+            theTrucks1.render(entity, f, f1, f2, f3, f4, f5);
+            GL11.glPopMatrix();
+        }
     }
 
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5)
