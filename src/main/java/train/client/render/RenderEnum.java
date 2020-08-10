@@ -743,8 +743,8 @@ public enum RenderEnum {
 		}
 	}, "", null, 0, false),
 	testControlCar(TestControlCar.class, new ModelPassengerHighSpeedCarZeroED(), "passengerHighSpeedCarZeroED_", true, new float[] { 0.0F, -0.47F, 0.0F }, null, null, "", 0, null, "", null, 0, false),
-	pch100(com.jcirmodelsquad.tcjcir.locomotives.PCH100H.class, new ModelPCH100H(), "pch100h", false, new float[]{-3.2F, 0.03F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
-	pch100coach(com.jcirmodelsquad.tcjcir.rollingstock.PCH100HCoach.class, new ModelPCH100HCoach(), "pch100h_coach", false, new float[]{-2F, 0.03F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
+	pch100(com.jcirmodelsquad.tcjcir.locomotives.PCH100H.class, new ModelPCH100H(), "pch100h_", true, new float[]{-3.2F, 0.03F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
+	pch100coach(com.jcirmodelsquad.tcjcir.rollingstock.PCH100HCoach.class, new ModelPCH100HCoach(), "pch100hcoach_", true, new float[]{-2F, 0.03F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
 	LUengine(com.jcirmodelsquad.tcjcir.locomotives.ElectricLUengine.class, new com.jcirmodelsquad.tcjcir.models.ModelLUengine(), "lu_engine", false,new float[] {-1.0F, 0.16F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
 	LUpassenger(com.jcirmodelsquad.tcjcir.rollingstock.LUpassenger.class, new com.jcirmodelsquad.tcjcir.models.ModelLUpassenger(), "lu_passenger",false,new float[] {0F, 0.16F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
 	GP13(com.jcirmodelsquad.tcjcir.locomotives.DieselGP13.class, new com.jcirmodelsquad.tcjcir.models.ModelGP13(), "gp13_", true, new float[] { -0.8F, -0.47F, 0.0F }, new float[] { 0F, 180F, 0F }, null, "smoke", 4, new ArrayList<double[]>() {
