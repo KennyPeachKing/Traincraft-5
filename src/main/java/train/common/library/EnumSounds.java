@@ -1,5 +1,6 @@
 package train.common.library;
 
+import com.jcirmodelsquad.tcjcir.vehicles.locomotives.PCH120Commute;
 import train.common.entity.rollingStock.*;
 
 public enum EnumSounds {
@@ -87,7 +88,7 @@ public enum EnumSounds {
 	locoLSSP7(EntityLocoSteamLSSP7.class, "american_steam_horn", 0.8F, "steam_run", 0.2F, 20, "steam_run", 0.2F, 20, true),
 	E103(EntityLocoElectricE103.class, "mg_horn", 1F, "mg_run", 0.6F, 8, "mg_idle", 0.4F, 50, false),
 
-	driverlessMetro(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DriverlessMetro.class, "nathan_p2", 1F, "mg_run", 0.6F, 8, "mg_idle", 0.4F, 50, false),
+	driverlessMetro(PCH120Commute.class, "nathan_p2", 1F, "mg_run", 0.6F, 8, "mg_idle", 0.4F, 50, false),
 	alcoS2(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselAlcoS2.class, "leslie_a200", 1F, "539t_notch8", 0.50F, 40, "539t_idle", 0.65F, 40, true),
 	SW1(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselSW1.class, "leslie_a200", 0.9F, "567_notch8", 0.45F, 40, "567_idle", 0.75F, 40, false),
 	H1044(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselH1044.class, "wabco_e2", 10F, "h10_notch8", 0.65F, 40, "h10_idle", 0.65F, 40, false),

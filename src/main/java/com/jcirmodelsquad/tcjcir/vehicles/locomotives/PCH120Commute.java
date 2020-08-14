@@ -31,7 +31,7 @@ import train.common.mtc.packets.PacketATOSetStopPoint;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DriverlessMetro extends ElectricTrain {
+public class PCH120Commute extends ElectricTrain {
     //DriverlessMetro for JCIR-Traincraft.
     public int currentMode = 0;
 
@@ -63,7 +63,7 @@ public class DriverlessMetro extends ElectricTrain {
     public AxisAlignedBB boundingBox = null;
     public boolean obstacleInWay = false;
     public boolean obstacleBrakeDone = false;
-    public DriverlessMetro otherSide;
+    public PCH120Commute otherSide;
     private boolean switchOverAtEnd = true;
     public boolean isLeading = true;
     private long lastMills = 0L;
@@ -72,12 +72,12 @@ public class DriverlessMetro extends ElectricTrain {
     public ArrayList<Station> initalTimetable = new ArrayList<Station>();
     public String initalPosition = "n";
 
-    public DriverlessMetro(World world) {
+    public PCH120Commute(World world) {
         super(world);
     }
 
 
-    public DriverlessMetro(World world, double d, double d1, double d2) {
+    public PCH120Commute(World world, double d, double d1, double d2) {
         this(world);
         setPosition(d, d1 + yOffset, d2);
         motionX = 0.0D;
@@ -637,8 +637,8 @@ public class DriverlessMetro extends ElectricTrain {
 
                                     for (int i = 0; i < (cartLinked1).train.getTrains().size(); i++) {
                                         EntityRollingStock stock = (cartLinked1).train.getTrains().get(i);
-                                        if (stock instanceof DriverlessMetro && stock.uniqueID != (cartLinked1).uniqueID && stock.uniqueID != this.uniqueID) {
-                                            otherSide = (DriverlessMetro) stock;
+                                        if (stock instanceof PCH120Commute && stock.uniqueID != (cartLinked1).uniqueID && stock.uniqueID != this.uniqueID) {
+                                            otherSide = (PCH120Commute) stock;
                                             break;
                                         }
                                     }

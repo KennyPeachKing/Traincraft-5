@@ -1,5 +1,7 @@
 package train.common.library;
 
+import com.jcirmodelsquad.tcjcir.vehicles.locomotives.PCH120Commute;
+import com.jcirmodelsquad.tcjcir.vehicles.rollingstock.PCH120Coach;
 import net.minecraft.item.Item;
 import net.minecraft.world.World;
 import train.common.api.AbstractTrains;
@@ -272,8 +274,8 @@ public enum EnumTrains {
 
 	//JCIR-TC
 	locoAlcoS2("Alco S2",  com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselAlcoS2.class, ItemIDs.minecartAlcoS2.item, "diesel", 1000, 96, 0, 45, 0, 170, 0.7, 0.965, 8000,TraincraftUtil.getBytesFromColors(new String[] {"Black", "Grey", "Green", "Orange", "Pink", "White", "Blue", "LightGrey", "Magenta", "Mayeeta", "Red"}), 18, -2, "Created by Bidahochi"),
-	driverlessMetro("PCH-120 Commute", com.jcirmodelsquad.tcjcir.vehicles.locomotives.DriverlessMetro.class, ItemIDs.minecartDriverlessMetro.item, "electric",1400, 120, 0, 5, 0, 160, 0.8, 0.985, 0, TraincraftUtil.getBytesFromColors(new String[] {"White", "Blue", "Red", "Green"}), 18, -2.7, "Model by Bidahochi, train by PeachMaster"),
-	driverlessMetroCar("PCH-120 Commute Car", com.jcirmodelsquad.tcjcir.vehicles.rollingstock.PCH120Car.class, ItemIDs.minecartDriverlessMetroCar.item, "passenger",0, 0, 2, 0, 0, 0, 0, 0, 0,TraincraftUtil.getBytesFromColors(new String[] {"White", "Blue", "Red", "Green"}), 0, 0,"Model by Bidahochi"),
+	pch120("PCH-120 Commute", PCH120Commute.class, ItemIDs.minecartPCH120.item, "electric",1400, 120, 0, 5, 0, 160, 0.8, 0.985, 0, TraincraftUtil.getBytesFromColors(new String[] {"White", "Blue", "Red", "Green"}), 18, -2.7, "Model by Bidahochi, train by PeachMaster"),
+	pch120coach("PCH-120 Commute Car", PCH120Coach.class, ItemIDs.minecartPCH120Coach.item, "passenger",0, 0, 2, 0, 0, 0, 0, 0, 0,TraincraftUtil.getBytesFromColors(new String[] {"White", "Blue", "Red", "Green"}), 0, 0,"Model by Bidahochi"),
 	//geometryCar("NXTrack Geometry Car", com.jcirmodelsquad.tcjcir.vehicles.rollingstock.ExperimentalGeometryCar.class, ItemIDs.minecartGeometryCar.item, "geometry car", 0, 0, 2, 0, 0, 0, 0, 0, 0, TraincraftUtil.getBytesFromColors(new String[] {"Grey", "LightGrey"}), 18, 0, "Model by Bidahochi, train by PeachMaster.\n It checks the railroad for things not up to standard."),
 	amfleet("Amfleet", com.jcirmodelsquad.tcjcir.vehicles.rollingstock.Amfleet.class, ItemIDs.minecartAmfleet.item, "passenger", 2, TraincraftUtil.getBytesFromColors(new String[] {"White", "Grey", "LightGrey", "LightBlue", "Red", "Blue", "Green"}), 0, 0, "Model by Valaktik, Updated by Bidahochi"),
 	SW1("SW1", com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselSW1.class, ItemIDs.minecartSW1.item, "diesel", 600, 105, 0, 45, 0, 160, 0.6, 0.890, 10000, TraincraftUtil.getBytesFromColors(new String[] {"Orange", "Green", "Blue", "Black", "Pink", "Cyan", "LightGrey", "White"}), 10, -2.1, "model by Bida as usual kEk"),

@@ -3,6 +3,7 @@ package train.common.api;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.jcirmodelsquad.tcjcir.vehicles.locomotives.GeGenesis;
+import com.jcirmodelsquad.tcjcir.vehicles.locomotives.PCH120Commute;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
@@ -1820,7 +1821,7 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
                 support = false;
             }
         }
-        return this instanceof EntityLocoDieselSD40 || this instanceof EntityLocoElectricBP4 || this instanceof EntityLocoDieselClass66 || this instanceof EntityLocoElectricBR185 || this instanceof EntityLocoElectricCD151 || this instanceof EntityLocoDieselDD35A || this instanceof EntityLocoElectricICE1 || this instanceof EntityLocoElectricHighSpeedZeroED || this instanceof EntityLocoElectricE103 || this instanceof EntityLocoDieselV60_DB || this instanceof EntityLocoDieselCD742 || this instanceof EntityLocoElectricVL10 || this instanceof EntityLocoElectricTramNY || this instanceof EntityLocoDieselIC4_DSB_MG || this instanceof EntityLocoDieselSD70 || this instanceof com.jcirmodelsquad.tcjcir.vehicles.locomotives.DriverlessMetro || this instanceof GeGenesis ||support;
+        return this instanceof EntityLocoDieselSD40 || this instanceof EntityLocoElectricBP4 || this instanceof EntityLocoDieselClass66 || this instanceof EntityLocoElectricBR185 || this instanceof EntityLocoElectricCD151 || this instanceof EntityLocoDieselDD35A || this instanceof EntityLocoElectricICE1 || this instanceof EntityLocoElectricHighSpeedZeroED || this instanceof EntityLocoElectricE103 || this instanceof EntityLocoDieselV60_DB || this instanceof EntityLocoDieselCD742 || this instanceof EntityLocoElectricVL10 || this instanceof EntityLocoElectricTramNY || this instanceof EntityLocoDieselIC4_DSB_MG || this instanceof EntityLocoDieselSD70 || this instanceof PCH120Commute || this instanceof GeGenesis ||support;
 
 
     }
@@ -1838,7 +1839,7 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
                 support = false;
             }
         }
-        return this instanceof EntityLocoElectricHighSpeedZeroED || this instanceof EntityLocoElectricTramNY || this instanceof EntityLocoElectricICE1 || this instanceof EntityLocoDieselIC4_DSB_MG || this instanceof com.jcirmodelsquad.tcjcir.vehicles.locomotives.DriverlessMetro || support;
+        return this instanceof EntityLocoElectricHighSpeedZeroED || this instanceof EntityLocoElectricTramNY || this instanceof EntityLocoElectricICE1 || this instanceof EntityLocoDieselIC4_DSB_MG || this instanceof PCH120Commute || support;
 
     }
     public void disconnectFromServer(boolean yes) {

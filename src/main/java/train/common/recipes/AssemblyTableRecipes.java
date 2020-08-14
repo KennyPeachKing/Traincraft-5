@@ -558,7 +558,7 @@ public class AssemblyTableRecipes {
 
 
 				for (ItemStack lightGrey: dyeLightGray) {
-					betterAddRecipe(3, new ItemStack(ItemIDs.controls.item, 2), new ItemStack(ItemIDs.atoCard.item, 1), new ItemStack(ItemIDs.steelcab.item, 2), lightGrey, new ItemStack(ItemIDs.electronicCircuit.item, 4), new ItemStack(ItemIDs.electmotor.item, 4), new ItemStack(ItemIDs.transformer.item, 4), new ItemStack(ItemIDs.bogie.item, 4), new ItemStack(ItemIDs.steelframe.item, 4),new ItemStack(itemSteel, 2, itemDamageSteel), new ItemStack(ItemIDs.minecartDriverlessMetro.item, 1), 1);
+					betterAddRecipe(3, new ItemStack(ItemIDs.controls.item, 2), new ItemStack(ItemIDs.atoCard.item, 1), new ItemStack(ItemIDs.steelcab.item, 2), lightGrey, new ItemStack(ItemIDs.electronicCircuit.item, 4), new ItemStack(ItemIDs.electmotor.item, 4), new ItemStack(ItemIDs.transformer.item, 4), new ItemStack(ItemIDs.bogie.item, 4), new ItemStack(ItemIDs.steelframe.item, 4),new ItemStack(itemSteel, 2, itemDamageSteel), new ItemStack(ItemIDs.minecartPCH120.item, 1), 1);
 				}
 
 				for (ItemStack white: dyeWhite) {

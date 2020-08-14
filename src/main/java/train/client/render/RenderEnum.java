@@ -1,6 +1,8 @@
 package train.client.render;
 
 import com.jcirmodelsquad.tcjcir.models.trains.*;
+import com.jcirmodelsquad.tcjcir.vehicles.locomotives.PCH120Commute;
+import com.jcirmodelsquad.tcjcir.vehicles.rollingstock.PCH120Coach;
 import com.jcirmodelsquad.tcjcir.vehicles.rollingstock.TestControlCar;
 import tmt.ModelBase;
 import train.client.render.models.*;
@@ -631,8 +633,8 @@ public enum RenderEnum {
 		}
 	}, "", null, 0, false),
 	geometryCar(com.jcirmodelsquad.tcjcir.vehicles.rollingstock.ExperimentalGeometryCar.class,new ModelGeometryCar(), "geometrycar_", true, new float[] {0F, 0F, 0.0F }, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
-	driverlessMetro(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DriverlessMetro.class, new ModelPCH120Commute(), "pch120commute_", true,new float[] {-1.3F, 0.03F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
-	driverlessMetroCar(com.jcirmodelsquad.tcjcir.vehicles.rollingstock.PCH120Car.class, new ModelPCH120Car(), "pch120car_", true,new float[] {0F, 0.03F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
+	pch120(PCH120Commute.class, new ModelPCH120Commute(), "pch120commute_", true,new float[] {-1.3F, 0.03F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
+	pch120Coach(PCH120Coach.class, new ModelPCH120Car(), "pch120car_", true,new float[] {0F, 0.03F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
 	amfleet(com.jcirmodelsquad.tcjcir.vehicles.rollingstock.Amfleet.class, new ModelAmfleet(),"amfleet_", true, new float[]{0F, -0.4F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
 	ribbedHopper(com.jcirmodelsquad.tcjcir.vehicles.rollingstock.RibbedHopper.class, new ModelRibbedHopper(),"ribbed_hopper_", true, new float[]{0F, -0.2F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
 	SW1( com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselSW1.class,  new ModelSW1(), "sw1_", true,new float[] {-1.1F, -0.05F, 0F},  new float[] { 0F, 180F, 180F }, null, "smoke", 2,  new ArrayList<double[]>() {

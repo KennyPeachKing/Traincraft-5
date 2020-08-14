@@ -7,12 +7,12 @@ import net.minecraft.world.World;
 import train.common.api.EntityRollingStock;
 import train.common.api.IPassenger;
 
-public class PCH120Car extends EntityRollingStock implements IPassenger {
-    public PCH120Car(World world) {
+public class PCH120Coach extends EntityRollingStock implements IPassenger {
+    public PCH120Coach(World world) {
         super(world);
     }
 
-    public PCH120Car(World world, double d, double d1, double d2) {
+    public PCH120Coach(World world, double d, double d1, double d2) {
         super(world, d, d1, d2);
     }
 
