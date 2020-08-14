@@ -1,9 +1,8 @@
 package train.common.core;
 
-import com.jcirmodelsquad.tcjcir.containers.ContainerStorage;
-import com.jcirmodelsquad.tcjcir.containers.GuiFortyFootContainer;
-import com.jcirmodelsquad.tcjcir.containers.TileFortyFootContainer;
-import com.jcirmodelsquad.tcjcir.extras.blocks.TileBetterDetector;
+import com.jcirmodelsquad.tcjcir.features.containers.ContainerStorage;
+import com.jcirmodelsquad.tcjcir.features.containers.TileFortyFootContainer;
+import com.jcirmodelsquad.tcjcir.features.betterdetector.TileBetterDetector;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;

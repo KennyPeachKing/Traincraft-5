@@ -7,7 +7,6 @@
 
 package train.common.library;
 
-import com.jcirmodelsquad.tcjcir.containers.ItemFortyFootContainer;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import train.common.items.*;

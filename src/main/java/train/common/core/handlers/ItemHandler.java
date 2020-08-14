@@ -7,8 +7,8 @@
 
 package train.common.core.handlers;
 
-import com.jcirmodelsquad.tcjcir.rollingstock.OreJenny;
-import com.jcirmodelsquad.tcjcir.rollingstock.WoodchipHopper;
+import com.jcirmodelsquad.tcjcir.vehicles.rollingstock.OreJenny;
+import com.jcirmodelsquad.tcjcir.vehicles.rollingstock.WoodchipHopper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRailBase;
 import net.minecraft.block.material.Material;

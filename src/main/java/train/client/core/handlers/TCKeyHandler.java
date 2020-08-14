@@ -1,8 +1,7 @@
 package train.client.core.handlers;
 
-import com.jcirmodelsquad.tcjcir.extras.GuiGeometryCar;
-import com.jcirmodelsquad.tcjcir.extras.packets.RemoteControlKeyPacket;
-import com.jcirmodelsquad.tcjcir.rollingstock.ExperimentalGeometryCar;
+import com.jcirmodelsquad.tcjcir.features.geometry.GuiGeometryCar;
+import com.jcirmodelsquad.tcjcir.vehicles.rollingstock.ExperimentalGeometryCar;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.common.Loader;
@@ -11,14 +10,12 @@ import cpw.mods.fml.common.gameevent.InputEvent;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.util.ChatComponentText;
 import org.lwjgl.input.Keyboard;
 import train.client.gui.GuiMTCInfo;
 import train.common.Traincraft;
 import train.common.api.Locomotive;
 import train.common.core.network.PacketKeyPress;
-import train.common.items.ItemRemoteController;
 
 
 public class TCKeyHandler {

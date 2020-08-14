@@ -2,6 +2,7 @@ package com.jcirmodelsquad.tcjcir.extras;
 
 import java.util.ArrayList;
 
+@Deprecated
 public class QuoteList {
     public static ArrayList<JCIRQuote> importantQuotes = new ArrayList<JCIRQuote>();
 

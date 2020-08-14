@@ -1,10 +1,7 @@
 package train.client.core;
 
-import com.jcirmodelsquad.tcjcir.containers.GuiFortyFootContainer;
-import com.jcirmodelsquad.tcjcir.containers.ItemRenderFortyFootContainer;
-import com.jcirmodelsquad.tcjcir.containers.TileFortyFootContainer;
-import com.jcirmodelsquad.tcjcir.containers.render.FortyFootContainerRender;
-import com.jcirmodelsquad.tcjcir.extras.HUDGeometryCar;
+import com.jcirmodelsquad.tcjcir.features.containers.GuiFortyFootContainer;
+import com.jcirmodelsquad.tcjcir.features.containers.TileFortyFootContainer;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.FMLCommonHandler;
@@ -70,7 +67,6 @@ public class ClientProxy extends CommonProxy {
 		super.registerEvents(event);
 		ClientTickHandler tickHandler = new ClientTickHandler();
 		HUDloco huDloco = new HUDloco();
-		HUDGeometryCar geoCarHUD = new HUDGeometryCar();
 		if (Loader.isModLoaded("ComputerCraft") || Loader.isModLoaded("OpenComputers")){
 			HUDMTC hudMTC = new HUDMTC();
 			registerEvent(hudMTC);
@@ -78,7 +74,6 @@ public class ClientProxy extends CommonProxy {
 
 		registerEvent(tickHandler);
 		registerEvent(huDloco);
-		registerEvent(geoCarHUD);
 	}
 
 	@Override

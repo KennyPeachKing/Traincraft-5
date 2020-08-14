@@ -2,7 +2,7 @@ package com.jcirmodelsquad.tcjcir.extras;/*
 package com.jcirmodelsquad.tcjcir.extras;
 
 
-import com.jcirmodelsquad.tcjcir.rollingstock.StandardDEGCar;
+import com.jcirmodelsquad.tcjcir.vehicles.rollingstock.StandardDEGCar;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.Entity;

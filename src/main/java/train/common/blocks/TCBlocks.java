@@ -7,10 +7,8 @@
 
 package train.common.blocks;
 
-import com.jcirmodelsquad.tcjcir.containers.BlockFortyFootContainer;
-import com.jcirmodelsquad.tcjcir.extras.blocks.BlockActualSignalBlock;
-import com.jcirmodelsquad.tcjcir.extras.blocks.BlockBetterDetector;
-import com.jcirmodelsquad.tcjcir.extras.blocks.TileBetterDetector;
+import com.jcirmodelsquad.tcjcir.features.actualsignalblock.BlockActualSignalBlock;
+import com.jcirmodelsquad.tcjcir.features.betterdetector.BlockBetterDetector;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;

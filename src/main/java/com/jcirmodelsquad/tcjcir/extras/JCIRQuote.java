@@ -1,5 +1,6 @@
 package com.jcirmodelsquad.tcjcir.extras;
 
+@Deprecated
 public class JCIRQuote {
     public String quote;
     public String from;
