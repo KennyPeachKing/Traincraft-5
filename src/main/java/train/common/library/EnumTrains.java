@@ -272,7 +272,7 @@ public enum EnumTrains {
 	locoSteamAdler("Loco Steam Adler",EntityLocoSteamAdler.class, ItemIDs.minecartLocoSteamAdler.item,"steam",200,65,0,60,160,300,0.5,0.968,3000,null,15,-1.5),
 	locoSteamSnowPlow("Loco Steam Snow Plow", EntityLocoSteamSnowPlow.class, ItemIDs.minecartLocoSnowPlow.item, "steam, snow plow", 200, 20, 0, 10, 120, 170, 0.7, 0.965, 6850, null, 18, -4.75),
 
-	//JCIR-TC
+	/** JCIR-TC*/
 	locoAlcoS2("Alco S2",  com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselAlcoS2.class, ItemIDs.minecartAlcoS2.item, "diesel", 1000, 96, 0, 45, 0, 170, 0.7, 0.965, 8000,TraincraftUtil.getBytesFromColors(new String[] {"Black", "Grey", "Green", "Orange", "Pink", "White", "Blue", "LightGrey", "Magenta", "Mayeeta", "Red"}), 18, -2, "Created by Bidahochi"),
 	pch120("PCH-120 Commute", PCH120Commute.class, ItemIDs.minecartPCH120.item, "electric",1400, 120, 0, 5, 0, 160, 0.8, 0.985, 0, TraincraftUtil.getBytesFromColors(new String[] {"White", "Blue", "Red", "Green"}), 18, -2.7, "Model by Bidahochi, train by PeachMaster"),
 	pch120coach("PCH-120 Commute Car", PCH120Coach.class, ItemIDs.minecartPCH120Coach.item, "passenger",0, 0, 2, 0, 0, 0, 0, 0, 0,TraincraftUtil.getBytesFromColors(new String[] {"White", "Blue", "Red", "Green"}), 0, 0,"Model by Bidahochi"),
@@ -316,7 +316,7 @@ public enum EnumTrains {
 
 	/*passengerICE1_Restaurant("ICE Restaurant", EntityPassengerICE_Restaurant.class,
 							 ItemIDs.minecartICE1_Restaurant.item, "passenger", 0, 0, 1.5, 0, 0, 0, 0, 0, 0, null, 10, 0),
-	*/
+	what is this for and why does it still exist?*/
 
 //String trainType,int MHP,int maxSpeed, double mass, int fuelConsumption, int waterConsumption, int heatingTime, double accelerationRate, double brakeRate, int tankCapacity, String[] colors,
 
