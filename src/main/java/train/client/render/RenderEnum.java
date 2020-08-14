@@ -1,9 +1,6 @@
 package train.client.render;
 
-import com.jcirmodelsquad.tcjcir.models.trains.ModelAlcoS2;
-import com.jcirmodelsquad.tcjcir.models.trains.ModelGeometryCar;
 import com.jcirmodelsquad.tcjcir.models.trains.*;
-import com.jcirmodelsquad.tcjcir.models.trains.ModelPCH100HCoach;
 import com.jcirmodelsquad.tcjcir.vehicles.rollingstock.TestControlCar;
 import tmt.ModelBase;
 import train.client.render.models.*;
@@ -734,7 +731,7 @@ public enum RenderEnum {
 
 		}
 	}, "", null, 0, false),
-	//HuskyStackWellcar(com.jcirmodelsquad.tcjcir.vehicles.rollingstock.HuskyStackWellcar.class, new com.jcirmodelsquad.tcjcir.models.ModelHuskyStackWellcar(), "huskystack_", true, new float[]{0F, 0.15F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
+	//HuskyStackWellcar(com.jcirmodelsquad.tcjcir.vehicles.rollingstock.HuskyStackWellcar.class, new com.jcirmodelsquad.tcjcir.models.trainsModelHuskyStackWellcar(), "huskystack_", true, new float[]{0F, 0.15F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
 	BombCart(com.jcirmodelsquad.tcjcir.vehicles.rollingstock.BombCart.class, new ModelBombCart(), "payload_", true, new float[]{0F, 0.15F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
 	Boxcab23Ton( com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselBoxcab23Ton.class,  new ModelBoxcab23Ton(), "boxcab_", true,new float[] {-0.75F, 0.2F, 0F},  new float[] { 0F, 0F, 180F }, null, "smoke", 5,  new ArrayList<double[]>() {
 		{ //note: use {-0.5F, 0.2F, 0F} and -1 for main hitbox and bogie position if the "fliparound" error is fixed, knowing eternal, not likely. sorry about extra thicc hitboxes -bid
@@ -743,11 +740,11 @@ public enum RenderEnum {
 		}
 	}, "", null, 0, false),
 	testControlCar(TestControlCar.class, new ModelPassengerHighSpeedCarZeroED(), "passengerHighSpeedCarZeroED_", true, new float[] { 0.0F, -0.47F, 0.0F }, null, null, "", 0, null, "", null, 0, false),
-	pch100(com.jcirmodelsquad.tcjcir.locomotives.PCH100H.class, new ModelPCH100H(), "pch100h_", true, new float[]{-3.2F, 0.03F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
-	pch100coach(com.jcirmodelsquad.tcjcir.rollingstock.PCH100HCoach.class, new ModelPCH100HCoach(), "pch100hcoach_", true, new float[]{-2F, 0.03F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
-	LUengine(com.jcirmodelsquad.tcjcir.locomotives.ElectricLUengine.class, new com.jcirmodelsquad.tcjcir.models.ModelLUengine(), "lu_engine", false,new float[] {-1.0F, 0.16F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
-	LUpassenger(com.jcirmodelsquad.tcjcir.rollingstock.LUpassenger.class, new com.jcirmodelsquad.tcjcir.models.ModelLUpassenger(), "lu_passenger",false,new float[] {0F, 0.16F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
-	GP13(com.jcirmodelsquad.tcjcir.locomotives.DieselGP13.class, new com.jcirmodelsquad.tcjcir.models.ModelGP13(), "gp13_", true, new float[] { -0.8F, -0.47F, 0.0F }, new float[] { 0F, 180F, 0F }, null, "smoke", 4, new ArrayList<double[]>() {
+	pch100(com.jcirmodelsquad.tcjcir.vehicles.locomotives.PCH100H.class, new ModelPCH100H(), "pch100h_", true, new float[]{-3.2F, 0.03F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
+	pch100coach(com.jcirmodelsquad.tcjcir.vehicles.rollingstock.PCH100HCoach.class, new ModelPCH100HCoach(), "pch100hcoach_", true, new float[]{-2F, 0.03F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
+	LUengine(com.jcirmodelsquad.tcjcir.vehicles.locomotives.ElectricLUengine.class, new com.jcirmodelsquad.tcjcir.models.trains.ModelLUengine(), "lu_engine", false,new float[] {-1.0F, 0.16F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
+	LUpassenger(com.jcirmodelsquad.tcjcir.vehicles.rollingstock.LUpassenger.class, new com.jcirmodelsquad.tcjcir.models.trains.ModelLUpassenger(), "lu_passenger",false,new float[] {0F, 0.16F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
+	GP13(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselGP13.class, new com.jcirmodelsquad.tcjcir.models.trains.ModelGP13(), "gp13_", true, new float[] { -0.8F, -0.47F, 0.0F }, new float[] { 0F, 180F, 0F }, null, "smoke", 4, new ArrayList<double[]>() {
 		{
 			add(new double[] { -0.2D, 1.3D, 0.0D });
 			add(new double[] { 0.45D, 1.3D, 0.0D });
