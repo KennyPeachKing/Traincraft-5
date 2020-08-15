@@ -1301,7 +1301,7 @@ public class ModelSW1500 extends ModelConverter //Same as Filename
 		bodyModel[311].setRotationPoint(17.18F, -29F, -0.5F);
 	}
 
-	ModelFlexicoil2 theTrucks1 = new ModelFlexicoil2();
+	com.jcirmodelsquad.tcjcir.models.trains.ModelFlexicoil2 theTrucks1 = new com.jcirmodelsquad.tcjcir.models.trains.ModelFlexicoil2();
 	ModelTypeASmol theTrucks2 = new ModelTypeASmol();
 
 	@Override

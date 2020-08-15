@@ -1507,7 +1507,7 @@ public class ModelSD40dash2 extends ModelConverter //Same as Filename
 		bodyModel[362].addBox(0F, 0F, 0F, 1, 1, 0, 0F); // Box 374
 		bodyModel[362].setRotationPoint(-15.5F, -29F, 2F);
 	}
-	ModelFlexicoil_C2H theTrucks = new ModelFlexicoil_C2H();
+	com.jcirmodelsquad.tcjcir.models.trains.ModelFlexicoil_C2H theTrucks = new com.jcirmodelsquad.tcjcir.models.trains.ModelFlexicoil_C2H();
 
 
 	@Override
