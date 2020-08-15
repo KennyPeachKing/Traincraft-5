@@ -324,7 +324,7 @@ item.tc:minecartLocoLSSP7.name=One Truck Heisler
 item.tc:minecartShortCoveredHopper.name=Short Covered Hopper
 item.tc:minecartKClassRailBox.name=K Class Rail Box
 item.tc:minecartLongCoveredHopper.name=Long Covered Hopper
-item.tc:minecartLocoFOLM1.name=FOL M1
+item.tc:minecartLocoFOLM1.name=FOL-M1
 item.tc:minecartHeavyweightFreight.name=Heavyweight Baggage
 item.tc:minecartLocoBP4.name=BP4
 item.tc:minecartASTFAutorack.name=ASTF ft-41 Auto Rack
@@ -383,6 +383,7 @@ item.tc:minecartPCH120.name=PCH-120
 item.tc:minecartLUpassenger.name=LU 1996 Passenger
 item.tc:minecartLUengine.name=LU 1996 Engine
 item.tc:minecartGP13.name=EMD GP13
+item.tc:minecartFOLM1B.name=FOL-M1B
 
 <!-- ## Achievements ## -->
 achievement.tc:engineer=Engineers clothes
@@ -646,7 +647,7 @@ entity.tc.Loco Steam LSSP7.name=One Truck Heisler
 entity.tc.Freight Short Covered Hopper.name=Short Covered Hopper
 entity.tc.Freight K Class Rail Box.name=K Class Rail Box
 entity.tc.Freight Long Covered Hopper.name=Long Covered Hopper
-entity.tc.Loco FOL M1.name=FOL M1
+entity.tc.Loco FOL M1.name=FOL-M1
 entity.tc.Freight Heavyweight Baggage.name=Heavyweight Baggage
 entity.tc.Loco Diesel BP4.name=BP4
 entity.tc.Freight ASTF Autorack.name=ASTF ft-41 Auto Rack
@@ -701,6 +702,7 @@ entity.tc.PCH100HCoach.name=PCH-100H Coach
 entity.tc.LUengine.name=LU 1996 Engine
 entity.tc.LUpassenger.name=LU 1996 Passenger
 entity.tc.GP13.name=EMD GP13
+entity.tc.Loco FOL-M1B.name=FOL-M1B
 
 description.villager.profession.tc.station_chief=Station Chief
 tile.tc:FortyFootContainer.name= Forty Foot Container

@@ -111,6 +111,8 @@ public enum EnumSounds {
 	PCH100H(com.jcirmodelsquad.tcjcir.vehicles.locomotives.PCH100H.class, "nathan_p2", 1F, "pch100h_notch8", 0.6F, 8, "pch100h_idle", 0.4F, 50, false),
 	LU96Stock(com.jcirmodelsquad.tcjcir.vehicles.locomotives.ElectricLUengine.class, "lu_whistle", 1F, "mg_run", 0.6F, 8, "mg_idle", 0.4F, 50, false),
 	GP13(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselGP13.class, "nathan_p6", 0.8F, "chme3_run", 0.65F, 35, "chme3_idle", 0.65F, 40, false),
+	FOLM1B(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselFOLM1B.class, "gp40-2_horn", 0.0F,"chme3_run", 0.65F, 40, "chme3_idle", 0.65F, 40, false),
+	//FOLM1 and FOLM1B need better engine sounds, JC when you see this give them opposed piston engines, and remove this message k thx bye -bida
 	;
 	private Class entityClass;
 	private String horn;
