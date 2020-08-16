@@ -133,7 +133,7 @@ public enum EnumTrains {
 	freightheavyweight("Heavyweight Freight Car", EntityFreightHeavyweight.class, ItemIDs.minecartHeavyweightMailcar.item, "freight", 0.5, null, 18, 27,"Cargo: any"),
 	freightCartBamboo("Bamboo Flatcar Freight", EntityFreightBamboo.class, ItemIDs.minecartFreightBamboo.item, "freight", 0.1, TraincraftUtil.getBytesFromColors(new String[] {"Red", "Blue", "Black", "Yellow", "Magenta", "Cyan", "Pink", "LightGrey", "Green", "White", "LightBlue", "Lime", "Brown", "Purple", "Orange", "Grey"}), 18, 36,"Cargo: any"),
 	freightGermanPost("Freight German Post", EntityFreightGermanPost.class, ItemIDs.minecartFreightGermanPost.item, "freight", 0.1, TraincraftUtil.getBytesFromColors(new String[]{"Yellow", "Red", "Blue"}), 18, 36, "Cargo: non-blocks"),
-	freightDepressedFlatbed("Freight Depressed Flatcar", EntityFreightDepressedFlatbed.class, ItemIDs.minecartFreightDepressedFlatbed.item, "freight", 0.1, TraincraftUtil.getBytesFromColors(new String[]{"Black", "Grey", "LightGrey", "Blue"}), 18, 36,"Cargo: any"),
+	freightDepressedFlatbed("Freight Depressed Flatcar", EntityFreightDepressedFlatbed.class, ItemIDs.minecartFreightDepressedFlatbed.item, "freight", 0.1, TraincraftUtil.getBytesFromColors(new String[]{"Black", "Grey", "LightGrey", "Blue", "Yellow"}), 18, 36,"Cargo: any"),
 	freightCarL("Freight Car L", EntityFreightCartL.class, ItemIDs.minecartFreightL.item, "freight", 3, TraincraftUtil.getBytesFromColors(new String[]{"Red", "Blue"}), 18, 27,"Cargo: any"),
 	freightHeavyweight("Freight Heavyweight Baggage", EntityFreightHeavyweightBaggage.class, ItemIDs.minecartHeavyweightFreight.item, "freight", 3, TraincraftUtil.getBytesFromColors(new String[]{"Red", "Grey"}), 18, 36,"Cargo: any"),
 
@@ -201,7 +201,7 @@ public enum EnumTrains {
 	locoDiesel44TonSwitcher("GE 44-ton Diesel switcher", EntityLocoDiesel44TonSwitcher.class, ItemIDs.minecartLoco44TonSwitcher.item, "diesel", 400, 56, 0, 10, 0, 170, 0.7, 0.965, 6850, TraincraftUtil.getBytesFromColors(new String[]{"Black", "Cyan"}), 18, -2.75),
 	locoDieselBamboo("Bamboo Flatcar Engine", EntityLocoDieselBamboo.class, ItemIDs.minecartTrainBamboo.item, "diesel", 30, 20, 0, 10, 0, 170, 0.7, 0.965, 3000,  TraincraftUtil.getBytesFromColors(new String[] {"Red", "Blue", "Black", "Yellow", "Magenta", "Cyan", "Pink", "LightGrey", "Green", "White", "LightBlue", "Lime", "Brown", "Purple", "Orange", "Grey"}), 18, -2),
 	locoDieselWLs40("Loco WLs40", EntityLocoDieselWLs40.class, ItemIDs.minecartLocoWLs40.item, "diesel", 60, 17, 0, 10, 0, 170, 0.7, 0.965, 3000, null, 18, -3),
-	locoDieselFOL_M1("Loco FOL-M1", EntityLocoDieselFOLM1.class, ItemIDs.minecartLocoFOLM1.item, "diesel", 5000, 110, 0, 10, 0, 170, 0.7, 0.965, 15000, TraincraftUtil.getBytesFromColors(new String[]{"Grey", "Blue"}), 18, -3.9, "Fictional loco from Factorio"),
+	locoDieselFOL_M1("Loco FOL-M1", EntityLocoDieselFOLM1.class, ItemIDs.minecartLocoFOLM1.item, "diesel", 5000, 110, 0, 10, 0, 170, 0.7, 0.965, 15000, TraincraftUtil.getBytesFromColors(new String[]{"Grey", "Blue", "Black"}), 18, -3.9, "Fictional loco from Factorio"),
 
 
 
@@ -270,7 +270,7 @@ public enum EnumTrains {
 	locoSteam262T("Loco Steam 262T",EntityLocoSteam262T.class, ItemIDs.minecartLocoSteam262T.item,"steam",300,70,0,60,160,300,0.5,0.968,4250,null,15,-3),
 	locoSteam040VB("Loco Steam 040VB",EntityLocoSteam040VB.class, ItemIDs.minecartLocoSteam040vb.item,"steam",200,32,0,40,120,200,0.5,0.968,2500,null,15,-1.1),
 	locoSteamAdler("Loco Steam Adler",EntityLocoSteamAdler.class, ItemIDs.minecartLocoSteamAdler.item,"steam",200,65,0,60,160,300,0.5,0.968,3000,null,15,-1.5),
-	locoSteamSnowPlow("Loco Steam Snow Plow", EntityLocoSteamSnowPlow.class, ItemIDs.minecartLocoSnowPlow.item, "steam, snow plow", 200, 20, 0, 10, 120, 170, 0.7, 0.965, 6850, null, 18, -4.75),
+	locoSteamSnowPlow("Loco Steam Snow Plow", EntityLocoSteamSnowPlow.class, ItemIDs.minecartLocoSnowPlow.item, "steam, snow plow", 200, 20, 0, 10, 120, 170, 0.7, 0.965, 6850, TraincraftUtil.getBytesFromColors(new String[] {"Red", "LightBlue"}), 18, -4.75),
 
 	/** JCIR-TC*/
 	locoAlcoS2("Alco S2",  com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselAlcoS2.class, ItemIDs.minecartAlcoS2.item, "diesel", 1000, 96, 0, 45, 0, 170, 0.7, 0.965, 8000,TraincraftUtil.getBytesFromColors(new String[] {"Black", "Grey", "Green", "Orange", "Pink", "White", "Blue", "LightGrey", "Magenta", "Mayeeta", "Red"}), 18, -2, "Created by Bidahochi"),
@@ -312,7 +312,7 @@ public enum EnumTrains {
 	PCH100H("PCH-100H", com.jcirmodelsquad.tcjcir.vehicles.locomotives.PCH100H.class, ItemIDs.minecartExperimentalHydrogenTrain.item, "hydrogen",900, 100, 0, 6, 0, 160, 0.8, 0.985, 7000, TraincraftUtil.getBytesFromColors(new String[]{"LightBlue", "Blue"}), 18,  -2.6, "Powered by Mekanism Hydrogen, Original model by Bidahochi, modified by PeachMaster"),
 	PCH100Coach("PCH-100H Coach", com.jcirmodelsquad.tcjcir.vehicles.rollingstock.PCH100HCoach.class, ItemIDs.minecartPCH100HCoach.item, "passenger",0, 0, 2, 0, 0, 0, 0, 0, 0, TraincraftUtil.getBytesFromColors(new String[]{"LightBlue", "Blue"}), 0, 0,"Original model by Bidahochi, modified by PeachMaster"),
 	GP13("GP13", com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselGP13.class, ItemIDs.minecartGP13.item, "diesel", 2510,90,0,50,0,200,0.74,0.96,20000, TraincraftUtil.getBytesFromColors(new String[]{"Blue", "LightBlue", "Black", "Orange", "White", "Yellow"}), 10, 1.4, "Fictional Rebuild of a GP7, Uses the original GP40 model"),
-	FOLM1B("FOL-M1B", com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselFOLM1B.class, ItemIDs.minecartFOLM1B.item, "diesel", 5000, 110, 0, 10, 0, 170, 0.7, 0.965, 15000, TraincraftUtil.getBytesFromColors(new String[]{"Grey", "Blue"}), 18, -3.8, "Fictional B unit for the Fictional loco from Factorio"),;
+	FOLM1B("FOL-M1B", com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselFOLM1B.class, ItemIDs.minecartFOLM1B.item, "diesel", 5000, 110, 0, 10, 0, 170, 0.7, 0.965, 15000, TraincraftUtil.getBytesFromColors(new String[]{"Grey", "Blue", "Black"}), 18, -3.8, "Fictional B unit for the Fictional loco from Factorio"),;
 
 
 	/*passengerICE1_Restaurant("ICE Restaurant", EntityPassengerICE_Restaurant.class,

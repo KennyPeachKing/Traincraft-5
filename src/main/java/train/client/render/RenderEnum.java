@@ -621,7 +621,7 @@ public enum RenderEnum {
 	PropagandaJapan(EntityPropagandaJapan.class, new ModelPropagandaCar(), "propaganda_Japan_", true, new float[] { 1.1F, 0.2F, -0.1F }, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
 	PropagandaUSSR(EntityPropagandaUSSR.class, new ModelPropagandaCar(), "propaganda_USSR_", true, new float[] { 1.1F, 0.2F, -0.1F }, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
 	PropagandaBritain(EntityPropagandaBritain.class, new ModelPropagandaCar(), "propaganda_Britain_", true, new float[] { 1.1F, 0.2F, -0.1F }, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
-	SnowPlow(EntityLocoSteamSnowPlow.class, new ModelSnowPlow(), "train_snowplow", false, new float[] { -2F, 0.12F, 0F }, new float[] { 0F, 180F, 180F }, null,  "smoke", 4, new ArrayList<double[]>() {
+	SnowPlow(EntityLocoSteamSnowPlow.class, new ModelSnowPlow(), "train_snowplow_", true, new float[] { -2F, 0.12F, 0F }, new float[] { 0F, 180F, 180F }, null,  "smoke", 4, new ArrayList<double[]>() {
 		{
 			add(new double[] { 3.15D, 1.6D, 0.0D });
 		}
@@ -753,7 +753,7 @@ public enum RenderEnum {
 			add(new double[] { 0.45D, 1.3D, 0.0D });
 		}
 	}, "", null, 0, false),
-	FOLM1B(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselFOLM1B.class, new com.jcirmodelsquad.tcjcir.models.trains.ModelFOLM1B(), "FOL_M1_", true, new float[] { -2.2F, 0.05F, 0.F },  new float[] { 0F, 180F, 180F }, null, "smoke", 3, new ArrayList<double[]>() {
+	FOLM1B(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselFOLM1B.class, new com.jcirmodelsquad.tcjcir.models.trains.ModelFOLM1B(), "FOL_M2_", true, new float[] { -2.2F, 0.05F, 0.F },  new float[] { 0F, 180F, 180F }, null, "smoke", 3, new ArrayList<double[]>() {
 		{
 			add(new double[]{1.3D, 1.45D, 0.0D});
 		}
