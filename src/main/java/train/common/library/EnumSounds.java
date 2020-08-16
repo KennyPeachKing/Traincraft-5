@@ -91,7 +91,7 @@ public enum EnumSounds {
 	driverlessMetro(PCH120Commute.class, "nathan_p2", 1F, "mg_run", 0.6F, 8, "mg_idle", 0.4F, 50, false),
 	alcoS2(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselAlcoS2.class, "leslie_a200", 1F, "539t_notch8", 0.50F, 40, "539t_idle", 0.65F, 40, true),
 	SW1(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselSW1.class, "leslie_a200", 0.9F, "567_notch8", 0.45F, 40, "567_idle", 0.75F, 40, false),
-	H1044(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselH1044.class, "wabco_e2", 10F, "38d_6_run", 0.65F, 40, "38d_6_idle", 0.65F, 40, false),
+	H1044(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselH1044.class, "wabco_e2", 10F, "38d_6_notch8", 0.65F, 40, "38d_6_idle", 0.65F, 40, false),
 	Thanos(com.jcirmodelsquad.tcjcir.vehicles.locomotives.Thanos.class, "thanos_horn", 5, "thanos_run", 0.65F, 60, "thanos_idle", 0.65F, 60, false),
 	HighrailTruck(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselHighrailTruck.class, "truck_horn", 0.8F, "boxcab_notch8", 0.65F, 15, "boxcab_idle", 0.65F, 25, true),
 	U23B(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselU23B.class, "leslie_s3l", 2.5F, "7fdl-12_notch8", 0.65F, 40, "7fdl-12_idle", 0.65F, 50, true),
