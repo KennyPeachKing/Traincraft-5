@@ -214,7 +214,7 @@ public class ModelES44 extends ModelConverter //Same as Filename
 		bodyModel[171] = new ModelRendererTurbo(this, 185, 1, textureX, textureY); // Box 219
 		bodyModel[172] = new ModelRendererTurbo(this, 353, 97, textureX, textureY); // Box 220
 		bodyModel[173] = new ModelRendererTurbo(this, 241, 33, textureX, textureY); // Box 221
-		bodyModel[174] = new ModelRendererTurbo(this, 361, 97, textureX, textureY, "lamp"); // Box 31 lamp
+		bodyModel[174] = new ModelRendererTurbo(this, 361, 97, textureX, textureY); // Box 31
 		bodyModel[175] = new ModelRendererTurbo(this, 385, 97, textureX, textureY, "lamp"); // Box 247 lamp
 		bodyModel[176] = new ModelRendererTurbo(this, 393, 97, textureX, textureY, "lamp"); // Box 248 lamp
 		bodyModel[177] = new ModelRendererTurbo(this, 377, 81, textureX, textureY); // Box 226
