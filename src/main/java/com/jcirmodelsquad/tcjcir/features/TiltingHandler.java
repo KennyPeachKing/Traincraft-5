@@ -54,7 +54,9 @@ public class TiltingHandler {
             tiltingOut = true;
             System.out.println("How do we get here??");
         }
-
+        if (theRail != null) {
+            System.out.println(theRail.getTrackType().getType().contains("STRAIGHT"));
+        }
       /*  if (tiltingOut && tiltingIn) {
             tiltingProgress = 0;
         }*/
@@ -66,7 +68,7 @@ public class TiltingHandler {
         System.out.println("Tilting to the left?" + tiltingToLeft);
         System.out.println("Max tilt: " + maxTilt);
         System.out.println("Inverse of max tilt: " + -maxTilt);
-        if ( (tiltingToLeft && tiltingProgress <= maxTilt) || (!tiltingToLeft && tiltingProgress >= -maxTilt) && tiltingIn)  {
+       if ( (tiltingToLeft && tiltingProgress <= maxTilt) || (!tiltingToLeft && tiltingProgress >= -maxTilt) && tiltingIn)  {
             if (tiltingToLeft) {
                 tiltingProgress = (float) (tiltingProgress + 0.2);
             } else {
@@ -75,7 +77,7 @@ public class TiltingHandler {
 
             System.out.println("Starting tilt.");
         }
-        System.out.println( Math.round(tiltingProgress) <=0);
+        System.out.println(tiltingProgress <=0);
         if ( Math.round(tiltingProgress) <= 0 && tiltingOut) {
             if (tiltingToLeft) {
                 tiltingProgress = (float) (tiltingProgress - 0.2);
