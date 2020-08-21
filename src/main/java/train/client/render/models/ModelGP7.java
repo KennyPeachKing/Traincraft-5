@@ -96,7 +96,7 @@ public class ModelGP7 extends ModelConverter //Same as Filename
 		bodyModel[46] = new ModelRendererTurbo(this, 179, 71, textureX, textureY, "lamp"); // Box 47 lamp
 		bodyModel[47] = new ModelRendererTurbo(this, 244, 118, textureX, textureY); // Box 48
 		bodyModel[48] = new ModelRendererTurbo(this, 244, 118, textureX, textureY); // Box 49
-		bodyModel[49] = new ModelRendererTurbo(this, 245, 107, textureX, textureY); // Box 50
+		bodyModel[49] = new ModelRendererTurbo(this, 245, 107, textureX, textureY, "lamp"); // Box 50
 		bodyModel[50] = new ModelRendererTurbo(this, 246, 112, textureX, textureY, "lamp"); // Box 51 lamp
 		bodyModel[51] = new ModelRendererTurbo(this, 133, 78, textureX, textureY); // Box 53
 		bodyModel[52] = new ModelRendererTurbo(this, 246, 112, textureX, textureY, "lamp"); // Box 54 lamp

@@ -292,7 +292,7 @@ public class ModelLoco44TonSwitcher extends ModelConverter //Same as Filename
 		bodyModel[239] = new ModelRendererTurbo(this, 65, 97, textureX, textureY); // Box 257
 		bodyModel[240] = new ModelRendererTurbo(this, 409, 65, textureX, textureY); // Box 258
 		bodyModel[241] = new ModelRendererTurbo(this, 241, 33, textureX, textureY); // Box 259
-		bodyModel[242] = new ModelRendererTurbo(this, 417, 89, textureX, textureY); // Box 261
+		bodyModel[242] = new ModelRendererTurbo(this, 417, 88, textureX, textureY); // Box 261
 		bodyModel[243] = new ModelRendererTurbo(this, 200, 77, textureX, textureY); // Box 515
 		bodyModel[244] = new ModelRendererTurbo(this, 200, 77, textureX, textureY); // Box 516
 		bodyModel[245] = new ModelRendererTurbo(this, 195, 78, textureX, textureY); // Box 517

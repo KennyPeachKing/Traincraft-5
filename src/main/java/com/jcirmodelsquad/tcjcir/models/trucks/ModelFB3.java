@@ -1,6 +1,6 @@
 //This File was created with the intent to make you Sus harder than the bagels in my backyard!
 
-package com.jcirmodelsquad.tcjcir.models.trains; //Path where the model is located
+package com.jcirmodelsquad.tcjcir.models.trucks; //Path where the model is located
 
 
 import tmt.ModelConverter;

@@ -7,7 +7,7 @@
 // Created on: 13.06.2020 - 11:01:35
 // Last changed on: 13.06.2020 - 11:01:35
 
-package com.jcirmodelsquad.tcjcir.models.trains; //Path where the model is located
+package com.jcirmodelsquad.tcjcir.models.trucks; //Path where the model is located
 
 
 import tmt.ModelConverter;

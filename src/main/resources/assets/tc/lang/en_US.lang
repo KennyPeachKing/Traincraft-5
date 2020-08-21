@@ -384,6 +384,7 @@ item.tc:minecartLUpassenger.name=LU 1996 Passenger
 item.tc:minecartLUengine.name=LU 1996 Engine
 item.tc:minecartGP13.name=EMD GP13
 item.tc:minecartFOLM1B.name=FOL-M1B
+item.tc:minecartGP30.name=GP30
 
 <!-- ## Achievements ## -->
 achievement.tc:engineer=Engineers clothes
@@ -702,7 +703,8 @@ entity.tc.PCH100HCoach.name=PCH-100H Coach
 entity.tc.LUengine.name=LU 1996 Engine
 entity.tc.LUpassenger.name=LU 1996 Passenger
 entity.tc.GP13.name=EMD GP13
-entity.tc.Loco FOL-M1B.name=FOL-M1B
+entity.tc.FOL-M1B.name=FOL-M1B
+entity.tc.GP30.name=EMD GP30
 
 description.villager.profession.tc.station_chief=Station Chief
 tile.tc:FortyFootContainer.name= Forty Foot Container

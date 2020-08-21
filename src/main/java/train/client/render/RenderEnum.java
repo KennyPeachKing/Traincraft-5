@@ -757,6 +757,11 @@ public enum RenderEnum {
 		{
 			add(new double[]{1.3D, 1.45D, 0.0D});
 		}
+	}, "", null, 0, false),
+	GP30( com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselGP30.class,  new ModelGP30(), "gp30_", true,new float[] {-1.7F, 0.155F, 0F},  new float[] { 0F, 180F, 180F }, null, "smoke", 4,  new ArrayList<double[]>() {
+		{
+			add(new double[]{1.9D, 1.6D, 0.0D});
+		}
 	}, "", null, 0, false),;
 
 	private Class<? extends AbstractTrains> entityClass;
