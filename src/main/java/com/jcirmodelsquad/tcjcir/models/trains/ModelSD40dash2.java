@@ -1523,12 +1523,13 @@ public class ModelSD40dash2 extends ModelConverter //Same as Filename
 		}
 		if (entity instanceof AbstractTrains && ((AbstractTrains) entity).getColor() == 15) {
 			Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/flexicoil_c2h_Blue.png"));
+		} else if (entity instanceof AbstractTrains && ((AbstractTrains) entity).getColor() == 4) {
+			Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/flexicoil_c2h_Grey.png"));
 		} else {
 			Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/flexicoil_c2h_Black.png"));
 		}
 		GL11.glPushMatrix();
 		GL11.glTranslatef(-2F, -0.32F, 0F);
-		//GL11.glScalef(0.9f,0.9f,0.8f);
 		theTrucks.render(entity, f, f1, f2, f3, f4, f5);
 		GL11.glPopMatrix();
 
