@@ -349,7 +349,8 @@ public enum ItemIDs {
 	minecartLUengine("ItemRollingStock", "luengine", 4),
 	minecartLUpassenger("ItemRollingStock", "lupassenger", 4),
 	minecartGP13("ItemRollingStock", "gp13", 11),
-	minecartFOLM1B("ItemRollingStock", "folm1b", 9),;
+	minecartFOLM1B("ItemRollingStock", "folm1b", 9),
+	minecartGP30("ItemRollingStock", "gp30", 10),;
 
 	public Item item;
 	public String className;

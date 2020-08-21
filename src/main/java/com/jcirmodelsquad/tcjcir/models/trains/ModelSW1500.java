@@ -10,6 +10,7 @@
 package com.jcirmodelsquad.tcjcir.models.trains; //Path where the model is located
 
 import com.jcirmodelsquad.tcjcir.models.trucks.ModelTypeASmol;
+import com.jcirmodelsquad.tcjcir.models.trucks.ModelFlexicoil2;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
@@ -1301,7 +1302,7 @@ public class ModelSW1500 extends ModelConverter //Same as Filename
 		bodyModel[311].setRotationPoint(17.18F, -29F, -0.5F);
 	}
 
-	com.jcirmodelsquad.tcjcir.models.trains.ModelFlexicoil2 theTrucks1 = new com.jcirmodelsquad.tcjcir.models.trains.ModelFlexicoil2();
+	ModelFlexicoil2 theTrucks1 = new ModelFlexicoil2();
 	ModelTypeASmol theTrucks2 = new ModelTypeASmol();
 
 	@Override

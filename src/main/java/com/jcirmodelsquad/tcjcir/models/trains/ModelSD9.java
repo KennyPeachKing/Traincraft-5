@@ -4,6 +4,7 @@ package com.jcirmodelsquad.tcjcir.models.trains; //Path where the model is locat
 
 
 import net.minecraft.client.Minecraft;
+import com.jcirmodelsquad.tcjcir.models.trucks.ModelFlexicoil_C1;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
