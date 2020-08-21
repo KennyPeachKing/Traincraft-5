@@ -2,6 +2,7 @@ package train.common.api;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.jcirmodelsquad.tcjcir.features.autotrain.Station;
 import com.jcirmodelsquad.tcjcir.vehicles.locomotives.GeGenesis;
 import com.jcirmodelsquad.tcjcir.vehicles.locomotives.PCH120Commute;
 import cpw.mods.fml.client.FMLClientHandler;
@@ -40,6 +41,7 @@ import train.common.mtc.PDMMessage;
 import train.common.mtc.TilePDMInstructionRadio;
 import train.common.mtc.packets.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Locomotive extends EntityRollingStock implements IInventory, WirelessTransmitter {
@@ -130,6 +132,12 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
     public boolean canBePulled = false;
 
     public boolean paired = false;
+
+    //ETI Type Beat type beat.
+    public String operatorID = ""; //Example: PR for PeachRail, or TXCN for Texas Central
+    public String trainName = ""; //May not be used very often, but just in case, include it.
+    public int trainNumber = 0;
+    public ArrayList<String> stations = new ArrayList<>();
 
     public Locomotive(World world) {
         super(world);
@@ -941,9 +949,7 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
                 if (mtcType == 2) {
                     //Send updates every few seconds
                     if (this.ticksExisted % 20 == 0) {
-
                     sendMTCStatusUpdate();
-
                     }
 
 
@@ -957,13 +963,8 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
 
                 }
             }
-            if (getSpeed() > speedLimit && speedLimit != 0 && enforceSpeedLimits) {
-                isDriverOverspeed = true;
 
-            } else {
-                isDriverOverspeed = false;
-
-            }
+            isDriverOverspeed = getSpeed() > speedLimit && speedLimit != 0 && enforceSpeedLimits;
             if (isDriverOverspeed && (ticksExisted % 40 == 0) && atoStatus != 1 && this.riddenByEntity != null) {
                 Traincraft.playSoundOnClientChannel.sendTo(new PacketPlaySoundOnClient(7, "tc:mtc_overspeed"), (EntityPlayerMP) this.riddenByEntity);
             }
@@ -1006,15 +1007,11 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
                 this.speedLimit = (int) Math.round(distanceFromStopPoint);
                 Traincraft.itsChannel.sendToAllAround(new PacketSetSpeed(this.speedLimit, (int) this.posX, (int) this.posY, (int) this.posZ, getEntityId()), new TargetPoint(this.worldObj.provider.dimensionId, this.posX, this.posY, this.posZ, 150.0D));
                 speedGoingDown = true;
-            } else {
-
             }
             if (distanceFromStopPoint >= 15 && distanceFromStopPoint < this.speedLimit && !(xFromStopPoint == 0.0) && mtcType == 2) {
                 this.speedLimit = (int) Math.round(distanceFromStopPoint);
                 Traincraft.itsChannel.sendToAllAround(new PacketSetSpeed(this.speedLimit, (int) this.posX, (int) this.posY, (int) this.posZ, getEntityId()), new TargetPoint(this.worldObj.provider.dimensionId, this.posX, this.posY, this.posZ, 150.0D));
                 speedGoingDown = true;
-            } else {
-
             }
 
 

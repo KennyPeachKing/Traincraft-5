@@ -1,8 +1,10 @@
 package train.client.gui;
 
 
+import com.jcirmodelsquad.tcjcir.features.eti.GuiETI;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.entity.Entity;
@@ -18,7 +20,11 @@ public class GuiMTCInfo extends GuiScreen {
        private GuiTCTextField trainLevel;
        private GuiTCTextField trainID;
        private GuiTCTextField destination;
-       private GuiButton okayButton;
+       private GuiButton enhancedTrainInformation;
+        public int xSize = 305;
+        public int ySize = 274;
+        public int guiLeft;
+        public int guiTop;
     public GuiMTCInfo(Entity entity) {
 
         if (entity instanceof Locomotive) {
@@ -28,11 +34,12 @@ public class GuiMTCInfo extends GuiScreen {
 
     @Override
     public void initGui() {
-
+        this.guiLeft = (this.width - this.xSize) / 2;
+        this.guiTop = (this.height - this.ySize) / 2;
         trainLevel = new GuiTCTextField(fontRendererObj, this.width/2 -5, this.height/2 - 1, 15,15);
         destination = new GuiTCTextField(fontRendererObj, this.width/2 -5, this.height/2 + 20, 80,15);
         trainID = new GuiTCTextField(fontRendererObj, this.width/2 -5, this.height/2 - 20, 80,15);
-        okayButton = new GuiButton(0,this.width/2 -5, this.height/2 + 40, 60,25, "Okay" );
+        enhancedTrainInformation = new GuiButton(0, guiLeft + 90, guiTop + 180, 150, 20, "Enhanced Train Information" );
         trainLevel.setMaxStringLength(1);
         trainLevel.setText(theLocomotive.trainLevel);
         trainID.setMaxStringLength(6);
@@ -41,7 +48,7 @@ public class GuiMTCInfo extends GuiScreen {
 
         destination.setText(theLocomotive.getDataWatcher().getWatchableObjectString(3));
 
-
+        this.buttonList.add(enhancedTrainInformation);
 
     }
 
@@ -61,7 +68,9 @@ public class GuiMTCInfo extends GuiScreen {
     @Override
     @SideOnly(Side.CLIENT)
     protected void actionPerformed(GuiButton button) {
-
+        if (button.id == 0) {
+            Minecraft.getMinecraft().displayGuiScreen(new GuiETI(theLocomotive));
+        }
     }
     @Override
     public void updateScreen() {

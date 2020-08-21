@@ -10,6 +10,7 @@
 package com.jcirmodelsquad.tcjcir.models.trains;
 
 
+import com.jcirmodelsquad.tcjcir.models.trucks.ModelFB2;
 import com.jcirmodelsquad.tcjcir.models.trucks.ModelTypeB;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;

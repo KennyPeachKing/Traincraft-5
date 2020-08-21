@@ -7,20 +7,26 @@ public class Station {
     public Double stationZ;
     public int dwellTime; //In seconds
     public boolean isFinalStop;
-    public Station(String theName, Double sX, Double sY, Double sZ, Integer dt) {
+    public Station(String theName, Double stationX, Double stationY, Double stationZ, Integer dwellTime) {
         name = theName;
-        stationX = sX;
-        stationY = sY;
-        stationZ = sZ;
-        dwellTime = dt;
+        this.stationX = stationX;
+        this.stationY = stationY;
+        this.stationZ = stationZ;
+        this.dwellTime = dwellTime;
     }
-    public Station(String theName, Double sX, Double sY, Double sZ, Integer dt, Boolean fs) {
+    public Station(String theName, Double stationX, Double stationY, Double stationZ) {
         name = theName;
-        stationX = sX;
-        stationY = sY;
-        stationZ = sZ;
-        dwellTime = dt;
-        isFinalStop = fs;
+        this.stationX = stationX;
+        this.stationY = stationY;
+        this.stationZ = stationZ;
+    }
+    public Station(String theName, Double stationX, Double stationY, Double stationZ, Integer dwellTime, Boolean isFinalStop) {
+        name = theName;
+        this.stationX = stationX;
+        this.stationY = stationY;
+        this.stationZ = stationZ;
+        this.dwellTime = dwellTime;
+        this.isFinalStop = isFinalStop;
     }
 
     public String getStationName() {return name;}

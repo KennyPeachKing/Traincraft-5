@@ -5,6 +5,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.jcirmodelsquad.tcjcir.features.autotrain.AutoTrainHandler;
 import com.jcirmodelsquad.tcjcir.features.autotrain.Station;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import net.minecraft.entity.item.EntityMinecart;
@@ -627,7 +628,7 @@ public class PCH120Commute extends ElectricTrain {
                     NBTTagList list = compound.getTagList("pages", Constants.NBT.TAG_STRING);
                     if (list != null) {
                         String theBook = list.getStringTagAt(0);
-                        operatingMode = Integer.valueOf(StringUtils.substringBetween(theBook, "/", "/"));
+                        operatingMode = Integer.parseInt(StringUtils.substringBetween(theBook, "/", "/"));
                         String initalPosition = StringUtils.substringBetween(theBook, "~");
                         thePlayer.addChatMessage(new ChatComponentText("Operating mode: " + operatingMode));
                         if (operatingMode == 2) {

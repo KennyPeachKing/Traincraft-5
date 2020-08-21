@@ -7,7 +7,7 @@
 // Created on: 19.06.2020 - 15:44:54
 // Last changed on: 19.06.2020 - 15:44:54
 
-package com.jcirmodelsquad.tcjcir.models.trains;
+package com.jcirmodelsquad.tcjcir.models.trucks;
 
 import tmt.ModelConverter;
 import tmt.ModelRendererTurbo;

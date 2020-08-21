@@ -1,10 +1,10 @@
 {
-  "PR" : {
+  "PCHR" : {
     "color" : "#7e60bf",
     "name" : "PeachRail",
     "image" : "https://i.imgur.com/XAnBzte.png"
   },
-  "BR" : {
+  "BRTR" : {
     "color" : "#084058",
     "name" : "British Rail"
   },
@@ -28,7 +28,7 @@
     "color": "#BF0D3E",
     "name" : "Texas Central"
   },
-  "JCT" : {
+  "JCTR" : {
     "color": "#004A7F",
     "name" : "JCTransit"
   }

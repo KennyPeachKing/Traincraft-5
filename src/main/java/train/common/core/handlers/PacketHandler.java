@@ -82,5 +82,9 @@ public class PacketHandler {
 		Traincraft.updateTrackReport.registerMessage(ClientGeometryCarUpdate.Handler.class, ClientGeometryCarUpdate.class, 223, Side.CLIENT);
 		Traincraft.remoteControlKey.registerMessage(RemoteControlKeyPacket.Handler.class, RemoteControlKeyPacket.class, 224, Side.SERVER);
 		Traincraft.updateGeometryCarFromServerChannel.registerMessage(UpdateGeometryCarFromServer.Handler.class, UpdateGeometryCarFromServer.class, 300, Side.CLIENT);
+
+		Traincraft.updateEtiChannel.registerMessage(UpdateETI.Handler.class, UpdateETI.class, 225, Side.CLIENT);
+		Traincraft.updateEtiChannel.registerMessage(UpdateETI.Handler.class, UpdateETI.class, 226, Side.SERVER);
+
 	}
 }
