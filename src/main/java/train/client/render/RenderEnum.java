@@ -766,11 +766,11 @@ public enum RenderEnum {
 	}, "", null, 0, false),
 	VBShay(com.jcirmodelsquad.tcjcir.vehicles.locomotives.SteamVBShay.class, new com.jcirmodelsquad.tcjcir.models.trains.ModelVBShay2(), "vbshay2_", true, new float[] { -0.4F, -1.15F, -0.0F }, new float[] { 0F, 0F, 0F }, null, "largesmoke", 20, new ArrayList<double[]>() {
 		{
-			add(new double[] { 1.0D, 1.7D, 0.2D });
+			add(new double[] { 0.65D, 2.3D, 0.2D });
 		}
 	}, "explode", new ArrayList<double[]>() {
 		{
-			add(new double[] { 1.6D, -0.4D, 0.8D });
+			add(new double[] { 0.6D, -0.4D, 0.8D });
 		}
 	}, 2, true),;
 
