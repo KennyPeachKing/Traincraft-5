@@ -89,4 +89,5 @@
   "pe_idle": {"category": "master", "sounds": [{"name": "pe_idle", "stream":  true}]},
   "nathan_p01235": {"category": "master", "sounds": [{"name": "nathan_p01235", "stream":  true}]},
   "drgw_3chime_2": {"category": "master", "sounds": [{"name": "drgw_3chime_2", "stream":  true}]},
+  "nathan_p5": {"category": "master", "sounds": [{"name": "nathan_p5", "stream":  true}]},
   "765_whistle": {"category": "master", "sounds": [{"name": "765_whistle", "stream":  true}]}}

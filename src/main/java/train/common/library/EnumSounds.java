@@ -112,6 +112,8 @@ public enum EnumSounds {
 	LU96Stock(com.jcirmodelsquad.tcjcir.vehicles.locomotives.ElectricLUengine.class, "lu_whistle", 1F, "mg_run", 0.6F, 8, "mg_idle", 0.4F, 50, false),
 	GP13(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselGP13.class, "nathan_p6", 0.8F, "chme3_run", 0.65F, 35, "chme3_idle", 0.65F, 40, false),
 	FOLM1B(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselFOLM1B.class, "nathan_p01235", 0.0F,"38d_6_notch8", 0.65F, 40, "38d_6_idle", 0.65F, 40, false),
+	GP30(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselGP30.class, "nathan_p5", 0.8F, "567_notch8", 0.65F, 35, "567_idle", 0.65F, 40, false),
+	VBShay(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselGP30.class, "shay_horn", 0.8F, "steam_run", 0.2F, 20, "steam_run", 0.2F, 20, true),
 	;
 	private Class entityClass;
 	private String horn;
