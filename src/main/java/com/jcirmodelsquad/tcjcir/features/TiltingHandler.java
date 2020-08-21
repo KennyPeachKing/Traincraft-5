@@ -47,7 +47,8 @@ public class TiltingHandler {
             tiltingOut = false;
             tiltingToLeft = !theRail.getType().equals("VERY_LARGE_RIGHT_TURN");
 
-        } else if (theRail != null && theRail.getType().contains("MEDIUM_STRAIGHT") && tiltingIn) {
+
+        } else if (theRail != null && theRail.getTrackType().getType().contains("STRAIGHT") && tiltingIn) {
             //Tilt out.
             tiltingIn = false;
             tiltingOut = true;
