@@ -100,6 +100,7 @@ public class Traincraft {
 	public static SimpleNetworkWrapper updateTrackReport = NetworkRegistry.INSTANCE.newSimpleChannel("UpdateTrackReport");
 	public static SimpleNetworkWrapper remoteControlKey = NetworkRegistry.INSTANCE.newSimpleChannel("RemoteControl");
 	public static SimpleNetworkWrapper brakeUpdateFromServer = NetworkRegistry.INSTANCE.newSimpleChannel("BrakeUpdateFromServer");
+	public static SimpleNetworkWrapper updateEtiChannel = NetworkRegistry.INSTANCE.newSimpleChannel("UpdateETI");
 	public static File configDirectory;
 
 	/* Creative tab for Traincraft */

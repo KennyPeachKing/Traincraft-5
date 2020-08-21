@@ -15,6 +15,7 @@ import org.lwjgl.opengl.GL11;
 import tmt.ModelConverter;
 import tmt.ModelRendererTurbo;
 import tmt.Tessellator;
+import train.common.entity.rollingStock.EntityPassengerRheingold;
 import train.common.library.Info;
 
 public class ModelRheingoldPassenger extends ModelConverter
@@ -838,11 +839,21 @@ public class ModelRheingoldPassenger extends ModelConverter
 		}
 	private ModelRheingoldBogie bogie1 = new ModelRheingoldBogie();
 
+
 	@Override
 	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
 	{
+		GL11.glPushMatrix();
+		EntityPassengerRheingold theCoach = (EntityPassengerRheingold)entity;
+		if (theCoach.tiltingHandler != null) {
+			GL11.glRotatef(theCoach.tiltingHandler.tiltingProgress, 4F, 0, 0);
+		}
+
+		//GL11.glTranslatef(0, 0.1F, 0);
+		//GL11.glRotatef(5, 1.F, 1F, 1);
 		super.render(entity, f, f1, f2, f3, f4, f5);
 
+		GL11.glPopMatrix();
 		Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/Rheingold_Bogie.png"));
 		GL11.glPushMatrix();
 		GL11.glTranslated(-4.625,0.20,-1.045);

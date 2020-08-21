@@ -51,7 +51,7 @@ public class GuiGeometryCar extends GuiScreen {
         operatingCrew = new GuiTCTextField(fontRendererObj, guiLeft + 110, guiTop + 72, 120, 15);
        // geometryCarName = new GuiTCTextField(fontRendererObj, guiLeft + 110, guiTop + 56, 120,15);
       //  railroadType = new GuiTCTextField(fontRendererObj, guiLeft + 85, guiTop + 46, 80,15);
-        railroadType = new GuiButton(0, guiLeft + 110, guiTop + 48, 120, 20, theCar.lineType);
+        railroadType = new GuiButton(0, guiLeft + 110, guiTop + 48, 130, 20, theCar.lineType);
 
         //railroadStandard = new GuiTCTextField(fontRendererObj, guiLeft + 5, guiTop + 546, 160,140);
 
@@ -64,7 +64,7 @@ public class GuiGeometryCar extends GuiScreen {
 
 
 
-        if (theCar != null && theCar.getDataWatcher() != null) {
+        if (theCar.getDataWatcher() != null) {
             railroadName.setText(theCar.railroadLine);
         }
        // saveTrackReport = new GuiButton(2,guiLeft + 110, guiTop + 115,130,20,"Generate Track Report");

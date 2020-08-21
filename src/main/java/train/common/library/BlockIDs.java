@@ -43,6 +43,7 @@ public enum BlockIDs {
 	pdmInstructionBlock(false, null),
 	actualSignalBlock(false, null),
 	betterDetector(false, null),
+	mtcMultiTransmitter(false, null),
 //	FortyFootContainer(true, ItemFortyFootContainer.class),
 	//Liquids
 	diesel(false, ItemBlockFluid.class),
