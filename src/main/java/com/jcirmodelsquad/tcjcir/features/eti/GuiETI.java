@@ -13,7 +13,7 @@ import train.common.api.Locomotive;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-
+/*
 public class GuiETI extends GuiScreen {
     Locomotive theLocomotive;
     GuiTCTextField operatorID;
@@ -162,5 +162,5 @@ public class GuiETI extends GuiScreen {
         }
     }
 }
-
+*/
 

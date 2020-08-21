@@ -3,6 +3,7 @@ package train.client.render;
 import com.jcirmodelsquad.tcjcir.models.trains.*;
 import com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselFOLM1B;
 import com.jcirmodelsquad.tcjcir.vehicles.locomotives.PCH120Commute;
+import com.jcirmodelsquad.tcjcir.vehicles.locomotives.SteamVBShay;
 import com.jcirmodelsquad.tcjcir.vehicles.rollingstock.PCH120Coach;
 import com.jcirmodelsquad.tcjcir.vehicles.rollingstock.TestControlCar;
 import tmt.ModelBase;
@@ -762,7 +763,16 @@ public enum RenderEnum {
 		{
 			add(new double[]{1.9D, 1.6D, 0.0D});
 		}
-	}, "", null, 0, false),;
+	}, "", null, 0, false),
+	VBShay(com.jcirmodelsquad.tcjcir.vehicles.locomotives.SteamVBShay.class, new com.jcirmodelsquad.tcjcir.models.trains.ModelVBShay2(), "vbshay2_", true, new float[] { -0.4F, -1.15F, -0.0F }, new float[] { 0F, 0F, 0F }, null, "largesmoke", 20, new ArrayList<double[]>() {
+		{
+			add(new double[] { 1.0D, 1.7D, 0.2D });
+		}
+	}, "explode", new ArrayList<double[]>() {
+		{
+			add(new double[] { 1.6D, -0.4D, 0.8D });
+		}
+	}, 2, true),;
 
 	private Class<? extends AbstractTrains> entityClass;
 	private ModelBase model;
