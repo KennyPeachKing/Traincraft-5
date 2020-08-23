@@ -314,7 +314,8 @@ public enum EnumTrains {
 	GP13("GP13", com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselGP13.class, ItemIDs.minecartGP13.item, "diesel", 2510,90,0,50,0,200,0.74,0.96,20000, TraincraftUtil.getBytesFromColors(new String[]{"Blue", "LightBlue", "Black", "Orange", "White", "Yellow"}), 10, 1.4, "Fictional Rebuild of a GP7, Uses the original GP40 model"),
 	FOLM1B("FOL-M1B", com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselFOLM1B.class, ItemIDs.minecartFOLM1B.item, "diesel", 5000, 110, 0, 10, 0, 170, 0.7, 0.965, 15000, TraincraftUtil.getBytesFromColors(new String[]{"Grey", "Blue", "Black"}), 18, -3.8, "Fictional B unit for the Fictional loco from Factorio"),
 	GP30("GP30", com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselGP30.class, ItemIDs.minecartGP30.item, "diesel", 2250, 114, 0, 50, 0, 180, 0.7, 0.91, 18000, TraincraftUtil.getBytesFromColors(new String[] {"LightGrey", "Black", "Yellow", "Blue", "Orange", "White", "Grey"}), 10, -3.5, "Made by Bida"),
-	VBShay("2TruckVerticalBoilerShay", com.jcirmodelsquad.tcjcir.vehicles.locomotives.SteamVBShay.class, ItemIDs.minecartVBShay2.item, "steam", 280,55,0,50,160,120,0.7,0.99,5000, TraincraftUtil.getBytesFromColors(new String[] {"Black", "Grey"}),15,-1.3, "Made with care by Bida"),;
+	VBShay("2TruckVerticalBoilerShay", com.jcirmodelsquad.tcjcir.vehicles.locomotives.SteamVBShay.class, ItemIDs.minecartVBShay2.item, "steam", 280,55,0,50,160,120,0.7,0.99,5000, TraincraftUtil.getBytesFromColors(new String[] {"Black", "Grey"}),15,-1.3, "Made with care by Bida"),
+	MillGondola("52footMillGondola", com.jcirmodelsquad.tcjcir.vehicles.rollingstock.MillGondola.class, ItemIDs.minecartMillGondola.item, "freight", 5, TraincraftUtil.getBytesFromColors(new String[] {"Red", "Black"}), 30, 50, "Made by Bida"),;
 
 
 	/*passengerICE1_Restaurant("ICE Restaurant", EntityPassengerICE_Restaurant.class,
