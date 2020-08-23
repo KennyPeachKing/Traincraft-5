@@ -1,5 +1,6 @@
 package train.client.core;
 
+import com.jcirmodelsquad.tcjcir.extras.HudTiltingHandler;
 import com.jcirmodelsquad.tcjcir.features.containers.GuiFortyFootContainer;
 import com.jcirmodelsquad.tcjcir.features.containers.TileFortyFootContainer;
 import cpw.mods.fml.client.registry.ClientRegistry;
@@ -71,6 +72,8 @@ public class ClientProxy extends CommonProxy {
 			HUDMTC hudMTC = new HUDMTC();
 			registerEvent(hudMTC);
 		}
+		HudTiltingHandler handler = new HudTiltingHandler();
+		registerEvent(handler);
 
 		registerEvent(tickHandler);
 		registerEvent(huDloco);

@@ -16,7 +16,6 @@ import train.common.tile.TileTCRailGag;
 
 public class EntityPassengerRheingold extends EntityRollingStock implements IPassenger {
 
-    public TiltingHandler tiltingHandler = new TiltingHandler(7);
 
     public EntityPassengerRheingold(World world) {
         super(world);
@@ -63,13 +62,6 @@ public class EntityPassengerRheingold extends EntityRollingStock implements IPas
         return true;
     }
 
-    @Override
-    public void onUpdate() {
-        super.onUpdate();
-        if (worldObj.isRemote) {
-            tiltingHandler.handleTilting(this);
-        }
-    }
 
     @Override
     public boolean canBeRidden() {
