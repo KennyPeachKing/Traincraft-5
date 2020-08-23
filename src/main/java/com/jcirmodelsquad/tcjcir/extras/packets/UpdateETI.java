@@ -59,7 +59,7 @@ public class UpdateETI implements IMessage {
                     theLocomotive.operatorID = message.operatorID;
                     theLocomotive.trainName = message.trainName;
                     theLocomotive.trainNumber = message.trainNumber;
-                  //  theLocomotive.stations = new ArrayList<String>(Arrays.asList(message.stations.split(", ")));
+                    theLocomotive.stations = new ArrayList<String>(Arrays.asList(message.stations.split(", ")));
                 }
             } else {
                 //Coming from the server. Do client side stuff.

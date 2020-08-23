@@ -1,6 +1,5 @@
 package train.common.items;
 
-import com.sun.istack.internal.Nullable;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -18,6 +17,7 @@ import train.common.library.ItemIDs;
 import train.common.tile.TileTCRail;
 import train.common.tile.TileTCRailGag;
 
+import javax.annotation.Nullable;
 import java.util.List;
 
 public class ItemTCRail extends ItemPart {

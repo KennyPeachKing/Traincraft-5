@@ -61,7 +61,7 @@ public class TCBlocks {
 			BlockIDs.mtcReceiverDestination.block = new BlockInfoGrabberDestination(Material.rock).setHardness(3.5F).setStepSound(Block.soundTypeMetal).setBlockTextureName("tc:destinationreceiver").setBlockName("mtcdestinationreceiver").setCreativeTab(Traincraft.tcTab);
 			BlockIDs.pdmInstructionBlock.block = new BlockPDMInstructionRadio(Material.rock).setHardness(3.5F).setStepSound(Block.soundTypeMetal).setBlockTextureName("tc:pdmradio").setBlockName("pdmradio").setCreativeTab(Traincraft.tcTab);
 			BlockIDs.betterDetector.block = new BlockBetterDetector(Material.rock).setHardness(3.5F).setStepSound(Block.soundTypeMetal).setBlockTextureName("tc:better_detector").setBlockName("betterdetector").setCreativeTab(Traincraft.tcTab);;
-			BlockIDs.mtcMultiTransmitter.block = new MTCMultiTransmitter.mtBlock(Material.rock).setHardness(3.5F).setStepSound(Block.soundTypeMetal).setBlockTextureName("tc:better_detector").setBlockName("betterdetector").setCreativeTab(Traincraft.tcTab);;
+			BlockIDs.mtcMultiTransmitter.block = new BlockMTCMultiTransmitter(Material.rock).setHardness(3.5F).setStepSound(Block.soundTypeMetal).setBlockTextureName("tc:better_detector").setBlockName("betterdetector").setCreativeTab(Traincraft.tcTab);;
 		}
 		BlockIDs.actualSignalBlock.block = new BlockActualSignalBlock(Material.rock).setHardness(3.5F).setStepSound(Block.soundTypeMetal).setBlockTextureName("tc:actual_signal_block").setBlockName("actualsignalblock").setCreativeTab(Traincraft.tcTab);;
 		//BlockIDs.FortyFootContainer.block = new BlockFortyFootContainer(Material.rock).setHardness(4.5F).setCreativeTab(Traincraft.tcTab).setStepSound(Block.soundTypeMetal);

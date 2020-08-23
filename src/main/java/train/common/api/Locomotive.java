@@ -137,7 +137,7 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
     public String operatorID = ""; //Example: PR for PeachRail, or TXCN for Texas Central
     public String trainName = ""; //May not be used very often, but just in case, include it.
     public int trainNumber = 0;
-    //public ArrayList<String> stations = new ArrayList<>();
+    public ArrayList<String> stations = new ArrayList<>();
 
     public Locomotive(World world) {
         super(world);
