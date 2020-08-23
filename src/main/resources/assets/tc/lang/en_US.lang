@@ -386,6 +386,7 @@ item.tc:minecartGP13.name=EMD GP13
 item.tc:minecartFOLM1B.name=FOL-M1B
 item.tc:minecartGP30.name=GP30
 item.tc:minecartVBShay2.name=2 Truck Vertical Boiler Shay
+item.tc:minecartMillGondola.name=52' Mill Gondola
 
 <!-- ## Achievements ## -->
 achievement.tc:engineer=Engineers clothes
@@ -707,6 +708,7 @@ entity.tc.GP13.name=EMD GP13
 entity.tc.FOL-M1B.name=FOL-M1B
 entity.tc.GP30.name=EMD GP30
 entity.tc.2TruckVerticalBoilerShay.name=2 Truck Vertical Boiler Shay
+entity.tc.52footMillGondola.name=52' Mill Gondola
 
 description.villager.profession.tc.station_chief=Station Chief
 tile.tc:FortyFootContainer.name= Forty Foot Container

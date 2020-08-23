@@ -353,6 +353,8 @@ public enum ItemIDs {
 	minecartGP30("ItemRollingStock", "gp30", 10),
 	minecartVBShay2("ItemRollingStock", "vbshay2", 7),
 	minecartAipkitExplorer("ItemRollingStock", "explorer", 14);
+	minecartVBShay2("ItemRollingStock", "vbshay2", 7),
+	minecartMillGondola("ItemRollingStock", "millgondola", 4),;
 
 	public Item item;
 	public String className;
