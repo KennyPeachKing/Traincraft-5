@@ -42,6 +42,9 @@ repositories {
         url = "http://maven.cil.li/"
     }
 }
+sourceCompatibility = 1.8
+
+targetCompatibility = 1.8
 
 dependencies {
     repositories {
