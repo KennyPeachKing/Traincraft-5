@@ -31,7 +31,6 @@ public class HudTiltingHandler extends GuiScreen {
                 }
             } catch (NoSuchFieldException | IllegalAccessException e) {
                 //Train does not have a tilt hadnler
-                System.out.println("No tilt handler found.");
             }
 
         } else {

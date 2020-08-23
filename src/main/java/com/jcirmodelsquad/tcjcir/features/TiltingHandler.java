@@ -44,7 +44,7 @@ public class TiltingHandler {
 
             if (theTileEntity != null) {
                 if (theRail != null) {
-                    System.out.println(theRail.getType());
+               //     System.out.println(theRail.getType());
                 }
             }
             if (ItemTCRail.isTCTurnTrack(theRail)) {
@@ -115,16 +115,16 @@ public class TiltingHandler {
                         tiltingProgress = (float) (tiltingProgress - 0.2);
                     }
 
-                    System.out.println("Starting tilt.");
+                    //System.out.println("Starting tilt.");
                 } else if (Math.round(tiltingProgress) <= 0 && tiltingOut) {
                     if (tiltingToLeft) {
                         tiltingProgress = (float) (tiltingProgress - 0.2);
-                        System.out.println("untilt?");
+                     //   System.out.println("untilt?");
                     } else {
                         tiltingProgress = (float) (tiltingProgress + 0.2);
                     }
 
-                    System.out.println("Starting untilt.");
+                   // System.out.println("Starting untilt.");
                 }
             }
     }
@@ -140,7 +140,7 @@ public class TiltingHandler {
     public void tiltToTheRight() {
         if (tiltingToLeft) {
             tiltingProgress = (float) (tiltingProgress - 0.2);
-            System.out.println("untilt?");
+           // System.out.println("untilt?");
         } else {
             tiltingProgress = (float) (tiltingProgress + 0.2);
         }
