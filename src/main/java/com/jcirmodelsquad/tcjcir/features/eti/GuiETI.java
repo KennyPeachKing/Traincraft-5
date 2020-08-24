@@ -46,8 +46,8 @@ public class GuiETI extends GuiScreen {
 
         operatorID.setText(theLocomotive.operatorID);
         trainName.setText(theLocomotive.trainName);
-        trainNumber.setText(String.valueOf(theLocomotive.trainNumber));
-        trainNumber.setMaxStringLength(4);
+        trainNumber.setText(theLocomotive.trainNumber);
+        trainNumber.setMaxStringLength(5);
         stations.setMaxStringLength(500);
         this.buttonList.add(saveAndClose);
     }
@@ -92,10 +92,10 @@ public class GuiETI extends GuiScreen {
             }
             theLocomotive.operatorID = operatorID.getText();
             theLocomotive.trainName = trainName.getText();
-            theLocomotive.trainNumber = Integer.parseInt(trainNumber.getText());
+            theLocomotive.trainNumber = trainNumber.getText();
             String listString = String.join(", ", toSend);
             theLocomotive.stations = new ArrayList<String>(Arrays.asList(listString.split(", ")));
-            Traincraft.updateEtiChannel.sendToServer(new UpdateETI(theLocomotive.getEntityId(), operatorID.getText(), trainName.getText(), Integer.parseInt(trainNumber.getText()), listString));
+            Traincraft.updateEtiChannel.sendToServer(new UpdateETI(theLocomotive.getEntityId(), operatorID.getText(), trainName.getText(), trainNumber.getText(), listString));
             mc.thePlayer.closeScreen();
         }
     }

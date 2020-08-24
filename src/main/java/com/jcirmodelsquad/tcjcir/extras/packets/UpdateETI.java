@@ -18,11 +18,11 @@ public class UpdateETI implements IMessage {
     public int entity;
     public String operatorID;
     public String trainName;
-    public int trainNumber;
+    public String trainNumber;
     public String stations;
 
     public UpdateETI() {}
-    public UpdateETI(int entity, String operatorID, String trainName, int trainNumber, String stations) {
+    public UpdateETI(int entity, String operatorID, String trainName, String trainNumber, String stations) {
         this.entity = entity;
         this.operatorID = operatorID;
         this.trainName = trainName;
@@ -34,7 +34,7 @@ public class UpdateETI implements IMessage {
         this.entity = buf.readInt();
         operatorID = ByteBufUtils.readUTF8String(buf);
         trainName = ByteBufUtils.readUTF8String(buf);
-        this.trainNumber =  buf.readInt();
+        this.trainNumber =  ByteBufUtils.readUTF8String(buf);
         stations = ByteBufUtils.readUTF8String(buf);
     }
 
@@ -43,7 +43,7 @@ public class UpdateETI implements IMessage {
         buf.writeInt(entity);
         ByteBufUtils.writeUTF8String(buf, operatorID);
         ByteBufUtils.writeUTF8String(buf, trainName);
-        buf.writeInt(trainNumber);
+        ByteBufUtils.writeUTF8String(buf, trainNumber);
         ByteBufUtils.writeUTF8String(buf, stations);
     }
 

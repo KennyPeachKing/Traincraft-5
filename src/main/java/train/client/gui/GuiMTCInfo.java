@@ -2,6 +2,7 @@ package train.client.gui;
 
 
 //import com.jcirmodelsquad.tcjcir.features.eti.GuiETI;
+import com.jcirmodelsquad.tcjcir.features.eti.GuiETI;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.Minecraft;
@@ -65,13 +66,13 @@ public class GuiMTCInfo extends GuiScreen {
         super.drawScreen(mouseX, mouseY, partialTicks);
     }
 
-    /*@Override
+    @Override
     @SideOnly(Side.CLIENT)
     protected void actionPerformed(GuiButton button) {
         if (button.id == 0) {
             Minecraft.getMinecraft().displayGuiScreen(new GuiETI(theLocomotive));
         }
-    }*/
+    }
     @Override
     public void updateScreen() {
         super.updateScreen();
