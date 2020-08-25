@@ -10,7 +10,8 @@
   },
   "OWO" : {
     "color" : "#B6D5B3",
-    "name" : "Washaska & Old Fox Rail Co"
+    "name" : "Washaska & Old Fox Rail Co",
+    "image" : "https://i.imgur.com/BmD9Ivs.png"
   },
   "YR" : {
     "color": "#FFFFFF",
@@ -18,7 +19,8 @@
   },
   "BNSF" : {
     "color": "#E06100",
-    "name" : "BNSF"
+    "name" : "BNSF",
+    "image" : "https://i.imgur.com/D2KZ4wi.png"
   },
   "FWWR" : {
     "color": "#169C9D",
@@ -26,7 +28,8 @@
   },
   "TXCN" : {
     "color": "#BF0D3E",
-    "name" : "Texas Central"
+    "name" : "Texas Central",
+    "image" : "https://i.imgur.com/IW9IZX6.png"
   },
   "JCTR" : {
     "color": "#004A7F",
