@@ -286,11 +286,14 @@ public class ModelMillGondola extends ModelConverter //Same as Filename
 				int cargo = ((Freight) entity).getAmmountOfCargo();
 				if (cargo != 0) {
 					GL11.glPushMatrix();
-					GL11.glTranslatef(0, -0.51f + ((Freight) entity).getAmmountOfCargo() * 0.016f, 0);
+					GL11.glTranslatef(0, 0.57f + ((Freight) entity).getAmmountOfCargo() * -0.013f, 0);
+					// 0.57f is the "starting height", the *-0.whatever is the multiplier
+					//System.out.println(-0.51f + ((Freight) entity).getAmmountOfCargo() * 0.016f);
+					bodyModel[58].render(f5);
 					GL11.glPopMatrix();
 				}
-			}
-			bodyModel[i].render(f5);
+			} else
+				bodyModel[i].render(f5);
 		}
 
 		Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/70truck_Black.png"));
