@@ -473,6 +473,20 @@ achievement.tc:heavySteam= Heavy Steam Engine
 achievement.tc:heavySteam.desc= thicc steam
 achievement.tc:crossrail=Crossrail
 achievement.tc:crossrail.desc=Still delayed to this day!
+achievement.tc:cf7=CF7
+achievement.tc:cf7.desc=The Best Rebuild
+achievement.tc:thanos=Thanos
+achievement.tc:thanos.desc=Let me show you how to Scratch It!
+achievement.tc:sd9=Cadillac!
+achievement.tc:sd9.desc=The Cadillac of the Rails
+achievement.tc:geared=Geared Power!
+achievement.tc:geared.desc=An Unusual Transmission!
+achievement.tc:powerful=More power less Locomotive
+achievement.tc:powerful.desc=One of the Big Ones
+achievement.tc:gevo=Modern Tech
+achievement.tc:gevo.desc=woo oh yeah woo its GEVO time
+achievement.tc:switchin=Switchin it Up!
+achievement.tc:switchin.desc=Time for Yard Work!
 
 
 <!-- ## GUI ## -->
