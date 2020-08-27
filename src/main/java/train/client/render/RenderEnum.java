@@ -779,7 +779,7 @@ public enum RenderEnum {
 	SD70Mac( com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselSD70Mac.class,  new ModelSD70Mac(), "sd70mac_", true,new float[] {-2.3F, 0.15F, 0F},  new float[] { 0F, 180F, 180F }, null, "smoke", 5,  new ArrayList<double[]>() {
 
 		{
-			add(new double[]{1.4D, 1.7D, 0.0D});
+			add(new double[]{2.35D, 1.7D, 0.0D});
 		}
 	}, "", null, 0, false),
 	;
