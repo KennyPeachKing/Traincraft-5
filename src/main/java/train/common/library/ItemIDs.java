@@ -354,7 +354,8 @@ public enum ItemIDs {
 	minecartAipkitExplorer("ItemRollingStock", "explorer", 14),
 	minecartVBShay2("ItemRollingStock", "vbshay2", 7),
 	minecartMillGondola("ItemRollingStock", "millgondola", 4),
-	minecartClass345("ItemRollingStock", "class345", 15),;
+	minecartClass345("ItemRollingStock", "class345", 13),
+	minecartSD70Mac("ItemRollingStock", "sd70mac", 14);
 
 	public Item item;
 	public String className;

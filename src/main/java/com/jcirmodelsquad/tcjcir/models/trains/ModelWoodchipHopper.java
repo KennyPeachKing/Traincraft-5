@@ -8,6 +8,7 @@ import org.lwjgl.opengl.GL11;
 import tmt.ModelConverter;
 import tmt.ModelRendererTurbo;
 import tmt.Tessellator;
+import train.common.api.Freight;
 import train.common.library.Info;
 
 public class ModelWoodchipHopper extends ModelConverter //Same as Filename
@@ -234,16 +235,16 @@ public class ModelWoodchipHopper extends ModelConverter //Same as Filename
 		bodyModel[40].addShapeBox(0F, 0F, 0F, 8, 0, 6, 0F,0F, 5F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 5F, 0F, 0F, -5F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -5F, 0F); // load 5
 		bodyModel[40].setRotationPoint(33F, -20F, -3F);
 
-		bodyModel[41].addShapeBox(0F, 0F, 0F, 8, 5, 7, 0F,0F, 0F, 0F, -8F, 0F, 0F, -8F, 0F, -7F, 0F, 0F, -7F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F); // load 6
+		bodyModel[41].addShapeBox(0F, 0F, 0F, 8, 5, 7, 0F,0F, 0F, 0F, -8F, 0F, 0F, -8F, 0F, -7F, 0F, 0F, -7F, 0F, -5F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F); // load 6
 		bodyModel[41].setRotationPoint(33F, -25F, 3F);
 
-		bodyModel[42].addShapeBox(0F, 0F, 0F, 8, 5, 7, 0F,0F, 0F, -7F, -8F, 0F, -7F, -8F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F); // load 9
+		bodyModel[42].addShapeBox(0F, 0F, 0F, 8, 5, 7, 0F,0F, 0F, -7F, -8F, 0F, -7F, -8F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -5F, 0F); // load 9
 		bodyModel[42].setRotationPoint(33F, -25F, -10F);
 
-		bodyModel[43].addShapeBox(0F, 0F, 0F, 8, 5, 7, 0F,-8F, 0F, -7F, 0F, 0F, -7F, 0F, 0F, 0F, -8F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F); // load 8
+		bodyModel[43].addShapeBox(0F, 0F, 0F, 8, 5, 7, 0F,-8F, 0F, -7F, 0F, 0F, -7F, 0F, 0F, 0F, -8F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -5F, 0F, 0F, 0F, 0F); // load 8
 		bodyModel[43].setRotationPoint(-41F, -25F, -10F);
 
-		bodyModel[44].addShapeBox(0F, 0F, 0F, 8, 5, 7, 0F,-8F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -7F, -8F, 0F, -7F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F); // load 7
+		bodyModel[44].addShapeBox(0F, 0F, 0F, 8, 5, 7, 0F,-8F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -7F, -8F, 0F, -7F, 0F, 0F, 0F, 0F, -5F, 0F, 0F, 0F, 0F, 0F, 0F, 0F); // load 7
 		bodyModel[44].setRotationPoint(-41F, -25F, 3F);
 
 		bodyModel[45].addBox(0F, 0F, 0F, 1, 21, 1, 0F); // Box 1
@@ -358,9 +359,30 @@ public class ModelWoodchipHopper extends ModelConverter //Same as Filename
 	@Override
 	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
 	{
-		for(int i = 0; i < 81; i++)
-		{
-			bodyModel[i].render(f5);
+		for (int i = 0; i < 81; i++) {
+			if (i == 36) { //37 38 39 40 41 42 43 44
+				/*int cargo = ((Freight) entity).getAmmountOfCargo();
+				if (cargo != 0) {
+					GL11.glPushMatrix();
+					GL11.glTranslatef(0, 0.57f + ((Freight) entity).getAmmountOfCargo() * -0.013f, 0);
+					// 0.57f is the "starting height", the *-0.whatever is the multiplier
+					bodyModel[36].render(f5);
+					bodyModel[37].render(f5);
+					bodyModel[38].render(f5);
+					bodyModel[39].render(f5);
+					bodyModel[40].render(f5);
+					bodyModel[41].render(f5);
+					bodyModel[42].render(f5);
+					bodyModel[43].render(f5);
+					bodyModel[44].render(f5);
+					GL11.glPopMatrix();
+				} else if (cargo == 0){
+					GL11.glPushMatrix();
+					GL11.glTranslatef(0, 0.57f + ((Freight) entity).getAmmountOfCargo() * -0.013f, 0);
+					GL11.glPopMatrix(); //this is supposed to not render the load bits if it doesnt have anything in it
+				}*/
+			} else
+				bodyModel[i].render(f5);
 		}
 
 		Tessellator.bindTexture(new ResourceLocation(Info.resourceLocation, "textures/trains/70truck_Black.png"));
