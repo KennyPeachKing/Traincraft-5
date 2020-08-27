@@ -57,7 +57,7 @@
   "nathan_k5La": {"category": "master", "sounds": [{"name": "nathan_k5La","stream": true}]},
   "nathan_k5La_2": {"category": "master", "sounds": [{"name": "nathan_k5La_2","stream": true}]},
   "nathan_k5La_3": {"category": "master", "sounds": [{"name": "nathan_k5La_3","stream": true}]},
-  "nathan_k5hl": {"category": "master", "sounds": [{"name": "nathan_k5hl","stream": true}]},
+  "nathan_k5hll": {"category": "master", "sounds": [{"name": "nathan_k5hll","stream": true}]},
   "gevo12_idle": {"category": "master", "sounds": [{"name": "gevo12_idle","stream": true}]},
   "gevo12_notch8": {"category": "master", "sounds": [{"name": "gevo12_notch8","stream": true}]},
   "heavy_whistle": {"category": "master", "sounds": [{"name": "heavy_whistle", "stream":  true}]},
@@ -90,4 +90,5 @@
   "nathan_p01235": {"category": "master", "sounds": [{"name": "nathan_p01235", "stream":  true}]},
   "drgw_3chime_2": {"category": "master", "sounds": [{"name": "drgw_3chime_2", "stream":  true}]},
   "nathan_p5": {"category": "master", "sounds": [{"name": "nathan_p5", "stream":  true}]},
+  "bombcart_run": {"category": "master", "sounds": [{"name": "bombcart_run", "stream":  true}]},
   "765_whistle": {"category": "master", "sounds": [{"name": "765_whistle", "stream":  true}]}}
