@@ -469,6 +469,11 @@ achievement.tc:caboose=Caboose
 achievement.tc:caboose.desc=The last one!
 achievement.tc:mtg=Mind The Gap
 achievement.tc:mtg.desc=Stand behind the yellow line!
+achievement.tc:heavySteam= Heavy Steam Engine
+achievement.tc:heavySteam.desc= thicc steam
+achievement.tc:crossrail=Crossrail
+achievement.tc:crossrail.desc=Still delayed to this day!
+
 
 <!-- ## GUI ## -->
 builder.follow.name=Follow tracks
