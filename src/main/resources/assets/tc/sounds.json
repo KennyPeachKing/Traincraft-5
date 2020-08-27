@@ -91,4 +91,7 @@
   "drgw_3chime_2": {"category": "master", "sounds": [{"name": "drgw_3chime_2", "stream":  true}]},
   "nathan_p5": {"category": "master", "sounds": [{"name": "nathan_p5", "stream":  true}]},
   "bombcart_run": {"category": "master", "sounds": [{"name": "bombcart_run", "stream":  true}]},
+  "710G3B_idle": {"category": "master", "sounds": [{"name": "710G3B_idle", "stream":  true}]},
+  "710G3B_notch8": {"category": "master", "sounds": [{"name": "710G3B_notch8", "stream":  true}]},
+  "nathan_k5la_4": {"category": "master", "sounds": [{"name": "nathan_k5la_4", "stream":  true}]},
   "765_whistle": {"category": "master", "sounds": [{"name": "765_whistle", "stream":  true}]}}

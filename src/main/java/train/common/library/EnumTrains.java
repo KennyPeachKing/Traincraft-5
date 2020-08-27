@@ -318,7 +318,7 @@ public enum EnumTrains {
 	aipkitExplorer("Aipkit Explorer", com.jcirmodelsquad.tcjcir.vehicles.rollingstock.AipkitExplorer.class, ItemIDs.minecartAipkitExplorer.item, "passenger",0, 0, 2, 0, 0, 0, 0, 0, 0, null, 0, 0,"Built from scratch by PeachMaster"),
 	FOLM1B("FOL-M1B", com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselFOLM1B.class, ItemIDs.minecartFOLM1B.item, "diesel", 5000, 110, 0, 10, 0, 170, 0.7, 0.965, 15000, TraincraftUtil.getBytesFromColors(new String[]{"Grey", "Blue"}), 18, -3.8, "Fictional B unit for the Fictional loco from Factorio"),
 	Class345("Class 345", com.jcirmodelsquad.tcjcir.vehicles.locomotives.ElectricClass345.class, ItemIDs.minecartClass345.item, "electric", 600, 100, 0,10, 0, 100, 0.7, 0.8, 1000, null, 18, -2, "Class 345 by hariesh"),
-	SD70Mac("SD70Mac", com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselSD70Mac.class, ItemIDs.minecartSD70Mac.item, "diesel", 4000, 112, 0, 15, 0, 150, 0.6, 0.8, 17000, TraincraftUtil.getBytesFromColors(new String[]{"Red", "Blue"}), 18, -4, "Original Model by Eddie, upgraded by Bida"),;
+	SD70Mac("SD70Mac", com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselSD70Mac.class, ItemIDs.minecartSD70Mac.item, "diesel", 4000, 112, 0, 15, 0, 150, 0.6, 0.8, 17000, TraincraftUtil.getBytesFromColors(new String[]{"Red", "Blue", "Grey", "LightGrey", "LightBlue", "Yellow", "Black","Green", "Orange"}), 18, -4, "Original Model by Eddie, upgraded by Bida"),;
 
 
 	/*passengerICE1_Restaurant("ICE Restaurant", EntityPassengerICE_Restaurant.class,
