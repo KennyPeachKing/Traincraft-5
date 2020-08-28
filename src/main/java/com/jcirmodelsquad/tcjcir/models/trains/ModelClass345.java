@@ -2,8 +2,8 @@
 // Copyright (C) 2020 Minecraft-SMP.de
 // This file is for Flan's Flying Mod Version 4.0.x+
 
-// Model: Class345
-// Model Creator: hariesh
+// Model: 
+// Model Creator: 
 // Created on: 20.07.2020 - 16:35:23
 // Last changed on: 20.07.2020 - 16:35:23
 
@@ -15,7 +15,7 @@ import tmt.ModelRendererTurbo;
 public class ModelClass345 extends ModelConverter //Same as Filename
 {
 	int textureX = 512;
-	int textureY = 511;
+	int textureY = 512;
 
 	public ModelClass345() //Same as Filename
 	{
@@ -643,10 +643,10 @@ public class ModelClass345 extends ModelConverter //Same as Filename
 		bodyModel[141].setRotationPoint(-2F, -1F, -10F);
 
 		bodyModel[142].addShapeBox(0F, 0F, 0F, 3, 1, 1, 0F,0F, 0F, -0.4F, 0F, 0F, -0.4F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -0.4F, -0.4F, 0F, -0.6F, -0.4F, 0F, -0.6F, 0F, 0F, -0.4F, 0F); // Box 143
-		bodyModel[142].setRotationPoint(-5F, -5F, -3F);
+		bodyModel[142].setRotationPoint(-6F, -5F, -3F);
 
 		bodyModel[143].addShapeBox(0F, 0F, 0F, 3, 1, 1, 0F,0F, 0F, -0.4F, 0F, 0F, -0.4F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -0.4F, -0.4F, 0F, -0.6F, -0.4F, 0F, -0.6F, 0F, 0F, -0.4F, 0F); // Box 144
-		bodyModel[143].setRotationPoint(-5F, -5F, -7F);
+		bodyModel[143].setRotationPoint(-6F, -5F, -7F);
 
 		bodyModel[144].addShapeBox(0F, 0F, 0F, 3, 1, 1, 0F,0F, 0F, 0F, 0F, 0F, 0F, 0F, 0F, -0.4F, 0F, 0F, -0.4F, 0F, -0.4F, 0F, 0F, -0.6F, 0F, 0F, -0.6F, -0.4F, 0F, -0.4F, -0.4F); // Box 145
 		bodyModel[144].setRotationPoint(-6F, -5F, 2F);
@@ -688,7 +688,7 @@ public class ModelClass345 extends ModelConverter //Same as Filename
 		bodyModel[156].setRotationPoint(30F, -3F, -9F);
 
 		bodyModel[157].addShapeBox(0F, 0F, 0F, 1, 1, 3, 0F,0F, 0F, 0F, -0.4F, 0F, 0F, -0.4F, 0F, 0F, 0F, 0F, 0F, 0F, -0.4F, 0F, -0.4F, -0.4F, 0F, -0.4F, -0.6F, 0F, 0F, -0.6F, 0F); // Box 158
-		bodyModel[157].setRotationPoint(-34F, -3F, -9F);
+		bodyModel[157].setRotationPoint(-15F, -3F, -9F);
 
 		bodyModel[158].addBox(0F, 0F, 0F, 12, 9, 1, 0F); // Box 159
 		bodyModel[158].setRotationPoint(20F, -6F, 9F);
@@ -766,6 +766,6 @@ public class ModelClass345 extends ModelConverter //Same as Filename
 		bodyModel[182].setRotationPoint(25F, -3F, -9F);
 
 		bodyModel[183].addShapeBox(1F, 0F, 0F, 1, 1, 3, 0F,0F, 0F, 0F, -0.4F, 0F, 0F, -0.4F, 0F, 0F, 0F, 0F, 0F, 0F, -0.6F, 0F, -0.4F, -0.6F, 0F, -0.4F, -0.4F, 0F, 0F, -0.4F, 0F); // Box 160
-		bodyModel[183].setRotationPoint(21F, -3F, 6F);
+		bodyModel[183].setRotationPoint(22F, -3F, 6F);
 	}
 }

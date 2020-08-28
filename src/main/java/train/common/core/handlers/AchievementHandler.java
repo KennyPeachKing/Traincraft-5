@@ -70,7 +70,7 @@ public class AchievementHandler {
 		AchievementIDs.fast.achievement = achievement("fast", -8, 10, ItemIDs.minecartVL10.item, AchievementIDs.electMotor.achievement);
 
 		AchievementIDs.engineer.achievement = achievement("engineer", -2, -2, ItemIDs.overalls.item, null);
-
+		//new achivements by hariesh
 		AchievementIDs.mtg.achievement = achievement("mtg", -12,12 , ItemIDs.minecartLUengine.item, AchievementIDs.electMotor.achievement);
 		AchievementIDs.crossrail.achievement = achievement("crossrail",-12,14, ItemIDs.minecartClass345.item, AchievementIDs.mtg.achievement).setSpecial();
 
