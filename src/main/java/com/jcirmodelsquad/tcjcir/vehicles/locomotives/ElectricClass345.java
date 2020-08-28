@@ -22,7 +22,7 @@ public class ElectricClass345 extends ElectricTrain {
         motionX = 0.0D;
         motionY = 0.0D;
         motionZ = 0.0D;
-        prevPosX = d;
+        prevPosX = d ;
         prevPosY = d1;
         prevPosZ = d2;
     }
@@ -134,7 +134,7 @@ public class ElectricClass345 extends ElectricTrain {
     }
     @Override
     public float getOptimalDistance(EntityMinecart cart) {
-        return 0.53F;
+        return 2F;
     }
 
     @Override
