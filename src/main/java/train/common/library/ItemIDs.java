@@ -348,7 +348,7 @@ public enum ItemIDs {
 	testControlCar("ItemRollingStock", "test_controlcar", 100000),
 	minecartLUengine("ItemRollingStock", "luengine", 4),
 	minecartLUpassenger("ItemRollingStock", "lupassenger", 4),
-	minecartGP13("ItemRollingStock", "gp13", 11),
+	minecartGP13("ItemRollingStock", "gp13", 9),
 	minecartFOLM1B("ItemRollingStock", "folm1b", 9),
 	minecartGP30("ItemRollingStock", "gp30", 10),
 	minecartAipkitExplorer("ItemRollingStock", "explorer", 14),
@@ -356,7 +356,8 @@ public enum ItemIDs {
 	minecartMillGondola("ItemRollingStock", "millgondola", 4),
 	minecartClass345("ItemRollingStock", "class345", 13),
 	minecartSD70Mac("ItemRollingStock", "sd70mac", 14),
-	minecartClass345Coach("ItemRollingStock", "class345coach", 7);
+	/*minecartClass345Coach("ItemRollingStock", "class345coach", 7),*/
+	minecartC424("ItemRollingStock", "c424", 11);
 
 	public Item item;
 	public String className;

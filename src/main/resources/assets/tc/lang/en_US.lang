@@ -389,6 +389,7 @@ item.tc:minecartVBShay2.name=2 Truck Vertical Boiler Shay
 item.tc:minecartMillGondola.name=52' Mill Gondola
 item.tc:minecartClass345.name=Class 345
 item.tc:minecartSD70Mac.name=EMD SD70Mac
+item.tc:minecartC424.name=ALCo C424/C425
 
 
 
@@ -695,7 +696,7 @@ entity.tc.Freight Car L.name=Freight Car L
 entity.tc.Loco Steam C41 0-8-0.name=C41 0-8-0
 entity.tc.Loco Steam Alco SC4.name=Alco SC4
 
-entity.tc.ALCO S2.name=Alco S2
+entity.tc.ALCO S2.name=ALCo S2
 entity.tc.Ribbed Hopper.name=Ribbed Covered Hopper
 entity.tc.SW1.name=EMD SW1
 entity.tc.H1044.name=FM H10-44
@@ -734,6 +735,7 @@ entity.tc.2TruckVerticalBoilerShay.name=2 Truck Vertical Boiler Shay
 entity.tc.52footMillGondola.name=52' Mill Gondola
 entity.tc.Class345.name=Class 345
 entity.tc.SD70Mac.name=EMD SD70Mac
+entity.tc.C424.name= ALCo C424/C425
 
 description.villager.profession.tc.station_chief=Station Chief
 tile.tc:FortyFootContainer.name= Forty Foot Container
