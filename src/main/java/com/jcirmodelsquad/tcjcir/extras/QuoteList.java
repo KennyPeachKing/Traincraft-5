@@ -117,6 +117,7 @@ public class QuoteList {
         importantQuotes.add(new JCIRQuote("Vertical boiler doesn't do blowjobs anymore.", "Bida"));
         importantQuotes.add(new JCIRQuote("Who is the Mayeeta Bandit?", "Bida"));
         importantQuotes.add(new JCIRQuote("My pants...?", "SDM"));
+        importantQuotes.add(new JCIRQuote("i haven't even begined and it's already spoiler!", "JCRail"));
         //jc if your reading this, dont edit existing quotes k thnx -bida
     return importantQuotes;
 
