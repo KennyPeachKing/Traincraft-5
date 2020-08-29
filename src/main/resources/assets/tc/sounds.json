@@ -94,4 +94,6 @@
   "710G3B_idle": {"category": "master", "sounds": [{"name": "710G3B_idle", "stream":  true}]},
   "710G3B_notch8": {"category": "master", "sounds": [{"name": "710G3B_notch8", "stream":  true}]},
   "nathan_k5la_4": {"category": "master", "sounds": [{"name": "nathan_k5la_4", "stream":  true}]},
+  "251B16_idle": {"category": "master", "sounds": [{"name": "251B16_idle", "stream":  true}]},
+  "251B16_notch8": {"category": "master", "sounds": [{"name": "251B16_notch8", "stream":  true}]},
   "765_whistle": {"category": "master", "sounds": [{"name": "765_whistle", "stream":  true}]}}

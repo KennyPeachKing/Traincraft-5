@@ -115,7 +115,9 @@ public enum EnumSounds {
 	GP30(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselGP30.class, "nathan_p5", 0.8F, "567_notch8", 0.65F, 35, "567_idle", 0.65F, 40, false),
 	VBShay(com.jcirmodelsquad.tcjcir.vehicles.locomotives.SteamVBShay.class, "shay_horn", 0.8F, "steam_run", 0.2F, 20, "steam_run", 0.2F, 20, true),
 	Payload(com.jcirmodelsquad.tcjcir.vehicles.rollingstock.BombCart.class, "", 0.8F, "bombcart_run", 1F, 60, "", 0.2F, 20, false),
-	SD70M(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselSD70Mac.class, "nathan_k5la_4", 0.8F, "710G3B_notch8", 1F, 40, "710G3B_idle", 0.2F, 20, false),
+	SD70M(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselSD70Mac.class, "nathan_k5la_4", 0.8F, "710G3B_notch8", 0.5F, 40, "710G3B_idle", 0.5F, 20, false),
+	C424(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselC424.class, "leslie_s3", 1F, "251B16_notch8", 0.5F, 20, "251B16_idle", 0.5F, 20, false),
+	;
 	;
 	private Class entityClass;
 	private String horn;
