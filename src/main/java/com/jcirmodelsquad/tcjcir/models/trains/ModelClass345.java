@@ -19,7 +19,7 @@ public class ModelClass345 extends ModelConverter //Same as Filename
 
 	public ModelClass345() //Same as Filename
 	{
-		bodyModel = new ModelRendererTurbo[184];
+		bodyModel = new ModelRendererTurbo[185];
 
 		initbodyModel_1();
 

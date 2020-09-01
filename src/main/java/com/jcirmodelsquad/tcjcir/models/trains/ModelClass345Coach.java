@@ -19,7 +19,7 @@ public class ModelClass345Coach extends ModelConverter //Same as Filename
 
 	public ModelClass345Coach() //Same as Filename
 	{
-		bodyModel = new ModelRendererTurbo[172];
+		bodyModel = new ModelRendererTurbo[174];
 
 		initbodyModel_1();
 
