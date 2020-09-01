@@ -356,7 +356,7 @@ public enum ItemIDs {
 	minecartMillGondola("ItemRollingStock", "millgondola", 4),
 	minecartClass345("ItemRollingStock", "class345", 13),
 	minecartSD70Mac("ItemRollingStock", "sd70mac", 14),
-	/*minecartClass345Coach("ItemRollingStock", "class345coach", 7),*/
+	minecartClass345Coach("ItemRollingStock", "class345coach", 7),
 	minecartC424("ItemRollingStock", "c424", 11),
 	minecartAmfleet2("ItemRollingStock", "amfleet2", 3),
 	minecartTGVMobile("ItemRollingStock", "tgvmobile", 30),
