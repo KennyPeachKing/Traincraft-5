@@ -39,6 +39,7 @@ public class AssemblyTableRecipes {
 		ArrayList<ItemStack> dyeMagenta = OreDictionary.getOres("dyeMagenta");
 		ArrayList<ItemStack> dyeLime = OreDictionary.getOres("dyeLime");
 		ArrayList<ItemStack> dyeLightBlue = OreDictionary.getOres("dyeLightBlue");
+		ArrayList<ItemStack> dyePurple = OreDictionary.getOres("dyePurple");
 		List<ItemStack> coal = new ArrayList<ItemStack>();
 		coal.add(new ItemStack(Items.coal));
 		coal.addAll(OreDictionary.getOres("coal"));
@@ -498,6 +499,12 @@ public class AssemblyTableRecipes {
 				for (ItemStack rs : redstone) {
 					cm.addRecipe(3, new ItemStack(ItemIDs.controls.item, 2), new ItemStack(ItemIDs.bogie.item, 3), new ItemStack(ItemIDs.steelframe.item, 2), new ItemStack(itemSteel, 1, itemDamageSteel),  new ItemStack(ItemIDs.steelchimney.item, 1), new ItemStack(ItemIDs.steelcab.item, 1),  new ItemStack(ItemIDs.transformer.item, 2), new ItemStack(ItemIDs.electmotor.item, 2),  new ItemStack(rs.getItem(), 2), dye, new ItemStack(ItemIDs.minecartLocoClass85.item, 1), 1);
 				}
+			}
+
+
+			for (ItemStack dye: dyePurple){
+				cm.addRecipe(3, new ItemStack(itemSteel, 2 ,itemDamageSteel), new ItemStack(ItemIDs.bogie.item, 4), new ItemStack(ItemIDs.steelframe.item, 4), new ItemStack(itemSteel, 2, itemDamageSteel), new ItemStack(ItemIDs.copperWireFine.item, 2), new ItemStack(ItemIDs.steelcab.item, 2), new ItemStack(ItemIDs.electmotor.item, 4), new ItemStack(ItemIDs.transformer.item, 4), new ItemStack(Items.redstone,5), dye,  new ItemStack(ItemIDs.minecartClass345.item, 1),1);
+				cm.addRecipe(3, new ItemStack(itemSteel, 2 ,itemDamageSteel), new ItemStack(ItemIDs.bogie.item, 4), new ItemStack(ItemIDs.steelframe.item, 4), new ItemStack(itemSteel, 2, itemDamageSteel), new ItemStack(ItemIDs.copperWireFine.item, 4), null, new ItemStack(ItemIDs.electmotor.item, 1), new ItemStack(ItemIDs.transformer.item, 1), new ItemStack(Items.redstone,2), dye,  new ItemStack(ItemIDs.minecartClass345Coach.item, 1),1);
 			}
 
 

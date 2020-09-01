@@ -391,8 +391,13 @@ item.tc:minecartClass345.name=Class 345
 item.tc:minecartSD70Mac.name=EMD SD70Mac
 item.tc:minecartC424.name=ALCo C424/C425
 item.tc:minecartAmfleet2.name=Amfleet 2 Coach
+<<<<<<< Updated upstream
 item.tc:minecartTGVMobile.name=TGV Highrail Van
 item.tc:minecartHustler.name=Hustler Switcher
+=======
+item.tc:minecartClass345coach.name=Class 345 Coach
+
+>>>>>>> Stashed changes
 
 
 <!-- ## Achievements ## -->
