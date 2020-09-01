@@ -357,7 +357,8 @@ public enum ItemIDs {
 	minecartClass345("ItemRollingStock", "class345", 13),
 	minecartSD70Mac("ItemRollingStock", "sd70mac", 14),
 	/*minecartClass345Coach("ItemRollingStock", "class345coach", 7),*/
-	minecartC424("ItemRollingStock", "c424", 11);
+	minecartC424("ItemRollingStock", "c424", 11),
+	minecartAmfleet2("ItemRollingStock", "amfleet2", 3),;
 
 	public Item item;
 	public String className;

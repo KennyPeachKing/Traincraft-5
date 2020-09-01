@@ -788,7 +788,9 @@ public enum RenderEnum {
 		{
 			add(new double[]{1D, 1.7D, 0.0D});
 		}
-	}, "", null, 0, false),;
+	}, "", null, 0, false),
+	amfleet2(com.jcirmodelsquad.tcjcir.vehicles.rollingstock.Amfleet2.class, new ModelAmfleet2(),"amfleet2_", true, new float[]{0F, -0.4F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
+	;
 
 
 
