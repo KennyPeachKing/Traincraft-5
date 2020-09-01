@@ -118,6 +118,7 @@ public enum EnumSounds {
 	SD70M(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselSD70Mac.class, "nathan_k5la_4", 0.8F, "710G3B_notch8", 0.5F, 40, "710G3B_idle", 0.5F, 20, false),
 	C424(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselC424.class, "leslie_s3", 1F, "251B16_notch8", 0.5F, 20, "251B16_idle", 0.5F, 20, false),
 	TGVmobile(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselTGVmobile.class, "mg_horn", 1F, "mg_run", 0.9F, 8, "mg_idle", 0.7F, 50, false),
+	Hustler(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselHustler.class, "wabco3bell", 1F, "ml8_notch8", 0.9F, 8, "ml8_idle", 0.7F, 50, false),
 	;
 
 	private Class entityClass;
