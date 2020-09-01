@@ -391,7 +391,8 @@ item.tc:minecartClass345.name=Class 345
 item.tc:minecartSD70Mac.name=EMD SD70Mac
 item.tc:minecartC424.name=ALCo C424/C425
 item.tc:minecartAmfleet2.name=Amfleet 2 Coach
-
+item.tc:minecartTGVMobile.name=TGV Highrail Van
+item.tc:minecartHustler.name=Hustler Switcher
 
 
 <!-- ## Achievements ## -->
@@ -738,11 +739,14 @@ entity.tc.Class345.name=Class 345
 entity.tc.SD70Mac.name=EMD SD70Mac
 entity.tc.C424.name= ALCo C424/C425
 entity.tc.Amfleet2.name=Amfleet 2 CaR
+entity.tc.TGVmobile.name=TGV Highrail Van
+entity.tc.Hustler.name=Hustler Switcher
 
 description.villager.profession.tc.station_chief=Station Chief
 tile.tc:FortyFootContainer.name= Forty Foot Container
-key.categories.traincraft=Traincraft
-key.traincraft.horn=Horn
+
+key.categories.traincraft=JCIR-Traincraft
+key.traincraft.horn=Horn/Whistle
 key.traincraft.inventory=Inventory
 key.traincraft.up=Up
 key.traincraft.down=Down
