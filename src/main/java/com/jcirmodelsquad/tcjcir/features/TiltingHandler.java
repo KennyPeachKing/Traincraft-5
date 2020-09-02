@@ -28,6 +28,8 @@ public class TiltingHandler {
     }
 
     public void handleTilting(EntityRollingStock rollingStock) {
+        System.out.println(Math.round(tiltingProgress));
+        System.out.println(Math.round(tiltingProgress) <= 0);
         if (!testTilting) {
             int xFloor = MathHelper.floor_double(rollingStock.posX);
             int yFloor = MathHelper.floor_double(rollingStock.posY);
@@ -116,6 +118,7 @@ public class TiltingHandler {
                     }
 
                     //System.out.println("Starting tilt.");
+
                 } else if (Math.round(tiltingProgress) <= 0 && tiltingOut) {
                     if (tiltingToLeft) {
                         tiltingProgress = (float) (tiltingProgress - 0.2);

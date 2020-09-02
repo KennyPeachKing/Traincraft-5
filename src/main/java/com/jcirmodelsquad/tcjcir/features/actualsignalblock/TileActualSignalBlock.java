@@ -8,6 +8,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
+import net.minecraft.util.Vec3;
 import train.common.api.EntityRollingStock;
 
 import java.util.List;
@@ -31,16 +32,16 @@ public class TileActualSignalBlock extends TileEntity {
         if (worldObj.isRemote) { return;}
        // System.out.println(xCoord + ": " + isPairedToAnother);
         //System.out.println("activ:" + xCoord + ": " + activated);
-        System.out.println(xCoord + ":" + this.getRenderBoundingBox());
-        List list = this.worldObj.getEntitiesWithinAABBExcludingEntity(null, this.getRenderBoundingBox());
-        if (list != null && list.size() > 0) {
+      //  System.out.println(xCoord + ":" + this.getRenderBoundingBox());
+        //System.out.println(AxisAlignedBB.getBoundingBox(xCoord, yCoord, zCoord, pairedX, pairedY + 4, pairedZ).intersectsWith(AxisAlignedBB.getBoundingBox(pairedX, pairedY, pairedZ, xCoord, yCoord, zCoord)));
+        /*if (list != null && list.size() > 0) {
             for (Object obj : list) {
                 activated = obj instanceof EntityRollingStock;
             }
         } else {
             activated = false;
         }
-
+*/
         if (lastStatus != activated) {
             updateThings();
         }
@@ -124,7 +125,7 @@ public class TileActualSignalBlock extends TileEntity {
     @Override
     public AxisAlignedBB getRenderBoundingBox() {
         if (isPairedToAnother) {
-            boundingBox = AxisAlignedBB.getBoundingBox(xCoord, yCoord + 2, zCoord, pairedX + 2, pairedY + 2, pairedZ + 2);
+            boundingBox = AxisAlignedBB.getBoundingBox(xCoord, yCoord, zCoord, pairedX, pairedY + 3, pairedZ);
         } else {
             boundingBox = AxisAlignedBB.getBoundingBox(xCoord, yCoord, zCoord, xCoord, yCoord, zCoord);
         }
