@@ -2,8 +2,8 @@
 // Copyright (C) 2020 Minecraft-SMP.de
 // This file is for Flan's Flying Mod Version 4.0.x+
 
-// Model: 
-// Model Creator: 
+// Model: LU 1996 Stock
+// Model Creator: hariesh
 // Created on: 21.06.2020 - 05:37:16
 // Last changed on: 21.06.2020 - 05:37:16
 

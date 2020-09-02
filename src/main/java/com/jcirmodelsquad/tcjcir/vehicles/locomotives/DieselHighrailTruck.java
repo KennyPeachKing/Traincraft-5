@@ -15,7 +15,7 @@ import train.common.library.GuiIDs;
 
 public class DieselHighrailTruck extends DieselTrain {
     public DieselHighrailTruck(World world) {
-        super(world, EnumTrains.locoDieselMILW_H1044.getTankCapacity(), LiquidManager.dieselFilter());
+        super(world, EnumTrains.HighrailTruck.getTankCapacity(), LiquidManager.dieselFilter());
         initLoco();
         //apparently, the reason "world" was red was cus it needed the tank capacity thingg from something else, so iDk reER
     }

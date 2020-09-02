@@ -39,8 +39,7 @@ public enum AchievementIDs {
 			ItemIDs.minecartV60_DB.item }),
 	tram(new Item[] { ItemIDs.minecartTramWood.item, ItemIDs.minecartTramWood.item }),
 	fast(new Item[] { ItemIDs.minecartVL10.item, ItemIDs.minecartBR_E69.item }),
-	// heavySteam(new Item[] { ItemIDs.minecartHeavySteam.item }),//TODO put it back once Heavy
-	// Steam is back
+	heavySteam(new Item[] { ItemIDs.minecartHeavySteam.item }),
 	workCart(new Item[] { ItemIDs.minecartWork.item, ItemIDs.minecartCabooseWork.item }),
 	builder(new Item[] { ItemIDs.minecartBuilder.item }),
 	jukebox(new Item[] { ItemIDs.minecartJukeBoxCart.item }),
@@ -68,12 +67,27 @@ public enum AchievementIDs {
 			ItemIDs.minecartFlatCartSU.item, ItemIDs.minecartFlatCartUS.item,
 			ItemIDs.minecartFlatCartWoodUS.item }),
 	mail(new Item[] { ItemIDs.minecartMailWagon_DB.item }),
+
+
 	mtg(new Item[] { ItemIDs.minecartLUengine.item }),
+	crossrail(new Item[] { ItemIDs.minecartClass345.item }),
+
 	caboose(new Item[] { ItemIDs.minecartCaboose.item, ItemIDs.minecartCaboose3.item,
 			ItemIDs.minecartCabooseWork.item }),
 	stockCar(new Item[] { ItemIDs.minecartStockCar.item, ItemIDs.minecartDRWGStockCar.item }),
-	distilationTower(new Item[] { Item.getItemFromBlock(BlockIDs.distilIdle.block) });
+	distilationTower(new Item[] { Item.getItemFromBlock(BlockIDs.distilIdle.block) }),
+	cf7(new Item[]{ItemIDs.minecartCF7.item}), thanos(new Item[]{ItemIDs.minecartThanos.item}),
+	sd9(new Item[]{ItemIDs.minecartSD9.item}),
+	geared(new Item[] { ItemIDs.minecartVBShay2.item, ItemIDs.minecartLocoSteamVBShay.item,
+			ItemIDs.minecartLocoSteamShay.item, ItemIDs.minecartLocoSteamClimax.item,
+			ItemIDs.minecartLocoLSSP7.item}),
+	gevo(new Item[]{ItemIDs.minecartES44.item}),
+	switchin(new Item[]{ItemIDs.minecartSW1.item, ItemIDs.minecartSW1500.item, ItemIDs.minecartAlcoS2.item, ItemIDs.minecartBoxcab23Ton.item,
+	ItemIDs.minecartH1044.item});
 
+	/*remind me once some big thing like the U50 is added to add this:
+	* powerful(new Item[]{ItemIDs.minecartU50.item})
+	* */
 	public Achievement	achievement;
 	protected Item[]	items;
 	

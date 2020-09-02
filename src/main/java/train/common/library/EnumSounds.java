@@ -104,8 +104,8 @@ public enum EnumSounds {
 	SDL39(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselSDL39.class, "nathan_p3", 2F, "645e3_notch8", 0.65F, 10, "645e3_idle", 0.65F, 3, true),
 	geGenesis(com.jcirmodelsquad.tcjcir.vehicles.locomotives.GeGenesis.class, "nathan_k5La", 2.5F, "7fdl-12_notch8", 0.65F, 40, "7fdl-12_idle", 0.65F, 50, true),
 	F7A(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselF7A.class, "leslie_a200", 1F, "567_notch8", 0.45F, 15, "567_idle", 0.75F, 3, true),
-	F7B(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselF7B.class, "leslie_a200", 0F, "567_notch8", 0.45F, 15, "567_idle", 0.75F, 3, true),
-	ES44(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselES44.class, "nathan_k5hl", 1F, "gevo12_notch8", 0.65F, 20, "gevo12_idle", 0.75F, 50, true),
+	F7B(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselF7B.class, "leslie_a200", 1F, "567_notch8", 0.45F, 15, "567_idle", 0.75F, 3, true),
+	ES44(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselES44.class, "nathan_k5hll", 1F, "gevo12_notch8", 0.65F, 20, "gevo12_idle", 0.75F, 50, true),
 	Boxcab23Ton(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselBoxcab23Ton.class, "wabco_e2", 10F, "boxcab_notch8", 0.5F, 15, "boxcab_idle", 0.5F, 25, false),
 	testControlCar(com.jcirmodelsquad.tcjcir.vehicles.rollingstock.TestControlCar.class, "nathan_p2", 1F, "mg_run", 0.6F, 8, "mg_idle", 0.4F, 50, false),
 	PCH100H(com.jcirmodelsquad.tcjcir.vehicles.locomotives.PCH100H.class, "nathan_p2", 1F, "pch100h_notch8", 0.6F, 8, "pch100h_idle", 0.4F, 50, false),
@@ -113,8 +113,14 @@ public enum EnumSounds {
 	GP13(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselGP13.class, "nathan_p6", 0.8F, "chme3_run", 0.65F, 35, "chme3_idle", 0.65F, 40, false),
 	FOLM1B(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselFOLM1B.class, "nathan_p01235", 0.0F,"38d_6_notch8", 0.65F, 40, "38d_6_idle", 0.65F, 40, false),
 	GP30(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselGP30.class, "nathan_p5", 0.8F, "567_notch8", 0.65F, 35, "567_idle", 0.65F, 40, false),
-	VBShay(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselGP30.class, "shay_horn", 0.8F, "steam_run", 0.2F, 20, "steam_run", 0.2F, 20, true),
+	VBShay(com.jcirmodelsquad.tcjcir.vehicles.locomotives.SteamVBShay.class, "shay_horn", 0.8F, "steam_run", 0.2F, 20, "steam_run", 0.2F, 20, true),
+	Payload(com.jcirmodelsquad.tcjcir.vehicles.rollingstock.BombCart.class, "", 0.8F, "bombcart_run", 1F, 60, "", 0.2F, 20, false),
+	SD70M(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselSD70Mac.class, "nathan_k5la_4", 0.8F, "710G3B_notch8", 0.5F, 40, "710G3B_idle", 0.5F, 20, false),
+	C424(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselC424.class, "leslie_s3", 1F, "251B16_notch8", 0.5F, 20, "251B16_idle", 0.5F, 20, false),
+	TGVmobile(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselTGVmobile.class, "mg_horn", 1F, "mg_run", 0.9F, 8, "mg_idle", 0.7F, 50, false),
+	Hustler(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselHustler.class, "wabco3bell", 1F, "ml8_notch8", 0.9F, 8, "ml8_idle", 0.7F, 50, false),
 	;
+
 	private Class entityClass;
 	private String horn;
 	private float hornVolume;

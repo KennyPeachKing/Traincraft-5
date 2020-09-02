@@ -88,7 +88,7 @@ public class GuiETI extends GuiScreen {
         System.out.println(button.id);
         if (button.id == 0) {
             //Send the packet and close the menu.
-            ArrayList<String> toSend = new ArrayList<>();
+            ArrayList<String> toSend = new ArrayList<String>();
             String[] splitUp = stations.getText().split(",");
             if (!stations.getText().equals("")) {
                 for (String str : splitUp) {

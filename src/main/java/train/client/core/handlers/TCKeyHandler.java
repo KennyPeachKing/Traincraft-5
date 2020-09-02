@@ -49,13 +49,13 @@ public class TCKeyHandler {
         furnace = new KeyBinding("key.traincraft.furnace", Keyboard.KEY_F, "key.categories.traincraft");
         ClientRegistry.registerKeyBinding(furnace);
         if (Loader.isModLoaded("ComputerCraft") || Loader.isModLoaded("OpenComputers")) {
-            MTCScreen = new KeyBinding("key.traincraft.showMTCScreen", Keyboard.KEY_M, "key.categories.traincraft");
+            MTCScreen = new KeyBinding("key.traincraft.showMTCScreen", Keyboard.KEY_NONE, "key.categories.traincraft");
             ClientRegistry.registerKeyBinding(MTCScreen);
-            toggleATO = new KeyBinding("key.traincraft.toggleATO", Keyboard.KEY_O, "key.categories.traincraft");
+            toggleATO = new KeyBinding("key.traincraft.toggleATO", Keyboard.KEY_NONE, "key.categories.traincraft");
             ClientRegistry.registerKeyBinding(toggleATO);
-            mtcOverride = new KeyBinding("key.traincraft.mtcOverride", Keyboard.KEY_T, "key.categories.traincraft");
+            mtcOverride = new KeyBinding("key.traincraft.mtcOverride", Keyboard.KEY_NONE, "key.categories.traincraft");
             ClientRegistry.registerKeyBinding(mtcOverride);
-            overspeedOverride = new KeyBinding("key.traincraft.overspeedOverride", Keyboard.KEY_L, "key.categories.traincraft");
+            overspeedOverride = new KeyBinding("key.traincraft.overspeedOverride", Keyboard.KEY_NONE, "key.categories.traincraft");
             ClientRegistry.registerKeyBinding(overspeedOverride);
         }
 

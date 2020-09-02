@@ -177,7 +177,7 @@ item.tc:minecartFlatCart_DB.name=Flat Car (DB)
 item.tc:minecartFlatCartLogs_DB.name=Log Transport (DB)
 item.tc:minecartFreightGondola_DB.name=Freight Gondola (DB)
 item.tc:minecartTankWagon_DB.name=Tank Wagon (DB)
-item.tc:minecartLocoSD70.name=SD70M (US)
+item.tc:minecartLocoSD70.name=SDL70M (US)
 item.tc:minecartLocoEr.name=USSR 0-5-0
 item.tc:minecartTenderEr.name=USSR 0-5-0 Tender
 item.tc:minecartFreightCenterBeam_Empty.name=Center Beam Freight Car
@@ -214,7 +214,7 @@ item.tc:minecartTenderAdler.name=Adler Tender
 item.tc:minecartPassengerAdler.name=Adler Passenger Car
 item.tc:minecartCabooseLogging.name=Logging Caboose
 item.tc:minecartPassengerTramNY.name=Kawasaki PA4 Passenger Car (US)
-item.tc:minecartLocoSD40.name=SD40-2 (US)
+item.tc:minecartLocoSD40.name=SDL40-2 (US)
 item.tc:zeppelin.name=Zeppelin
 item.tc:copperRail.name=Copper Rail
 item.tc:steelRail.name=Steel Rail
@@ -348,30 +348,30 @@ item.tc:minecartFreightL.name=Freight Car L
 
 
 item.tc:minecartAlcoS2.name=Alco S2
-item.tc:minecartRibbedHopper.name= Ribbed Covered Hopper
-item.tc:minecartSW1.name= EMD SW1
-item.tc:minecartH1044.name= FM H10-44
-item.tc:minecartAmfleet.name= Amfleet Car
-item.tc:minecartHighrailTruck.name= Generic Highrail Truck
-item.tc:minecartThanos.name= Thanos Cart
-item.tc:minecartGeometryCar.name= NXTrack Geometry Car
-item.tc:minecartU23B.name= GE U23B
-item.tc:minecartSW1500.name= EMD SW1500
-item.tc:remoteController.name= Remote Controller
-item.tc:remoteControllerModule.name= Remote Controller Module
-item.tc:minecartSD45dash2.name= EMD SD45-2
-item.tc:minecartSD40dash2.name= EMD SD40-2
-item.tc:minecart40highcube.name= 40 foot Highcube Boxcar
+item.tc:minecartRibbedHopper.name=Ribbed Covered Hopper
+item.tc:minecartSW1.name=EMD SW1
+item.tc:minecartH1044.name=FM H10-44
+item.tc:minecartAmfleet.name=Amfleet 1 Coach
+item.tc:minecartHighrailTruck.name=Generic Highrail Truck
+item.tc:minecartThanos.name=Thanos Cart
+item.tc:minecartGeometryCar.name=NXTrack Geometry Car
+item.tc:minecartU23B.name=GE U23B
+item.tc:minecartSW1500.name=EMD SW1500
+item.tc:remoteController.name=Remote Controller
+item.tc:remoteControllerModule.name=Remote Controller Module
+item.tc:minecartSD45dash2.name=EMD SD45-2
+item.tc:minecartSD40dash2.name=EMD SD40-2
+item.tc:minecart40highcube.name=40 foot Highcube Boxcar
 item.tc:minecartFRED.name=F.R.E.D
-item.tc:minecartCF7.name= EMD CF7
-item.tc:minecartWoodchipHopper.name= Woodchip Hopper
-item.tc:minecartOreJenny.name= Ore Jenny
-item.tc:minecartSD9.name= EMD SD9
-item.tc:minecartSDL39.name= EMD SDL39
-item.tc:minecartSF30C.name= GE SF30C
-item.tc:minecartF7A.name= EMD F7a
-item.tc:minecartF7B.name= EMD F7b
-item.tc:minecartGeGenesis.name= GE Genesis
+item.tc:minecartCF7.name=EMD CF7
+item.tc:minecartWoodchipHopper.name=Woodchip Hopper
+item.tc:minecartOreJenny.name=Ore Jenny
+item.tc:minecartSD9.name=EMD SD9
+item.tc:minecartSDL39.name=EMD SDL39
+item.tc:minecartSF30C.name=GE SF30C
+item.tc:minecartF7A.name=EMD F7a
+item.tc:minecartF7B.name=EMD F7b
+item.tc:minecartGeGenesis.name=GE Genesis
 item.tc:minecartES44.name=GE ES44
 item.tc:minecartHuskyStackWellcar.name=53 Foot HuskyStack Wellcar
 item.tc:minecartBoxcab23Ton.name=GE 23 Ton Boxcab
@@ -387,6 +387,18 @@ item.tc:minecartFOLM1B.name=FOL-M1B
 item.tc:minecartGP30.name=GP30
 item.tc:minecartVBShay2.name=2 Truck Vertical Boiler Shay
 item.tc:minecartMillGondola.name=52' Mill Gondola
+item.tc:minecartClass345.name=Class 345
+item.tc:minecartSD70Mac.name=EMD SD70Mac
+item.tc:minecartC424.name=ALCo C424/C425
+item.tc:minecartAmfleet2.name=Amfleet 2 Coach
+<<<<<<< Updated upstream
+item.tc:minecartTGVMobile.name=TGV Highrail Van
+item.tc:minecartHustler.name=Hustler Switcher
+=======
+item.tc:minecartClass345coach.name=Class 345 Coach
+
+>>>>>>> Stashed changes
+
 
 <!-- ## Achievements ## -->
 achievement.tc:engineer=Engineers clothes
@@ -465,6 +477,25 @@ achievement.tc:caboose=Caboose
 achievement.tc:caboose.desc=The last one!
 achievement.tc:mtg=Mind The Gap
 achievement.tc:mtg.desc=Stand behind the yellow line!
+achievement.tc:heavySteam= Heavy Steam Engine
+achievement.tc:heavySteam.desc= thicc steam
+achievement.tc:crossrail=Crossrail
+achievement.tc:crossrail.desc=Still delayed to this day!
+achievement.tc:cf7=CF7
+achievement.tc:cf7.desc=The Best Rebuild
+achievement.tc:thanos=Thanos
+achievement.tc:thanos.desc=Let me show you how to Scratch It!
+achievement.tc:sd9=Cadillac!
+achievement.tc:sd9.desc=The Cadillac of the Rails
+achievement.tc:geared=Geared Power!
+achievement.tc:geared.desc=An Unusual Transmission!
+achievement.tc:powerful=More power less Locomotive
+achievement.tc:powerful.desc=One of the Big Ones
+achievement.tc:gevo=Modern Tech
+achievement.tc:gevo.desc=woo oh yeah woo its GEVO time
+achievement.tc:switchin=Switchin it Up!
+achievement.tc:switchin.desc=Time for Yard Work!
+
 
 <!-- ## GUI ## -->
 builder.follow.name=Follow tracks
@@ -503,8 +534,8 @@ entity.tc.Loco Electric BR_E69.name=BR E69
 entity.tc.Loco Electric VL10.name=VL10 (SU)
 entity.tc.Loco Diesel V60 DB.name=V60 (DB)
 entity.tc.Loco Diesel Shunter.name=Class 08 Shunter (UK)
-entity.tc.Loco Diesel SD70.name=SD70M (US)
-entity.tc.Loco Diesel SD40.name=SD40-2 (US)
+entity.tc.Loco Diesel SD70.name=SDL70M (US)
+entity.tc.Loco Diesel SD40.name=SDL40-2 (US)
 entity.tc.Loco Diesel GP7.name=GP7 (US)
 entity.tc.Loco Diesel ChME3.name=ChME3 (SU)
 entity.tc.Loco Diesel CD742.name=CD 742
@@ -672,7 +703,7 @@ entity.tc.Freight Car L.name=Freight Car L
 entity.tc.Loco Steam C41 0-8-0.name=C41 0-8-0
 entity.tc.Loco Steam Alco SC4.name=Alco SC4
 
-entity.tc.ALCO S2.name=Alco S2
+entity.tc.ALCO S2.name=ALCo S2
 entity.tc.Ribbed Hopper.name=Ribbed Covered Hopper
 entity.tc.SW1.name=EMD SW1
 entity.tc.H1044.name=FM H10-44
@@ -709,11 +740,18 @@ entity.tc.FOL-M1B.name=FOL-M1B
 entity.tc.GP30.name=EMD GP30
 entity.tc.2TruckVerticalBoilerShay.name=2 Truck Vertical Boiler Shay
 entity.tc.52footMillGondola.name=52' Mill Gondola
+entity.tc.Class345.name=Class 345
+entity.tc.SD70Mac.name=EMD SD70Mac
+entity.tc.C424.name= ALCo C424/C425
+entity.tc.Amfleet2.name=Amfleet 2 CaR
+entity.tc.TGVmobile.name=TGV Highrail Van
+entity.tc.Hustler.name=Hustler Switcher
 
 description.villager.profession.tc.station_chief=Station Chief
 tile.tc:FortyFootContainer.name= Forty Foot Container
-key.categories.traincraft=Traincraft
-key.traincraft.horn=Horn
+
+key.categories.traincraft=JCIR-Traincraft
+key.traincraft.horn=Horn/Whistle
 key.traincraft.inventory=Inventory
 key.traincraft.up=Up
 key.traincraft.down=Down
