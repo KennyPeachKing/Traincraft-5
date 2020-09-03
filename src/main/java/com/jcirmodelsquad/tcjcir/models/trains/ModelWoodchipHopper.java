@@ -360,7 +360,7 @@ public class ModelWoodchipHopper extends ModelConverter //Same as Filename
 	public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
 	{
 		for (int i = 0; i < 81; i++) {
-			if (i == 36) { //37 38 39 40 41 42 43 44
+			if (i == 9999) { //36 37 38 39 40 41 42 43 44
 				/*int cargo = ((Freight) entity).getAmmountOfCargo();
 				if (cargo != 0) {
 					GL11.glPushMatrix();

@@ -358,7 +358,7 @@ public enum ItemIDs {
 	minecartSD70Mac("ItemRollingStock", "sd70mac", 14),
 	minecartClass345Coach("ItemRollingStock", "class345coach", 7),
 	minecartC424("ItemRollingStock", "c424", 11),
-	minecartAmfleet2("ItemRollingStock", "amfleet2", 3),
+	minecartAmfleet2("ItemRollingStock", "Amfleet2", 3),
 	minecartTGVMobile("ItemRollingStock", "tgvmobile", 30),
 	minecartHustler("ItemRollingStock", "hustler", 2),
 	minecartF40PH("ItemRollingStock", "f40ph", 10),;

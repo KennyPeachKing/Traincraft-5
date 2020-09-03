@@ -754,7 +754,7 @@ public enum RenderEnum {
 			add(new double[] { 0.45D, 1.3D, 0.0D });
 		}
 	}, "", null, 0, false),
-	FOLM1B(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselFOLM1B.class, new com.jcirmodelsquad.tcjcir.models.trains.ModelFOLM1B(), "FOL_M2_", true, new float[] { -2.2F, 0.05F, 0.F },  new float[] { 0F, 180F, 180F }, null, "smoke", 3, new ArrayList<double[]>() {
+	FOLM1B(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselFOLM1B.class, new com.jcirmodelsquad.tcjcir.models.trains.ModelFOLM1B(), "FOL_M1b_", true, new float[] { -2.2F, 0.05F, 0.F },  new float[] { 0F, 180F, 180F }, null, "smoke", 3, new ArrayList<double[]>() {
 		{
 			add(new double[]{1.3D, 1.45D, 0.0D});
 		}
