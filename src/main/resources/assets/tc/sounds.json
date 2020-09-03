@@ -81,7 +81,7 @@
   "lu_whistle": {"category": "master", "sounds": [{"name": "lu_whistle", "stream":  true}]},
   "jnr_5chime": {"category": "master", "sounds": [{"name": "jnr_5chime", "stream":  true}]},
   "leslie_s3": {"category": "master", "sounds": [{"name": "leslie_s3", "stream":  true}]},
-  "k5la_4": {"category": "master", "sounds": [{"name": "k5la_4", "stream":  true}]},
+  "nathan_k5la_5": {"category": "master", "sounds": [{"name": "k5la_4", "stream":  true}]},
   "nathan_p6": {"category": "master", "sounds": [{"name": "nathan_p6", "stream":  true}]},
   "nathan_p2": {"category": "master", "sounds": [{"name": "nathan_p2", "stream":  true}]},
   "leslie_rs5t": {"category": "master", "sounds": [{"name": "leslie_rs5t", "stream":  true}]},
@@ -99,4 +99,6 @@
   "wabco3bell": {"category": "master", "sounds": [{"name": "wabco3bell", "stream":  true}]},
   "ml8_idle": {"category": "master", "sounds": [{"name": "ml8_idle", "stream":  true}]},
   "ml8_notch8": {"category": "master", "sounds": [{"name": "ml8_notch8", "stream":  true}]},
+  "635E3B_idle": {"category": "master", "sounds": [{"name": "635E3B_idle", "stream":  true}]},
+  "635E3B_notch8": {"category": "master", "sounds": [{"name": "635E3B_notch8", "stream":  true}]},
   "765_whistle": {"category": "master", "sounds": [{"name": "765_whistle", "stream":  true}]}}
