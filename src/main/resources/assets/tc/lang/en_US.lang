@@ -393,6 +393,7 @@ item.tc:minecartC424.name=ALCo C424/C425
 item.tc:minecartAmfleet2.name=Amfleet 2 Coach
 item.tc:minecartTGVMobile.name=TGV Highrail Van
 item.tc:minecartHustler.name=Hustler Switcher
+item.tc:minecartF40PH.name=EMD F40PH
 
 
 <!-- ## Achievements ## -->
@@ -741,6 +742,7 @@ entity.tc.C424.name= ALCo C424/C425
 entity.tc.Amfleet2.name=Amfleet 2 CaR
 entity.tc.TGVmobile.name=TGV Highrail Van
 entity.tc.Hustler.name=Hustler Switcher
+entity.tc.F40PH.name=EMD F40PH
 
 description.villager.profession.tc.station_chief=Station Chief
 tile.tc:FortyFootContainer.name= Forty Foot Container

@@ -13,13 +13,13 @@ import train.common.api.LiquidManager;
 import train.common.library.EnumTrains;
 import train.common.library.GuiIDs;
 
-public class DieselC424 extends DieselTrain {
-    public DieselC424(World world) {
-        super(world, EnumTrains.C424.getTankCapacity(), LiquidManager.dieselFilter());
+public class DieselF40PH extends DieselTrain {
+    public DieselF40PH(World world) {
+        super(world, EnumTrains.F40PH.getTankCapacity(), LiquidManager.dieselFilter());
         initLoco();
 
     }
-    public DieselC424(World world, double d, double d1, double d2){
+    public DieselF40PH(World world, double d, double d1, double d2){
         this(world);
         setPosition(d, d1 + yOffset, d2);
         motionX = 0.0D;
@@ -39,7 +39,7 @@ public class DieselC424 extends DieselTrain {
     public void updateRiderPosition() {
         if (riddenByEntity == null) {return;}
         double pitchRads = this.anglePitchClient * Math.PI / 180.0D;
-        double distance = 3.3;
+        double distance = 3.2;
         double yOffset = 0.4;
         float rotationCos1 = (float) Math.cos(Math.toRadians(this.renderYaw + 90));
         float rotationSin1 = (float) Math.sin(Math.toRadians((this.renderYaw + 90)));
@@ -131,7 +131,7 @@ public class DieselC424 extends DieselTrain {
 
     @Override
     public String getInventoryName() {
-        return "ALCo C424";
+        return "EMD F40PH";
     }
 
     @Override

@@ -792,6 +792,11 @@ public enum RenderEnum {
 	amfleet2(com.jcirmodelsquad.tcjcir.vehicles.rollingstock.Amfleet2.class, new ModelAmfleet2(),"amfleet2_", true, new float[]{0F, -0.4F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
 	TGVmobile( com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselTGVmobile.class,  new ModelTGVMobile(), "tgvmobile_Orange", false,new float[] {-1.5F, 0.2F, 0F},  new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
 	Hustler(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselHustler.class, new ModelHustler(), "hustler", false, new float[]{-1F, 0.2F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
+	F40PH( com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselF40PH.class,  new ModelF40PH(), "f40ph_", true,new float[] {-1.7F, 0.155F, 0F},  new float[] { 0F, 180F, 180F }, null, "smoke", 4,  new ArrayList<double[]>() {
+		{
+			add(new double[]{1.9D, 1.6D, 0.0D});
+		}
+	}, "", null, 0, false),
 	;
 
 

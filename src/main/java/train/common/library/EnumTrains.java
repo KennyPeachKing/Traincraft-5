@@ -322,9 +322,10 @@ public enum EnumTrains {
 	SD70Mac("SD70Mac", com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselSD70Mac.class, ItemIDs.minecartSD70Mac.item, "diesel", 4000, 112, 0, 15, 0, 150, 0.6, 0.8, 17000, TraincraftUtil.getBytesFromColors(new String[]{"Red", "Blue", "Grey", "LightGrey", "LightBlue", "Yellow", "Black","Green", "Orange"}), 18, -4, "Original Model by Eddie, upgraded by Bida"),
 	Class345Coach("Class345", com.jcirmodelsquad.tcjcir.vehicles.rollingstock.Class345Coach.class, ItemIDs.minecartClass345Coach.item, "passenger", 0, 0, 1.5,0 , 0, 0, 0,0,0,null,0,0,"Class 345 Coach by hariesh"),
 	C424("C424", com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselC424.class, ItemIDs.minecartC424.item, "diesel", 2400, 113, 0, 60, 0, 190, 0.7, 0.8, 19000, TraincraftUtil.getBytesFromColors(new String[]{"Black", "Yellow", "Green", "Orange", "White"}), 10, -3.6, "Yet Another Bida Model kek"),
-	amfleet2("Amfleet2", com.jcirmodelsquad.tcjcir.vehicles.rollingstock.Amfleet2.class, ItemIDs.minecartAmfleet2.item, "passenger", 2, TraincraftUtil.getBytesFromColors(new String[] {"Blue", "LightBlue"}), 0, 0, "Amfleet1 by Valaktik, Updated by Bidahochi, Converted to Amfleet2 by Anonymous Sponser"),
+	amfleet2("Amfleet2", com.jcirmodelsquad.tcjcir.vehicles.rollingstock.Amfleet2.class, ItemIDs.minecartAmfleet2.item, "passenger", 2, TraincraftUtil.getBytesFromColors(new String[] {"Blue", "LightGrey", "Grey"}), 0, 0, "Amfleet1 by Valaktik, Updated by Bidahochi, Converted to Amfleet2 by Anonymous Sponser"),
 	TGVmobile("TGVmobile", com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselTGVmobile.class, ItemIDs.minecartTGVMobile.item, "diesel", 200, 350, 0, 10, 0, 140, 0.9, 0.9, 1000,null,18, 2.7, "Yes, this is real, minus the highrail gear. Made by Bida at 3AM"),
 	Hustler("Hustler", com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselHustler.class, ItemIDs.minecartHustler.item, "diesel", 150, 30, 0, 50, 0, 170, 0.6, 0.7, 9000, null, 10, -2, "Made by BigJ"),
+	F40PH("F40PH", com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselF40PH.class, ItemIDs.minecartF40PH.item, "diesel", 3000, 103, 9, 50, 0, 170, 0.75, 0.95, 11000, TraincraftUtil.getBytesFromColors(new String[] {"LightGrey", "Grey", "Red", "Yellow", "Cyan"}), 10, -3.5, "Model by Bida & Mr Coomer"),
 	;
 
 	/*passengerICE1_Restaurant("ICE Restaurant", EntityPassengerICE_Restaurant.class,
