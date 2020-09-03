@@ -2,11 +2,13 @@ package train.common.mtc;
 
 import cpw.mods.fml.common.Optional;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import li.cil.oc.api.Network;
 import li.cil.oc.api.machine.Arguments;
 import li.cil.oc.api.machine.Callback;
 import li.cil.oc.api.machine.Context;
-import li.cil.oc.api.network.SimpleComponent;
+import li.cil.oc.api.network.*;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.AxisAlignedBB;
 import train.common.Traincraft;
@@ -16,7 +18,7 @@ import train.common.mtc.packets.*;
 import java.util.List;
 
 
-    public class TileMTCMultiTransmitter extends TileEntity implements SimpleComponent {
+    public class TileMTCMultiTransmitter extends TileEntity implements SimpleComponent, Environment {
         public boolean isActivated;
         public int speedLimit;
         public int nextSpeedLimit;
@@ -34,7 +36,11 @@ import java.util.List;
         public boolean doTransmitStopPoint = false;
 
         public AxisAlignedBB boundingBox = null;
+        public Node leNode;
 
+        public TileMTCMultiTransmitter() {
+            leNode = Network.newNode(this, Visibility.Network).withComponent(getComponentName()).withConnector(32).create();
+        }
         @Override
         public String getComponentName() {
             return "mtc_multi_transmitter";
@@ -239,5 +245,94 @@ import java.util.List;
             }
             return new Object[]{true};
         }
+        @Override
+        public void readFromNBT(NBTTagCompound nbt) {
+            super.readFromNBT(nbt);
+            isActivated = nbt.getBoolean("isActivated");
+            speedLimit = nbt.getInteger("speedLimit");
+            enforceSpeedLimits = nbt.getBoolean("enforceSpeedLimits");
+            speedChangeCoords.setX(nbt.getInteger("speedChangeX"));
+            speedChangeCoords.setY(nbt.getInteger("speedChangeY"));
+            speedChangeCoords.setZ(nbt.getInteger("speedChangeZ"));
+
+            stopCoords.setX(nbt.getInteger("stopCoordsX"));
+            stopCoords.setY(nbt.getInteger("stopCoordsY"));
+            stopCoords.setZ(nbt.getInteger("stopCoordsZ"));
+
+            serverUUID = nbt.getString("serverUUID");
+            signalBlock = nbt.getString("signalBlock");
+            mtcType = nbt.getInteger("mtcType");
+            mtcStatus = nbt.getInteger("mtcStatus");
+
+            doTransmitSpeedLimits = nbt.getBoolean("doTransmitSpeedLimits");
+            doTransmitMTCData = nbt.getBoolean("doTransmitMTCData");
+            doTransmitStopPoint = nbt.getBoolean("doTransmitStopPoint");
+            if (leNode != null && leNode.host() == this) {
+                leNode.load(nbt.getCompoundTag("oc:node"));
+            }
+        }
+
+        @Override
+        public void writeToNBT(NBTTagCompound nbt) {
+            super.writeToNBT(nbt);
+            nbt.setBoolean("isActivated", isActivated);
+            nbt.setInteger("speedLimit", speedLimit);
+            nbt.setBoolean("enforceSpeedLimits", enforceSpeedLimits);
+
+            nbt.setInteger("speedChangeX", speedChangeCoords.getX());
+            nbt.setInteger("speedChangeY", speedChangeCoords.getY());
+            nbt.setInteger("speedChangeZ", speedChangeCoords.getZ());
+
+            nbt.setInteger("stopCoordsX", stopCoords.getX());
+            nbt.setInteger("stopCoordsY", stopCoords.getY());
+            nbt.setInteger("stopCoordsZ", stopCoords.getZ());
+
+            nbt.setString("serverUUID", serverUUID);
+            nbt.setString("signalBlock", signalBlock);
+            nbt.setInteger("mtcType", mtcType);
+            nbt.setInteger("mtcStatus", mtcStatus);
+
+            nbt.setBoolean("doTransmitSpeedLimits", doTransmitSpeedLimits);
+            nbt.setBoolean("doTransmitMTCData", doTransmitMTCData);
+            nbt.setBoolean("doTransmitStopPoint", doTransmitStopPoint);
+            if (leNode != null && leNode.host() == this) {
+                final NBTTagCompound nodeNbt = new NBTTagCompound();
+                leNode.save(nodeNbt);
+                nbt.setTag("oc:node", nodeNbt);
+            }
+        }
+
+        @Override
+        public Node node() {
+            return leNode;
+        }
+
+        @Override
+        public void onConnect(Node node) {
+
+        }
+
+        @Override
+        public void onDisconnect(Node node) {
+
+        }
+
+        @Override
+        public void onMessage(Message message) {
+
+        }
+
+        @Override
+        public void onChunkUnload() {
+            super.onChunkUnload();
+            if (leNode != null) leNode.remove();
+        }
+
+        @Override
+        public void invalidate() {
+            super.invalidate();
+            if (leNode != null) leNode.remove();
+        }
+
     }
 

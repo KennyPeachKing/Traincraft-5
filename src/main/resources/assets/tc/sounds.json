@@ -96,4 +96,7 @@
   "nathan_k5la_4": {"category": "master", "sounds": [{"name": "nathan_k5la_4", "stream":  true}]},
   "251B16_idle": {"category": "master", "sounds": [{"name": "251B16_idle", "stream":  true}]},
   "251B16_notch8": {"category": "master", "sounds": [{"name": "251B16_notch8", "stream":  true}]},
+  "wabco3bell": {"category": "master", "sounds": [{"name": "wabco3bell", "stream":  true}]},
+  "ml8_idle": {"category": "master", "sounds": [{"name": "ml8_idle", "stream":  true}]},
+  "ml8_notch8": {"category": "master", "sounds": [{"name": "ml8_notch8", "stream":  true}]},
   "765_whistle": {"category": "master", "sounds": [{"name": "765_whistle", "stream":  true}]}}

@@ -49,6 +49,11 @@ public class GuiETI extends GuiScreen {
         trainNumber.setText(theLocomotive.trainNumber);
         trainNumber.setMaxStringLength(5);
         stations.setMaxStringLength(500);
+        StringBuilder output = new StringBuilder();
+        for (String station : theLocomotive.stations) {
+            output.append(station).append(",");
+        }
+        stations.setText(output.toString());
         this.buttonList.add(saveAndClose);
     }
 

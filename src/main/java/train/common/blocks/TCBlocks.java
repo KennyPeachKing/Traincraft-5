@@ -9,6 +9,7 @@ package train.common.blocks;
 
 import com.jcirmodelsquad.tcjcir.features.actualsignalblock.BlockActualSignalBlock;
 import com.jcirmodelsquad.tcjcir.features.betterdetector.BlockBetterDetector;
+import com.jcirmodelsquad.tcjcir.features.eti.BlockTrainMonitor;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
@@ -61,7 +62,9 @@ public class TCBlocks {
 			BlockIDs.mtcReceiverDestination.block = new BlockInfoGrabberDestination(Material.rock).setHardness(3.5F).setStepSound(Block.soundTypeMetal).setBlockTextureName("tc:destinationreceiver").setBlockName("mtcdestinationreceiver").setCreativeTab(Traincraft.tcTab);
 			BlockIDs.pdmInstructionBlock.block = new BlockPDMInstructionRadio(Material.rock).setHardness(3.5F).setStepSound(Block.soundTypeMetal).setBlockTextureName("tc:pdmradio").setBlockName("pdmradio").setCreativeTab(Traincraft.tcTab);
 			BlockIDs.betterDetector.block = new BlockBetterDetector(Material.rock).setHardness(3.5F).setStepSound(Block.soundTypeMetal).setBlockTextureName("tc:better_detector").setBlockName("betterdetector").setCreativeTab(Traincraft.tcTab);;
-			BlockIDs.mtcMultiTransmitter.block = new BlockMTCMultiTransmitter(Material.rock).setHardness(3.5F).setStepSound(Block.soundTypeMetal).setBlockTextureName("tc:better_detector").setBlockName("betterdetector").setCreativeTab(Traincraft.tcTab);;
+			BlockIDs.mtcMultiTransmitter.block = new BlockMTCMultiTransmitter(Material.rock).setHardness(3.5F).setStepSound(Block.soundTypeMetal).setBlockTextureName("tc:mtc_multitransmitter").setBlockName("mutlireceiver").setCreativeTab(Traincraft.tcTab);;
+			BlockIDs.mtcMultiReceiver.block = new BlockMTCMultiReceiver(Material.rock).setHardness(3.5F).setStepSound(Block.soundTypeMetal).setBlockTextureName("tc:mtc_multireceiver").setBlockName("multitransmitter").setCreativeTab(Traincraft.tcTab);;
+			BlockIDs.trainMonitor.block = new BlockTrainMonitor(Material.rock).setHardness(3.5F).setStepSound(Block.soundTypeMetal).setBlockTextureName("tc:better_detector").setBlockName("betterdetector").setCreativeTab(Traincraft.tcTab);
 		}
 		BlockIDs.actualSignalBlock.block = new BlockActualSignalBlock(Material.rock).setHardness(3.5F).setStepSound(Block.soundTypeMetal).setBlockTextureName("tc:actual_signal_block").setBlockName("actualsignalblock").setCreativeTab(Traincraft.tcTab);;
 		//BlockIDs.FortyFootContainer.block = new BlockFortyFootContainer(Material.rock).setHardness(4.5F).setCreativeTab(Traincraft.tcTab).setStepSound(Block.soundTypeMetal);

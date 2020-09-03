@@ -36,7 +36,7 @@ public class TCKeyHandler {
 
 
     public TCKeyHandler() {
-        horn = new KeyBinding("key.traincraft.horn", Keyboard.KEY_H, "key.categories.traincraft");
+        horn = new KeyBinding("key.traincraft.horn", Keyboard.KEY_NONE, "key.categories.traincraft");
         ClientRegistry.registerKeyBinding(horn);
         inventory = new KeyBinding("key.traincraft.inventory", Keyboard.KEY_R, "key.categories.traincraft");
         ClientRegistry.registerKeyBinding(inventory);
