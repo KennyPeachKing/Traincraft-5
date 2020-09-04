@@ -58,7 +58,7 @@ public enum EnumSounds {
 	locoIC4_DSB_MG(EntityLocoDieselIC4_DSB_MG.class, "mg_horn", 1F, "mg_run", 0.8F, 10, "mg_idle", 0.6F, 50, false),
 	locoSpeedGrey(EntityLocoElectricNewHighSpeed.class, "high_speed_horn", 0.8F, "vl10_idle", 0.6F, 50, "vl10_idle", 0.6F, 50, false),
 	ICE1(EntityLocoElectricICE1.class, "mg_horn", 1F, "mg_run", 0.8F, 10, "mg_idle", 0.6F, 50, false),
-	E10(EntityLocoElectricE10_DB.class, "k5la_4", 1F, "mg_run", 0.6F, 8, "mg_idle", 0.4F, 50, false),
+	E10(EntityLocoElectricE10_DB.class, "nathan_k5la_5", 1F, "mg_run", 0.6F, 8, "mg_idle", 0.4F, 50, false),
 	locoBR185(EntityLocoElectricBR185.class, "mg_horn", 1F, "vl10_idle", 0.8F, 10, "vl10_idle", 0.6F, 50, false),
 	locoClass85(EntityLocoElectricClass85.class, "mg_horn", 1F, "vl10_idle", 0.8F, 10, "vl10_idle", 0.6F, 50, false),
 
@@ -119,6 +119,7 @@ public enum EnumSounds {
 	C424(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselC424.class, "leslie_s3", 1F, "251B16_notch8", 0.5F, 20, "251B16_idle", 0.5F, 20, false),
 	TGVmobile(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselTGVmobile.class, "mg_horn", 1F, "mg_run", 0.9F, 8, "mg_idle", 0.7F, 50, false),
 	Hustler(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselHustler.class, "wabco3bell", 1F, "ml8_notch8", 0.9F, 8, "ml8_idle", 0.7F, 50, false),
+	F40PH(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselF40PH.class, "nathan_k5la_5", 1F, "635E3B_notch8", 0.9F, 8, "635E3B_idle", 0.7F, 50, false),
 	;
 
 	private Class entityClass;
