@@ -33,6 +33,7 @@ tile.tc:mtcReceiverMTC.name=MTC Status Receiver
 tile.tc:mtcReceiverDestination.name=MTC Destination Receiver
 tile.tc:pdmInstructionBlock.name=W-MTC Wireless Radio
 tile.tc:betterDetector.name= Better Detector
+tile.tc:trainMonitor.name= Train Monitor
 <!-- ## Fluids ## -->
 fluid.diesel.name=Diesel Fuel
 fluid.refinedfuel.name=Refined Fuel

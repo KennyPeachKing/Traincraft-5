@@ -490,7 +490,7 @@ public class RecipeHandler {
 		}
 
 		for (ItemStack rs: redstone) {
-			TrainCraftingManager.instance.addRecipe(new ItemStack(BlockIDs.betterDetector.block, 1), "SRS", "SES", "SRS", 'S', Blocks.stone, 'R', rs, 'E', ItemIDs.electronicCircuit.item);
+			//TrainCraftingManager.instance.addRecipe(new ItemStack(BlockIDs.betterDetector.block, 1), "SRS", "SES", "SRS", 'S', Blocks.stone, 'R', rs, 'E', ItemIDs.electronicCircuit.item);
 		}
 
 		/*for (ItemStack ironingot : iron) {

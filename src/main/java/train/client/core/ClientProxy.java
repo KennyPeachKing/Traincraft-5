@@ -3,6 +3,9 @@ package train.client.core;
 import com.jcirmodelsquad.tcjcir.extras.HudTiltingHandler;
 import com.jcirmodelsquad.tcjcir.features.containers.GuiFortyFootContainer;
 import com.jcirmodelsquad.tcjcir.features.containers.TileFortyFootContainer;
+import com.jcirmodelsquad.tcjcir.features.eti.TileTrainMonitor;
+import com.jcirmodelsquad.tcjcir.features.eti.TrainMonitorItemRender;
+import com.jcirmodelsquad.tcjcir.features.eti.TrainMonitorRender;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.FMLCommonHandler;
@@ -121,6 +124,8 @@ public class ClientProxy extends CommonProxy {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileBridgePillar.class, new RenderBridgePillar());
 		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockIDs.bridgePillar.block), new ItemRenderBridgePillar());
 
+		ClientRegistry.bindTileEntitySpecialRenderer(TileTrainMonitor.class, new TrainMonitorRender());
+		MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockIDs.trainMonitor.block), new TrainMonitorItemRender());
 		//ClientRegistry.bindTileEntitySpecialRenderer(TileFortyFootContainer.class, new FortyFootContainerRender());
 	//	MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(BlockIDs.FortyFootContainer.block), new ItemRenderFortyFootContainer());
 	}

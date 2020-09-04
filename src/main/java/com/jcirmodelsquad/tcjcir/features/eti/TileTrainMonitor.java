@@ -6,6 +6,7 @@ import li.cil.oc.api.machine.Arguments;
 import li.cil.oc.api.machine.Callback;
 import li.cil.oc.api.machine.Context;
 import li.cil.oc.api.network.SimpleComponent;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 
 import java.lang.reflect.Field;
@@ -15,7 +16,11 @@ import java.util.HashMap;
 
 public class TileTrainMonitor extends TileEntity implements SimpleComponent {
     public boolean isScanning = false;
+    public int dir;
 
+    public TileTrainMonitor(int dir) {
+        this.dir = dir;
+    }
 
     @Override
     public String getComponentName() {
@@ -30,14 +35,12 @@ public class TileTrainMonitor extends TileEntity implements SimpleComponent {
             //example output:
             // {<trainID> = {operatorID = <opID>, player = <player>, locomotive = <locomotive>, speed = <speed in int), stations = {<stationname> = {estimaedTimeTo = <estimatedTimeto>}}}
            Field allDrivenTrainsOB = theActualMonitor.getDeclaredField("allDrivenTrains");
-            ParameterizedType myListType = ((ParameterizedType)
-                    theActualMonitor.getDeclaredField("allDrivenTrains").getGenericType());
             ArrayList<BasicallyLocomotive> allTrains = (ArrayList<BasicallyLocomotive>) allDrivenTrainsOB.get(theActualMonitor);
 
             HashMap<String, HashMap> output = new HashMap<>();
-            int elasped = 0;
+            int elapsed = 0;
             for (BasicallyLocomotive basically : allTrains) {
-                elasped++;
+                elapsed++;
                 HashMap toAddMap = new HashMap<>();
                 if (basically.details != null) {
                     toAddMap.put("operatorID", basically.details.trainType);
@@ -61,7 +64,7 @@ public class TileTrainMonitor extends TileEntity implements SimpleComponent {
                 toAddMap.put("playerName", basically.driverName);
                 toAddMap.put("trainType", basically.trainName);
                 toAddMap.put("speed", String.valueOf(basically.speed));
-                output.put(String.valueOf(elasped),  toAddMap);
+                output.put(String.valueOf(elapsed),  toAddMap);
             }
             return new HashMap[]{output};
         } catch (ClassNotFoundException | NoSuchFieldException | IllegalAccessException e) {
@@ -70,5 +73,15 @@ public class TileTrainMonitor extends TileEntity implements SimpleComponent {
         }
 
     }
+    @Override
+    public void readFromNBT(NBTTagCompound nbttagcompound) {
+        super.readFromNBT(nbttagcompound);
+        this.dir = nbttagcompound.getInteger("dir");
+    }
 
+    @Override
+    public void writeToNBT(NBTTagCompound nbttagcompound) {
+        super.writeToNBT(nbttagcompound);
+        nbttagcompound.setInteger("dir", this.dir);
+    }
 }

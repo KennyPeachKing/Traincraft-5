@@ -514,7 +514,7 @@ public class AssemblyTableRecipes {
 			}
 
 			for (ItemStack dye : dyeGray){
-				cm.addRecipe(3, new ItemStack(ItemIDs.controls.item, 6),new ItemStack(ItemIDs.bogie.item, 5),new ItemStack(ItemIDs.steelframe.item, 5),new ItemStack(itemSteel, 2, itemDamageSteel),new ItemStack(ItemIDs.seats.item, 2),new ItemStack(ItemIDs.steelcab.item, 2),new ItemStack(BlockIDs.betterDetector.block, 2),new ItemStack(Blocks.daylight_detector, 2),new ItemStack(ItemIDs.electronicCircuit.item, 6),dye,new ItemStack(ItemIDs.minecartGeometryCar.item, 1), 1);
+				//cm.addRecipe(3, new ItemStack(ItemIDs.controls.item, 6),new ItemStack(ItemIDs.bogie.item, 5),new ItemStack(ItemIDs.steelframe.item, 5),new ItemStack(itemSteel, 2, itemDamageSteel),new ItemStack(ItemIDs.seats.item, 2),new ItemStack(ItemIDs.steelcab.item, 2),new ItemStack(BlockIDs.betterDetector.block, 2),new ItemStack(Blocks.daylight_detector, 2),new ItemStack(ItemIDs.electronicCircuit.item, 6),dye,new ItemStack(ItemIDs.minecartGeometryCar.item, 1), 1);
 				cm.addRecipe(3, null, new ItemStack(ItemIDs.bogie.item, 4), new ItemStack(ItemIDs.steelframe.item, 4), null, new ItemStack(ItemIDs.steelcab.item, 2), null, null, null, new ItemStack(ItemIDs.seats.item, 2), dye, new ItemStack(ItemIDs.minecartPCH100HCoach.item, 1),1);
 			}
 

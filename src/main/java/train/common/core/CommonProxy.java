@@ -3,6 +3,7 @@ package train.common.core;
 import com.jcirmodelsquad.tcjcir.features.containers.ContainerStorage;
 import com.jcirmodelsquad.tcjcir.features.containers.TileFortyFootContainer;
 import com.jcirmodelsquad.tcjcir.features.betterdetector.TileBetterDetector;
+import com.jcirmodelsquad.tcjcir.features.eti.TileTrainMonitor;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
@@ -97,6 +98,7 @@ public class CommonProxy implements IGuiHandler {
 			GameRegistry.registerTileEntity(TileMTCMultiReceiver.class, "tileMTCMultiReceiver");
 		}
 		GameRegistry.registerTileEntity(TileFortyFootContainer.class, "tileFortyFootContainer");
+		GameRegistry.registerTileEntity(TileTrainMonitor.class, "tileTrainMonitor");
 	}
 
 	public void registerComputerCraftPeripherals() throws ClassNotFoundException {

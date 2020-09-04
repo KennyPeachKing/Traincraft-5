@@ -59,7 +59,7 @@ public class TileActualSignalBlock extends TileEntity {
                 int x = thePairDevice.getTagCompound().getCompoundTag("currentPairing").getInteger("x");
                 int y = thePairDevice.getTagCompound().getCompoundTag("currentPairing").getInteger("y");
                 int z = thePairDevice.getTagCompound().getCompoundTag("currentPairing").getInteger("z");
-                if (worldObj.getTileEntity(x,y,z) != null) { System.out.println(worldObj.getTileEntity(x,y,z)); };
+               // if (worldObj.getTileEntity(x,y,z) != null) { System.out.println(worldObj.getTileEntity(x,y,z)); };
                // System.out.println(x==xCoord);
                 //System.out.println(y==yCoord);
                 //System.out.println(z==zCoord);
@@ -141,7 +141,6 @@ public class TileActualSignalBlock extends TileEntity {
         worldObj.notifyBlocksOfNeighborChange(xCoord, yCoord, zCoord - 1, b);
         worldObj.notifyBlocksOfNeighborChange(xCoord, yCoord - 1, zCoord, b);
         worldObj.notifyBlocksOfNeighborChange(xCoord, yCoord + 1, zCoord, b);
-        System.out.println("Updating " + xCoord);
         this.worldObj.notifyBlocksOfNeighborChange(this.xCoord, this.yCoord, this.zCoord, b);
     }
 }

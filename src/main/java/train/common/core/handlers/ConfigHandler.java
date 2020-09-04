@@ -42,7 +42,7 @@ public class ConfigHandler {
 	public static boolean ENABLE_WAGON_REMOVAL_NOTICES;
 	public static boolean ENABLE_LOGGING;
 	public static boolean ALLOW_ATO_ON_STEAMERS;
-
+	public static boolean ENABLE_TILT_HANDLER;
 	public static int UPDATE_FREQUENCY=3;
 
 	public static void changeFirstLoad(){
@@ -88,7 +88,7 @@ public class ConfigHandler {
 			ALLOW_ATO_ON_STEAMERS = cf.get(CATEGORY_GENERAL, "ALLOW_ATO_ON_STEAMERS", false, "Allows remote control of steam trains via the Minecraft Train Control (MTC) ATO system.").getBoolean(true);
 
 			UPDATE_FREQUENCY = cf.get(CATEGORY_GENERAL, "MOVEMENT_PACKET_FREQUENCY", 3,"how often to send and receive update packets, Older TC uses 1, Default is 3 like horses, max is 20").setMaxValue(20).setMinValue(1).getInt();
-
+			ENABLE_TILT_HANDLER = cf.get(CATEGORY_GENERAL, "ENABLE_TILT_HANDLER", false, "Allows certain trains to tilt into curves, as a visual effect. As of 1.6, it isn't perfect and there could be issues. Try it if you want, though. [default: false]").getBoolean(false);
 
 		} catch (Exception e) {
 			Traincraft.tcLog.fatal("Traincraft had a problem loading its configuration\n" + e);

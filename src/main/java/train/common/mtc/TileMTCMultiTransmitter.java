@@ -18,7 +18,7 @@ import train.common.mtc.packets.*;
 import java.util.List;
 
 
-    public class TileMTCMultiTransmitter extends TileEntity implements SimpleComponent, Environment {
+    public class TileMTCMultiTransmitter extends TileEntity implements SimpleComponent {
         public boolean isActivated;
         public int speedLimit;
         public int nextSpeedLimit;
@@ -27,7 +27,7 @@ import java.util.List;
         public boolean enforceSpeedLimits;
         public Coordinates speedChangeCoords = new Coordinates();
         public Coordinates stopCoords = new Coordinates();
-        public String serverUUID;
+        public String serverUUID = "";
         public String signalBlock = "";
         public int mtcType;
         public int mtcStatus;
@@ -36,11 +36,9 @@ import java.util.List;
         public boolean doTransmitStopPoint = false;
 
         public AxisAlignedBB boundingBox = null;
-        public Node leNode;
 
-        public TileMTCMultiTransmitter() {
-            leNode = Network.newNode(this, Visibility.Network).withComponent(getComponentName()).withConnector(32).create();
-        }
+
+
         @Override
         public String getComponentName() {
             return "mtc_multi_transmitter";
@@ -267,9 +265,7 @@ import java.util.List;
             doTransmitSpeedLimits = nbt.getBoolean("doTransmitSpeedLimits");
             doTransmitMTCData = nbt.getBoolean("doTransmitMTCData");
             doTransmitStopPoint = nbt.getBoolean("doTransmitStopPoint");
-            if (leNode != null && leNode.host() == this) {
-                leNode.load(nbt.getCompoundTag("oc:node"));
-            }
+
         }
 
         @Override
@@ -295,44 +291,10 @@ import java.util.List;
             nbt.setBoolean("doTransmitSpeedLimits", doTransmitSpeedLimits);
             nbt.setBoolean("doTransmitMTCData", doTransmitMTCData);
             nbt.setBoolean("doTransmitStopPoint", doTransmitStopPoint);
-            if (leNode != null && leNode.host() == this) {
-                final NBTTagCompound nodeNbt = new NBTTagCompound();
-                leNode.save(nodeNbt);
-                nbt.setTag("oc:node", nodeNbt);
-            }
-        }
-
-        @Override
-        public Node node() {
-            return leNode;
-        }
-
-        @Override
-        public void onConnect(Node node) {
 
         }
 
-        @Override
-        public void onDisconnect(Node node) {
 
-        }
-
-        @Override
-        public void onMessage(Message message) {
-
-        }
-
-        @Override
-        public void onChunkUnload() {
-            super.onChunkUnload();
-            if (leNode != null) leNode.remove();
-        }
-
-        @Override
-        public void invalidate() {
-            super.invalidate();
-            if (leNode != null) leNode.remove();
-        }
 
     }
 
