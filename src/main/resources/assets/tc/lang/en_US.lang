@@ -397,6 +397,7 @@ item.tc:minecartTGVMobile.name=TGV Highrail Van
 item.tc:minecartHustler.name=Hustler Switcher
 item.tc:minecartClass345coach.name=Class 345 Coach
 item.tc:minecartF40PH.name=EMD F40PH
+item.tc:minecartGP7u.name=EMD GP7u
 
 <!-- ## Achievements ## -->
 achievement.tc:engineer=Engineers clothes
@@ -745,6 +746,7 @@ entity.tc.Amfleet2.name=Amfleet 2 CaR
 entity.tc.TGVmobile.name=TGV Highrail Van
 entity.tc.Hustler.name=Hustler Switcher
 entity.tc.F40PH.name=EMD F40PH
+entity.tc.GP7u.name=EMD GP7u
 
 description.villager.profession.tc.station_chief=Station Chief
 tile.tc:FortyFootContainer.name= Forty Foot Container

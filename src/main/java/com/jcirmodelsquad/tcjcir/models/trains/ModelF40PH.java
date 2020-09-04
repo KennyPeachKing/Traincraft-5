@@ -1042,6 +1042,6 @@ public class ModelF40PH extends ModelConverter //Same as Filename
 	{
 	}
 
-	public ModelRendererTurbo ModelC424[];
+	public ModelRendererTurbo ModelF40PH[];
 
 }

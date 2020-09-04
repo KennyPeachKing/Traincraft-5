@@ -683,8 +683,8 @@ public enum RenderEnum {
 	FRED(com.jcirmodelsquad.tcjcir.vehicles.rollingstock.FRED.class, new ModelFRED(),"fred", false, new float[]{0F, 0.05F, 0F}, new float[] { 0F, 180F, 180F }, null, "", 0, null, "", null, 0, false),
 	CF7( com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselCF7.class,  new ModelCF7(), "cf7_", true,new float[] {-1.5F, -0.16F, 0F},  new float[] { 0F, 180F, 180F }, null, "smoke", 6,  new ArrayList<double[]>() {
 		{
-			add(new double[]{0.85D, 1.65D, 0.0D});
-			add(new double[]{1.25D, 1.65D, 0.0D});
+			add(new double[]{0.73D, 1.65D, 0.0D});
+			add(new double[]{1.23D, 1.65D, 0.0D});
 
 		}
 	}, "", null, 0, false),
@@ -795,6 +795,13 @@ public enum RenderEnum {
 	F40PH( com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselF40PH.class,  new ModelF40PH(), "f40ph_", true,new float[] {-1.7F, 0.155F, 0F},  new float[] { 0F, 180F, 180F }, null, "smoke", 4,  new ArrayList<double[]>() {
 		{
 			add(new double[]{1.9D, 1.6D, 0.0D});
+		}
+	}, "", null, 0, false),
+	GP7u( com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselGP7u.class,  new ModelGP7u(), "gp7u_", true,new float[] {-1.5F, -0.05F, 0F},  new float[] { 0F, 180F, 180F }, null, "smoke", 5,  new ArrayList<double[]>() {
+		{
+			add(new double[]{0.45D, 1.65D, 0.0D});
+			add(new double[]{1.25D, 1.65D, 0.0D});
+
 		}
 	}, "", null, 0, false),
 	;
