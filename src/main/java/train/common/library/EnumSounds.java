@@ -120,6 +120,8 @@ public enum EnumSounds {
 	TGVmobile(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselTGVmobile.class, "mg_horn", 1F, "mg_run", 0.9F, 8, "mg_idle", 0.7F, 50, false),
 	Hustler(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselHustler.class, "wabco3bell", 1F, "ml8_notch8", 0.9F, 8, "ml8_idle", 0.7F, 50, false),
 	F40PH(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselF40PH.class, "nathan_k5la_5", 1F, "635E3B_notch8", 0.9F, 8, "635E3B_idle", 0.7F, 50, false),
+	GP7u(com.jcirmodelsquad.tcjcir.vehicles.locomotives.DieselGP7u.class, "leslie_s3", 1F, "567_notch8", 0.9F, 8, "567_idle", 0.7F, 50, false),
+	Classs345(com.jcirmodelsquad.tcjcir.vehicles.locomotives.ElectricClass345.class, "br_horn", 1F, "mg_run", 0.9F, 8, "mg_idle", 0.7F, 50, false),
 	;
 
 	private Class entityClass;
