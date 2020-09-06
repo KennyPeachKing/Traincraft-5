@@ -361,7 +361,9 @@ public enum ItemIDs {
 	minecartAmfleet2("ItemRollingStock", "Amfleet2", 3),
 	minecartTGVMobile("ItemRollingStock", "tgvmobile", 30),
 	minecartHustler("ItemRollingStock", "hustler", 2),
-	minecartF40PH("ItemRollingStock", "f40ph", 10),;
+	minecartF40PH("ItemRollingStock", "f40ph", 10),
+	minecartGP7u("ItemRollingStock", "gp7u", 8),
+	;
 
 	public Item item;
 	public String className;
