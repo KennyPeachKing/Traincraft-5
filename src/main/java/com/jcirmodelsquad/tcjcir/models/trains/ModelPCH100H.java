@@ -9,6 +9,7 @@
 
 package com.jcirmodelsquad.tcjcir.models.trains;
 
+import com.jcirmodelsquad.tcjcir.models.ModelAutoTrainIndicator;
 import com.jcirmodelsquad.tcjcir.models.trucks.ModelPCHBogie;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
@@ -465,6 +466,7 @@ public class ModelPCH100H extends ModelBase
     }
 
     ModelPCHBogie theBogie = new ModelPCHBogie();
+    ModelAutoTrainIndicator indicator = new ModelAutoTrainIndicator();
     @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
     {
@@ -492,7 +494,14 @@ public class ModelPCH100H extends ModelBase
         GL11.glPushMatrix();
         GL11.glTranslated(0.7F,0.1F,0);
         theBogie.render(entity,f,f1,f2,f3,f4,f5);
+      //  indicator.render(entity,f,f1,f2,f3,f4,f5);
         GL11.glPopMatrix();
+/*
+        GL11.glPushMatrix();
+        GL11.glTranslatef(10F ,20F,10F);
+        Tessellator.bindTexture(new ResourceLocation("tc:textures/trains/indicator_off.png"));
+        indicator.render(entity,f,f1,f2,f3,f4,f5);
+        GL11.glPopMatrix();*/
     }
 
     public void setRotationAngles(float f, float f1, float f2, float f3, float f4, float f5)

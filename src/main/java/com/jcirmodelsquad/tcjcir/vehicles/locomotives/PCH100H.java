@@ -1,5 +1,10 @@
 package com.jcirmodelsquad.tcjcir.vehicles.locomotives;
 
+import com.jcirmodelsquad.tcjcir.features.autotrain.AutoTrain2Handler;
+import com.jcirmodelsquad.tcjcir.features.autotrain.TrackSection;
+import com.jcirmodelsquad.tcjcir.features.autotrain.modules.PassengerTrainModule;
+import com.jcirmodelsquad.tcjcir.features.autotrain.modules.PitTrainModule;
+import com.jcirmodelsquad.tcjcir.features.eti.jcirmonitor.Position;
 import net.minecraft.entity.item.EntityMinecart;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -9,10 +14,14 @@ import train.common.api.HydrogenTrain;
 import train.common.library.EnumTrains;
 import train.common.library.GuiIDs;
 
+import java.util.ArrayList;
+
 public class PCH100H extends HydrogenTrain{
 
+    public AutoTrain2Handler autoTrainHandler;
     public PCH100H(World world) {
         super(world, EnumTrains.PCH100H.getTankCapacity(), 1000);
+        autoTrainHandler = new AutoTrain2Handler();
         initLoco();
     }
     public PCH100H(World world, double d, double d1, double d2){
@@ -81,6 +90,24 @@ public class PCH100H extends HydrogenTrain{
     public void onUpdate() {
         checkInvent(locoInvent[0]);
         super.onUpdate();
+
+        autoTrainHandler.operateAutoTrain(this);
+    }
+
+    @Override
+    public void setLocoTurnedOnFromPacket(boolean set) {
+        super.setLocoTurnedOnFromPacket(set);
+        if (set) {
+            ArrayList<TrackSection> testDatabase = new ArrayList<>();
+            testDatabase.add(new TrackSection(new Position(270, 4, 473), new Position(175, 4, 517), 15, false, "normal"));
+            testDatabase.add(new TrackSection(new Position(189, 4, 518), new Position(177, 4, 518),15, false, "station"));
+            testDatabase.add(new TrackSection(new Position(174, 4, 517), new Position(54, 4, 612), 40, false, "normal"));
+            testDatabase.add(new TrackSection(new Position(54, 4, 612), new Position(-35, 4, 642), 15, false, "normal"));
+            autoTrainHandler.loadedModule = new PassengerTrainModule();
+            System.out.println(autoTrainHandler.startAutoTrain(testDatabase, this));
+
+
+        }
     }
 
     @Override

@@ -2,8 +2,10 @@ package train.common.api;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.jcirmodelsquad.tcjcir.features.autotrain.AutoTrain2Handler;
 import com.jcirmodelsquad.tcjcir.features.autotrain.Station;
 import com.jcirmodelsquad.tcjcir.vehicles.locomotives.GeGenesis;
+import com.jcirmodelsquad.tcjcir.vehicles.locomotives.PCH100H;
 import com.jcirmodelsquad.tcjcir.vehicles.locomotives.PCH120Commute;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.common.FMLCommonHandler;
@@ -944,8 +946,18 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
 
 
         //Minecraft Train Control things.
+        //Oh, before we really, determine if this is running the AutoTrain 2 system.
+
         if (!worldObj.isRemote) {
-            if (mtcStatus == 1 | mtcStatus == 2) {
+            boolean autoTrainOn = false;
+            try {
+                AutoTrain2Handler handlerField = (AutoTrain2Handler) getClass().getField("autoTrainHandler").get(this);
+                autoTrainOn = handlerField.autoTrainActivated;
+
+            } catch (IllegalAccessException | NoSuchFieldException e) {
+
+            }
+            if (mtcStatus == 1 || mtcStatus == 2 || !autoTrainOn) {
                 if (mtcType == 2) {
                     //Send updates every few seconds
                     if (this.ticksExisted % 20 == 0) {
@@ -1008,7 +1020,7 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
                 Traincraft.itsChannel.sendToAllAround(new PacketSetSpeed(this.speedLimit, (int) this.posX, (int) this.posY, (int) this.posZ, getEntityId()), new TargetPoint(this.worldObj.provider.dimensionId, this.posX, this.posY, this.posZ, 150.0D));
                 speedGoingDown = true;
             }
-            if (distanceFromStopPoint >= 15 && distanceFromStopPoint < this.speedLimit && !(xFromStopPoint == 0.0) && mtcType == 2) {
+            if (distanceFromStopPoint >= 15 && distanceFromStopPoint < this.speedLimit && !(xFromStopPoint == 0.0) && (mtcType == 2 || autoTrainOn)) {
                 this.speedLimit = (int) Math.round(distanceFromStopPoint);
                 Traincraft.itsChannel.sendToAllAround(new PacketSetSpeed(this.speedLimit, (int) this.posX, (int) this.posY, (int) this.posZ, getEntityId()), new TargetPoint(this.worldObj.provider.dimensionId, this.posX, this.posY, this.posZ, 150.0D));
                 speedGoingDown = true;
@@ -1059,7 +1071,7 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
                     this.parkingBrake = true;
                 }
 
-                if (this.distanceFromStationStop < 2 && !stationStop) {
+                if (this.distanceFromStationStop < 2 && !stationStop || !autoTrainOn) {
                     stationStopComplete();
                     this.parkingBrake = true;
                     this.isBraking = true;
@@ -1836,7 +1848,7 @@ public abstract class Locomotive extends EntityRollingStock implements IInventor
                 support = false;
             }
         }
-        return this instanceof EntityLocoElectricHighSpeedZeroED || this instanceof EntityLocoElectricTramNY || this instanceof EntityLocoElectricICE1 || this instanceof EntityLocoDieselIC4_DSB_MG || this instanceof PCH120Commute || support;
+        return this instanceof EntityLocoElectricHighSpeedZeroED || this instanceof EntityLocoElectricTramNY || this instanceof EntityLocoElectricICE1 || this instanceof EntityLocoDieselIC4_DSB_MG || this instanceof PCH120Commute || this instanceof PCH100H || support;
 
     }
     public void disconnectFromServer(boolean yes) {
