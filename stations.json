@@ -16,5 +16,23 @@
     "x" : 207,
     "y" : 72,
     "z" : 414
+  },
+  "FTBR" : {
+    "publicName" : "Fort Bruh",
+    "x" : 7190,
+    "y" : 72,
+    "z" : 3096
+  },
+  "DSRT" : {
+    "publicName" : "Desertia",
+    "x" : 7425,
+    "y" : 72,
+    "z" : 3163
+  },
+  "SMLT" : {
+    "publicName" : "Smalltown",
+    "x" : 9998,
+    "y" : 69,
+    "z" : 2675
   }
 }
