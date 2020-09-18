@@ -34,6 +34,10 @@
   "JCTR" : {
     "color": "#004A7F",
     "name" : "JCTransit"
+  },
+  "MFRL" : {
+    "color" : "#0B6623",
+    "name" : "macParzival's Foresty Railroad"
   }
 }
 
