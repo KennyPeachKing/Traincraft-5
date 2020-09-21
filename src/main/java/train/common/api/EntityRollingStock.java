@@ -1240,7 +1240,7 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 		if (meta == 2 || meta == 0) {
 			norm = Math.sqrt(motionX * motionX + motionZ * motionZ);
 
-			setPosition(cx + 0.5, posY + yOffset +0.5, posZ);
+			setPosition(cx + 0.5, posY + yOffset+this.ySize+0.5, posZ);
 			//setPosition(posX, posY + yOffset, posZ);
 
 			motionX = 0;
@@ -1253,15 +1253,16 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 					return;
 				}
 			}
-			this.posX = (this.boundingBox.minX + this.boundingBox.maxX) *0.5d;
-			this.posY = this.boundingBox.minY + (double)this.yOffset - this.ySize-0.5d;
-			this.posZ = (this.boundingBox.minZ + this.boundingBox.maxZ) *0.5d;
+			setPosition((this.boundingBox.minX + this.boundingBox.maxX) *0.5,
+					this.boundingBox.minY + this.yOffset - this.ySize-0.5,
+					(this.boundingBox.minZ + this.boundingBox.maxZ)*0.5
+			);
 
 			//System.out.println("straight z "+Math.copySign(norm, motionZ));
 		}
 		if (meta == 1 || meta == 3) {
 
-			setPosition(posX, posY + yOffset+0.5, cz + 0.5);
+			setPosition(posX, posY + yOffset+this.ySize+0.5, cz + 0.5);
 			//setPosition(posX, posY + yOffset, posZ);
 
 			motionX = Math.copySign(Math.sqrt(motionX * motionX + motionZ * motionZ), motionX);
@@ -1274,9 +1275,10 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 					return;
 				}
 			}
-			posX =(this.boundingBox.minX + this.boundingBox.maxX) *0.5;
-			posY=this.boundingBox.minY + this.yOffset - this.ySize-0.5;
-			posZ=(this.boundingBox.minZ + this.boundingBox.maxZ)*0.5;
+			setPosition((this.boundingBox.minX + this.boundingBox.maxX) *0.5,
+					this.boundingBox.minY + this.yOffset - this.ySize-0.5,
+					(this.boundingBox.minZ + this.boundingBox.maxZ)*0.5
+			);
 
 			//System.out.println("straight x "+Math.copySign(norm, motionX));
 		}
@@ -1336,7 +1338,7 @@ public abstract class EntityRollingStock extends AbstractTrains implements ILink
 		vx2 = Math.copySign(vx2, (cx + ((px2_cx / norm) * r)) - posX);
 		vz2 = Math.copySign(vz2, (cz + ((pz2_cz / norm) * r)) - posZ);
 
-		setPosition(cx + ((cpx / cp_norm) * r), posY + yOffset, cz + ((cpz / cp_norm) * r));
+		setPosition(cx + ((cpx / cp_norm) * r), posY + yOffset-this.ySize, cz + ((cpz / cp_norm) * r));
 
 		moveEntity(vx2, 0.0D, vz2);
 
