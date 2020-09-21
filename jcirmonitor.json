@@ -42,6 +42,10 @@
   "APKT" : {
      "color" : "#00b9ff",
      "name" : "Aipkit Factory"
+  }, 
+  "L&ER" : {
+    "color" : "#1092e3",
+    "name" : "Lakeshore and East Haddon Railway"
   }
 }
 
