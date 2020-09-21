@@ -38,6 +38,10 @@
   "MFRL" : {
     "color" : "#0B6623",
     "name" : "macParzival's Foresty Railroad"
+  },
+  "APKT" : {
+     "color" : "#00b9ff",
+     "name" : "Aipkit Factory"
   }, 
   "L&ER" : {
     "color" : "#1092e3",
