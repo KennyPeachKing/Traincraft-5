@@ -92,7 +92,7 @@ public enum EnumTrains {
 	/**
 	 * Freight
 	 */
-	freightCartRed("Freight Cart Red", EntityFreightCart2.class, ItemIDs.minecartFreightCart2.item, "freight", 3, TraincraftUtil.getBytesFromColors(new String[]{"Red", "White"}), 18, 36,"Cargo: any"),
+	freightCartRed("Freight Cart Red", EntityFreightCart2.class, ItemIDs.minecartFreightCart2.item, "freight", 3, TraincraftUtil.getBytesFromColors(new String[]{"Red", "White", "Orange"}), 18, 36,"Cargo: any"),
 	freightCartYellow("Freight Cart Yellow", EntityFreightCart.class, ItemIDs.minecartChest.item, "freight", 3, null, 18, 36,"Cargo: any"),
 	freightWood("Freight Flat Cart Log", EntityFreightWood.class, ItemIDs.minecartWood.item, "freight", 3, null, 18, 27, "Cargo: only Logs"),
 	freightHopper("Freight Hopper Green", EntityFreightGrain.class, ItemIDs.minecartGrain.item, "freight", 4, TraincraftUtil.getBytesFromColors(new String[]{"Green", "White"}), 18, 36, "Cargo: wheat, seeds"),
