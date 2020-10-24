@@ -58,6 +58,10 @@
   "WFRX" : {
     "color": "#FF5000",
     "name" : "Wolf Fox Railroad"
+  },
+  "NRPC" : {
+    "color" : "#496556",
+    "name" : "Northern Pacific"
   }
 }
 
