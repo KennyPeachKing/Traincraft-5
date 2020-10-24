@@ -50,6 +50,14 @@
   "FURRX" : {
     "color" : "#CD3401",
     "name" : "Fox Union Rail Resources (FURRX)"
+  },
+  "MT&S" : {
+    "color" : "#013220",
+    "name" : "Messicrew Tenneva & Southern"
+  },
+  "WFRX" : {
+    "color": "#FF5000",
+    "name" : "Wolf Fox Railroad"
   }
 }
 
