@@ -46,6 +46,10 @@
   "L&ER" : {
     "color" : "#1092e3",
     "name" : "Lakeshore and East Haddon Railway"
+  },
+  "FURRX" : {
+    "color" : "#CD3401",
+    "name" : "Fox Union Rail Resources"
   }
 }
 
