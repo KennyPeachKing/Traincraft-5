@@ -62,6 +62,16 @@
   "NRPC" : {
     "color" : "#496556",
     "name" : "Northern Pacific"
+  },
+  "ATSF" : {
+    "color" : "#B90000",
+    "name" : "Atchison, Topeka, Santa Fe",
+    "image" : "https://i.imgur.com/e2d4iS7.png"
+  },
+  "MILW" : {
+    "color" : "#B65724",
+    "name" : "Chicago, Milwaukee, St. Paul, & Pacific",
+    "image" : "https://i.imgur.com/zuqT9t5.png"
   }
 }
 
