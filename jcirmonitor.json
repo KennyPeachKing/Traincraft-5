@@ -6,7 +6,8 @@
   },
   "BRTR" : {
     "color" : "#084058",
-    "name" : "British Rail"
+    "name" : "British Rail",
+    "image" : "https://i.imgur.com/2xzaPBr.png"
   },
   "OWO" : {
     "color" : "#B6D5B3",
