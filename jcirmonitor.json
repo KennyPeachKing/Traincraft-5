@@ -77,6 +77,10 @@
   "SSTT" : {
     "color" : "#808080",
     "name" : "Sneaky Steve Transit"
+  },
+  "JBRL" : {
+    "color" : "#000055",
+    "name" : "Joblogh Rail"
   }
 }
 
