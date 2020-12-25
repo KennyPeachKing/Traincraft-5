@@ -91,6 +91,10 @@
     "name" : "New York Central",
     "color" : "#CC2C16",
     "image" : "https://i.imgur.com/azIDe2N.png"
-  }
+  },
+  "ARR" : {
+    "name" : "Alaska Railroad",
+    "color" : "#0B01F",
+    "image" : "https://i.imgur.com/uzIJBgU.png"
 }
 
