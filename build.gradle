@@ -38,6 +38,9 @@ repositories {
         name "ChickenBones"
         url "http://chickenbones.net/maven/"
     }
+    maven { 
+        url = "http://maven.cil.li/"
+    }
 }
 
 dependencies {
@@ -47,6 +50,9 @@ dependencies {
             artifactPattern "http://www.mod-buildcraft.com/releases/BuildCraft/[revision]/[module]-[revision](-[classifier]).[ext]"
         }
     }
+
+    compile "li.cil.oc:OpenComputers:MC1.7.10-1.5.+:api"
+
     // you may put jars on which you depend on in ./libs
     // or you may define them like so..
     //compile "some.group:artifact:version:classifier"

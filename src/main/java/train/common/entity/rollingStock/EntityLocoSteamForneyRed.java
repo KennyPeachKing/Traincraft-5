@@ -1,6 +1,5 @@
 package train.common.entity.rollingStock;
 
-import net.minecraft.block.Block;
 import net.minecraft.entity.item.EntityMinecart;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -41,7 +40,7 @@ public class EntityLocoSteamForneyRed extends SteamTrain {
 	@Override
 	public void updateRiderPosition() {
 		if(riddenByEntity==null){return;}
-		TraincraftUtil.updateRider(this,0.5,0.5);
+		TraincraftUtil.updateRider(this,0.5,0.4);
 	}
 
 	@Override

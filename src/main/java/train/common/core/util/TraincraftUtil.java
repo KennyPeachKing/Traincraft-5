@@ -94,13 +94,16 @@ public class TraincraftUtil{
         float pitchRads = transport.anglePitchClient * radian;
         double rotationCos1 = Math.cos(Math.toRadians(transport.renderYaw+((transport instanceof Locomotive)?90:180)));
         double rotationSin1 = Math.sin(Math.toRadians(transport.renderYaw+((transport instanceof Locomotive)?90:180)));
+        float pitch = (float) (transport.posY + (Math.tan(pitchRads) * distance) + transport.getMountedYOffset()
+                + transport.riddenByEntity.getYOffset() + yOffset+0.2f);
+        float pitch1 = (float)(transport.posY + transport.getMountedYOffset() + transport.riddenByEntity.getYOffset() + yOffset);
         if(transport.side.isServer()){
             rotationCos1 =  Math.cos(Math.toRadians(transport.serverRealRotation + 90));
             rotationSin1 = Math.sin(Math.toRadians((transport.serverRealRotation + 90)));
             transport.anglePitchClient = transport.serverRealPitch*60;
+            pitch+=0.5;
+            pitch1+=0.5;
         }
-        float pitch = (float) (transport.posY + (Math.tan(pitchRads) * distance) + transport.getMountedYOffset()
-                + transport.riddenByEntity.getYOffset() + yOffset);
 
         double bogieX1 = (transport.posX + (rotationCos1 * distance));
         double bogieZ1 = (transport.posZ + (rotationSin1* distance));
@@ -115,9 +118,52 @@ public class TraincraftUtil{
         }
         if (pitchRads > -1.01 && pitchRads < 1.01) {
             transport.riddenByEntity.setPosition(bogieX1, pitch, bogieZ1);
-        } else {
-            transport.riddenByEntity.setPosition(bogieX1, (transport.posY + transport.getMountedYOffset() + transport.riddenByEntity.getYOffset() + yOffset), bogieZ1);
+        } else if(pitchRads == 0.0) {
+            transport.riddenByEntity.setPosition(bogieX1, pitch1, bogieZ1);
         }
     }
+
+    public static float atan2f(double x, double z) {
+        float pi =-3.141592653f;
+        float multiplier = 1.0f;
+
+        if (z < 0.0d) {
+            if (x < 0.0d) {
+                z = -z;
+                x = -x;
+            } else {
+                z = -z;
+                multiplier = -1.0f;
+            }
+
+        } else {
+            if (x < 0.0d) {
+                x = -x;
+                multiplier = -1.0f;
+            }
+
+            pi = 0.0f;
+        }
+
+        double invDiv = 1.0D / (((z < x) ? x : z) * (1.0D / (ATAN2_SQRT - 1)));
+        return (atan2[(int)(x * invDiv) * ATAN2_SQRT + (int)(z * invDiv)] + pi) * multiplier;
+    }
+
+    public static float atan2degreesf(double x, double y){
+        return atan2f(x,y)*degreesF;
+    }
+
+    private static final int ATAN2_SQRT = (int) Math.sqrt(1024);
+    private static final float[] atan2 = new float[1024];
+    static {
+        for (int i = 0; i < ATAN2_SQRT; i++) {
+            for (int j = 0; j < ATAN2_SQRT; j++) {
+                atan2[j * ATAN2_SQRT + i] = (float) Math.atan2((float) j / ATAN2_SQRT, (float) i / ATAN2_SQRT);
+            }
+        }
+    }
+
+    public static final float degreesF = (float) (180.0d / Math.PI);
+
 
 }
